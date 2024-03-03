@@ -1,0 +1,39 @@
+// media query
+@mixin mq($breakpoint: md) {
+  @if $breakpoint == "md" {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == "sp" {
+    @media screen and (max-width: 767.98px) {
+      @content;
+    }
+  }
+}
+
+// media query style generator
+@mixin mqStyle($breakpoint: md) {
+  @if $breakpoint == "md" {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+// link
+@mixin linktext {
+  color: var(--color-link-text);
+
+  &:hover {
+    color: var(--color-link);
+  }
+}
+
+// icons
+@mixin icon($code) {
+  content: unquote('"\\#{$code}"');
+  font-family: remixicon;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+}

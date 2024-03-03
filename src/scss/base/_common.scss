@@ -1,0 +1,20 @@
+@use "../abstracts/mixins" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-link);
+  transition: all 0.3s;
+  text-underline-offset: 0.25em;
+}

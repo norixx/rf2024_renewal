@@ -1,0 +1,86 @@
+// fonts
+$ff: "Noto Sans JP", "Hiragino Sans", "Meiryo", "Hiragino Kaku Gothic ProN", sans-serif;
+$ff-en: "Roboto", sans-serif;
+
+// colors
+$gray-white: rgba(255, 255, 255, 1);
+$gray9: rgba(249, 249, 249, 1);
+$gray8: rgba(244, 244, 244, 1);
+$gray7: rgba(238, 238, 238, 1);
+$gray6: rgba(227, 227, 227, 1);
+$gray5: rgba(211, 211, 211, 1);
+$gray4: rgba(195, 195, 195, 1);
+$gray3: rgba(163, 163, 163, 1);
+$gray2: rgba(136, 136, 136, 1);
+$gray1: rgba(85, 85, 85, 1);
+$gray0: rgba(51, 51, 51, 1);
+$gray-black: rgba(0, 0, 0, 1);
+
+$primary: rgba(242, 119, 5, 1);
+$primary-xxlight: rgba(252, 247, 241, 1);
+$primary-xlight: rgba(249, 237, 226, 1);
+$primary-light: rgba(251, 235, 221, 1);
+$primary-mid-light: rgba(252, 172, 97, 1);
+$primary-mid: rgba(251, 149, 53, 1);
+
+$alert: rgb(242, 76, 5);
+$alert-trans: rgb(242 76 5 / 0.9);
+
+// CSS vars
+:root {
+  // =======================================================
+  // COLORS
+  // background
+  --bg-primary: #{$primary};
+  --bg-primary-xxlight: #{$primary-xxlight};
+  --bg-primary-xlight: #{$primary-xlight};
+  --bg-primary-light: #{$primary-light};
+  --bg-primary-mid: #{$primary-mid};
+  --bg-gray-xxlight: #{$gray9};
+  --bg-gray-xlight: #{$gray8};
+  --bg-gray-light: #{$gray6};
+  --bg-gray-normal: #{$gray5};
+  --bg-gray-dark: #{$gray2};
+  --bg-gray-xdark: #{$gray1};
+  --bg-gray-xxdark: #{$gray0};
+  --bg-white: #{$gray-white};
+  --bg-black: #{$gray-black};
+
+  // border
+  --bdr-light: #{$gray6};
+  --bdr-normal: #{$gray5};
+  --bdr-dark: #{$gray2};
+  --bdr-black: #{$gray-black};
+  --bdr-primary: #{$primary};
+  --bdr-primary-mid: #{$primary-mid-light};
+  --bdr-primary-light: #{$primary-mid-light};
+
+  --bdr-btn-gray: #{$gray4};
+  --bdr-btn-gray--hover: #{$gray-black};
+  --bdr-btn-gray-light: #{$gray5};
+  --bdr-btn-gray-light: #{$gray5};
+  --bdr-btn-gray-dark: #{$gray3};
+
+  --bdr-form: #{$gray5};
+  --bdr-form--hover: #{$gray3};
+
+  // text
+  --txt-xlight: #{$gray4};
+  --txt-light: #{$gray2};
+  --txt-dark: #{$gray1};
+  --txt-white: #{$gray-white};
+  --txt-normal: #{$gray-black};
+  --txt-primary: #{$primary};
+  --txt-primary-mid: #{$primary-mid};
+
+  // alert
+  --alert: #{$alert};
+  --alert-trans: #{$alert-trans};
+
+  // theme
+
+  // =======================================================
+  // FONTS
+  --ff-base: #{$ff};
+  --ff-num: #{$ff-en};
+}

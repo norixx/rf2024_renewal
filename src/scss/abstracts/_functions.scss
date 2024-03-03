@@ -1,0 +1,9 @@
+// Shade Color
+@function color-shader($color, $weight: 0%) {
+  @return mix($color, #000, $weight);
+}
+
+//Tint Color
+@function color-tinter($color, $weight: 0%) {
+  @return mix($color, #fff, $weight);
+}

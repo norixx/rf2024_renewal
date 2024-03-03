@@ -1,0 +1,19 @@
+@use "../abstracts/mixins" as *;
+
+// font
+.fw {
+  // normal
+  &-n {
+    font-weight: normal !important;
+  }
+
+  &-sb {
+    font-weight: 600 !important;
+  }
+}
+
+.ff {
+  &-en {
+    font-family: sans-serif !important;
+  }
+}
