@@ -7,8 +7,10 @@
   <title>TOP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@400;500&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 
 <body>
@@ -62,48 +64,217 @@
   <main></main>
 
   <footer class="site-footer">
-    <div class="concent">
-      <div class="l-container">
-
+    <div class="footer-concent">
+      <div class="l-container l-col-container u-flex-pc-center">
+        <div class="l-col-pc-10 u-w-sp-100">
+          <dl class="footer-concent-form">
+            <dt>個人情報の取り扱いについて同意フォーム</dt>
+            <div class="footer-concent-form__links">
+              <dd class="footer-concent-form__detail"><a href="#" class="btn --normal --w100">詳細</a></dd>
+              <dd class="footer-concent-form__ps"><a href="#" class="btn --normal --w100">プライバシーステートメント</a></dd>
+              <dd class="footer-concent-form__form"><a href="#" class="btn --impact --w100">同意フォーム</a></dd>
+            </div>
+          </dl>
+        </div>
       </div>
     </div>
     <div class="footer-content">
-      <div class="l-container">
-        <nav class="footer-nav-main">
-          <div class="footer-nav-main__col-about">
-            <h3 class="footer-nav-main__h footer-nav-toggler" data-toggle="footer-about-us">About Us</h3>
-            <div class="footer-nav-toggle" id="footer-about-us">
+      <div class="l-container l-col-container u-flex-pc-center">
+        <div class="l-col-pc-10 u-w-sp-100">
+          <nav class="footer-nav-main">
+            <div class="footer-nav-main__col footer-nav-main__col-about">
               <ul class="footer-nav-list">
-                <li><a href="#">サービスについて</a></li>
-                <li><a href="#">会社概要</a></li>
-                <li><a href="#">採用情報</a></li>
-                <li><a href="#">アクセス</a></li>
-                <li><a href="#">グループ紹介</a></li>
+                <li>
+                  <h3 class="footer-nav-main__h footer-nav-toggler u-tt-uppercase toggle-sp-only"
+                    data-toggle="#footer-about-us">About
+                    Us</h3>
+                  <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-about-us">
+                    <ul class="footer-nav-sublist">
+                      <li><a href="#">サービスについて</a></li>
+                      <li><a href="#">会社概要</a></li>
+                      <li><a href="#">採用情報</a></li>
+                      <li><a href="#">アクセス</a></li>
+                      <li><a href="#">グループ紹介</a></li>
+                    </ul>
+                </li>
               </ul>
             </div>
-          </div>
-          <div class="footer-nav-main__col-rent">
-            <h3>About Us</h3>
-            <ul class="footer-nav-list">
-              <li><a href="#">サービスについて</a></li>
-              <li><a href="#">会社概要</a></li>
-              <li><a href="#">採用情報</a></li>
-              <li><a href="#">アクセス</a></li>
-              <li><a href="#">グループ紹介</a></li>
+            <div class="footer-nav-main__col footer-nav-main__col-rent">
+              <ul class="footer-nav-list footer-nav-rent">
+                <li>
+                  <h3 class="footer-nav-main__h footer-nav-toggler --is-open" data-toggle="#footer-rent">借りたい</h3>
+                  <div class="footer-nav-toggle --is-open" id="footer-rent">
+                    <div class="footer-nav-rent__container">
+                      <div class="footer-nav-rent__col">
+                        <h4 class="footer-nav-sub-h">検索する</h4>
+                        <ul class="footer-nav-list footer-nav-sublist">
+                          <li><a href="#">人気エリアから探す</a></li>
+                          <li><a href="#">区から探す</a></li>
+                          <li><a href="#">駅・沿線から探す</a></li>
+                        </ul>
+                      </div>
+                      <div class="footer-nav-rent__col">
+                        <h4 class="footer-nav-sub-h">最新情報から探す</h4>
+                        <ul class="footer-nav-list footer-nav-sublist">
+                          <li><a href="#">おすすめ情報から探す</a></li>
+                          <li><a href="#">新着情報から探す</a></li>
+                          <li><a href="#">採用情報</a></li>
+                          <li><a href="#">アクセス</a></li>
+                          <li><a href="#">グループ紹介</a></li>
+                        </ul>
+                      </div>
+                      <div class="footer-nav-rent__col">
+                        <h4 class="footer-nav-sub-h">特集から探す</h4>
+                        <ul class="footer-nav-list footer-nav-sublist">
+                          <li><a href="#">プレミアムマンション</a></li>
+                          <li><a href="#">新築</a></li>
+                          <li><a href="#">当社限定</a></li>
+                          <li><a href="#">三井不動産企画</a></li>
+                          <li><a href="#">分譲賃貸</a></li>
+                          <li><a href="#">賃料改定</a></li>
+                          <li><a href="#">賃料改定</a></li>
+                          <li><a href="#">フリーレント</a></li>
+                          <li><a href="#">ペット可</a></li>
+                          <li><a href="#">こだわり条件</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                </li>
+            </div>
+            <div class="footer-nav-main__col footer-nav-main__col-other">
+              <ul class="footer-nav-list">
+                <li><a href="#">貸したい</a></li>
+                <li><a href="#">資産活用</a></li>
+                <li><a href="#">RESIDENTFIRST CHANNEL</a></li>
+                <li><a href="#">会員ページ</a></li>
+                <li><a href="#">English</a></li>
+                <li><a href="#">ニュースリリース</a></li>
+              </ul>
+            </div>
+          </nav>
+          <nav class="footer-nav-base">
+            <ul class="footer-nav-base-list">
+              <li><a href="#">サイトマップ</a></li>
+              <li><a href="#">プライバシーステートメント</a></li>
+              <li><a href="#">特定個人情報基本方針</a></li>
+              <li><a href="#">人情報の取り扱いについて</a></li>
+              <li><a href="#">個人情報の開示等手続きについて</a></li>
+              <li><a href="#">Cookieおよびアクセスログについて</a></li>
+              <li><a href="#">サイトポリシー</a></li>
+              <li><a href="#">三井不動産グループソーシャルメディアガイドライン</a></li>
             </ul>
+          </nav>
+          <nav class="footer-nav-district">
+            <h3 class="footer-nav-district__h" data-toggle="#footer-district-popular">人気エリア</h3>
+            <div class="footer-district-container" id="footer-district-popular">
+              <ul class="footer-district-list">
+                <li><a href="#">赤坂・六本木・麻布</a></li>
+                <li><a href="#">芝公園・虎ノ門・新橋</a></li>
+                <li><a href="#">番町・飯田橋・麹町</a></li>
+                <li><a href="#">白金・白金台・高輪</a></li>
+                <li><a href="#">恵比寿・代官山・広尾</a></li>
+                <li><a href="#">代々木上原・松濤・代々木</a></li>
+                <li><a href="#">早稲田・落合・神楽坂</a></li>
+                <li><a href="#">日本橋・人形町・銀座</a></li>
+                <li><a href="#">本郷・湯島・小石川</a></li>
+                <li><a href="#">芝浦・三田・芝</a></li>
+                <li><a href="#">豊洲・月島・勝どき</a></li>
+                <li><a href="#">戸越・五反田・大崎</a></li>
+                <li><a href="#">祐天寺・学芸大学・自由が丘</a></li>
+                <li><a href="#">駒沢・用賀・二子玉川</a></li>
+                <li><a href="#">池尻・三宿・駒場</a></li>
+                <li><a href="#">東中野・高円寺・阿佐ヶ谷</a></li>
+                <li><a href="#">成城・砧</a></li>
+                <li><a href="#">上野・浅草・門前仲町</a></li>
+                <li><a href="#">池袋・板橋・王子</a></li>
+              </ul>
+              <ul class="footer-district-list">
+                <li><a href="#">青山</a></li>
+                <li><a href="#">渋谷</a></li>
+                <li><a href="#">東京・大手町</a></li>
+                <li><a href="#">新宿</a></li>
+                <li><a href="#">品川</a></li>
+                <li><a href="#">目黒・中目黒</a></li>
+                <li><a href="#">神田・御茶ノ水・秋葉原</a></li>
+                <li><a href="#">初台・幡ヶ谷・笹塚</a></li>
+              </ul>
+            </div>
+            <h3 class="footer-nav-district__h" data-toggle="#footer-district-23">区名(23区)</h3>
+            <div class="footer-district-contaienr" id="footer-district-23">
+              <ul class="footer-district-list">
+                <li><a href="#">港区</a></li>
+                <li><a href="#">渋谷区</a></li>
+                <li><a href="#">中央区</a></li>
+                <li><a href="#">新宿区</a></li>
+                <li><a href="#">文京区</a></li>
+                <li><a href="#">目黒区</a></li>
+                <li><a href="#">品川区</a></li>
+                <li><a href="#">世田谷区</a></li>
+                <li><a href="#">大田区</a></li>
+                <li><a href="#">江東区</a></li>
+                <li><a href="#">台東区</a></li>
+                <li><a href="#">墨田区</a></li>
+                <li><a href="#">中野区</a></li>
+                <li><a href="#">豊島区</a></li>
+                <li><a href="#">杉並区</a></li>
+                <li><a href="#">板橋区</a></li>
+                <li><a href="#">北区</a></li>
+                <li><a href="#">練馬区</a></li>
+                <li><a href="#">荒川区</a></li>
+                <li><a href="#">足立区</a></li>
+                <li><a href="#">葛飾区</a></li>
+                <li><a href="#">江戸川区</a></li>
+              </ul>
+            </div>
+          </nav>
+          <aside class="footer-groups">
+            <ul class="footer-groups-list">
+              <li><a href="#" target="_blank"><img src="" alt=""></a></li>
+              <li><a href="#" target="_blank"><img src="" alt=""></a></li>
+              <li><a href="#" target="_blank"><img src="" alt=""></a></li>
+              <li><a href="#" target="_blank"><img src="" alt=""></a></li>
+            </ul>
+          </aside>
+          <aside class="footer-group-services">
+            <h2 class="footer-grop-services__h">三井不動産グループの住まいに関する具体的なサービス内容については、各事業サイトをご覧ください</h2>
+            <ul class="footer-group-services-list">
+              <li><a href="#"><span>&nbsp;</span><img src="" alt=""></a></li>
+              <li><a href="#"><span>住んでからの安心サポートなら</span><img src="" alt=""></a></li>
+              <li><a href="#"><span>すまいとくらしの総合情報サイトなら</span><img src="" alt=""></a></li>
+              <li><a href="#"><span>新築の住まい探しなら</span><img src="" alt=""></a></li>
+              <li><a href="#"><span>不動産の売却・購入なら</span><img src="" alt=""></a></li>
+              <li><a href="#"><span>注文住宅・賃貸建築・医院建築のことなら</span><img src="" alt=""></a></li>
+              <li><a href="#"><span>住まいのリフォーム・リノベーションなら</span><img src="" alt=""></a></li>
+              <li><a href="#"><span>空間デザイン・インテリア販売なら</span><img src="" alt=""></a></li>
+              <li><a href="#"><span>マンション管理のトータルサポートなら</span><img src="" alt=""></a></li>
+              <li><a href="#"><span>シニアのためのサービスレジデンスなら</span><img src="" alt=""></a></li>
+            </ul>
+            <div class="footer-csr-group-link">
+              <a href="#" target="_blank"><img src="" alt=""></a>
+              <a href="#" target="_blank"><img src="" alt=""></a>
+            </div>
+          </aside>
+          <div class="footer-company-desc">
+            <div class="footer-company-desc__detail">
+              東京都知事（2）第96482号 （一社） 不動産流通経営協会会員 （公社） 首都圏不動産公正取引協議会加盟<br>
+              〒107-0052 東京都港区赤坂八丁目4番14号 青山タワープレイス4階<br>
+              三井の賃貸「いちばんに、住む人のこと。」 東京都心を中心とした豊富な賃貸マンションのご紹介。
+            </div>
+            <p class="footer-company-desc__slogan">
+              理想の高級賃貸物件は見つかりましたか？エリアや駅などの条件面を変えて検索すればきっと理想の物件に巡り合えます。<br>
+              都心の高級賃貸物件探しは[三井の賃貸]レジデントファーストで！
+            </p>
           </div>
-          <div class="footer-nav-main__col-other"></div>
-        </nav>
-        <nav class="footer-nav-sub">
-
-        </nav>
-        <nav class="footer-nav-district">
-
-        </nav>
+          <p class="footer-copyright">
+            <small>Copyright &copy; RESIDENT FIRST Co.,Ltd. All Rights Reserved.</small>
+          </p>
+        </div>
       </div>
     </div>
   </footer>
 
+
+  <script src="assets/js/rf.min.js"></script>
 </body>
 
 </html>

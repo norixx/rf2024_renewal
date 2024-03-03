@@ -1,0 +1,64 @@
+@use "../abstracts/mixins" as *;
+
+.site-footer {
+  background: var(--bg-gray-xxdark);
+}
+
+.footer-concent {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background: var(--bg-gray-xlight);
+
+  &-form {
+    --form-gap: 8px;
+    display: flex;
+    flex-direction: column;
+
+    &__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--form-gap);
+    }
+
+    dt {
+      font-weight: var(--fw-bold);
+      margin-bottom: 16px;
+    }
+    dd {
+      display: flex;
+    }
+
+    &__detail,
+    &__ps {
+      flex-basis: calc((100% - var(--form-gap)) / 2);
+    }
+    &__form {
+      flex-basis: 100%;
+    }
+
+    @include mq {
+      --form-gap: 16px;
+
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      &__links {
+        flex-wrap: none;
+      }
+      &__detail,
+      &__ps {
+        flex-basis: auto;
+      }
+      &__form {
+        flex-basis: auto;
+      }
+    }
+  }
+}
+
+.footer-content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: var(--txt-white);
+}

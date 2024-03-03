@@ -9,6 +9,14 @@
   ],
   "creatorBuild" : "34564",
   "files" : {
+    "\/.gitignore" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.gitignore",
+      "oF" : 0
+    },
     "\/assets" : {
       "ft" : 65536,
       "oA" : 1,
@@ -22,6 +30,50 @@
       "oA" : 0,
       "oAP" : "\/index.html",
       "oF" : 0
+    },
+    "\/src\/js\/partials\/_globals.js" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/src\/js\/partials\/_globals-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/src\/js\/partials\/_responsive.js" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/src\/js\/partials\/_responsive-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/src\/js\/partials\/_toggles.js" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/src\/js\/partials\/_toggles-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/src\/js\/rf.js" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/assets\/js\/rf.min.js",
+      "oF" : 2,
+      "sC" : 3,
+      "tS" : 0
     },
     "\/src\/scss\/abstracts\/_functions.scss" : {
       "aP" : 0,
@@ -113,6 +165,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/src\/scss\/components\/_buttons.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/components\/_buttons.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/src\/scss\/components\/_index.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -128,6 +195,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/src\/scss\/components\/_toggle.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/components\/_toggle.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/src\/scss\/layout\/_common.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -138,6 +220,36 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/src\/scss\/layout\/_common.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/src\/scss\/layout\/_footer.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/layout\/_footer.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/src\/scss\/layout\/_header.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/layout\/_header.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -1567,7 +1679,7 @@
       "autoOutputPathReplace1" : "",
       "autoOutputPathReplace2" : "",
       "autoOutputPathStyle" : 0,
-      "bundleFormat" : 0,
+      "bundleFormat" : 4,
       "minifierStyle" : 1,
       "sourceMapStyle" : 0,
       "syntaxCheckerStyle" : 3,

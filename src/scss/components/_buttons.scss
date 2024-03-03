@@ -1,0 +1,50 @@
+@use "../abstracts/variables" as *;
+
+.btn {
+  --x: 16px;
+  --y: 12px;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 1.5;
+  padding-left: var(--x);
+  padding-right: var(--x);
+  padding-top: var(--y);
+  padding-bottom: var(--y);
+  border-radius: var(--bdr-radius-md);
+  border: 1px solid transparent;
+  font-size: var(--fz-sm);
+
+  // Type
+  &.--normal {
+    background-color: var(--bg-white);
+    border-color: var(--bdr-btn-gray);
+
+    &:hover {
+      border-color: var(--bdr-btn-gray--hover);
+    }
+  }
+  &.--impact {
+    background-color: var(--bg-black);
+    color: var(--txt-white);
+  }
+  &.--primary-outline {
+    border-color: var(--bg-primary);
+  }
+
+  // Icon
+  &.--icon-before {
+    &::before {
+      margin-right: 8px;
+    }
+  }
+  &.--icon-after {
+    &::after {
+      margin-left: 8px;
+    }
+  }
+
+  // Size
+  &.--w100 {
+    width: 100%;
+  }
+}

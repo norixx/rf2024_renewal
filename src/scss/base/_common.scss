@@ -9,7 +9,10 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-size: var(--fz-md);
+  font-family: var(--ff-base);
+  font-weight: 400;
+  line-height: 1.75;
 }
 
 a {
@@ -17,4 +20,21 @@ a {
   color: var(--color-link);
   transition: all 0.3s;
   text-underline-offset: 0.25em;
+}
+button {
+  transition: all 0.3s;
+  border: none;
+  background: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: 0;
+    margin: 0;
+  }
 }

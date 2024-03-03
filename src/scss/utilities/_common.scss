@@ -1,7 +1,9 @@
 @use "../abstracts/mixins" as *;
 
+// =======================================================
+// FONT & TEXT
 // font
-.fw {
+.u-fw {
   // normal
   &-n {
     font-weight: normal !important;
@@ -12,8 +14,160 @@
   }
 }
 
-.ff {
+.u-ff {
   &-en {
     font-family: sans-serif !important;
+  }
+}
+
+// Text
+.u-tt {
+  $transforms: uppercase, lowercase, capitalize;
+  @each $transform in $transforms {
+    &-#{$transform} {
+      text-transform: #{$transform} !important;
+    }
+  }
+
+  @include mq {
+    @each $transform in $transforms {
+      &-pc-#{$transform} {
+        text-transform: #{$transform} !important;
+      }
+    }
+  }
+}
+
+// =======================================================
+// LAYOUT
+.u-flex {
+  $positions: start, end, center, between, around, evenly;
+  @each $pos in $positions {
+    &-#{$pos} {
+      $value: #{$pos};
+      @if $pos == start {
+        $value: flex-start;
+      }
+      @if $pos == end {
+        $value: flex-end;
+      }
+      @if $pos == center {
+        $value: center;
+      }
+      @if $pos == between {
+        $value: space-between;
+      }
+      @if $pos == around {
+        $value: space-around;
+      }
+      @if $pos == evenly {
+        $value: space-evenly;
+      }
+
+      display: flex !important;
+      justify-content: #{$value} !important;
+    }
+  }
+
+  @include mq {
+    @each $pos in $positions {
+      &-pc-#{$pos} {
+        $value: #{$pos};
+        @if $pos == start {
+          $value: flex-start;
+        }
+        @if $pos == end {
+          $value: flex-end;
+        }
+        @if $pos == center {
+          $value: center;
+        }
+        @if $pos == between {
+          $value: space-between;
+        }
+        @if $pos == around {
+          $value: space-around;
+        }
+        @if $pos == evenly {
+          $value: space-evenly;
+        }
+
+        display: flex !important;
+        justify-content: #{$value} !important;
+      }
+    }
+  }
+}
+
+// =======================================================
+// SIZING
+// Width
+.u-w {
+  $widths: auto, 50, 100;
+
+  @each $w in $widths {
+    &-#{$w} {
+      @if $w != "auto" {
+        width: $w * 1% !important;
+      } @else {
+        width: #{$w} !important;
+      }
+    }
+
+    @include mq(sp) {
+      &-sp-#{$w} {
+        @if $w != "auto" {
+          width: $w * 1% !important;
+        } @else {
+          width: #{$w} !important;
+        }
+      }
+    }
+
+    @include mq {
+      &-pc-#{$w} {
+        @if $w != "auto" {
+          width: $w * 1% !important;
+        } @else {
+          width: #{$w} !important;
+        }
+      }
+    }
+  }
+}
+
+// Height
+// Width
+.u-h {
+  $heigts: auto, 50, 100;
+
+  @each $h in $heigts {
+    &-#{$h} {
+      @if $h != "auto" {
+        width: $h * 1% !important;
+      } @else {
+        width: #{$h} !important;
+      }
+    }
+
+    @include mq(sp) {
+      &-sp-#{$h} {
+        @if $h != "auto" {
+          width: $h * 1% !important;
+        } @else {
+          width: #{$h} !important;
+        }
+      }
+    }
+
+    @include mq {
+      &-pc-#{$h} {
+        @if $h != "auto" {
+          width: $h * 1% !important;
+        } @else {
+          width: #{$h} !important;
+        }
+      }
+    }
   }
 }

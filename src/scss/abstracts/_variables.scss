@@ -2,6 +2,28 @@
 $ff: "Noto Sans JP", "Hiragino Sans", "Meiryo", "Hiragino Kaku Gothic ProN", sans-serif;
 $ff-en: "Roboto", sans-serif;
 
+$fw-normal: 400;
+$fw-bold: 600;
+$fw-en-bold: 500;
+
+$fz11: 11px;
+$fz12: 12px;
+$fz13: 13px;
+$fz14: 14px;
+$fz15: 15px;
+$fz16: 16px;
+$fz18: 18px;
+$fz20: 20px;
+$fz22: 22px;
+$fz24: 24px;
+$fz26: 26px;
+$fz28: 28px;
+$fz32: 32px;
+$fz40: 40px;
+$fz48: 48px;
+$fz56: 56px;
+$fz64: 64px;
+
 // colors
 $gray-white: rgba(255, 255, 255, 1);
 $gray9: rgba(249, 249, 249, 1);
@@ -25,6 +47,22 @@ $primary-mid: rgba(251, 149, 53, 1);
 
 $alert: rgb(242, 76, 5);
 $alert-trans: rgb(242 76 5 / 0.9);
+
+// =======================================================
+// NUMBERS
+// Layout
+$page-gutters-sp: 16px;
+$page-gutters-pc: 32px;
+$col-width: 5.4%;
+$col-gap: 3.2%;
+
+// Radius
+$radius-xs: 2px;
+$radius-sm: 2px;
+$radius-md: 3px;
+$radius-lg: 4px;
+$radius-xl: 6px;
+$radius-xxl: 8px;
 
 // CSS vars
 :root {
@@ -83,4 +121,32 @@ $alert-trans: rgb(242 76 5 / 0.9);
   // FONTS
   --ff-base: #{$ff};
   --ff-num: #{$ff-en};
+
+  --fw-normal: #{$fw-normal};
+  --fw-bold: #{$fw-bold};
+  --fw-en-bold: #{$fw-en-bold};
+
+  --fz-xxs: #{$fz11};
+  --fz-xs: #{$fz12};
+  --fz-sm: #{$fz14};
+  --fz-md: #{$fz16};
+  --fz-lg: #{$fz18};
+  --fz-xl: #{$fz20};
+  --fz-xxl: #{$fz24};
+
+  // =======================================================
+  // LAYOUTS
+  --page-gutter-sp-x: #{$page-gutters-sp};
+  --page-gutter-pc-x: #{$page-gutters-pc};
+  --col-width: #{$col-width};
+  --col-gap: #{$col-gap};
+
+  // =======================================================
+  // OTHERS
+  --bdr-radius-xs: #{$radius-xs};
+  --bdr-radius-sm: #{$radius-sm};
+  --bdr-radius-md: #{$radius-md};
+  --bdr-radius-lg: #{$radius-lg};
+  --bdr-radius-xl: #{$radius-xl};
+  --bdr-radius-xxl: #{$radius-xxl};
 }

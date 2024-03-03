@@ -1,0 +1,30 @@
+@use "../abstracts/mixins" as *;
+
+.toggle {
+  &-sp-only {
+  }
+
+  &-target {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--animation-normal);
+
+    &.--is-open {
+      grid-template-rows: 1fr !important;
+    }
+  }
+
+  &-pc-only {
+  }
+
+  @include mq {
+    &-target-sp-only {
+      grid-template-rows: 1fr !important;
+    }
+    &-pc-only {
+    }
+  }
+}
+
+[data-toggle] {
+}
