@@ -62,3 +62,139 @@
   padding-bottom: 40px;
   color: var(--txt-white);
 }
+
+.footer-nav-main {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-24);
+
+  @include mq {
+    justify-content: space-between;
+    flex-direction: row;
+    // border-bottom: none;
+    margin-bottom: var(--space-40);
+  }
+}
+
+.footer-nav-main {
+  // 借りたいカラム
+  &__col-rent {
+    display: flex;
+    flex-direction: column;
+
+    @include mq {
+      justify-content: space-between;
+      flex-direction: row;
+      width: 56%;
+    }
+  }
+}
+
+// リストLv1
+.footer-nav-lv1 {
+  // 見出し
+  &-h {
+    margin-bottom: var(--space-16);
+    font-size: var(--fz-16);
+    line-height: var(--line-height-md);
+  }
+
+  // リスト
+  &-list {
+    > li {
+      &:not(:last-child) {
+        margin-bottom: var(--space-8);
+      }
+      > a {
+        font-size: var(--fz-16);
+        font-weight: var(--fw-bold);
+      }
+    }
+
+    @include mq {
+      > li {
+        &:not(:last-child) {
+          margin-bottom: var(--space-16);
+        }
+        > a {
+          font-size: var(--fz-18);
+        }
+      }
+    }
+  }
+}
+
+// リストLv2
+.footer-nav-lv2 {
+  &-h {
+    font-size: var(--fz-16);
+    color: var(--txt-xlight);
+    margin-bottom: var(--space-16);
+    line-height: var(--line-height-md);
+  }
+}
+
+.footer-nav-list {
+  font-size: var(--fz-14);
+  line-height: var(--line-height-md);
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    a {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        background: var(--color-link-text);
+      }
+    }
+  }
+}
+
+// 借りたい
+.footer-nav-rent {
+  width: 100%;
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include mq {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+// ベースリスト
+.footer-nav-base {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+  border-top: 1px solid var(--bdr-dark);
+  border-bottom: 1px solid var(--bdr-dark);
+  margin-bottom: var(--space-24);
+
+  @include mq {
+    margin-bottom: var(--space-40);
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    line-height: var(--line-height-md);
+    font-size: var(--fz-14);
+    row-gap: var(--space-8);
+    column-gap: var(--space-24);
+
+    @include mq {
+      flex-direction: row;
+      flex-wrap: wrap;
+      row-gap: var(--space-16);
+      column-gap: var(--space-24);
+    }
+  }
+}

@@ -6,23 +6,35 @@ $fw-normal: 400;
 $fw-bold: 600;
 $fw-en-bold: 500;
 
-$fz11: 11px;
-$fz12: 12px;
-$fz13: 13px;
-$fz14: 14px;
-$fz15: 15px;
-$fz16: 16px;
-$fz18: 18px;
-$fz20: 20px;
-$fz22: 22px;
-$fz24: 24px;
-$fz26: 26px;
-$fz28: 28px;
-$fz32: 32px;
-$fz40: 40px;
-$fz48: 48px;
-$fz56: 56px;
-$fz64: 64px;
+$fz-11: 11px;
+$fz-12: 12px;
+$fz-13: 13px;
+$fz-14: 14px;
+$fz-15: 15px;
+$fz-16: 16px;
+$fz-18: 18px;
+$fz-20: 20px;
+$fz-22: 22px;
+$fz-24: 24px;
+$fz-26: 26px;
+$fz-28: 28px;
+$fz-32: 32px;
+$fz-40: 40px;
+$fz-48: 48px;
+$fz-56: 56px;
+$fz-64: 64px;
+
+// texts
+$line-height-200: 2;
+$line-height-180: 1.8;
+$line-height-175: 1.75;
+$line-height-160: 1.6;
+$line-height-150: 1.5;
+$line-height-140: 1.4;
+$line-height-130: 1.3;
+$line-height-120: 1.2;
+$line-height-110: 1.1;
+$line-height-100: 1;
 
 // colors
 $gray-white: rgba(255, 255, 255, 1);
@@ -53,8 +65,8 @@ $alert-trans: rgb(242 76 5 / 0.9);
 // Layout
 $page-gutters-sp: 16px;
 $page-gutters-pc: 32px;
-$col-width: 5.4%;
-$col-gap: 3.2%;
+$col-width: 5.92105%;
+$col-gap: 2.631578%;
 
 // Radius
 $radius-xs: 2px;
@@ -64,6 +76,31 @@ $radius-lg: 4px;
 $radius-xl: 6px;
 $radius-xxl: 8px;
 
+// Spacing
+$space-8: 0.5rem;
+$space-10: 0.625rem;
+$space-12: 0.75rem;
+$space-14: 0.875rem;
+$space-16: 1rem;
+$space-18: 1.125rem;
+$space-20: 1.25rem;
+$space-24: 1.5rem;
+$space-28: 1.75rem;
+$space-32: 2rem;
+$space-40: 2.5rem;
+$space-48: 3rem;
+$space-56: 3.5rem;
+$space-64: 4rem;
+$space-72: 4.5rem;
+$space-80: 5rem;
+$space-88: 5.5rem;
+$space-96: 6rem;
+$space-104: 6.5rem;
+$space-112: 7rem;
+$space-120: 7.5rem;
+
+// =======================================================
+// =======================================================
 // CSS vars
 :root {
   // =======================================================
@@ -118,7 +155,7 @@ $radius-xxl: 8px;
   // theme
 
   // =======================================================
-  // FONTS
+  // FONTS & TEXTS
   --ff-base: #{$ff};
   --ff-num: #{$ff-en};
 
@@ -126,13 +163,21 @@ $radius-xxl: 8px;
   --fw-bold: #{$fw-bold};
   --fw-en-bold: #{$fw-en-bold};
 
-  --fz-xxs: #{$fz11};
-  --fz-xs: #{$fz12};
-  --fz-sm: #{$fz14};
-  --fz-md: #{$fz16};
-  --fz-lg: #{$fz18};
-  --fz-xl: #{$fz20};
-  --fz-xxl: #{$fz24};
+  --fz-11: #{$fz-11};
+  --fz-12: #{$fz-12};
+  --fz-14: #{$fz-14};
+  --fz-16: #{$fz-16};
+  --fz-18: #{$fz-18};
+  --fz-20: #{$fz-20};
+  --fz-24: #{$fz-24};
+  --fz-32: #{$fz-32};
+
+  --line-height-200: #{$line-height-200};
+  --line-height-base: #{$line-height-175};
+  --line-height-lg: #{$line-height-180};
+  --line-height-md: #{$line-height-150};
+  --line-height-sm: #{$line-height-120};
+  --line-height-100: #{$line-height-100};
 
   // =======================================================
   // LAYOUTS
@@ -149,4 +194,26 @@ $radius-xxl: 8px;
   --bdr-radius-lg: #{$radius-lg};
   --bdr-radius-xl: #{$radius-xl};
   --bdr-radius-xxl: #{$radius-xxl};
+
+  --animation-fast: 0.2s;
+  --animation-normal: 0.3s;
+  --animation-slow: 0.5s;
+
+  // Spacing
+  --space-8: #{$space-8};
+  --space-10: #{$space-10};
+  --space-12: #{$space-12};
+  --space-14: #{$space-14};
+  --space-16: #{$space-16};
+  --space-18: #{$space-18};
+  --space-20: #{$space-20};
+  --space-24: #{$space-24};
+  --space-28: #{$space-28};
+  --space-32: #{$space-32};
+  --space-40: #{$space-40};
+  --space-48: #{$space-48};
+  --space-56: #{$space-56};
+  --space-64: #{$space-64};
+  --space-72: #{$space-72};
+  --space-80: #{$space-80};
 }

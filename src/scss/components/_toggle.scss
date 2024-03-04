@@ -12,6 +12,10 @@
     &.--is-open {
       grid-template-rows: 1fr !important;
     }
+
+    &__inner {
+      overflow: hidden;
+    }
   }
 
   &-pc-only {
