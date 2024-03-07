@@ -36,6 +36,11 @@ $line-height-120: 1.2;
 $line-height-110: 1.1;
 $line-height-100: 1;
 
+// letter spacing
+$letter-space-0: 0em;
+$letter-space-10: 0.1em;
+$letter-space-20: 0.2em;
+
 // colors
 $gray-white: rgba(255, 255, 255, 1);
 $gray9: rgba(249, 249, 249, 1);
@@ -77,6 +82,7 @@ $radius-xl: 6px;
 $radius-xxl: 8px;
 
 // Spacing
+$space-0: 0;
 $space-8: 0.5rem;
 $space-10: 0.625rem;
 $space-12: 0.75rem;
@@ -99,6 +105,9 @@ $space-104: 6.5rem;
 $space-112: 7rem;
 $space-120: 7.5rem;
 
+// animation & transition
+$animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
+
 // =======================================================
 // =======================================================
 // CSS vars
@@ -120,11 +129,14 @@ $space-120: 7.5rem;
   --bg-gray-xxdark: #{$gray0};
   --bg-white: #{$gray-white};
   --bg-black: #{$gray-black};
+  --bg-black-90: rgba(0 0 0 / 0.9);
 
   // border
   --bdr-light: #{$gray6};
   --bdr-normal: #{$gray5};
   --bdr-dark: #{$gray2};
+  --bdr-xdark: #{$gray1};
+  --bdr-xxdark: #{$gray0};
   --bdr-black: #{$gray-black};
   --bdr-primary: #{$primary};
   --bdr-primary-mid: #{$primary-mid-light};
@@ -173,11 +185,15 @@ $space-120: 7.5rem;
   --fz-32: #{$fz-32};
 
   --line-height-200: #{$line-height-200};
-  --line-height-base: #{$line-height-175};
   --line-height-lg: #{$line-height-180};
+  --line-height-base: #{$line-height-175};
   --line-height-md: #{$line-height-150};
   --line-height-sm: #{$line-height-120};
   --line-height-100: #{$line-height-100};
+
+  --letter-space-0: #{$letter-space-0};
+  --letter-space-10: #{$letter-space-10};
+  --letter-space-20: #{$letter-space-20};
 
   // =======================================================
   // LAYOUTS
@@ -185,6 +201,9 @@ $space-120: 7.5rem;
   --page-gutter-pc-x: #{$page-gutters-pc};
   --col-width: #{$col-width};
   --col-gap: #{$col-gap};
+
+  // グローバルナビゲーション幅
+  --gnav-sp-width: calc(100% - var(--space-64));
 
   // =======================================================
   // OTHERS
@@ -200,6 +219,7 @@ $space-120: 7.5rem;
   --animation-slow: 0.5s;
 
   // Spacing
+  --space-0: #{$space-0};
   --space-8: #{$space-8};
   --space-10: #{$space-10};
   --space-12: #{$space-12};
@@ -216,4 +236,7 @@ $space-120: 7.5rem;
   --space-64: #{$space-64};
   --space-72: #{$space-72};
   --space-80: #{$space-80};
+
+  // Animation & Transition
+  --animation-easing: #{$animation-easing};
 }

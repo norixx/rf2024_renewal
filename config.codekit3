@@ -42,6 +42,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/src\/js\/partials\/_gnav.js" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 1,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/src\/js\/partials\/_gnav-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/src\/js\/partials\/_responsive.js" : {
       "bF" : 4,
       "ft" : 64,
@@ -296,7 +307,7 @@
       "oA" : 0,
       "oAP" : "\/assets\/css\/style.min.css",
       "oF" : 2,
-      "oS" : 3,
+      "oS" : 1,
       "pg" : 0,
       "sct" : 0
     },

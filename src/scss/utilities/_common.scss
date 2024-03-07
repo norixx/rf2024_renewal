@@ -171,3 +171,172 @@
     }
   }
 }
+
+// =======================================================
+// DISPLAY
+.u-sp-only {
+  // display値はその場のレイアウトを優先すること
+  display: block;
+  @include mq {
+    display: none;
+  }
+}
+
+.u-pc-only {
+  // display値はその場のレイアウトを優先すること
+  display: none;
+  @include mq {
+    display: block;
+  }
+}
+
+// =======================================================
+// POSITION
+.u-pos {
+  $positions: relative, absolute, fixed, sticky;
+  @each $pos in $positions {
+    &-#{$pos} {
+      position: #{$pos} !important;
+    }
+  }
+
+  @include mq(sp) {
+    @each $pos in $positions {
+      &-sp-#{$pos} {
+        position: #{$pos} !important;
+      }
+    }
+  }
+
+  @include mq {
+    @each $pos in $positions {
+      &-pc-#{$pos} {
+        position: #{$pos} !important;
+      }
+    }
+  }
+}
+
+// =======================================================
+// SPACING
+@mixin spacing($direction, $space, $type, $breakpoint: "") {
+  @if $breakpoint != "" {
+    $breakpoint: #{$breakpoint}-;
+  }
+  @if $direction == all {
+    @if $type == m {
+      &-#{$type}-#{$breakpoint}#{$space} {
+        margin: var(--space-#{$space}) !important;
+      }
+    }
+    @if $type == p {
+      &-#{$type}-#{$breakpoint}#{$space} {
+        padding: var(--space-#{$space}) !important;
+      }
+    }
+  }
+  @if $direction == t {
+    @if $type == m {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        margin-top: var(--space-#{$space}) !important;
+      }
+    }
+    @if $type == p {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        padding-top: var(--space-#{$space}) !important;
+      }
+    }
+  }
+
+  @if $direction == r {
+    @if $type == m {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        margin-right: var(--space-#{$space}) !important;
+      }
+    }
+    @if $type == p {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        padding-right: var(--space-#{$space}) !important;
+      }
+    }
+  }
+
+  @if $direction == b {
+    @if $type == m {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        margin-bottom: var(--space-#{$space}) !important;
+      }
+    }
+    @if $type == p {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        padding-bottom: var(--space-#{$space}) !important;
+      }
+    }
+  }
+
+  @if $direction == l {
+    @if $type == m {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        margin-left: var(--space-#{$space}) !important;
+      }
+    }
+    @if $type == p {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        padding-left: var(--space-#{$space}) !important;
+      }
+    }
+  }
+
+  @if $direction == x {
+    @if $type == m {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        margin-left: var(--space-#{$space}) !important;
+        margin-right: var(--space-#{$space}) !important;
+      }
+    }
+    @if $type == p {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        padding-left: var(--space-#{$space}) !important;
+        padding-right: var(--space-#{$space}) !important;
+      }
+    }
+  }
+
+  @if $direction == y {
+    @if $type == m {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        margin-top: var(--space-#{$space}) !important;
+        margin-bottom: var(--space-#{$space}) !important;
+      }
+    }
+    @if $type == p {
+      &-#{$type}#{$direction}-#{$breakpoint}#{$space} {
+        padding-top: var(--space-#{$space}) !important;
+        padding-bottom: var(--space-#{$space}) !important;
+      }
+    }
+  }
+}
+.u {
+  $types: m, p;
+  $spaces: 0, 8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 40, 48, 56, 64, 72, 80;
+  $directions: all, t, r, b, l, x, y;
+
+  @each $type in $types {
+    @each $space in $spaces {
+      @each $direction in $directions {
+        @include spacing($direction, $space, $type);
+      } // @each $direction
+    }
+  }
+
+  @include mq {
+    @each $type in $types {
+      @each $space in $spaces {
+        @each $direction in $directions {
+          @include spacing($direction, $space, $type, "pc");
+        } // @each $direction
+      }
+    }
+  }
+}

@@ -1,0 +1,313 @@
+@use "../abstracts/mixins" as *;
+
+.site-header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--bg-black);
+  height: 70px;
+  z-index: 100;
+  color: var(--txt-white);
+
+  @include mq {
+    position: relative;
+  }
+
+  &__container {
+    @include mq {
+      padding: 0 var(--space-32);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+// グローバルナビゲーション詳細設定
+.gnav {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  color: var(--txt-white);
+  background-color: transparent;
+  transition: background-color var(--animation-normal) var(--animation-easing);
+
+  &.--is-open {
+    left: 0;
+    background-color: rgba(0 0 0 / 0.2);
+  }
+
+  @include mq {
+    position: static;
+    height: auto;
+    width: auto;
+    background-color: transparent !important;
+  }
+
+  // Gnav開閉🍔ボタン
+  &-toggle {
+    @include mq {
+      display: none;
+    }
+  }
+
+  // メインコンテナ
+  &-container {
+    background-color: var(--bg-black-90);
+    width: var(--gnav-sp-width);
+    margin-left: var(--space-64);
+    height: 100%;
+    transition: left var(--animation-normal) var(--animation-easing);
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 100;
+    padding: var(--space-40) var(--space-24);
+
+    @include mq {
+      position: static;
+      width: auto;
+      margin-left: 0;
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+  &.--is-open &-container {
+    left: 0;
+  }
+
+  // サブコンテナ
+  &-sub-container {
+    position: fixed;
+    width: var(--gnav-sp-width);
+    top: 0;
+    left: var(--space-64);
+    // height: 100vh;
+    z-index: 100;
+    left: 100%; //暫定
+
+    @include mq {
+      display: grid;
+      grid-template-rows: 0fr;
+
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      height: auto;
+      background-color: var(--bg-black-90);
+      transition: grid-template-rows var(--animation-slow) var(--animation-easing);
+
+      // 開いている状態
+      &.--is-open {
+        grid-template-rows: 1fr;
+      }
+    }
+
+    // サブコンテナ内部
+    &__inner {
+      overflow: hidden;
+    }
+  }
+
+  // Lv2コンテンツ(PC用)
+  &-lv2 {
+    @include mq {
+      display: grid !important; //gnav-anim-panelの設定を上書き
+      grid-template-rows: 0fr;
+      transition: grid-template-rows var(--animation-normal) !important; //gnav-anim-panelの設定を上書き
+
+      &.--is-open {
+        grid-template-rows: 1fr;
+      }
+
+      &__inner {
+        overflow: hidden;
+      }
+    }
+  }
+
+  // サブリスト
+  &-sublist {
+    line-height: var(--line-height-md);
+    > li {
+      border-bottom: 1px solid var(--bdr-xxdark);
+      > a {
+        display: block;
+        padding: var(--space-16);
+        font-size: var(--fz-md);
+        color: var(--txt-white);
+
+        &:active {
+          background: rgba(255 255 255 / 0.1);
+        }
+      }
+    }
+    @include mq {
+      // display: none;
+      > li {
+        border-bottom: none;
+
+        > a {
+          &:active {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  // アニメーション対象パネル
+  &-anim-panel {
+    transition: left var(--animation-normal) var(--animation-easing);
+    position: fixed;
+    top: 0;
+    left: 95%; //暫定
+    height: 100vh;
+    width: var(--gnav-sp-width);
+    background: var(--bg-black); //暫定
+
+    &.--is-open {
+      // transform: translateX(-40%); //暫定
+      left: var(--space-64);
+    }
+
+    // 子階層を一旦非表示してOPEN時に即表示
+    > * {
+      display: none;
+    }
+
+    &.--is-open > * {
+      display: block;
+    }
+
+    @include mq {
+      position: static;
+      width: auto;
+      height: auto;
+      background: transparent;
+
+      // PCでは子階層を表示
+      > * {
+        display: block;
+      }
+    }
+  }
+
+  // 下層レベル
+  &-lower-sect {
+    &__header {
+      display: flex;
+      align-items: center;
+      padding: var(--space-16);
+      border-bottom: 1px solid var(--bdr-xdark);
+
+      @include mq {
+        // 下層オープン
+        &.gnav-open-lower {
+          display: none;
+        }
+      }
+    }
+
+    &__h {
+      font-size: var(--fz-18);
+    }
+
+    .gnav-open-lower &__h {
+      font-size: var(--fz-14) !important;
+      font-weight: var(--fw-normal) !important;
+
+      @include mq {
+        font-size: var(--fz-18) !important;
+        font-weight: var(--fw-bold) !important;
+      }
+    }
+
+    @include mq {
+      &__header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  }
+
+  // 第1階層ナビゲーションリスト
+  &-list {
+    padding-bottom: var(--space-24);
+    margin-bottom: var(--space-24);
+    border-bottom: 1px solid var(--bdr-xdark);
+
+    > li {
+      &:not(:last-child) {
+        margin-bottom: var(--space-32);
+      }
+    }
+
+    @include mq {
+      display: flex;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+
+      > li {
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // パネル戻るボタン(SPのみ)
+  &-go-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+
+    @include mq {
+      display: none;
+    }
+  }
+
+  // サイト基本ナビゲーション
+  &-site-info,
+  &-user-control {
+    font-size: var(--fz-14);
+    letter-spacing: var(--letter-space-10);
+    padding-bottom: var(--space-24);
+    margin-bottom: var(--space-24);
+    border-bottom: 1px solid var(--bdr-xdark);
+
+    @include mq {
+      display: none;
+    }
+
+    > li {
+      &:not(:last-child) {
+        margin-bottom: var(--space-10);
+      }
+
+      > a {
+        display: block;
+      }
+    }
+  }
+
+  // ユーザー主導ナビゲーション
+  &-user-control {
+    border-bottom: none;
+  }
+
+  &-lang-switch {
+    display: flex;
+    justify-content: center;
+
+    @include mq {
+      display: none;
+    }
+  }
+}
