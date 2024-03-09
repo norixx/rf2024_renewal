@@ -2,6 +2,14 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+body {
+  padding-top: 70px;
+
+  @include mq {
+    padding-top: 0;
+  }
+}
+
 .l-container {
   padding-left: var(--page-gutter-sp-x);
   padding-right: var(--page-gutter-sp-x);
@@ -15,13 +23,19 @@
     min-width: 1100px;
   }
 }
-
-.l-col-container {
-  display: flex;
-  row-gap: var(--col-gap);
-}
-
 .l-col {
+  &-container {
+    display: flex;
+    column-gap: var(--col-gap);
+  }
+
+  @include mq {
+    &-pc-container {
+      display: flex;
+      column-gap: var(--col-gap);
+    }
+  }
+
   @for $i from 1 through 12 {
     &-#{$i} {
       width: calc((var(--col-width) * $i) + (var(--col-gap) * ($i - 1)));
@@ -35,4 +49,68 @@
       }
     }
   }
+}
+
+// メインレイアウト
+.l-main {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    order: 1;
+  }
+
+  &__breadcrumb {
+    order: 2;
+  }
+
+  @include mq {
+    &__content {
+      order: initial;
+    }
+
+    &__breadcrumb {
+      order: initial;
+    }
+  }
+}
+
+// メインコンテンツ
+.l-main-content {
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-40);
+
+  @include mq {
+    padding-top: var(--space-40);
+    padding-bottom: var(--space-80);
+  }
+  // $spaces: 0, 8, 16, 20, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96;
+  // $directions: x, y, t, r, b, l;
+
+  // @each $space in $spaces {
+  //   @each $direction in $directions {
+  //     @if $direction == x {
+  //       &.--#{$direction}-#{$space} {
+  //         padding-left: var(--space-#{$space});
+  //         padding-right: var(--space-#{$space});
+  //       }
+  //     }
+
+  //     @if $direction == y {
+  //       &.--#{$direction}-#{$space} {
+  //         padding-top: var(--space-#{$space});
+  //         padding-bottom: var(--space-#{$space});
+  //       }
+  //     }
+  //   }
+  // }
+
+  // @include mq {
+  //   @each $space in $spaces {
+  //     &.--y-pc-#{$space} {
+  //       padding-top: var(--space-#{$space});
+  //       padding-bottom: var(--space-#{$space});
+  //     }
+  //   }
+  // }
 }

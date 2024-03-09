@@ -1,0 +1,121 @@
+// 部屋リストコンポーネント
+@use "../abstracts/mixins" as *;
+
+.c-room-list {
+  display: block;
+  border-bottom: 1px solid var(--bdr-light);
+
+  // HEAD
+  &__head {
+    display: none;
+
+    @include mq {
+      display: block;
+      padding: var(--space-8) var(--space-16);
+      background-color: var(--bg-gray-xlight);
+      border-bottom: 1px solid var(--bdr-light);
+    }
+  }
+  &__head-row {
+    @include mq {
+      display: flex;
+      align-items: center;
+    }
+
+    th {
+      display: flex;
+      justify-content: center;
+      font-size: var(--fz-12);
+      line-height: var(--line-height-sm);
+      font-weight: var(--fw-normal);
+      color: var(--txt-dark);
+      text-align: center;
+      flex: 1 0 0;
+    }
+  }
+
+  // BODY
+  &__body {
+    display: block;
+    overflow: hidden;
+  }
+  &__body-row {
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--bdr-light);
+    }
+
+    @include mq {
+      display: flex;
+      align-items: center;
+      padding: var(--space-12) var(--space-16);
+      transition: background var(--animation-normal);
+
+      &:hover {
+        background: var(--bg-gray-xxlight);
+        cursor: pointer;
+      }
+    }
+
+    th,
+    td {
+      line-height: var(--line-height-sm);
+      font-size: var(--fz-14);
+      flex: 1 0 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    td {
+      font-family: var(--ff-en-jp);
+      row-gap: var(--space-4);
+    }
+  }
+
+  // COMMON
+  &__col-madori {
+    @include mq {
+      flex-grow: 0 !important;
+      flex-basis: 100px !important;
+    }
+  }
+
+  &__col-action {
+    @include mq {
+      flex-grow: 0 !important;
+      flex-basis: 120px !important;
+      row-gap: var(--space-8) !important;
+
+      &.--wide {
+        flex-basis: 200px !important;
+      }
+    }
+  }
+
+  &__body-madori {
+    padding: var(--space-8);
+    background-color: var(--bg-white);
+
+    img {
+      aspect-ratio: 1/1;
+      object-fit: contain;
+    }
+  }
+
+  &__rent {
+    font-weight: var(--fw-bold);
+  }
+
+  &__shiki,
+  &__rei {
+    &::before {
+      content: "";
+      display: inline-block;
+      background-color: #eee;
+      width: 16px;
+      height: 16px;
+      margin-right: var(--space-4);
+      vertical-align: middle;
+    }
+  }
+}

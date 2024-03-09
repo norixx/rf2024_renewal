@@ -1,0 +1,111 @@
+// ページネーション
+@use "../abstracts/mixins" as *;
+
+.c-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-en-jp);
+  font-size: var(--fz-14);
+  line-height: var(--line-height-100);
+  font-weight: var(--fw-bold);
+
+  --gap: var(--space-12);
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--gap);
+
+    @include mq {
+      gap: 0;
+      column-gap: var(--space-16);
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+
+    @include mq {
+      order: initial;
+      // margin-right: var(--space-16);
+      // margin-left: var(--space-16);
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: var(--space-6);
+    }
+  }
+
+  &__item-prev-next {
+    flex: 0 1 calc((100% - var(--gap)) / 2);
+
+    @include mq {
+      // margin-bottom: 0;
+      flex: initial;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--bdr-radius-md);
+    transition: var(--animation-normal);
+
+    &:not(.--prev):not(.--next) {
+      width: 40px;
+    }
+    &.--prev,
+    &.--next {
+      padding-right: var(--space-16);
+      padding-left: var(--space-16);
+    }
+
+    &.--prev {
+      &::before {
+        content: "<";
+        margin-right: var(--space-8);
+      }
+    }
+    &.--next {
+      &::after {
+        content: ">";
+        margin-left: var(--space-8);
+      }
+    }
+
+    &:not(.--current):not(.--disabled):not(.--dots) {
+      border: 1px solid var(--bdr-btn-gray-light);
+      background-color: var(--bg-white);
+    }
+
+    &:not(.--current):not(.--disabled):not(.--dots):hover {
+      border: 1px solid var(--bdr-btn-gray--hover);
+    }
+
+    &.--current {
+      background-color: var(--bg-gray-xlight);
+      color: var(--txt-dark);
+    }
+
+    &.--disabled {
+      background-color: var(--bg-gray-xlight);
+      color: var(--txt-light);
+    }
+
+    &.--dots {
+      color: var(--txt-light);
+    }
+  }
+}

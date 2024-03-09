@@ -1,11 +1,13 @@
 // fonts
 $ff: "Noto Sans JP", "Hiragino Sans", "Meiryo", "Hiragino Kaku Gothic ProN", sans-serif;
+$ff-en-jp: "Roboto", "Noto Sans JP", "Hiragino Sans", "Meiryo", "Hiragino Kaku Gothic ProN", sans-serif;
 $ff-en: "Roboto", sans-serif;
 
 $fw-normal: 400;
 $fw-bold: 600;
 $fw-en-bold: 500;
 
+$fz-10: 10px;
 $fz-11: 11px;
 $fz-12: 12px;
 $fz-13: 13px;
@@ -72,6 +74,8 @@ $page-gutters-sp: 16px;
 $page-gutters-pc: 32px;
 $col-width: 5.92105%;
 $col-gap: 2.631578%;
+$l-container-max: 1280px;
+$l-container-min: 1100px;
 
 // Radius
 $radius-xs: 2px;
@@ -83,6 +87,8 @@ $radius-xxl: 8px;
 
 // Spacing
 $space-0: 0;
+$space-4: 0.25rem;
+$space-6: 0.375rem;
 $space-8: 0.5rem;
 $space-10: 0.625rem;
 $space-12: 0.75rem;
@@ -132,6 +138,7 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --bg-black-90: rgba(0 0 0 / 0.9);
 
   // border
+  --bdr-xlight: #{$gray8};
   --bdr-light: #{$gray6};
   --bdr-normal: #{$gray5};
   --bdr-dark: #{$gray2};
@@ -169,12 +176,9 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   // =======================================================
   // FONTS & TEXTS
   --ff-base: #{$ff};
+  --ff-en-jp: #{$ff-en-jp};
   --ff-num: #{$ff-en};
-
-  --fw-normal: #{$fw-normal};
-  --fw-bold: #{$fw-bold};
-  --fw-en-bold: #{$fw-en-bold};
-
+  --fz-10: #{$fz-10};
   --fz-11: #{$fz-11};
   --fz-12: #{$fz-12};
   --fz-14: #{$fz-14};
@@ -183,6 +187,10 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --fz-20: #{$fz-20};
   --fz-24: #{$fz-24};
   --fz-32: #{$fz-32};
+
+  --fw-normal: #{$fw-normal};
+  --fw-bold: #{$fw-bold};
+  --fw-en-bold: #{$fw-en-bold};
 
   --line-height-200: #{$line-height-200};
   --line-height-lg: #{$line-height-180};
@@ -201,6 +209,8 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --page-gutter-pc-x: #{$page-gutters-pc};
   --col-width: #{$col-width};
   --col-gap: #{$col-gap};
+  --l-container-max: #{$l-container-max};
+  --l-container-min: #{$l-container-min};
 
   // グローバルナビゲーション幅
   --gnav-sp-width: calc(100% - var(--space-64));
@@ -220,6 +230,8 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
 
   // Spacing
   --space-0: #{$space-0};
+  --space-4: #{$space-4};
+  --space-6: #{$space-6};
   --space-8: #{$space-8};
   --space-10: #{$space-10};
   --space-12: #{$space-12};

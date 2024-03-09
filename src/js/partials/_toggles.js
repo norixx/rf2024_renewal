@@ -1,3 +1,4 @@
+// Toggle 共通
 import { rf_get_globals, rf_set_globals } from './_globals'
 
 const rf_toggles = () => {

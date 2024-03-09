@@ -38,6 +38,23 @@
   }
 }
 
+.u-td {
+  $values: none, underline, line-through;
+  @each $value in $values {
+    &-#{$value} {
+      text-decoration: #{$value} !important;
+    }
+  }
+
+  @include mq {
+    @each $value in $values {
+      &-pc-#{$value} {
+        text-decoration: #{$value} !important;
+      }
+    }
+  }
+}
+
 // =======================================================
 // LAYOUT
 .u-flex {

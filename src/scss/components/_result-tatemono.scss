@@ -1,0 +1,114 @@
+// 検索結果 - 建物コンポーネント
+@use "../abstracts/mixins" as *;
+
+.c-result-tatemono {
+  border: 1px solid var(--bdr-light);
+  padding: var(--space-16);
+
+  @include mq {
+    padding: var(--space-24) var(--space-16);
+  }
+
+  // 上部
+  &__upper {
+    position: relative;
+  }
+
+  // 下部
+  &__lower {
+    // position: relative;
+
+    @include mq {
+      margin-top: var(--space-24);
+    }
+  }
+
+  // ヘッダー
+  &__header {
+    @include mq {
+      margin-bottom: var(--space-24);
+    }
+  }
+
+  &__header-content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__point {
+  }
+  &__point-list {
+    li {
+      &:not(:last-child) {
+        margin-bottom: var(--space-4);
+      }
+    }
+  }
+
+  &__title {
+    flex: 1;
+    font-size: var(--fz-18);
+    margin-left: var(--space-16);
+    line-height: var(--line-height-md);
+
+    @include mq {
+      font-size: var(--fz-20);
+      margin-left: var(--space-24);
+    }
+  }
+
+  // 基本情報
+  &__basic-info {
+    display: flex;
+    flex-direction: column;
+
+    @include mq {
+      flex-direction: row;
+    }
+  }
+
+  // 写真
+  &__pic-area {
+    @include mq {
+      flex: 0 0 400px;
+    }
+  }
+  &__pic {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+  }
+
+  // 概要
+  &__overview {
+    font-size: var(--fz-14);
+    line-height: var(--line-height-md);
+
+    @include mq {
+      margin-left: var(--space-24);
+      flex: 1;
+    }
+  }
+  &__overview-list {
+    dt {
+      font-weight: var(--fw-bold);
+      margin-bottom: 2px;
+
+      &:not(:first-child) {
+        margin-top: var(--space-16);
+      }
+    }
+    dd {
+    }
+  }
+
+  // キャッチ
+  &__catch {
+    font-size: var(--fz-14);
+    line-height: var(--line-height-md);
+    margin-top: var(--space-16);
+    border: 5px solid var(--bdr-xlight);
+    padding: var(--space-16);
+    font-weight: var(--fw-bold);
+  }
+}

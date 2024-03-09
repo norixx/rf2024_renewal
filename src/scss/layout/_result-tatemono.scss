@@ -1,0 +1,39 @@
+// 検索結果 - 建物
+@use "../abstracts/mixins" as *;
+
+.l-result-tatemono {
+  // 結果リスト
+  &-list {
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: var(--space-24);
+      }
+    }
+
+    @include mq {
+      &__item {
+        &:not(:last-child) {
+          margin-bottom: var(--space-40);
+        }
+      }
+    }
+  }
+
+  // ページネーション
+  &__pagination {
+    margin-top: var(--space-40);
+
+    @include mq {
+      margin-top: var(--space-64);
+    }
+  }
+
+  // コンタクト
+  &__contact {
+    margin-top: var(--space-40);
+
+    @include mq {
+      margin-top: var(--space-64);
+    }
+  }
+}

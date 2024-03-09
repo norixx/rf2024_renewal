@@ -1,18 +1,23 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 .btn {
   --x: 16px;
   --y: 12px;
   display: inline-flex;
   justify-content: center;
-  line-height: 1.5;
+  line-height: var(--line-height-sm);
   padding-left: var(--x);
   padding-right: var(--x);
   padding-top: var(--y);
   padding-bottom: var(--y);
   border-radius: var(--bdr-radius-md);
   border: 1px solid transparent;
-  font-size: var(--fz-sm);
+  font-size: var(--fz-14);
+
+  @include mq {
+    cursor: pointer;
+  }
 
   // Type
   &.--normal {
@@ -44,7 +49,15 @@
   }
 
   // Size
+  &.--sm {
+    --y: var(--space-10);
+  }
   &.--w100 {
     width: 100%;
+  }
+
+  // Status
+  &.--saved {
+    border-color: var(--bdr-btn-gray-dark);
   }
 }

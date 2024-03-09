@@ -7,16 +7,29 @@
   height: 70px;
   z-index: 100;
   color: var(--txt-white);
+  top: 0;
 
   @include mq {
+    height: 80px;
     position: relative;
   }
 
   &__container {
+    display: flex;
+    padding: 0 var(--space-16);
+    justify-content: space-between;
+    align-items: center;
+
     @include mq {
       padding: 0 var(--space-32);
+      min-width: var(--l-container-min);
+      height: 100%;
+    }
+  }
+
+  &__subnav {
+    @include mq {
       display: flex;
-      justify-content: space-between;
       align-items: center;
     }
   }
@@ -65,6 +78,7 @@
     left: 100%;
     z-index: 100;
     padding: var(--space-40) var(--space-24);
+    overflow: auto;
 
     @include mq {
       position: static;
@@ -72,6 +86,7 @@
       margin-left: 0;
       padding: 0;
       background-color: transparent;
+      overflow: initial;
     }
   }
   &.--is-open &-container {
@@ -112,7 +127,7 @@
     }
   }
 
-  // Lv2コンテンツ(PC用)
+  // PC: Lv2コンテンツ
   &-lv2 {
     @include mq {
       display: grid !important; //gnav-anim-panelの設定を上書き
@@ -125,6 +140,22 @@
 
       &__inner {
         overflow: hidden;
+        min-height: 0;
+        width: 100%;
+        max-width: var(--l-container-max);
+        margin: 0 auto;
+      }
+    }
+  }
+
+  // PC: Lv2サブセクション
+  &-subsect {
+    @include mq {
+      display: flex;
+      margin: 0 auto;
+      padding: var(--space-48) 0;
+
+      &__header {
       }
     }
   }
@@ -137,7 +168,7 @@
       > a {
         display: block;
         padding: var(--space-16);
-        font-size: var(--fz-md);
+        font-size: var(--fz-14);
         color: var(--txt-white);
 
         &:active {
@@ -164,7 +195,7 @@
     transition: left var(--animation-normal) var(--animation-easing);
     position: fixed;
     top: 0;
-    left: 95%; //暫定
+    left: 100%; //暫定
     height: 100vh;
     width: var(--gnav-sp-width);
     background: var(--bg-black); //暫定
@@ -205,6 +236,9 @@
       border-bottom: 1px solid var(--bdr-xdark);
 
       @include mq {
+        border-bottom: none;
+        padding: 0;
+
         // 下層オープン
         &.gnav-open-lower {
           display: none;
@@ -246,16 +280,47 @@
       }
     }
 
+    &__link {
+      display: block;
+    }
+
+    &__link-text {
+      display: block;
+      font-size: var(--fz-24);
+      line-height: var(--line-height-sm);
+      margin-bottom: var(--space-8);
+    }
+    &__lead {
+      font-size: var(--fz-12);
+      color: var(--txt-xlight);
+    }
+
     @include mq {
       display: flex;
+      align-items: center;
       padding-bottom: 0;
       margin-bottom: 0;
       border-bottom: none;
 
       > li {
+        line-height: var(--line-height-md);
+
         &:not(:last-child) {
           margin-bottom: 0;
+          margin-right: var(--space-32);
         }
+      }
+
+      &__link {
+        font-size: var(--fz-14);
+        letter-spacing: var(--letter-space-10);
+        cursor: pointer;
+      }
+
+      &__link-text {
+        font-size: var(--fz-14);
+        line-height: var(--line-height-md);
+        margin-bottom: 0;
       }
     }
   }
@@ -274,6 +339,7 @@
   }
 
   // サイト基本ナビゲーション
+
   &-site-info,
   &-user-control {
     font-size: var(--fz-14);
@@ -302,6 +368,7 @@
     border-bottom: none;
   }
 
+  // 言語切替
   &-lang-switch {
     display: flex;
     justify-content: center;

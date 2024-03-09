@@ -19,24 +19,22 @@
     <div class="site-header__container">
 
       <div class="site-header__logo">
-        <a href="/">
-          <img src="" alt="ロゴ">
+        <a href="/" style="font-size: 40px;">
+          🐮
         </a>
       </div>
 
-      <button data-js-gnav="#gnav-main" class="gnav-toggle u-sp-only" id="gnav-btn-open" type="button">🍔</button>
 
       <nav class="site-header__gnav gnav" id="gnav-main">
         <!-- グローバルナビゲーション閉じるボタン -->
-        <button data-js-gnav-close type="button" class="gnav-close u-sp-only"
-          style="color: #fff; font-size: 20px">✗</button>
+        <button data-js-gnav-close type="button" class="gnav-close u-sp-only" style="font-size: 32px">❌️</button>
 
         <div class="gnav-container">
           <ul class="gnav-list" id="gnav-list">
             <li class="gnav-list__item">
               <div class="gnav-list__link" data-js-gnav-sub="#gnav-aboutus" data-js-gnav-lv1>
                 <span class="gnav-list__link-text">About Us</span>
-                <p class="gnav-lead u-sp-only">私たちレジデントファーストの思いや<br>
+                <p class="gnav-list__lead u-sp-only">私たちレジデントファーストの思いや<br>
                   ご提供するサービスをご紹介します
                 </p>
               </div>
@@ -44,13 +42,13 @@
             <li class="gnav-list__item">
               <div class="gnav-list__link" data-js-gnav-sub="#gnav-rent" data-js-gnav-link="#" data-js-gnav-lv1>
                 <span class="gnav-list__link-text">借りたい</span>
-                <p class="gnav-lead u-sp-only">厳選した都心の上質な賃貸マンションを<br>数多くご提案します</p>
+                <p class="gnav-list__lead u-sp-only">厳選した都心の上質な賃貸マンションを<br>数多くご提案します</p>
               </div>
             </li>
             <li class="gnav-list__item u-mb-0">
               <div class="gnav-list__link" data-js-gnav-sub="#gnav-lend" data-js-gnav-link="#" data-js-gnav-lv1>
-                <span class="gnav-list__link">貸したい</span>
-                <p class="gnav-lead u-sp-only">賃貸運営をお考えのオーナー様に最適なプランを数多くご提案します
+                <span class="gnav-list__link-text">貸したい</span>
+                <p class="gnav-list__lead u-sp-only">賃貸運営をお考えのオーナー様に最適なプランを数多くご提案します
                 </p>
               </div>
             </li>
@@ -88,8 +86,8 @@
             <!-- ABOUT US -->
             <div class="gnav-anim-panel gnav-lv2" id="gnav-aboutus">
               <div class="gnav-lv2__inner u-pos-relative">
-                <section class="gnav-subsect gnav-lower-sect">
-                  <header class="gnav-lower-sect__header">
+                <section class="gnav-subsect gnav-lower-sect l-col-pc-10">
+                  <header class="gnav-subsect__header gnav-lower-sect__header">
                     <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-aboutus">&lt;</span>
                     <h2 class="gnav-lower-sect__h">About Us</h2>
                     <p class="gnav-lower-sect__lead u-pc-only">私たちレジデントファーストの思いや<br>
@@ -115,8 +113,8 @@
             <div class="gnav-anim-panel gnav-lv2" id="gnav-rent">
               <div class="gnav-lv2__inner u-pos-relative">
 
-                <section class="gnav-subsect gnav-lower-sect">
-                  <header class="gnav-lower-sect__header">
+                <section class="gnav-subsect gnav-lower-sect l-col-pc-10">
+                  <header class="gnav-subsect__header gnav-lower-sect__header">
                     <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-rent">&lt;</span>
                     <h2 class="gnav-lower-sect__h">借りたい</h2>
                     <p class="gnav-lower-sect__lead u-pc-only">厳選した都心の上質な賃貸マンションを数多くご提案します</p>
@@ -199,7 +197,7 @@
             <!-- 貸したい -->
             <div class="gnav-anim-panel gnav-lv2" id="gnav-lend">
               <div class="gnav-lv2__inner">
-                貸したい
+                <section class="gnav-subsect gnav-lower-sect l-col-pc-10">貸したい</section>
               </div>
             </div>
 
@@ -214,14 +212,27 @@
         </div>
         <div class="site-header__logo-group">
           <a href="#">
-            <img src="" alt="三井不動産グループ RESIDENT FIRST レジデントファースト株式会社">
+            <img src="https://picsum.photos/id/583/120/60" alt="三井不動産グループ RESIDENT FIRST レジデントファースト株式会社">
           </a>
         </div>
       </div>
+
+      <button data-js-gnav="#gnav-main" class="gnav-toggle u-sp-only" id="gnav-btn-open" type="button"
+        style="font-size: 32px;">🍔</button>
+
     </div>
   </header>
 
-  <main></main>
+  <main>
+    メインコンテンツ
+
+    <ul>
+      <li><a href="result.html">検索結果ページ</a></li>
+      <li><a href="building.html">建物ページ</a></li>
+      <li><a href="room.html">部屋ページ</a></li>
+      <li><a href="area.html">エリアページ</a></li>
+    </ul>
+  </main>
 
   <footer class="site-footer">
     <div class="footer-concent">

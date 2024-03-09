@@ -1,0 +1,12 @@
+// 検索結果ページ
+@use "../abstracts/mixins" as *;
+
+.l-result {
+  // &__summary {}
+
+  &__body {
+    @include mq {
+      margin-top: var(--space-24);
+    }
+  }
+}

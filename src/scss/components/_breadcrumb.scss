@@ -1,0 +1,32 @@
+// パンくずナビゲーション
+@use "../abstracts/mixins" as *;
+
+.c-breadcrumb {
+  background-color: var(--bg-gray-xdark);
+  padding: var(--space-10) 0;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    font-size: var(--fz-12);
+    line-height: var(--line-height-sm);
+
+    li {
+      &:not(:last-child) {
+        margin-right: var(--space-8);
+
+        &::after {
+          content: ">";
+          margin-left: var(--space-8);
+          display: inline-block;
+          color: var(--txt-xlight);
+        }
+      }
+
+      a,
+      span {
+        color: var(--txt-xlight);
+      }
+    }
+  }
+}

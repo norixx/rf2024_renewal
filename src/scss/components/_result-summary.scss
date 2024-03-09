@@ -1,0 +1,184 @@
+// 検索結果サマリー
+@use "../abstracts/mixins" as *;
+
+.c-result-summary {
+  &__header {
+    text-align: center;
+    padding: var(--space-8) 0;
+    border-bottom: 1px solid var(--bdr-light);
+
+    @include mq {
+      padding: var(--space-12) 0;
+    }
+  }
+
+  &__h {
+    font-size: var(--fz-18);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--letter-space-10);
+
+    @include mq {
+      font-size: var(--fz-24);
+    }
+  }
+
+  // ロー
+  &__row {
+    display: flex;
+    align-items: center;
+    padding: var(--space-8) 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--bdr-light);
+    }
+
+    @include mq {
+      padding: var(--space-10) 0;
+    }
+  }
+
+  // 条件ロー
+  &__condition {
+    position: relative;
+    --space: 18%;
+  }
+
+  // 概要
+  &__overview {
+    flex: 1;
+    // display: block;
+    font-size: var(--fz-14);
+    line-height: var(--line-height-md);
+
+    @include mq {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding-left: var(--space);
+    }
+
+    dt,
+    dd {
+      display: inline;
+
+      @include mq {
+        display: block;
+      }
+    }
+
+    dt {
+      display: inline-block;
+      min-width: 5em;
+
+      &::after {
+        content: ":";
+        margin-left: var(--space-4);
+        margin-right: var(--space-8);
+        display: inline-block;
+      }
+
+      @include mq {
+        min-width: 0;
+      }
+    }
+  }
+
+  // 条件保存
+  &__control {
+    display: flex;
+    justify-content: flex-end;
+
+    @include mq {
+      flex-basis: var(--space);
+
+      // position: absolute;
+      // right: 0;
+      // top: 50%;
+      // translate: 0 -50%;
+    }
+  }
+
+  &__number-re-order {
+    flex-direction: column;
+
+    @include mq {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__number {
+    display: flex;
+    justify-content: center;
+
+    @include mq {
+    }
+  }
+
+  &__number-list {
+    display: flex;
+    align-items: baseline;
+    font-weight: var(--fw-bold);
+
+    &:not(:last-child) {
+      margin-right: var(--space-24);
+    }
+
+    dt {
+      &::after {
+        content: ":";
+        margin-right: var(--space-4);
+      }
+    }
+  }
+  &__fig {
+    font-family: var(--ff-num);
+    font-size: var(--fz-24);
+    padding: 0 var(--space-4);
+  }
+
+  // 並び替え
+  &__display {
+    display: flex;
+    flex: 1;
+
+    @include mq {
+      flex: initial;
+    }
+  }
+
+  &__display-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fz-14);
+    line-height: var(--line-height-md);
+    color: var(--txt-dark);
+
+    &:not(:last-child) {
+      margin-right: var(--space-16);
+    }
+
+    @include mq {
+      flex-direction: row;
+      align-items: center;
+      flex: initial;
+
+      &:not(:last-child) {
+        margin-right: var(--space-32);
+      }
+    }
+
+    dt {
+      margin-bottom: var(--space-4);
+      font-size: var(--fz-12);
+
+      @include mq {
+        font-size: var(--fz-14);
+        margin-right: var(--space-16);
+        margin-bottom: 0;
+      }
+    }
+  }
+}
