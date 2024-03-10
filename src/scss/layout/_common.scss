@@ -58,6 +58,24 @@ body {
 
   &__content {
     order: 1;
+
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-40);
+
+    @include mq {
+      padding-top: var(--space-40);
+      padding-bottom: var(--space-80);
+    }
+
+    &.--pt-0 {
+      padding-top: 0 !important;
+    }
+
+    @include mq {
+      &.--pt-pc-0 {
+        padding-top: 0 !important;
+      }
+    }
   }
 
   &__breadcrumb {

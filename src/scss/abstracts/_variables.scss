@@ -70,6 +70,8 @@ $alert-trans: rgb(242 76 5 / 0.9);
 // =======================================================
 // NUMBERS
 // Layout
+$header-height-sp: 70px;
+$header-height-pc: 80px;
 $page-gutters-sp: 16px;
 $page-gutters-pc: 32px;
 $col-width: 5.92105%;
@@ -205,6 +207,8 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
 
   // =======================================================
   // LAYOUTS
+  --header-height-sp: #{$header-height-sp};
+  --header-height-pc: #{$header-height-pc};
   --page-gutter-sp-x: #{$page-gutters-sp};
   --page-gutter-pc-x: #{$page-gutters-pc};
   --col-width: #{$col-width};

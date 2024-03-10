@@ -1,0 +1,28 @@
+// TOPページコンポーネント
+@use "../abstracts/mixins" as *;
+
+.c-mv {
+  height: calc(100dvh - var(--header-height-sp));
+  background-color: var(--bg-gray-dark);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mq {
+    height: calc(100dvh - var(--header-height-pc));
+  }
+
+  &__catch {
+    text-align: center;
+    color: var(--txt-white);
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: var(--txt-white);
+  }
+}

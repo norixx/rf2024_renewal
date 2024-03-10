@@ -49,9 +49,82 @@
   }
 
   // Size
-  &.--sm {
-    --y: var(--space-10);
+  $sizes: xxs, xs, sm, md, lg, xl;
+  @each $size in $sizes {
+    @if $size == xxs {
+      &.--#{$size} {
+        --x: var(--space-8);
+        --y: var(--space-4);
+        font-size: var(--fz-12);
+        border-radius: var(--bdr-radius-sm);
+      }
+    }
+    @if $size == xs {
+      &.--#{$size} {
+        --y: var(--space-10);
+      }
+    }
+    @if $size == sm {
+      &.--#{$size} {
+        --y: var(--space-10);
+      }
+    }
+    @if $size == md {
+      &.--#{$size} {
+        --y: var(--space-12);
+      }
+    }
+    @if $size == lg {
+      &.--#{$size} {
+        --y: var(--space-14);
+      }
+    }
+    @if $size == xl {
+      &.--#{$size} {
+        --y: var(--space-16);
+      }
+    }
   }
+
+  @include mq {
+    @each $size in $sizes {
+      @if $size == xxs {
+        &.--pc-#{$size} {
+          --x: var(--space-8);
+          --y: var(--space-4);
+          font-size: var(--fz-12);
+          border-radius: var(--bdr-radius-sm);
+        }
+      }
+      @if $size == xs {
+        &.--pc-#{$size} {
+          --y: var(--space-10);
+        }
+      }
+      @if $size == sm {
+        &.--pc-#{$size} {
+          --y: var(--space-10);
+        }
+      }
+      @if $size == md {
+        &.--pc-#{$size} {
+          --y: var(--space-12);
+        }
+      }
+      @if $size == lg {
+        &.--pc-#{$size} {
+          --y: var(--space-14);
+        }
+      }
+      @if $size == xl {
+        &.--pc-#{$size} {
+          --y: var(--space-16);
+        }
+      }
+    }
+  }
+
+  // width
   &.--w100 {
     width: 100%;
   }

@@ -3,7 +3,7 @@ let rf_globals = {
   breakpoint: 768,
 }
 
-const rf_set_globals = (settings) => {
+const rf_set_globals = settings => {
 
   rf_globals = {
     ...rf_globals,

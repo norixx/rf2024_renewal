@@ -38,7 +38,10 @@
   &__body {
     display: block;
     overflow: hidden;
+    max-height: 400px;
+    transition: max-height var(--animation-normal) var(--animation-easing);
   }
+
   &__body-row {
     &:not(:last-child) {
       border-bottom: 1px solid var(--bdr-light);
@@ -116,6 +119,38 @@
       height: 16px;
       margin-right: var(--space-4);
       vertical-align: middle;
+    }
+  }
+
+  // すべてのお部屋を表示
+  &__toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--space-16);
+
+    @include mq {
+      padding-top: var(--space-24);
+    }
+  }
+
+  &__toggle-btn {
+    font-size: var(--fz-16);
+    font-weight: var(--fw-bold);
+
+    &::after {
+      content: "+";
+      margin-left: var(--space-16);
+    }
+
+    &.--is-open {
+      &::after {
+        content: "-";
+      }
+    }
+
+    @include mq {
+      cursor: pointer;
     }
   }
 }

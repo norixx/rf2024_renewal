@@ -1,0 +1,17 @@
+// 建物・部屋レイアウト共通
+@use "../abstracts/mixins" as *;
+
+.l-buildroom {
+  // サマリー部分
+  &__summary {
+  }
+
+  // =======================================================
+  // 詳細部
+  &__detail {
+    @include mq {
+      padding-top: var(--space-56);
+      // padding-bottom: var(--space-80);
+    }
+  }
+}

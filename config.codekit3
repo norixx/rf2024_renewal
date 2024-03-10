@@ -39,6 +39,17 @@
       "oAP" : "\/result.html",
       "oF" : 0
     },
+    "\/src\/js\/partials\/_buildroom.js" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 1,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/src\/js\/partials\/_buildroom-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/src\/js\/partials\/_globals.js" : {
       "bF" : 4,
       "ft" : 64,
@@ -210,6 +221,36 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/src\/scss\/components\/_buildroom-mv.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/components\/_buildroom-mv.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/src\/scss\/components\/_buildroom.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/components\/_buildroom.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/src\/scss\/components\/_buttons.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -255,6 +296,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/src\/scss\/components\/_result-build.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/components\/_result-build.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/src\/scss\/components\/_result-summary.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -265,21 +321,6 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/src\/scss\/components\/_result-summary.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/src\/scss\/components\/_result-tatemono.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/src\/scss\/components\/_result-tatemono.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -310,6 +351,36 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/src\/scss\/components\/_toggle.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/src\/scss\/components\/_top.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/components\/_top.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/src\/scss\/layout\/_buildroom.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/layout\/_buildroom.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -375,7 +446,7 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/src\/scss\/layout\/_result-tatemono.scss" : {
+    "\/src\/scss\/layout\/_result-build.scss" : {
       "aP" : 0,
       "bl" : 0,
       "co" : 0,
@@ -384,7 +455,7 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/src\/scss\/layout\/_result-tatemono.css",
+      "oAP" : "\/src\/scss\/layout\/_result-build.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -400,6 +471,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/src\/scss\/layout\/_result.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/src\/scss\/layout\/_top.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/layout\/_top.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -464,6 +550,14 @@
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
+    },
+    "\/tatemono.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/tatemono.html",
+      "oF" : 0
     }
   },
   "hooks" : [

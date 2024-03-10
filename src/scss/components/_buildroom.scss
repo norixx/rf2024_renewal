@@ -1,0 +1,164 @@
+// 建物・部屋ページ共通
+@use "../abstracts/mixins" as *;
+
+// 建物・部屋 メインのサマリー部分
+.c-buildroom {
+  background-color: var(--bg-gray-xxlight);
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+
+  @include mq {
+    padding-top: var(--space-40);
+    padding-bottom: var(--space-40);
+  }
+
+  &__summary {
+    &-header {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @include mq {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+      }
+    }
+
+    &-points {
+      @include mq {
+        margin-right: var(--space-24);
+      }
+    }
+    &-h {
+      font-size: var(--fz-18);
+      flex: 1 0 100%;
+      order: 1;
+      line-height: var(--line-height-md);
+      margin-top: var(--space-8);
+
+      @include mq {
+        margin-top: 0;
+        font-size: var(--fz-24);
+        flex: 1;
+        order: initial;
+      }
+    }
+
+    // キャッチコピー
+    &-catch {
+      margin-top: var(--space-16);
+      font-size: var(--fz-14);
+      background-color: var(--bg-white);
+      padding: var(--space-8);
+      border-bottom: 1px solid var(--bdr-light);
+      line-height: var(--line-height-md);
+
+      @include mq {
+        padding: var(--space-16);
+        margin-top: var(--space-24);
+      }
+    }
+
+    // ボディ部
+    &-body {
+      margin-top: var(--space-16);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @include mq {
+        margin-top: var(--space-24);
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: var(--space-56);
+      }
+    }
+
+    // ビジュアル部分
+    &-visual {
+      width: 100%;
+      margin-bottom: var(--space-24);
+
+      @include mq {
+        width: 780px;
+        margin-bottom: 0;
+      }
+    }
+
+    &-pics {
+    }
+
+    &-mv {
+      background-color: var(--bg-white);
+    }
+    &-mv-thumbs {
+      margin-top: var(--space-8);
+      // background-color: var(--bg-white);
+    }
+
+    &-vacant-link {
+      margin-top: var(--space-24);
+    }
+
+    // 概要
+    &-overview {
+      padding: var(--space-16);
+      border: 1px solid var(--bdr-normal);
+      background-color: var(--bg-white);
+
+      @include mq {
+        flex: 1;
+        padding: var(--space-24);
+      }
+
+      &-list {
+        font-size: var(--fz-14);
+        line-height: var(--line-height-md);
+
+        > div {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+
+        dt {
+          font-weight: var(--fw-bold);
+        }
+
+        > div:not(:first-child) dt {
+          margin-top: var(--space-16);
+        }
+
+        dd {
+          flex: 1 0 100%;
+          margin-top: var(--space-4);
+
+          &.__map {
+            margin-top: 0;
+            flex: initial;
+            margin-left: auto;
+          }
+        }
+      }
+
+      @include mq {
+        &-list {
+          > div:not(:first-child) dt {
+            margin-top: var(--space-24);
+          }
+
+          dd {
+            &.__map {
+              margin-left: var(--space-16);
+            }
+          }
+        }
+      }
+    }
+  } //&__summary
+}
+
+// セクション
+.c-buildroom-sect {
+}

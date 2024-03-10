@@ -8,6 +8,16 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height-sp);
+  position: relative;
+
+  @include mq {
+    scroll-padding-top: 0;
+  }
+}
+
 body {
   font-size: var(--fz-md);
   font-family: var(--ff-base);
