@@ -11,6 +11,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@400;500&display=swap"
     rel="stylesheet">
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
   <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 
@@ -20,11 +24,10 @@
     <div class="site-header__container">
 
       <div class="site-header__logo">
-        <a href="/" style="font-size: 40px;">
+        <a href="./" style="font-size: 40px;">
           🐮
         </a>
       </div>
-
 
       <nav class="site-header__gnav gnav" id="gnav-main">
         <!-- グローバルナビゲーション閉じるボタン -->
@@ -33,7 +36,7 @@
         <div class="gnav-container">
           <ul class="gnav-list" id="gnav-list">
             <li class="gnav-list__item">
-              <div class="gnav-list__link" data-js-gnav-sub="#gnav-aboutus" data-js-gnav-lv1>
+              <div class="gnav-list__link" data-js-gnav-sub="#gnav-aboutus" data-js-gnav-lv1="aboutus">
                 <span class="gnav-list__link-text">About Us</span>
                 <p class="gnav-list__lead u-sp-only">私たちレジデントファーストの思いや<br>
                   ご提供するサービスをご紹介します
@@ -41,13 +44,13 @@
               </div>
             </li>
             <li class="gnav-list__item">
-              <div class="gnav-list__link" data-js-gnav-sub="#gnav-rent" data-js-gnav-link="#" data-js-gnav-lv1>
+              <div class="gnav-list__link" data-js-gnav-sub="#gnav-rent" data-js-gnav-lv1="rent">
                 <span class="gnav-list__link-text">借りたい</span>
                 <p class="gnav-list__lead u-sp-only">厳選した都心の上質な賃貸マンションを<br>数多くご提案します</p>
               </div>
             </li>
             <li class="gnav-list__item u-mb-0">
-              <div class="gnav-list__link" data-js-gnav-sub="#gnav-lend" data-js-gnav-link="#" data-js-gnav-lv1>
+              <div class="gnav-list__link" data-js-gnav-sub="#gnav-lend" data-js-gnav-lv1="lend">
                 <span class="gnav-list__link-text">貸したい</span>
                 <p class="gnav-list__lead u-sp-only">賃貸運営をお考えのオーナー様に最適なプランを数多くご提案します
                 </p>
@@ -82,7 +85,7 @@
           <div class="gnav-sub-container__inner">
 
             <!-- PC用 閉じるボタン -->
-            <button class="u-pc-only gnav-close-btn" data-js-gnav-sub-close>閉じる</button>
+            <button class="u-pc-only gnav-sub-container__btn-close" data-js-gnav-sub-container-close>❌️</button>
 
             <!-- ABOUT US -->
             <div class="gnav-anim-panel gnav-lv2" id="gnav-aboutus">
@@ -226,7 +229,7 @@
 
   <ul style="position: fixed; bottom: 0; right: 0; background-color: rgba(0,0,0,.7); z-index: 1; padding: .5rem;">
     <li><a href="result.html" style="color: #fff;">検索結果ページ &gt;</a></li>
-    <li><a href="tatemono.html" style="color: #fff;">建物ページ &gt;</a></li>
+    <li><a href="build.html" style="color: #fff;">建物ページ &gt;</a></li>
     <li><a href="room.html" style="color: #fff;">部屋ページ &gt;</a></li>
     <li><a href="area.html" style="color: #fff;">エリアページ &gt;</a></li>
   </ul>
@@ -247,6 +250,12 @@
                   レジデントファースト</span>
               </h1>
             </div>
+            <div class="c-mv__img">
+              <img sizes="(max-width:500px) 50vw, 100vw" srcset="
+                https://picsum.photos/id/473/800/450 800w,
+                https://picsum.photos/id/817/1200/900 1200w" src="https://picsum.photos/id/882/1600/900" alt=""
+                class="__img">
+            </div>
             <div class="c-mv__scroll">
               <p>scroll</p>
               <div class="c-mv__scroll-arrow">
@@ -256,9 +265,65 @@
           </div>
         </div><!-- /.l-top__mv -->
 
+        <div class="l-top__banners">
+          <div class="c-top-banners">
+            <div class="c-top-banners__slider swiper" data-js-top-banners>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#"><img src="https://picsum.photos/id/994/800/450" alt="" class="c-top-banners__img"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#"><img src="https://picsum.photos/id/15/800/450" alt="" class="c-top-banners__img"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#"><img src="https://picsum.photos/id/824/800/450" alt="" class="c-top-banners__img"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#"><img src="https://picsum.photos/id/129/800/450" alt="" class="c-top-banners__img"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#"><img src="https://picsum.photos/id/473/800/450" alt="" class="c-top-banners__img"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#"><img src="https://picsum.photos/id/163/800/450" alt="" class="c-top-banners__img"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="l-top__search">
-          <div class="c-search">
-            検索コンポーネント
+          <div class="l-container l-col-container --u-flex-center">
+            <div class="l-col-pc-10">
+              <article class="c-top-search">
+                <header class="c-top-search__header">
+                  <h2 class="c-top-search__h u-pc-only">賃貸物件を探す</h2>
+                  <div class="c-top-search__prop-status">
+                    <dl class="c-top-search__prop-status-list">
+                      <dt><b>新着物件</b>(1週間)</dt>
+                      <dd>
+                        <span class="__fig">102</span>
+                        <span class="__unit">部屋</span>
+                      </dd>
+                    </dl>
+                    <dl class="c-top-search__prop-status-list">
+                      <dt><b>本日掲載中の物件</b></dt>
+                      <dd>
+                        <span class="__fig">1,234</span>
+                        <span class="__unit">棟</span>
+                      </dd>
+                      <dd>
+                        <span class="__fig">2,340</span>
+                        <span class="__unit">部屋</span>
+                      </dd>
+                    </dl>
+                  </div>
+                </header>
+                <div class="c-top-search__body">
+
+                </div>
+              </article>
+            </div>
           </div>
         </div><!-- /.l-top__search -->
 
@@ -540,6 +605,8 @@
     </div>
   </footer>
 
+  <!-- swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script src="assets/js/rf.min.js"></script>
 </body>
