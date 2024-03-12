@@ -68,6 +68,8 @@ $primary-mid: rgba(251, 149, 53, 1);
 $alert: rgb(242, 76, 5);
 $alert-trans: rgb(242 76 5 / 0.9);
 
+$card-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+
 // =======================================================
 // NUMBERS
 // Layout
@@ -174,6 +176,9 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   // alert
   --alert: #{$alert};
   --alert-trans: #{$alert-trans};
+
+  // シャドウ
+  --card-shadow: #{$card-shadow};
 
   // theme
 

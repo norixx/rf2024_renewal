@@ -1,0 +1,53 @@
+// カード
+@use "../abstracts/mixins" as *;
+
+.c-card {
+  border-radius: var(--bdr-radius-sm);
+  box-shadow: var(--card-shadow);
+  background-color: var(--bg-white);
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img {
+    position: relative;
+    img {
+      border-radius: var(--bdr-radius-sm) var(--bdr-radius-sm) 0 0;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+
+    .__icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__body {
+    padding: var(--space-16) var(--space-16) var(--space-24) var(--space-16);
+  }
+
+  &__title {
+    display: flex;
+
+    .__icon {
+      margin-right: var(--space-8);
+    }
+  }
+
+  &__h {
+    font-size: var(--fz-14);
+    font-weight: var(--fw-bold);
+  }
+
+  &__text {
+    font-size: var(--fz-14);
+    &:not(:first-child) {
+      margin-top: var(--space-8);
+    }
+  }
+}

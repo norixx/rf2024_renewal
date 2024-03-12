@@ -3,6 +3,7 @@ import rf_responsive_check from "./partials/_responsive";
 import rf_gnav from "./partials/_gnav";
 import rf_toggles from "./partials/_toggles";
 import rf_top_banners from "./partials/_top-banners";
+import rf_prop_slider from "./partials/_prop-slider";
 import { rf_room_list_link, rf_room_list_toggle } from "./partials/_room-list";
 import { rf_buildroom_main_slide, rf_buildroom_related_slide } from "./partials/_buildroom";
 
@@ -25,6 +26,11 @@ if (document.querySelector('[data-js-toggle]')) {
 // Topページ - バナー
 if (document.querySelector('[data-js-top-banners]')) {
   rf_top_banners()
+}
+
+// 物件スライダー
+if (document.querySelector('[data-js-prop-slider]')) {
+  rf_prop_slider()
 }
 
 // お部屋リストリンク

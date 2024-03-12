@@ -12,6 +12,7 @@ const rf_top_banners = () => {
     },
   }
   const banner = new Swiper('[data-js-top-banners]', args)
+  console.log(banner)
 }
 
 export default rf_top_banners

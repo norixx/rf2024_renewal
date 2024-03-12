@@ -23,6 +23,12 @@ body {
     min-width: 1100px;
   }
 }
+
+// col基本設定（個別設定で上書きされる）
+[class*="l-col-pc-"] {
+  width: 100%;
+}
+
 .l-col {
   &-container {
     display: flex;
@@ -49,9 +55,6 @@ body {
       }
     }
   }
-}
-[class*="l-col-pc"] {
-  flex-basis: 100%;
 }
 
 // メインレイアウト

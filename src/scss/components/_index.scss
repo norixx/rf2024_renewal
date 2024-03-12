@@ -1,14 +1,19 @@
 @forward "./buttons";
+@forward "./breadcrumb";
+@forward "./pagination";
 @forward "./forms";
+@forward "./card";
 @forward "./toggle";
+@forward "./sections";
 @forward "./gnav";
+
+@forward "./prop-slider";
 @forward "./result-build";
 @forward "./result-summary";
 @forward "./room-list";
-@forward "./breadcrumb";
-@forward "./pagination";
 @forward "./buildroom";
 @forward "./buildroom-mv";
+
 @forward "./top";
 @forward "./top-banners";
 @forward "./top-search";
