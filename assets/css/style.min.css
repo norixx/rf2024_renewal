@@ -363,6 +363,7 @@
   line-height: var(--line-height-sm);
   padding: var(--space-16);
   border-radius: var(--bdr-radius-sm);
+  transition: var(--animation-normal);
 }
 .form-input.--text:focus {
   border-color: var(--bdr-black);
@@ -1526,8 +1527,8 @@
   }
 }
 .c-top-banners__slider {
-  padding-right: var(--space-16);
-  padding-left: var(--space-16);
+  padding-right: var(--space-32);
+  padding-left: var(--space-32);
 }
 @media screen and (min-width: 768px) {
   .c-top-banners__slider {
