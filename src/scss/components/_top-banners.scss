@@ -4,7 +4,7 @@
 .c-top-banners {
   padding-top: var(--space-16);
   padding-bottom: var(--space-16);
-  background-color: #222; //イレギュラーカラー
+  background-color: var(--bg-nearly-black); //イレギュラーカラー
 
   @include mq {
     padding-top: var(--space-24);

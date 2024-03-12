@@ -81,7 +81,7 @@
         $value: space-evenly;
       }
 
-      display: flex !important;
+      // display: flex !important;
       justify-content: #{$value} !important;
     }
   }

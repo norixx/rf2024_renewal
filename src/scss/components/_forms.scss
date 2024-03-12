@@ -1,0 +1,23 @@
+// フォーム関連
+@use "../abstracts/mixins" as *;
+
+::placeholder {
+  color: var(--txt-light);
+  font-size: var(--fz-14);
+}
+
+.form-input {
+  &.--text {
+    border: 1px solid var(--bdr-normal);
+    background-color: var(--bg-white);
+    font-size: var(--fz-14);
+    line-height: var(--line-height-sm);
+    padding: var(--space-16);
+    border-radius: var(--bdr-radius-sm);
+
+    &:focus {
+      border-color: var(--bdr-black);
+      outline: 3px solid rgba(0 0 0 /0.1);
+    }
+  }
+}

@@ -50,6 +50,9 @@ body {
     }
   }
 }
+[class*="l-col-pc"] {
+  flex-basis: 100%;
+}
 
 // メインレイアウト
 .l-main {

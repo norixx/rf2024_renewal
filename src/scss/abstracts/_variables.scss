@@ -55,6 +55,7 @@ $gray3: rgba(163, 163, 163, 1);
 $gray2: rgba(136, 136, 136, 1);
 $gray1: rgba(85, 85, 85, 1);
 $gray0: rgba(51, 51, 51, 1);
+$gray-nearly-black: rgb(34, 34, 34);
 $gray-black: rgba(0, 0, 0, 1);
 
 $primary: rgba(242, 119, 5, 1);
@@ -136,6 +137,7 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --bg-gray-xdark: #{$gray1};
   --bg-gray-xxdark: #{$gray0};
   --bg-white: #{$gray-white};
+  --bg-nearly-black: #{$gray-nearly-black};
   --bg-black: #{$gray-black};
   --bg-black-90: rgba(0 0 0 / 0.9);
 
