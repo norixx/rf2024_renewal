@@ -6,6 +6,7 @@
   --y: 12px;
   display: inline-flex;
   justify-content: center;
+  align-items: center;
   line-height: var(--line-height-sm);
   padding-left: var(--x);
   padding-right: var(--x);
@@ -54,6 +55,16 @@
   }
 
   // Icon
+  &.--icon-before::before,
+  &.--icon-after::after {
+    content: "";
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 16px;
+    height: 16px;
+    background-color: #f0f0f0; //暫定
+  }
   &.--icon-before {
     &::before {
       margin-right: 8px;
@@ -63,6 +74,17 @@
     &::after {
       margin-left: 8px;
     }
+  }
+  &.--icon-lg {
+    &::after,
+    &::before {
+      width: 24px !important;
+      height: 24px !important;
+    }
+  }
+
+  &.--i-arrow {
+    background-image: url("../img/icons/arrow-right.svg");
   }
 
   // Size
@@ -144,6 +166,11 @@
   // width
   &.--w100 {
     width: 100%;
+  }
+
+  &.--mw400px {
+    width: 400px;
+    max-width: 100%;
   }
 
   // Status

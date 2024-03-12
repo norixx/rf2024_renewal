@@ -1,0 +1,91 @@
+// ニュースリスト
+@use "../abstracts/mixins" as *;
+
+.c-newslist {
+  &__header {
+    text-align: center;
+  }
+
+  &__h {
+    font-size: var(--fz-18);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--letter-space-10);
+
+    @include mq {
+      font-size: var(--fz-20);
+    }
+  }
+
+  &__body {
+    margin-top: var(--space-16);
+
+    @include mq {
+      margin-top: var(--space-24);
+    }
+  }
+
+  // リスト
+  &__list {
+  }
+
+  &__list-item {
+    .__link {
+      display: block;
+      padding-bottom: var(--space-16);
+      margin-bottom: var(--space-16);
+      border-bottom: 1px solid var(--bdr-light);
+      position: relative;
+      font-size: var(--fz-14);
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: var(--bg-gray-dark);
+        translate: 0 1px;
+        scale: 0 1;
+        transition: scale var(--animation-slow) var(--animation-easing);
+        transform-origin: left center;
+      }
+
+      &:hover::after {
+        scale: 1 1;
+      }
+    }
+    .__time {
+      display: block;
+      font-size: var(--fz-14);
+      font-family: var(--ff-num);
+      color: var(--txt-light);
+      letter-spacing: var(--letter-space-10);
+    }
+
+    .__text {
+      margin-top: var(--space-8);
+
+      strong {
+        margin-right: 1em;
+      }
+    }
+
+    @include mq {
+      .__link {
+        font-size: var(--fz-16);
+        padding-bottom: var(--space-24);
+        margin-bottom: var(--space-24);
+      }
+    }
+  }
+
+  &__link {
+    margin-top: var(--space-24);
+    text-align: center;
+
+    @include mq {
+      margin-top: var(--space-32);
+    }
+  }
+}
