@@ -24,7 +24,7 @@
     }
   }
   &__h {
-    font-size: var(--fz-32);
+    font-size: var(--fz-20);
     font-weight: var(--fw-bold);
     line-height: var(--line-height-md);
     display: flex;
@@ -41,6 +41,17 @@
 
     @include mq {
       font-size: var(--fz-32);
+    }
+  }
+
+  // リード
+  &__lead {
+    font-size: var(--fz-14);
+    margin-top: var(--space-24);
+    letter-spacing: var(--letter-space-10);
+
+    @include mq {
+      margin-top: var(--space-32);
     }
   }
 
