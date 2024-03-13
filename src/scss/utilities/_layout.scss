@@ -1,0 +1,62 @@
+// LAYOUT
+@use "../abstracts/mixins" as *;
+
+// Flexbox
+.u-flex {
+  $positions: start, end, center, between, around, evenly;
+  @each $pos in $positions {
+    &-#{$pos} {
+      $value: #{$pos};
+      @if $pos == start {
+        $value: flex-start;
+      }
+      @if $pos == end {
+        $value: flex-end;
+      }
+      @if $pos == center {
+        $value: center;
+      }
+      @if $pos == between {
+        $value: space-between;
+      }
+      @if $pos == around {
+        $value: space-around;
+      }
+      @if $pos == evenly {
+        $value: space-evenly;
+      }
+
+      // display: flex !important;
+      justify-content: #{$value} !important;
+    }
+  }
+
+  @include mq {
+    @each $pos in $positions {
+      &-pc-#{$pos} {
+        $value: #{$pos};
+        @if $pos == start {
+          $value: flex-start;
+        }
+        @if $pos == end {
+          $value: flex-end;
+        }
+        @if $pos == center {
+          $value: center;
+        }
+        @if $pos == between {
+          $value: space-between;
+        }
+        @if $pos == around {
+          $value: space-around;
+        }
+        @if $pos == evenly {
+          $value: space-evenly;
+        }
+
+        display: flex !important;
+        justify-content: #{$value} !important;
+      }
+    }
+  }
+}

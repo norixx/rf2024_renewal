@@ -1,0 +1,18 @@
+// DISPLAY
+@use "../abstracts/mixins" as *;
+
+.u-sp-only {
+  // display値はその場のレイアウトを優先すること
+  display: block;
+  @include mq {
+    display: none;
+  }
+}
+
+.u-pc-only {
+  // display値はその場のレイアウトを優先すること
+  display: none;
+  @include mq {
+    display: block;
+  }
+}

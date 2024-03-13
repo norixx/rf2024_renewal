@@ -68,7 +68,8 @@ $primary-mid: rgba(251, 149, 53, 1);
 $alert: rgb(242, 76, 5);
 $alert-trans: rgb(242 76 5 / 0.9);
 
-$card-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+$shadow-sm: 0px 0px 4px rgba(0, 0, 0, 0.15);
+$shadow-md: 0px 0px 8px rgba(0, 0, 0, 0.15);
 
 // =======================================================
 // NUMBERS
@@ -127,23 +128,23 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   // COLORS
   // background
   --bg-primary: #{$primary};
+  --bg-primary-mid: #{$primary-mid};
   --bg-primary-xxlight: #{$primary-xxlight};
   --bg-primary-xlight: #{$primary-xlight};
   --bg-primary-light: #{$primary-light};
-  --bg-primary-mid: #{$primary-mid};
   --bg-gray-xxlight: #{$gray9};
   --bg-gray-xlight: #{$gray8};
   --bg-gray-light: #{$gray6};
-  --bg-gray-normal: #{$gray5};
+  --bg-gray: #{$gray5};
   --bg-gray-dark: #{$gray2};
   --bg-gray-xdark: #{$gray1};
   --bg-gray-xxdark: #{$gray0};
   --bg-white: #{$gray-white};
-  --bg-nearly-black: #{$gray-nearly-black};
   --bg-black: #{$gray-black};
+  --bg-nearly-black: #{$gray-nearly-black};
   --bg-black-90: rgba(0 0 0 / 0.9);
 
-  // border
+  // border(基本グレー)
   --bdr-xlight: #{$gray8};
   --bdr-light: #{$gray6};
   --bdr-normal: #{$gray5};
@@ -155,6 +156,7 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --bdr-primary-mid: #{$primary-mid-light};
   --bdr-primary-light: #{$primary-mid-light};
 
+  // ボーダー（ボタン系）
   --bdr-btn-gray: #{$gray4};
   --bdr-btn-gray--hover: #{$gray-black};
   --bdr-btn-gray-light: #{$gray5};
@@ -178,15 +180,22 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --alert-trans: #{$alert-trans};
 
   // シャドウ
-  --card-shadow: #{$card-shadow};
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
 
   // theme
 
   // =======================================================
   // FONTS & TEXTS
+
+  // Font family
   --ff-base: #{$ff};
   --ff-en-jp: #{$ff-en-jp};
   --ff-num: #{$ff-en};
+  // --ff-mincho: #{ff-mincho}
+  // --ff-en-shoulder: #{ff-en-shoulder};
+
+  // Size
   --fz-10: #{$fz-10};
   --fz-11: #{$fz-11};
   --fz-12: #{$fz-12};
@@ -197,10 +206,12 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --fz-24: #{$fz-24};
   --fz-32: #{$fz-32};
 
+  // Weight
   --fw-normal: #{$fw-normal};
   --fw-bold: #{$fw-bold};
   --fw-en-bold: #{$fw-en-bold};
 
+  // Line height
   --line-height-200: #{$line-height-200};
   --line-height-lg: #{$line-height-180};
   --line-height-base: #{$line-height-175};
@@ -208,6 +219,7 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --line-height-sm: #{$line-height-120};
   --line-height-100: #{$line-height-100};
 
+  // Letter spacing
   --letter-space-0: #{$letter-space-0};
   --letter-space-10: #{$letter-space-10};
   --letter-space-20: #{$letter-space-20};

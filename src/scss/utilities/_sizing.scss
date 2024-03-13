@@ -1,0 +1,73 @@
+// SIZING
+@use "../abstracts/mixins" as *;
+
+// Width
+.u-w {
+  $widths: auto, 50, 100;
+
+  @each $w in $widths {
+    &-#{$w} {
+      @if $w != "auto" {
+        width: $w * 1% !important;
+      } @else {
+        width: #{$w} !important;
+      }
+    }
+
+    @include mq(sp) {
+      &-sp-#{$w} {
+        @if $w != "auto" {
+          width: $w * 1% !important;
+        } @else {
+          width: #{$w} !important;
+        }
+      }
+    }
+
+    @include mq {
+      &-pc-#{$w} {
+        @if $w != "auto" {
+          width: $w * 1% !important;
+        } @else {
+          width: #{$w} !important;
+        }
+      }
+    }
+  }
+}
+
+// Height
+// Width
+.u-h {
+  $heigts: auto, 50, 100;
+
+  @each $h in $heigts {
+    &-#{$h} {
+      @if $h != "auto" {
+        width: $h * 1% !important;
+      } @else {
+        width: #{$h} !important;
+      }
+    }
+
+    @include mq(sp) {
+      &-sp-#{$h} {
+        @if $h != "auto" {
+          width: $h * 1% !important;
+        } @else {
+          width: #{$h} !important;
+        }
+      }
+    }
+
+    @include mq {
+      &-pc-#{$h} {
+        @if $h != "auto" {
+          width: $h * 1% !important;
+        } @else {
+          width: #{$h} !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@use "../abstracts/mixins" as *;
+
+.u-pos {
+  $positions: relative, absolute, fixed, sticky;
+  @each $pos in $positions {
+    &-#{$pos} {
+      position: #{$pos} !important;
+    }
+  }
+
+  @include mq(sp) {
+    @each $pos in $positions {
+      &-sp-#{$pos} {
+        position: #{$pos} !important;
+      }
+    }
+  }
+
+  @include mq {
+    @each $pos in $positions {
+      &-pc-#{$pos} {
+        position: #{$pos} !important;
+      }
+    }
+  }
+}

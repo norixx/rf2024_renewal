@@ -4,7 +4,6 @@ const rf_prop_slider = () => {
   let sliders = {}
 
   const args = {
-    spaceBetween: 24,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -15,10 +14,16 @@ const rf_prop_slider = () => {
     },
     breakpoints: {
       0: {
-        slidesPerView: 1,
+        spaceBetween: 16,
+        slidesPerView: 1.2,
+        slidesOffsetBefore: 32,
+        slidesOffsetAfter: 32,
       },
       768: {
-        slidesPerView: 4,
+        spaceBetween: 24,
+        slidesPerView: 4.4,
+        slidesOffsetBefore: 40,
+        slidesOffsetAfter: 40,
       },
     },
   }

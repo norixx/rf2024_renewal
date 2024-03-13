@@ -1,0 +1,105 @@
+// Colors
+@use "../abstracts/mixins" as *;
+
+// Background color
+.u-bg {
+  &-primary {
+    background-color: var(--bg-primary);
+  }
+  &-primary-xxlight {
+    background-color: var(--bg-primary-xxlight);
+  }
+  &-primary-xlight {
+    background-color: var(--bg-primary-xlight);
+  }
+  &-primary-light {
+    background-color: var(--bg-primary-light);
+  }
+  &-primary-mid {
+    background-color: var(--bg-primary-mid);
+  }
+  &-gray {
+    background-color: var(--bg-gray);
+  }
+  &-gray-xxlight {
+    background-color: var(--bg-gray-xxlight);
+  }
+  &-gray-xlight {
+    background-color: var(--bg-gray-xlight);
+  }
+  &-gray-light {
+    background-color: var(--bg-gray-light);
+  }
+  &-gray-dark {
+    background-color: var(--bg-gray-dark);
+  }
+  &-gray-xdark {
+    background-color: var(--bg-gray-xdark);
+  }
+  &-gray-xxdark {
+    background-color: var(--bg-gray-xxdark);
+  }
+  &-white {
+    background-color: var(--bg-white);
+  }
+  &-black {
+    background-color: var(--bg-black);
+  }
+  &-nearly-black {
+    background-color: var(--bg-nearly-black);
+  }
+  &-black-90 {
+    background-color: var(--bg-black-90);
+  }
+
+  @include mq {
+    &-pc-primary {
+      background-color: var(--bg-primary);
+    }
+    &-pc-primary-xxlight {
+      background-color: var(--bg-primary-xxlight);
+    }
+    &-pc-primary-xlight {
+      background-color: var(--bg-primary-xlight);
+    }
+    &-pc-primary-light {
+      background-color: var(--bg-primary-light);
+    }
+    &-pc-primary-mid {
+      background-color: var(--bg-primary-mid);
+    }
+    &-pc-gray {
+      background-color: var(--bg-gray);
+    }
+    &-pc-gray-xxlight {
+      background-color: var(--bg-gray-xxlight);
+    }
+    &-pc-gray-xlight {
+      background-color: var(--bg-gray-xlight);
+    }
+    &-pc-gray-light {
+      background-color: var(--bg-gray-light);
+    }
+    &-pc-gray-dark {
+      background-color: var(--bg-gray-dark);
+    }
+    &-pc-gray-xdark {
+      background-color: var(--bg-gray-xdark);
+    }
+    &-pc-gray-xxdark {
+      background-color: var(--bg-gray-xxdark);
+    }
+    &-pc-white {
+      background-color: var(--bg-white);
+    }
+    &-pc-black {
+      background-color: var(--bg-black);
+    }
+    &-pc-nearly-black {
+      background-color: var(--bg-nearly-black);
+    }
+    &-pc-black-90 {
+      background-color: var(--bg-black-90);
+    }
+  }
+}

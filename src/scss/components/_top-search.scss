@@ -2,12 +2,13 @@
 @use "../abstracts/mixins" as *;
 
 .c-top-search {
-  padding-top: var(--space-24);
-  padding-bottom: var(--space-24);
+  background-color: var(--bg-white);
+  // padding: var(--space-24);
+  // box-shadow: var(--shadow-sm);
 
   @include mq {
-    padding-top: var(--space-56);
-    padding-bottom: var(--space-56);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-32);
   }
 
   &__header {
@@ -133,10 +134,11 @@
   &__basic-list {
     display: flex;
     flex-wrap: wrap;
-    --basic-gap: var(--space-16);
+    --basic-gap: var(--space-10);
     gap: var(--basic-gap);
 
     @include mq {
+      --basic-gap: var(--space-16);
       height: 100%;
     }
 
@@ -172,9 +174,10 @@
   // おすすめリスト
   &__pickup-list {
     display: flex;
-    gap: var(--space-16);
+    gap: var(--space-10);
 
     @include mq {
+      gap: var(--space-16);
       flex: 1 1 35%;
     }
 
@@ -187,10 +190,11 @@
   &__user-actions {
     display: flex;
     flex-wrap: wrap;
-    --action-gap: var(--space-16);
+    --action-gap: var(--space-10);
     gap: var(--action-gap);
 
     @include mq {
+      --action-gap: var(--space-16);
       flex: 1 1 65%;
     }
 

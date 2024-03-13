@@ -1,14 +1,18 @@
 // TOPバナースライダー
 const rf_top_banners = () => {
   const args = {
-    spaceBetween: 24,
     breakpoints: {
       0: {
-        slidesPerView: 1,
+        slidesPerView: 1.3,
         spaceBetween: 16,
+        slidesOffsetAfter: 16,
+        slidesOffsetBefore: 16,
       },
       768: {
-        slidesPerView: 4,
+        slidesPerView: 4.3,
+        spaceBetween: 24,
+        slidesOffsetAfter: 24,
+        slidesOffsetBefore: 24,
       },
     },
   }

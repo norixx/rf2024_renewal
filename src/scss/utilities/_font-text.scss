@@ -1,0 +1,55 @@
+// FONT & TEXT
+@use "../abstracts/mixins" as *;
+
+// font
+.u-fw {
+  // normal
+  &-n {
+    font-weight: normal !important;
+  }
+
+  &-sb {
+    font-weight: 600 !important;
+  }
+}
+
+.u-ff {
+  &-en {
+    font-family: sans-serif !important;
+  }
+}
+
+// Text
+.u-tt {
+  $transforms: uppercase, lowercase, capitalize;
+  @each $transform in $transforms {
+    &-#{$transform} {
+      text-transform: #{$transform} !important;
+    }
+  }
+
+  @include mq {
+    @each $transform in $transforms {
+      &-pc-#{$transform} {
+        text-transform: #{$transform} !important;
+      }
+    }
+  }
+}
+
+.u-td {
+  $values: none, underline, line-through;
+  @each $value in $values {
+    &-#{$value} {
+      text-decoration: #{$value} !important;
+    }
+  }
+
+  @include mq {
+    @each $value in $values {
+      &-pc-#{$value} {
+        text-decoration: #{$value} !important;
+      }
+    }
+  }
+}
