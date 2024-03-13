@@ -202,34 +202,4 @@
       flex: 1 1 calc((100% - var(--action-gap)) / 2);
     }
   }
-
-  // キーワード検索
-  &__keyword {
-    @include mq {
-      background: var(--bg-gray-xxlight);
-    }
-  }
-
-  &__keyword-list {
-    display: flex;
-    flex-direction: column;
-
-    @include mq {
-      padding: var(--space-24) var(--space-32);
-      flex-direction: row;
-      align-items: center;
-    }
-
-    dt {
-      font-weight: var(--fw-bold);
-      letter-spacing: var(--letter-space-10);
-    }
-
-    @include mq {
-      dt {
-        font-size: var(--fz-18);
-        flex: 0 0 25%;
-      }
-    }
-  }
 }

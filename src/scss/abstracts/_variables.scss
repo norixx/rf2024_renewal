@@ -54,7 +54,7 @@ $gray4: rgba(195, 195, 195, 1);
 $gray3: rgba(163, 163, 163, 1);
 $gray2: rgba(136, 136, 136, 1);
 $gray1: rgba(85, 85, 85, 1);
-$gray0: rgba(51, 51, 51, 1);
+$gray0: rgb(51, 51, 51);
 $gray-nearly-black: rgb(34, 34, 34);
 $gray-black: rgba(0, 0, 0, 1);
 
@@ -70,6 +70,13 @@ $alert-trans: rgb(242 76 5 / 0.9);
 
 $shadow-sm: 0px 0px 4px rgba(0, 0, 0, 0.15);
 $shadow-md: 0px 0px 8px rgba(0, 0, 0, 0.15);
+
+$gradient-dir-t: to top;
+$gradient-dir-b: to bottom;
+$gradient-dir-r: to right;
+$gradient-dir-l: to left;
+$gradient-dir-rb: to right bottom;
+$gradient-dir-lb: to left bottom;
 
 // =======================================================
 // NUMBERS
@@ -143,6 +150,8 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --bg-black: #{$gray-black};
   --bg-nearly-black: #{$gray-nearly-black};
   --bg-black-90: rgba(0 0 0 / 0.9);
+
+  --bg-black-gradient-rb: linear-gradient(#{$gradient-dir-rb}, #{$gray0} 0%, #{$gray-black} 100%);
 
   // border(基本グレー)
   --bdr-xlight: #{$gray8};

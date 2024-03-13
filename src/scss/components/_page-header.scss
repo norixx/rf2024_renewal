@@ -1,0 +1,30 @@
+// ページヘッダー
+@use "../abstracts/mixins" as *;
+
+.c-page-header {
+  text-align: center;
+
+  &__h {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fz-24);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-space-10);
+
+    .__en {
+      font-size: var(--fz-14);
+      font-weight: var(--fw-normal);
+      font-family: var(--ff-en-shoulder);
+      color: var(--txt-xlight);
+    }
+  }
+  @include mq {
+    &__h {
+      font-size: var(--fz-32);
+
+      .__en {
+        // font-size: var(--fz-14);
+      }
+    }
+  }
+}

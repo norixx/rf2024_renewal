@@ -38,22 +38,6 @@
     border-color: var(--bg-primary);
   }
 
-  &.--search-basic {
-    align-items: center;
-    flex-direction: column;
-    color: var(--txt-white);
-    line-height: var(--line-height-md);
-    background-color: var(--bg-black); //あとで変更
-    border-radius: var(--bdr-radius-sm);
-    font-size: var(--fz-12);
-    padding: var(--space-24) var(--space-8);
-
-    b {
-      font-weight: var(--fw-bold);
-      font-size: var(--fz-16);
-    }
-  }
-
   // Icon
   &.--icon-before::before,
   &.--icon-after::after {
@@ -177,4 +161,44 @@
   &.--saved {
     border-color: var(--bdr-btn-gray-dark);
   }
+
+  // 検索用ボタン
+  &.--search-basic {
+    align-items: center;
+    flex-direction: column;
+    color: var(--txt-white);
+    line-height: var(--line-height-md);
+    border: none;
+    background-color: var(--bg-black);
+    background-image: var(--bg-black-gradient-rb);
+    background-size: 200% auto;
+    background-position: left top;
+    border-radius: var(--bdr-radius-sm);
+    font-size: var(--fz-12);
+    padding: var(--space-16) var(--space-8);
+    transition: var(--animation-normal);
+
+    &:hover {
+      background-position: right top;
+    }
+
+    b {
+      font-weight: var(--fw-bold);
+      font-size: var(--fz-16);
+    }
+
+    &.--current {
+      border: 1px solid var(--bdr-btn-gray);
+      color: var(--txt-dark);
+      background: var(--bg-gray-xlight);
+    }
+    &.--current:hover {
+      border-color: var(--bdr-btn-gray--hover);
+      color: var(--txt-normal);
+    }
+
+    @include mq {
+      padding: var(--space-24) var(--space-8);
+    }
+  } //.--search-basic
 }

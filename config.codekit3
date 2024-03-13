@@ -17,6 +17,14 @@
       "oAP" : "\/.gitignore",
       "oF" : 0
     },
+    "\/area.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/area.html",
+      "oF" : 0
+    },
     "\/assets" : {
       "ft" : 65536,
       "oA" : 1,
@@ -379,6 +387,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/src\/scss\/components\/_page-header.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/components\/_page-header.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/src\/scss\/components\/_pagination.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -449,6 +472,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/src\/scss\/components\/_room-list.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/src\/scss\/components\/_search.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/components\/_search.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -629,6 +667,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/src\/scss\/layout\/_result.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/src\/scss\/layout\/_search.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/layout\/_search.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,

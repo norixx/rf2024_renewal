@@ -4,11 +4,11 @@
 .c-result-summary {
   &__header {
     text-align: center;
-    padding: var(--space-8) 0;
+    padding-bottom: var(--space-8);
     border-bottom: 1px solid var(--bdr-light);
 
     @include mq {
-      padding: var(--space-12) 0;
+      padding-bottom: var(--space-12);
     }
   }
 

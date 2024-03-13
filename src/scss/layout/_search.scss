@@ -1,0 +1,20 @@
+// 検索画面レイアウト
+@use "../abstracts/mixins" as *;
+
+.l-search {
+  &__header {
+    margin-bottom: var(--space-32);
+
+    @include mq {
+      margin-bottom: var(--space-40);
+    }
+  }
+
+  &__control {
+    margin-top: var(--space-32);
+
+    @include mq {
+      margin-top: var(--space-40);
+    }
+  }
+}
