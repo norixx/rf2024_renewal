@@ -22,3 +22,68 @@
     }
   }
 }
+
+.c-input-labellink {
+  display: inline-flex;
+  align-items: center;
+  line-height: var(--line-height-md);
+  font-size: var(--fz-14);
+  min-height: 64px;
+  border: 1px solid var(--bdr-btn-gray-xlight);
+  padding: var(--space-16);
+  border-radius: var(--bdr-radius-md);
+  cursor: pointer;
+  position: relative;
+  transition: var(--animation-normal);
+
+  &:hover {
+    border: 1px solid var(--bdr-btn-gray-dark);
+  }
+
+  &::before {
+    content: "";
+    margin-right: var(--space-16);
+    // background: url() no-repeat center center;
+    background-size: cover;
+    --icon-size: 20px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+
+    @include mq {
+      --icon-size: 24px;
+    }
+  }
+  .c-input-checkradio:checked ~ & {
+    border: 1px solid var(--bdr-btn-gray--checked);
+    background-color: var(--bg-gray-xxlight);
+  }
+  &.--checkbox::before {
+    background: var(--icon-checkbox) no-repeat center center;
+  }
+  &.--checkbox:hover::before {
+    background-image: var(--icon-checkbox--on);
+  }
+  .c-input-checkradio:checked ~ &.--checkbox::before {
+    background-image: var(--icon-checkbox--checked);
+  }
+  &.--radio::before {
+    background: var(--icon-radio) no-repeat center center;
+  }
+  &.--radio:hover::before {
+    background-image: var(--icon-radio--on);
+  }
+  .c-input-checkradio:checked ~ &.--radio::before {
+    background-image: var(--icon-radio--checked);
+  }
+
+  .__link {
+    text-decoration: underline;
+    flex: 1;
+  }
+
+  .__count {
+    font-size: var(--fz-12);
+    margin-left: var(--space-8);
+    color: var(--txt-light);
+  }
+}

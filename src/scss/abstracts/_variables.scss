@@ -167,10 +167,11 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
 
   // ボーダー（ボタン系）
   --bdr-btn-gray: #{$gray4};
-  --bdr-btn-gray--hover: #{$gray-black};
   --bdr-btn-gray-light: #{$gray5};
-  --bdr-btn-gray-light: #{$gray5};
+  --bdr-btn-gray-xlight: #{$gray6};
   --bdr-btn-gray-dark: #{$gray3};
+  --bdr-btn-gray--hover: #{$gray-black};
+  --bdr-btn-gray--checked: #{$gray-black};
 
   --bdr-form: #{$gray5};
   --bdr-form--hover: #{$gray3};
@@ -246,6 +247,10 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
 
   // グローバルナビゲーション幅
   --gnav-sp-width: calc(100% - var(--space-64));
+
+  // =======================================================
+  // ICONS
+  // _icons.scssへ移動
 
   // =======================================================
   // OTHERS

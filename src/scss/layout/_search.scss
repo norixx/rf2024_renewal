@@ -17,4 +17,11 @@
       margin-top: var(--space-40);
     }
   }
+
+  &__body {
+    margin-top: var(--space-40);
+    @include mq {
+      margin-top: var(--space-64);
+    }
+  }
 }

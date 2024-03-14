@@ -76,3 +76,51 @@
     }
   }
 }
+
+// 検索セクション
+.c-search-sect {
+  &__header {
+  }
+
+  &__h {
+    font-size: var(--fz-16);
+    letter-spacing: var(--letter-space-10);
+
+    @include mq {
+      font-size: var(--fz-20);
+    }
+  }
+
+  &__body {
+    margin-top: var(--space-16);
+
+    @include mq {
+      margin-top: var(--space-32);
+    }
+  }
+} // .c-search-sect
+
+// 検索（エリア）
+.c-search-areas {
+  display: flex;
+  flex-wrap: wrap;
+  --list-gap: var(--space-8);
+  gap: var(--list-gap);
+
+  @include mq {
+    --list-gap: var(--space-16);
+  }
+
+  &__item {
+    flex: 1 0 100%;
+
+    @include mq {
+      flex: 0 0 calc((100% - var(--list-gap) * 3) / 4);
+    }
+  }
+
+  &__label {
+    width: 100%;
+    height: 100%;
+  }
+}

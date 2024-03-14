@@ -1,0 +1,14 @@
+// アイコン
+:root {
+  // チェックボックス
+  --icon-checkbox: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='white' stroke='%23D3D3D3' stroke-width='2'/%3E%3C/svg%3E%0A");
+  --icon-checkbox--on: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='22' height='22' rx='3' fill='white' stroke='%23A3A3A3' stroke-width='2'/%3E%3C/svg%3E%0A");
+  --icon-checkbox--checked: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='24' height='24' rx='4' fill='black'/%3E%3Cpath d='M11.0911 17.3823L6 12.2912L7.69706 10.594L11.0911 13.9882L17.8794 7.19995L19.5765 8.897L11.0911 17.3823Z' fill='white'/%3E%3C/svg%3E%0A");
+
+  // ラジオボタン
+  --icon-radio: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='22' height='22' rx='11' fill='white' stroke='%23D3D3D3' stroke-width='2'/%3E%3C/svg%3E%0A");
+
+  --icon-radio--on: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='22' height='22' rx='11' fill='white' stroke='%23A3A3A3' stroke-width='2'/%3E%3C/svg%3E%0A");
+
+  --icon-radio--checked: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='3.5' y='3.5' width='17' height='17' rx='8.5' fill='white' stroke='black' stroke-width='7'/%3E%3C/svg%3E%0A");
+}
