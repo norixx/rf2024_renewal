@@ -104,7 +104,7 @@
 .c-search-areas {
   display: flex;
   flex-wrap: wrap;
-  --list-gap: var(--space-8);
+  --list-gap: var(--space-4);
   gap: var(--list-gap);
 
   @include mq {
@@ -122,5 +122,162 @@
   &__label {
     width: 100%;
     height: 100%;
+  }
+}
+
+// 絞り込み検索
+.c-search-filter {
+  border-bottom: 1px solid var(--bdr-light);
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+    border-top: 1px solid var(--bdr-light);
+
+    @include mq {
+      padding-top: var(--space-24);
+      padding-bottom: var(--space-24);
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    @include mq {
+      flex: 0 0 17%;
+    }
+  }
+  &__desc {
+    @include mq {
+      flex: 0 0 80%;
+    }
+  }
+
+  &__title {
+    font-weight: var(--fw-bold);
+    font-size: var(--fz-14);
+
+    @include mq {
+      font-size: var(--fz-16);
+    }
+  }
+
+  &__desc {
+    margin-top: var(--space-8);
+
+    > * {
+      &:not(:first-child) {
+        margin-top: var(--space-16);
+      }
+    }
+
+    @include mq {
+      margin-top: 0;
+
+      > * {
+        &:not(:first-child) {
+          margin-top: var(--space-24);
+        }
+      }
+    }
+  }
+
+  &__deep-filter {
+    display: flex;
+    flex-direction: column;
+    --gap: var(--space-8);
+    gap: var(--gap);
+
+    .__text {
+      font-size: var(--fz-14);
+    }
+
+    @include mq {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--space-24);
+
+      .__text {
+        flex: 1;
+      }
+
+      .__btn {
+        flex: 0 0 20%;
+      }
+    }
+  }
+} //filter
+
+.c-form-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  --list-gap: var(--space-10);
+  gap: var(--list-gap);
+
+  @include mq {
+    &.--layout-pc-h {
+      flex-direction: row;
+      flex-wrap: wrap;
+      // align-items: center;
+      --list-gap: var(--space-24);
+    }
+  }
+
+  > * {
+    &:not(:first-child) {
+      // margin-top: var(--space-10);
+    }
+    @include mq {
+      &:not(:first-child) {
+        // margin-top: 0;
+      }
+    }
+  }
+}
+
+// 結果（簡易表示）
+.c-search-brief-result {
+  background-color: var(--bg-gray-xxlight);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: var(--space-16);
+  --gap: var(--space-10);
+  gap: var(--gap);
+
+  @include mq {
+    --gap: var(--space-32);
+    text-align: start;
+    // padding: var(--space-24);
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__btn {
+    @include mq {
+      flex: 0 0 25%;
+    }
+  }
+
+  &__title {
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--letter-space-10);
+  }
+
+  &__count {
+    .__count {
+      font-family: var(--ff-num);
+      letter-spacing: var(--letter-space-10);
+      font-style: normal;
+      font-weight: var(--fw-bold);
+      font-size: var(--fz-28);
+
+      @include mq {
+      }
+    }
   }
 }

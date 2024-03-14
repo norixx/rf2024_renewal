@@ -6,67 +6,180 @@
   font-size: var(--fz-14);
 }
 
-.form-input {
-  &.--text {
-    border: 1px solid var(--bdr-normal);
-    background-color: var(--bg-white);
-    font-size: var(--fz-14);
-    line-height: var(--line-height-sm);
-    padding: var(--space-16);
-    border-radius: var(--bdr-radius-sm);
-    transition: var(--animation-normal);
+// テキスト系
+.c-input-text {
+  border: 1px solid var(--bdr-normal);
+  background-color: var(--bg-white);
+  font-size: var(--fz-14);
+  line-height: var(--line-height-sm);
+  padding: var(--space-16);
+  border-radius: var(--bdr-radius-sm);
+  transition: var(--animation-normal);
 
-    &:focus {
-      border-color: var(--bdr-black);
-      outline: 3px solid rgba(0 0 0 /0.1);
+  &:focus {
+    border-color: var(--bdr-black);
+    outline: var(--outline-form);
+  }
+}
+
+// セレクトボックス
+.c-input-select {
+  border: 1px solid var(--bdr-form);
+  min-height: 32px;
+  padding: var(--space-8);
+  padding-right: var(--space-32);
+  border-radius: var(--bdr-radius-md);
+  transition: var(--animation-normal);
+  font-size: var(--fz-14);
+  position: relative;
+  cursor: pointer;
+
+  &:focus {
+    border: 1px solid var(--bdr-form--hover);
+    outline: 2px solid rgba(0 0 0 / 0.2);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    --size: 32px;
+    height: var(--size);
+    width: var(--size);
+    background-color: var(--bg-gray);
+  }
+
+  $widths: 100, 110, 120, 140, 160, 180, 200, max;
+  @each $width in $widths {
+    @if ($width == max) {
+      &.--w-max {
+        width: 100%;
+      }
+    } @else {
+      &.--w-#{$width} {
+        width: #{$width}px;
+      }
     }
   }
 }
 
+// ラベル
+.c-form-label {
+  cursor: pointer;
+  font-size: var(--fz-14);
+  line-height: var(--line-height-md);
+
+  // チェックボックス
+  &.--checkbox,
+  &.--radio {
+    span {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-right: var(--space-8);
+      }
+    }
+  }
+
+  &.--checkbox span::before {
+    background-image: var(--icon-checkbox);
+  }
+  &.--checkbox:hover span::before {
+    background-image: var(--icon-checkbox--on);
+  }
+  &.--checkbox input:checked ~ span::before {
+    background-image: var(--icon-checkbox--checked);
+  }
+
+  &.--radio span::before {
+    background-image: var(--icon-radio);
+  }
+  &.--radio:hover span::before {
+    background-image: var(--icon-radio--on);
+  }
+  &.--radio input:checked ~ span::before {
+    background-image: var(--icon-radio--checked);
+  }
+
+  // セレクト
+  &.--select {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      height: 100%;
+      width: 36px;
+      border-radius: 0 var(--bdr-radius-md) var(--bdr-radius-md) 0;
+      background-color: var(--bg-gray-dark);
+      pointer-events: none;
+      transition: background var(--animation-normal);
+    }
+
+    &:hover::after {
+      background-color: var(--bg-black);
+    }
+  }
+}
+
+// ラベルリンク（エリア検索などで利用）
 .c-input-labellink {
-  display: inline-flex;
-  align-items: center;
+  display: block;
   line-height: var(--line-height-md);
   font-size: var(--fz-14);
   min-height: 64px;
-  border: 1px solid var(--bdr-btn-gray-xlight);
-  padding: var(--space-16);
-  border-radius: var(--bdr-radius-md);
   cursor: pointer;
   position: relative;
-  transition: var(--animation-normal);
 
-  &:hover {
-    border: 1px solid var(--bdr-btn-gray-dark);
-  }
+  > span {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border: 1px solid var(--bdr-btn-gray-xlight);
+    border-radius: var(--bdr-radius-md);
+    padding: var(--space-16);
+    transition: var(--animation-normal);
 
-  &::before {
-    content: "";
-    margin-right: var(--space-16);
-    // background: url() no-repeat center center;
-    background-size: cover;
-    --icon-size: 20px;
-    width: var(--icon-size);
-    height: var(--icon-size);
+    &:hover {
+      border: 1px solid var(--bdr-btn-gray-dark);
+    }
 
-    @include mq {
+    &::before {
+      content: "";
       --icon-size: 24px;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      margin-right: var(--space-16);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
     }
   }
-  .c-input-checkradio:checked ~ & {
+
+  // checkbox
+  &.--checkbox > input:checked ~ span {
     border: 1px solid var(--bdr-btn-gray--checked);
     background-color: var(--bg-gray-xxlight);
   }
-  &.--checkbox::before {
-    background: var(--icon-checkbox) no-repeat center center;
+  &.--checkbox > span::before {
+    background-image: var(--icon-checkbox);
   }
-  &.--checkbox:hover::before {
+  &.--checkbox:hover > span::before {
     background-image: var(--icon-checkbox--on);
   }
-  .c-input-checkradio:checked ~ &.--checkbox::before {
+  &.--checkbox > input:checked ~ span::before {
     background-image: var(--icon-checkbox--checked);
   }
-  &.--radio::before {
+  // radio
+  &.--radio > span::before {
     background: var(--icon-radio) no-repeat center center;
   }
   &.--radio:hover::before {
@@ -78,12 +191,20 @@
 
   .__link {
     text-decoration: underline;
-    flex: 1;
   }
 
   .__count {
+    flex: 1 0 20%;
     font-size: var(--fz-12);
     margin-left: var(--space-8);
     color: var(--txt-light);
+    text-align: end;
   }
+}
+
+// Others
+.c-form-select-range {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
 }

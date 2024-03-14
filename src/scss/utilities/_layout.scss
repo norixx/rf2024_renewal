@@ -1,8 +1,42 @@
 // LAYOUT
 @use "../abstracts/mixins" as *;
 
+// =======================================================
 // Flexbox
-.u-flex {
+.u-align-items {
+  $positions: start, end, center, baseline, stretch;
+  @each $pos in $positions {
+    &-#{$pos} {
+      $value: #{$pos}; //初期値
+      @if $pos == start {
+        $value: flex-start;
+      }
+      @if $pos == end {
+        $value: flex-end;
+      }
+
+      align-items: #{$value} !important;
+    }
+  }
+
+  @include mq {
+    @each $pos in $positions {
+      &-pc-#{$pos} {
+        $value: #{$pos}; //初期値
+        @if $pos == start {
+          $value: flex-start;
+        }
+        @if $pos == end {
+          $value: flex-end;
+        }
+
+        align-items: #{$pos} !important;
+      }
+    }
+  }
+}
+
+.u-justify-content {
   $positions: start, end, center, between, around, evenly;
   @each $pos in $positions {
     &-#{$pos} {

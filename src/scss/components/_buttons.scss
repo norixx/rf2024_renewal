@@ -16,6 +16,7 @@
   border: 1px solid transparent;
   font-size: var(--fz-14);
   text-align: center;
+  transition: var(--animation-normal);
 
   @include mq {
     cursor: pointer;
@@ -100,11 +101,13 @@
     @if $size == lg {
       &.--#{$size} {
         --y: var(--space-14);
+        font-size: var(--fz-16);
       }
     }
     @if $size == xl {
       &.--#{$size} {
         --y: var(--space-16);
+        font-size: var(--fz-16);
       }
     }
   }
@@ -137,11 +140,13 @@
       @if $size == lg {
         &.--pc-#{$size} {
           --y: var(--space-14);
+          font-size: var(--fz-16);
         }
       }
       @if $size == xl {
         &.--pc-#{$size} {
           --y: var(--space-16);
+          font-size: var(--fz-16);
         }
       }
     }

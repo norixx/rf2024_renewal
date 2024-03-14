@@ -176,6 +176,8 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --bdr-form: #{$gray5};
   --bdr-form--hover: #{$gray3};
 
+  --outline-form: 3px solid rgba(0 0 0 /0.1);
+
   // text
   --txt-xlight: #{$gray4};
   --txt-light: #{$gray2};
@@ -214,7 +216,11 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --fz-18: #{$fz-18};
   --fz-20: #{$fz-20};
   --fz-24: #{$fz-24};
+  --fz-28: #{$fz-28};
   --fz-32: #{$fz-32};
+  --fz-40: #{$fz-40};
+  --fz-48: #{$fz-48};
+  --fz-56: #{$fz-56};
 
   // Weight
   --fw-normal: #{$fw-normal};
