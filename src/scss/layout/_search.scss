@@ -2,6 +2,9 @@
 @use "../abstracts/mixins" as *;
 
 .l-search {
+  display: flex;
+  flex-direction: column;
+
   &__header {
     margin-bottom: var(--space-32);
 
@@ -11,15 +14,19 @@
   }
 
   &__control {
-    margin-top: var(--space-32);
+    // margin-top: var(--space-32);
+    order: 100; //最後尾に移動させる
+    margin-top: var(--space-40);
 
     @include mq {
-      margin-top: var(--space-40);
+      order: initial;
+      margin-top: 0;
     }
   }
 
   &__body {
-    margin-top: var(--space-40);
+    // margin-top: var(--space-24);
+
     @include mq {
       margin-top: var(--space-64);
     }

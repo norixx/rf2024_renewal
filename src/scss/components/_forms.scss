@@ -66,15 +66,23 @@
 .c-form-label {
   cursor: pointer;
   font-size: var(--fz-14);
-  line-height: var(--line-height-md);
+  line-height: var(--line-height-140);
+  display: inline-block;
 
   // チェックボックス
   &.--checkbox,
   &.--radio {
-    span {
-      display: flex;
-      align-items: center;
+    [type="checkbox"],
+    [type="radio"] {
+      @include visually-hidden;
+    }
 
+    span {
+      display: inline-flex;
+      // align-items: center;
+      align-items: flex-start;
+
+      // チェックボックス、ラジオボタン用スペース
       &::before {
         content: "";
         width: 20px;
@@ -83,6 +91,7 @@
         background-repeat: no-repeat;
         background-position: center center;
         margin-right: var(--space-8);
+        flex: 0 0 20px;
       }
     }
   }

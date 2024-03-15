@@ -184,7 +184,7 @@
     }
   }
 
-  &__deep-filter {
+  &__deep {
     display: flex;
     flex-direction: column;
     --gap: var(--space-8);
@@ -210,33 +210,111 @@
   }
 } //filter
 
+// フォームのリスト系
 .c-form-list {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: flex-start;
+  flex-wrap: wrap;
+
+  //デフォルトギャップ
   --list-gap: var(--space-10);
   gap: var(--list-gap);
 
   @include mq {
-    &.--layout-pc-h {
-      flex-direction: row;
-      flex-wrap: wrap;
-      // align-items: center;
-      --list-gap: var(--space-24);
+    //デフォルトギャップ
+    --list-gap: var(--space-24);
+  }
+
+  // カラム幅を意識したレイアウト用
+  // ギャップ
+  --col-gap-sp: var(--space-10);
+  --row-gap-sp: var(--space-10);
+  --col-gap-pc: var(--space-16);
+  --row-gap-pc: var(--space-10);
+
+  &[class*="--col-"] {
+    column-gap: var(--col-gap-sp);
+    row-gap: var(--row-gap-sp);
+    @include mq {
+      column-gap: var(--col-gap-pc);
+      row-gap: var(--row-gap-pc);
+    }
+  }
+  &[class*="--col-sp-"] {
+    @include mq(sp) {
+      column-gap: var(--col-gap-sp);
+      row-gap: var(--row-gap-sp);
+    }
+  }
+  &[class*="--col-pc-"] {
+    @include mq {
+      column-gap: var(--col-gap-pc);
+      row-gap: var(--row-gap-pc);
     }
   }
 
-  > * {
-    &:not(:first-child) {
-      // margin-top: var(--space-10);
-    }
+  &__item {
+    flex: 1 0 100%;
+    line-height: 1;
+
     @include mq {
-      &:not(:first-child) {
-        // margin-top: 0;
-      }
+      flex: initial;
     }
   }
-}
+
+  &.--col-2 &__item {
+    flex: 0 0 calc((100% - var(--col-gap-sp) * 1) / 2);
+
+    @include mq {
+      flex: 0 0 calc((100% - var(--col-gap-pc) * 1) / 2);
+    }
+  }
+  &.--col-sp-2 &__item {
+    @include mq(sp) {
+      flex: 0 0 calc((100% - var(--col-gap-sp) * 1) / 2);
+    }
+  }
+  &.--col-pc-2 &__item {
+    @include mq {
+      flex: 0 0 calc((100% - var(--col-gap-pc) * 1) / 2);
+    }
+  }
+  &.--col-3 &__item {
+    flex: 0 0 calc((100% - var(--col-gap-sp) * 2) / 3);
+
+    @include mq {
+      flex: 0 0 calc((100% - var(--col-gap-pc) * 2) / 3);
+    }
+  }
+  &.--col-sp-3 &__item {
+    @include mq(sp) {
+      flex: 0 0 calc((100% - var(--col-gap-sp) * 2) / 3);
+    }
+  }
+  &.--col-pc-3 &__item {
+    @include mq {
+      flex: 0 0 calc((100% - var(--col-gap-pc) * 2) / 3);
+    }
+  }
+  &.--col-4 &__item {
+    flex: 0 0 calc((100% - var(--col-gap-sp) * 3) / 4);
+
+    @include mq {
+      flex: 0 0 calc((100% - var(--col-gap-pc) * 3) / 4);
+    }
+  }
+  &.--col-sp-4 &__item {
+    @include mq(sp) {
+      flex: 0 0 calc((100% - var(--col-gap-sp) * 3) / 4);
+    }
+  }
+  &.--col-pc-4 &__item {
+    @include mq {
+      flex: 0 0 calc((100% - var(--col-gap-pc) * 3) / 4);
+    }
+  }
+} //.c-form-list
 
 // 結果（簡易表示）
 .c-search-brief-result {

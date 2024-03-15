@@ -150,6 +150,8 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --bg-black: #{$gray-black};
   --bg-nearly-black: #{$gray-nearly-black};
   --bg-black-90: rgba(0 0 0 / 0.9);
+  --bg-black-80: rgba(0 0 0 / 0.8);
+  --bg-black-70: rgba(0 0 0 / 0.7);
 
   --bg-black-gradient-rb: linear-gradient(#{$gradient-dir-rb}, #{$gray0} 0%, #{$gray-black} 100%);
 
@@ -232,6 +234,7 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
   --line-height-lg: #{$line-height-180};
   --line-height-base: #{$line-height-175};
   --line-height-md: #{$line-height-150};
+  --line-height-140: #{$line-height-140};
   --line-height-sm: #{$line-height-120};
   --line-height-100: #{$line-height-100};
 

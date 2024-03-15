@@ -1,0 +1,71 @@
+// 詳細絞り込み
+@use "../abstracts/mixins" as *;
+
+.c-search-deep {
+  // セクション
+  &__sect {
+    margin-top: var(--space-16);
+    &:not(:first-child) {
+    }
+
+    @include mq {
+      margin-top: var(--space-24);
+      &:not(:first-child) {
+      }
+    }
+  }
+
+  &__sect-h {
+    font-size: var(--fz-18);
+    line-height: var(--line-height-md);
+  }
+  &__sect-body {
+    margin-top: var(--space-8);
+
+    @include mq {
+      margin-top: var(--space-16);
+    }
+  }
+
+  // 検索対象単位ごと
+  &__unit {
+    &:not(:first-of-type) {
+      margin-top: var(--space-16);
+    }
+  }
+  &__unit-h {
+    background-color: var(--bg-gray-xlight);
+    line-height: var(--line-height-md);
+    font-size: var(--fz-16);
+    padding: var(--space-8);
+    position: sticky;
+    top: 0;
+  }
+  &__unit-body {
+    margin-top: var(--space-16);
+    padding: 0 var(--space-8);
+
+    @include mq {
+      padding: 0 var(--space-16);
+    }
+  }
+
+  // リスト(DL)
+  &__list {
+    &:not(:last-of-type) {
+      border-bottom: 1px solid var(--bdr-light);
+    }
+    &:not(:first-of-type) {
+      margin-top: var(--space-16);
+    }
+  }
+  &__list-title {
+    font-weight: var(--fw-bold);
+    font-size: var(--fz-14);
+    line-height: var(--line-height-md);
+    margin-bottom: var(--space-16);
+  }
+  &__list-desc {
+    padding-bottom: var(--space-16);
+  }
+}
