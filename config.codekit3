@@ -96,6 +96,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/src\/js\/partials\/_modal.js" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 1,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/src\/js\/partials\/_modal-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/src\/js\/partials\/_prop-slider.js" : {
       "bF" : 4,
       "ft" : 64,
@@ -155,7 +166,7 @@
       "bF" : 4,
       "ft" : 64,
       "ma" : 1,
-      "mi" : 1,
+      "mi" : 0,
       "oA" : 0,
       "oAP" : "\/assets\/js\/rf.min.js",
       "oF" : 2,

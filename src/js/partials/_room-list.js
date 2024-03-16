@@ -15,7 +15,6 @@ const rf_room_list_link = () => {
 
       const target = link.dataset.jsLinkRoom
       window.open(target, '_blank')
-      // target.scrollIntoView({ behavior: 'smooth' })
     })
   })
 }

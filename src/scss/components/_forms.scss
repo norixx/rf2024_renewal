@@ -33,6 +33,7 @@
   font-size: var(--fz-14);
   position: relative;
   cursor: pointer;
+  appearance: none;
 
   &:focus {
     border: 1px solid var(--bdr-form--hover);
@@ -199,7 +200,9 @@
   }
 
   .__link {
-    text-decoration: underline;
+    a {
+      text-decoration: underline;
+    }
   }
 
   .__count {

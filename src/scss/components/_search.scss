@@ -323,7 +323,7 @@
   flex-direction: column;
   text-align: center;
   padding: var(--space-16);
-  --gap: var(--space-10);
+  --gap: var(--space-4);
   gap: var(--gap);
 
   @include mq {
