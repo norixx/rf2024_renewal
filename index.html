@@ -3,19 +3,37 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" id="metaVP">
+
+  <!-- 本番には反映しない -->
   <meta name="robots" content="noindex, nofollow">
-  <title>TOP</title>
+
+  <title>［三井の賃貸］レジデントファースト－東京都心の高級賃貸・高級賃貸マンション</title>
+  <meta name="keywords" content="高級,賃貸,マンション,三井,レジデントファースト">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="expires" content="-1">
+
+  <!-- [ScrapeContent] -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@400;500&display=swap"
     rel="stylesheet">
 
+  <script src="/rf/assets/js/mypage/cookie_util.js"></script>
+  <script src="/rf/assets/js/mypage/project_constants.js"></script>
+
   <!-- swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-  <link rel="stylesheet" href="./assets/css/style.min.css">
+  <link rel="stylesheet" href="./assets/css/rf.min.css">
+
+  <script
+    src="https://assets.adobedtm.com/05c035d020eb682193974a42b73368b2a72c73a8/satelliteLib-fafbe33c69f380d90bd117133f8d178ffc6232f4.js"></script>
+  <!-- /[ScrapeContent] -->
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 </head>
 
 <body>
@@ -24,8 +42,8 @@
     <div class="site-header__container">
 
       <div class="site-header__logo">
-        <a href="./" style="font-size: 40px;">
-          🍑
+        <a href="./">
+          <img src="./assets/img/common/logo-rf-mark-lead.svg" alt="［三井の賃貸］レジデントファースト">
         </a>
       </div>
 
@@ -58,7 +76,7 @@
             </li>
             <li class="gnav-list__item u-pc-only"><a href="#" class="gnav-list__link">資産運用</a></li>
             <li class="gnav-list__item u-pc-only"><a href="#" class="gnav-list__link">Residential Channel</a></li>
-            <li class="gnav-list__item u-pc-only"><a href="#" class="gnav-list__link">会員ページ</a></li>
+            <li class="gnav-list__item u-pc-only"><a href="#" class="gnav-list__link u-tt-uppercase">Service</a></li>
           </ul>
 
           <ul class="gnav-site-info">
@@ -70,7 +88,7 @@
           <ul class="gnav-user-control">
             <li><a href="#">検討中リスト</a></li>
             <li><a href="#">閲覧履歴・検索条件</a></li>
-            <li><a href="#">会員ページ</a></li>
+            <li><a href="#" class="u-tt-uppercase">Service</a></li>
             <li><a href="#">ログイン/新規登録</a></li>
           </ul>
 
@@ -216,7 +234,7 @@
         </div>
         <div class="site-header__logo-group">
           <a href="#">
-            <img src="https://picsum.photos/id/583/120/60" alt="三井不動産グループ RESIDENT FIRST レジデントファースト株式会社">
+            <img src="./assets/img/common/logo-rf-text.webp" alt="三井不動産グループ RESIDENT FIRST レジデントファースト株式会社">
           </a>
         </div>
       </div>
@@ -224,6 +242,39 @@
       <button data-js-gnav="#gnav-main" class="gnav-toggle u-sp-only" id="gnav-btn-open" type="button"
         style="font-size: 32px;">🍔</button>
 
+    </div>
+
+    <!-- CTAナビ - 通常 -->
+    <div class="c-cta-navi">
+      <div class="c-cta-navi__contact">
+        <a href="https://form.mitsui-chintai.co.jp/webapp/form/19959_rndb_6/index.do" class="c-cta-navi__btn --web"
+          target="_blank">
+          <span class="u-sp-only">Web問い合わせ</span>
+          <span class="u-pc-only u-to-pc-v">Webで<br>お問い合わせ</span>
+        </a>
+        <dl class="c-cta-navi-tel" id="cta-navi-tel">
+          <div class="c-cta-navi-tel__inner">
+            <dt class="c-cta-navi-tel__title">
+              <button type="button" class="c-cta-navi__btn --tel" data-js-cta-navi-tel="#cta-navi-tel">
+                <span class="u-sp-only">電話問い合わせ</span>
+                <span class="u-pc-only u-to-pc-v">電話で<br>お問い合わせ</span>
+              </button>
+            </dt>
+            <dd class="c-cta-navi-tel__desc">
+              <div class="__inner">
+                <a href="tel:0120321719" class="__tel-num">0120-321-719</a>
+                <span class="__hours">営業時間 9:30~18:00(水曜定休)</span>
+              </div>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="c-cta-navi__considering">
+        <a href="/rf/list/ichiran" class="c-cta-navi__btn-considering" target="_blank">
+          <span class="u-sp-only">検討中</span>
+          <span class="u-pc-only u-to-pc-v">検討中リスト<br>閲覧履歴</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -262,6 +313,17 @@
                 <img src="" alt="">
               </div>
             </div>
+
+            <!-- アラート -->
+            <div class="c-mv__alert">
+              <div class="l-container">
+                <p class="c-mv__alert-text">
+                  <time datetime="2024-01-11">2024.01.11</time>
+                  <span><a href="#">緊急時固定お知らせ緊急時固定お知らせ緊急時固定お知らせ緊急時固定お知らせ緊急時固定お知らせ緊急時固定お知らせ</a></span>
+                </p>
+              </div>
+            </div>
+
           </div>
         </div><!-- /.l-top__mv -->
 
@@ -308,6 +370,7 @@
                   </dl>
                   <dl class="c-top-search__prop-status-list">
                     <dt><b>本日掲載中の物件</b></dt>
+                    <!-- 以下数値はAJAXロード -->
                     <dd>
                       <span class="__fig">1,234</span>
                       <span class="__unit">棟</span>
@@ -322,32 +385,34 @@
               <div class="c-top-search__body">
                 <div class="c-top-search__basic">
                   <ul class="c-top-search__basic-list">
-                    <li class="__item"><a href="#" class="btn --search-basic --w100"><b>人気エリア</b>から探す</a></li>
-                    <li class="__item"><a href="#" class="btn --search-basic --w100"><b>区</b>から探す</a></li>
-                    <li class="__item"><a href="#" class="btn --search-basic --w100"><b>駅・沿線</b>から探す</a></li>
-                    <li class="__item"><a href="#" class="btn --search-basic --w100"><b>地図</b>から探す</a></li>
+                    <li class="__item"><a href="/rf/area" class="btn --search-basic --w100"><b>人気エリア</b>から探す</a></li>
+                    <li class="__item"><a href="/rf/ward" class="btn --search-basic --w100"><b>区</b>から探す</a></li>
+                    <li class="__item"><a href="/rf/ensen/" class="btn --search-basic --w100"><b>駅・沿線</b>から探す</a></li>
+                    <li class="__item"><a href="/mapsearch" class="btn --search-basic --w100"><b>地図</b>から探す</a></li>
                     <li class="__item"><a href="#" class="btn --search-basic --w100"><b>特集</b>から探す</a></li>
-                    <li class="__item"><a href="#" class="btn --search-basic --w100"><b>プレミアムマンション</b>から探す（未定）</a>
+                    <li class="__item"><a href="/premium/"
+                        class="btn --search-basic --w100"><b>プレミアムマンション</b>から探す（未定）</a>
                     </li>
                   </ul>
                 </div>
                 <div class="c-top-search__lists">
                   <ul class="c-top-search__pickup-list">
-                    <li class="__item"><a href="#" class="btn --primary --w100 --text-center">“最新”新着<br>物件情報一覧</a>
+                    <li class="__item"><a href="/rf/osusume/new"
+                        class="btn --primary --w100 --text-center">“最新”新着<br>物件情報一覧</a>
                     </li>
                     <li class="__item"><a href="#" class="btn --primary --w100 --text-center">担当者おすすめ<br>物件情報一覧</a>
                     </li>
                   </ul>
                   <ul class="c-top-search__user-actions">
-                    <li class="__item"><a href="#"
+                    <li class="__item"><a href="/rf/list/ichiran"
                         class="btn --primary-black-outline --w100 --bdr-thick">検討中リストに<br>保存したお部屋</a></li>
-                    <li class="__item"><a href="#"
+                    <li class="__item"><a href="/rf/list/rirekioheya"
                         class="btn --primary-black-outline --w100 --bdr-thick">最近見た<br>お部屋</a>
                     </li>
-                    <li class="__item"><a href="#"
+                    <li class="__item"><a href="/rf/list/jyouken"
                         class="btn --primary-black-outline --w100 --bdr-thick">保存した<br>検索条件</a>
                     </li>
-                    <li class="__item"><a href="#"
+                    <li class="__item"><a href="/rf/list/rirekijyouken"
                         class="btn --primary-black-outline --w100 --bdr-thick">最近見た<br>検索条件</a>
                     </li>
                   </ul>
@@ -356,8 +421,9 @@
                   <dl class="c-search-keyword">
                     <dt>キーワードから探す</dt>
                     <dd>
-                      <form action="#" method="get">
-                        <input type="text" class="c-search-keyword__input c-input-text" placeholder="マンション名・地名">
+                      <form method="GET" action="/rf/result" accept-charset="UTF-8">
+                        <input type="search" class="c-search-keyword__input c-input-text" placeholder="マンション名・地名"
+                          name="search" id="iptKeyword">
                         <button class="c-search-keyword__btn-search form-btn --search">検索</button>
                       </form>
                     </dd>
@@ -661,7 +727,7 @@
             </header>
             <div class="c-sect__body">
               <div class="l-container">
-                コンテンツ
+                優先度（低）なので後回しになります
               </div>
             </div>
           </section>
@@ -678,7 +744,7 @@
             </header>
             <div class="c-sect__body">
               <div class="l-container">
-                ボディ
+                優先度（低）なので後回しになります
               </div>
             </div>
 
@@ -703,18 +769,22 @@
                     <div class="c-newslist__body">
                       <ul class="c-newslist__list">
                         <li class="c-newslist__list-item">
-                          <a href="#" class="__link">
-                            <time datetime="yyyy-mm-dd" class="__time">2024.01.31</time>
+                          <a href="https://www.mitsui-chintai.co.jp/resident/original/ichikawa/" class="__link">
+                            <time datetime="2024-03-15T09:00" class="__time">2024.03.15</time>
                             <p class="__text">
-                              <strong>【新築】ネウボーノ菊川Ⅱ</strong>菊川駅徒歩３分にある子育て応援マンション。キッズルームの管理人さんに気軽に育児相談ができ、託児サービス（有料）もあり。ゲストルーム、砂場や菜園もあり。2/10入居開始。■ご入居要件（１）未就学児も共にご入居する世帯（２）これから出産を控えている世帯
+                              <strong class="__title">【名称公開・新築】</strong>
+                              現在先行エントリー受付中<strong>「（仮称）市川市市川一丁目計画」</strong>の正式名称が「パークアクシス市川」に決定しました。<br>
+                              先行エントリーいただくと、現在、プラン・共用施設・アクセス・ロケーション・育児環境の特別コンテンツをご覧いただけます。
                             </p>
                           </a>
                         </li>
                         <li class="c-newslist__list-item">
-                          <a href="#" class="__link">
-                            <time datetime="yyyy-mm-dd" class="__time">2024.01.31</time>
+                          <a href="https://www.mitsui-chintai.co.jp/resident/original/pax_takinogawa_lb/"
+                            class="__link">
+                            <time datetime="2024-03-15T09:00" class="__time">2024.03.15</time>
                             <p class="__text">
-                              <strong>【新築】ネウボーノ菊川Ⅱ</strong>菊川駅徒歩３分にある子育て応援マンション。キッズルームの管理人さんに気軽に育児相談ができ、託児サービス（有料）もあり。ゲストルーム、砂場や菜園もあり。2/10入居開始。■ご入居要件（１）未就学児も共にご入居する世帯（２）これから出産を控えている世帯
+                              <strong class="__title">【掲載開始・新築】中野ステーションレジデンス</strong>JR
+                              JR中央線・総武線、東西線「中野」駅前ペデストリアンデッキ直結。免震構造の地上37階建て新築賃貸タワーレジデンス。
                             </p>
                           </a>
                         </li>
@@ -744,7 +814,7 @@
                         </li>
                       </ul>
                       <div class="c-newslist__link">
-                        <a href="#" class="btn --normal --mw400px --icon-after">最新情報一覧を見る</a>
+                        <a href="/topics/pickbk.html" class="btn --normal --mw400px --icon-after">最新情報一覧を見る</a>
                       </div>
                     </div>
                   </section>
@@ -753,10 +823,20 @@
                       <h3 class="c-newslist__h">ニュースリリース</h3>
                     </header>
                     <div class="c-newslist__body">
-                      最新情報と同じなので省略
+                      <ul class="c-newslist__list">
+                        <li class="c-newslist__list-item">
+                          <a href="#" class="__link">
+                            <time datetime="yyyy-mm-ddThh:mm" class="__time">YYYY.MM.DD</time>
+                            <p class="__text">
+                              <strong class="__title">【タイトル】</strong>
+                              最新情報と同じなので省略。新しいフォーマットでやり直していただく
+                            </p>
+                          </a>
+                        </li>
+                      </ul>
 
                       <div class="c-newslist__link">
-                        <a href="#" class="btn --normal --mw400px --icon-after">ニュースリリース一覧を見る</a>
+                        <a href="/topics/" class="btn --normal --mw400px --icon-after">ニュースリリース一覧を見る</a>
                       </div>
                     </div>
                   </section>
@@ -771,6 +851,9 @@
       </div><!-- /.l-main__content -->
 
     </div><!-- /.l-main -->
+
+
+
 
   </main>
 
@@ -834,9 +917,6 @@
                           <ul class="footer-nav-lv2 footer-nav-list">
                             <li><a href="#">おすすめ情報から探す</a></li>
                             <li><a href="#">新着情報から探す</a></li>
-                            <li><a href="#">採用情報</a></li>
-                            <li><a href="#">アクセス</a></li>
-                            <li><a href="#">グループ紹介</a></li>
                           </ul>
                         </div>
                         <div class="footer-nav-rent__col">
@@ -875,7 +955,7 @@
               <li><a href="#">サイトマップ</a></li>
               <li><a href="#">プライバシーステートメント</a></li>
               <li><a href="#">特定個人情報基本方針</a></li>
-              <li><a href="#">人情報の取り扱いについて</a></li>
+              <li><a href="#">個人情報の取り扱いについて</a></li>
               <li><a href="#">個人情報の開示等手続きについて</a></li>
               <li><a href="#">Cookieおよびアクセスログについて</a></li>
               <li><a href="#">サイトポリシー</a></li>
@@ -947,29 +1027,29 @@
           </nav>
           <aside class="footer-groups">
             <ul class="footer-groups-list">
-              <li><a href="#" target="_blank"><img src="" alt=""></a></li>
-              <li><a href="#" target="_blank"><img src="" alt=""></a></li>
-              <li><a href="#" target="_blank"><img src="" alt=""></a></li>
-              <li><a href="#" target="_blank"><img src="" alt=""></a></li>
+              <li><a href="#" target="_blank"><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#" target="_blank"><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#" target="_blank"><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#" target="_blank"><img src="" alt="" loading="lazy"></a></li>
             </ul>
           </aside>
           <aside class="footer-group-services">
             <h2 class="footer-grop-services__h">三井不動産グループの住まいに関する具体的なサービス内容については、各事業サイトをご覧ください</h2>
             <ul class="footer-group-services-list">
-              <li><a href="#"><span>&nbsp;</span><img src="" alt=""></a></li>
-              <li><a href="#"><span>住んでからの安心サポートなら</span><img src="" alt=""></a></li>
-              <li><a href="#"><span>すまいとくらしの総合情報サイトなら</span><img src="" alt=""></a></li>
-              <li><a href="#"><span>新築の住まい探しなら</span><img src="" alt=""></a></li>
-              <li><a href="#"><span>不動産の売却・購入なら</span><img src="" alt=""></a></li>
-              <li><a href="#"><span>注文住宅・賃貸建築・医院建築のことなら</span><img src="" alt=""></a></li>
-              <li><a href="#"><span>住まいのリフォーム・リノベーションなら</span><img src="" alt=""></a></li>
-              <li><a href="#"><span>空間デザイン・インテリア販売なら</span><img src="" alt=""></a></li>
-              <li><a href="#"><span>マンション管理のトータルサポートなら</span><img src="" alt=""></a></li>
-              <li><a href="#"><span>シニアのためのサービスレジデンスなら</span><img src="" alt=""></a></li>
+              <li><a href="#"><span>&nbsp;</span><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#"><span>住んでからの安心サポートなら</span><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#"><span>すまいとくらしの総合情報サイトなら</span><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#"><span>新築の住まい探しなら</span><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#"><span>不動産の売却・購入なら</span><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#"><span>注文住宅・賃貸建築・医院建築のことなら</span><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#"><span>住まいのリフォーム・リノベーションなら</span><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#"><span>空間デザイン・インテリア販売なら</span><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#"><span>マンション管理のトータルサポートなら</span><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="#"><span>シニアのためのサービスレジデンスなら</span><img src="" alt="" loading="lazy"></a></li>
             </ul>
             <div class="footer-csr-group-link">
-              <a href="#" target="_blank"><img src="" alt=""></a>
-              <a href="#" target="_blank"><img src="" alt=""></a>
+              <a href="#" target="_blank"><img src="" alt="" loading="lazy"></a>
+              <a href="#" target="_blank"><img src="" alt="" loading="lazy"></a>
             </div>
           </aside>
           <div class="footer-company-desc">
@@ -994,7 +1074,7 @@
   <!-- swiper -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <script src="assets/js/rf.min.js"></script>
+  <script src="./assets/js/rf.min.js"></script>
 </body>
 
 </html>

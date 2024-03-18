@@ -19,6 +19,25 @@
   }
 }
 
+// サイズ
+.u-fz {
+  $sizes: 10, 11, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40, 48, 56;
+
+  @each $size in $sizes {
+    &-#{$size} {
+      font-size: var(--fz-#{$size}) !important;
+    }
+  }
+
+  @include mq {
+    @each $size in $sizes {
+      &-pc-#{$size} {
+        font-size: var(--fz-#{$size}) !important;
+      }
+    }
+  }
+}
+
 // Text
 .u-tt {
   $transforms: uppercase, lowercase, capitalize;
@@ -50,6 +69,21 @@
       &-pc-#{$value} {
         text-decoration: #{$value} !important;
       }
+    }
+  }
+}
+
+// テキストオリエンテーション
+.u-to {
+  &-v {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+
+  @include mq {
+    &-pc-v {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
     }
   }
 }

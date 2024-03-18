@@ -1,0 +1,182 @@
+// 再検索ナビゲーション
+@use "../abstracts/mixins" as *;
+
+.c-re-search {
+  background: var(--bg-gray-xxlight);
+  line-height: var(--line-height-md);
+  position: relative;
+  max-width: 400px;
+  width: calc(100% - 60px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  translate: -100% 0;
+  transition: translate var(--animation-normal) var(--animation-easing);
+
+  .c-modal-re-search.--is-open & {
+    translate: 0;
+  }
+
+  @include mq {
+    position: static;
+    max-width: none;
+    width: auto;
+    translate: 0;
+  }
+
+  &__header {
+    --header-height: 60px;
+    padding: 0 var(--space-16);
+    line-height: var(--line-height-md);
+    background: var(--bg-gray-xxlight);
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    z-index: 101;
+
+    @include mq {
+      position: static;
+    }
+  }
+
+  &__h {
+    font-size: var(--fz-16);
+  }
+
+  // SP時はスクロールできるように
+  &__body {
+    max-height: calc(100svh - 60px);
+    overflow-y: scroll;
+
+    @include mq {
+      overflow-y: auto;
+      max-height: none;
+    }
+  }
+}
+
+.c-re-search-sect {
+  position: relative;
+
+  &__header {
+    border-top: 2px solid var(--bdr-light);
+    background-color: var(--bg-white);
+    padding: var(--space-16);
+    line-height: var(--line-height-md);
+    position: sticky;
+    z-index: 101;
+    top: 0;
+
+    @include mq {
+      @include mq {
+        position: static;
+      }
+    }
+  }
+
+  &__h {
+    font-size: var(--fz-14);
+  }
+
+  &__body {
+    padding: var(--space-16);
+  }
+}
+
+// 検索結果
+.c-re-search-result {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-white);
+  border: 2px solid var(--bdr-light);
+  padding: var(--space-16);
+  line-height: var(--line-height-md);
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    > * {
+      width: 100%;
+      // flex: 1 0 100%;
+    }
+  }
+}
+
+.c-re-search-toggle-sect {
+  &:not(:first-of-type) {
+    border-top: 1px solid var(--bdr-normal);
+  }
+  &:last-of-type {
+    border-bottom: 1px solid var(--bdr-normal);
+  }
+  &__header {
+    padding: var(--space-16);
+    display: flex;
+    justify-content: space-between;
+    line-height: var(--line-height-md);
+  }
+
+  &__h {
+    flex: 1;
+    font-size: var(--fz-14);
+  }
+
+  // 開閉ボタン
+  &__btn {
+    &::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: pink url();
+      cursor: pointer;
+    }
+
+    &.--is-open::before {
+      background: yellow url();
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--animation-normal);
+
+    &.--is-open {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__inner {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  &__content {
+    padding: var(--space-8) var(--space-16) var(--space-24);
+  }
+
+  // body内のブロック
+  &__block {
+    &:not(:first-child) {
+      margin-top: var(--space-16);
+    }
+  }
+}
+
+// トグルしないセクション
+.c-re-search-normal-sect {
+  padding: var(--space-16);
+}
+
+// 選択中のエリア
+.c-re-search-selected-areas {
+  font-weight: var(--fw-bold);
+}

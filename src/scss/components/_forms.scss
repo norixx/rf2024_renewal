@@ -29,6 +29,7 @@
   padding: var(--space-8);
   padding-right: var(--space-32);
   border-radius: var(--bdr-radius-md);
+  background-color: var(--bg-white);
   transition: var(--animation-normal);
   font-size: var(--fz-14);
   position: relative;
@@ -78,7 +79,7 @@
       @include visually-hidden;
     }
 
-    span {
+    > span {
       display: inline-flex;
       // align-items: center;
       align-items: flex-start;
@@ -95,22 +96,27 @@
         flex: 0 0 20px;
       }
     }
+
+    // 数値
+    .__count {
+      margin-left: var(--space-8);
+    }
   }
 
-  &.--checkbox span::before {
+  &.--checkbox > span::before {
     background-image: var(--icon-checkbox);
   }
-  &.--checkbox:hover span::before {
+  &.--checkbox:hover > span::before {
     background-image: var(--icon-checkbox--on);
   }
   &.--checkbox input:checked ~ span::before {
     background-image: var(--icon-checkbox--checked);
   }
 
-  &.--radio span::before {
+  &.--radio > span::before {
     background-image: var(--icon-radio);
   }
-  &.--radio:hover span::before {
+  &.--radio:hover > span::before {
     background-image: var(--icon-radio--on);
   }
   &.--radio input:checked ~ span::before {
@@ -219,4 +225,8 @@
   display: flex;
   align-items: center;
   gap: var(--space-8);
+
+  &.--w-max .c-form-label {
+    flex: 1;
+  }
 }

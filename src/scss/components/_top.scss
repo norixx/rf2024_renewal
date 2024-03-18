@@ -45,11 +45,47 @@
     }
   }
 
+  // スクロールインジケーター
   &__scroll {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
     color: var(--txt-white);
+  }
+
+  // アラート
+  &__alert {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--alert-trans);
+    padding: var(--space-16) 0;
+    font-size: var(--fz-14);
+    color: var(--txt-white);
+    line-height: var(--line-height-md);
+    width: 100%;
+
+    @include mq {
+      padding: var(--space-24) 0;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+
+      time {
+        margin-bottom: var(--space-8);
+      }
+
+      @include mq {
+        flex-direction: row;
+
+        time {
+          flex: 0 0 5em;
+          margin-right: var(--space-16);
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }

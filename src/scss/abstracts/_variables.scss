@@ -127,6 +127,13 @@ $space-120: 7.5rem;
 // animation & transition
 $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
 
+// z-index
+$z-index-lv1: 100;
+$z-index-lv2: 200;
+$z-index-lv3: 300;
+$z-index-lv4: 400;
+$z-index-lv5: 500;
+
 // =======================================================
 // =======================================================
 // CSS vars
@@ -297,4 +304,11 @@ $animation-easing: cubic-bezier(0.59, 0, 0.22, 0.98);
 
   // Animation & Transition
   --animation-easing: #{$animation-easing};
+
+  // z-index
+  --z-index-lv1: #{$z-index-lv1};
+  --z-index-lv2: #{$z-index-lv2};
+  --z-index-lv3: #{$z-index-lv3};
+  --z-index-lv4: #{$z-index-lv4};
+  --z-index-lv5: #{$z-index-lv5};
 }

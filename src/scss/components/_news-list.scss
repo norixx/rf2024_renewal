@@ -65,10 +65,10 @@
 
     .__text {
       margin-top: var(--space-8);
+    }
 
-      strong {
-        margin-right: 1em;
-      }
+    .__title {
+      margin-right: 1em;
     }
 
     @include mq {

@@ -16,6 +16,13 @@ html {
   @include mq {
     scroll-padding-top: 0;
   }
+
+  // モーダル関連
+  &.--is-modal-open {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  }
 }
 
 body {

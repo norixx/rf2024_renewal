@@ -11,7 +11,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@400;500&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.min.css">
+  <link rel="stylesheet" href="./assets/css/rf.min.css">
 </head>
 
 <body>
@@ -22,6 +22,42 @@
       <div class="site-header__logo">
         <a href="./" style="font-size: 40px;">
           🐮
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA - 再検索ナビ用 -->
+    <div class="c-cta-navi --re-search">
+      <div class="c-cta-navi__re-search">
+        <button type="button" class="btn --normal --icon-before --xs --w100 --no-border"
+          data-js-modal="#re-search">条件を変更して<br>再検索</button>
+      </div>
+      <div class="c-cta-navi__contact">
+        <a href="#" class="c-cta-navi__btn --web">
+          <span class="u-sp-only">Web</span>
+          <span class="u-pc-only u-to-pc-v">Webで<br>お問い合わせ</span>
+        </a>
+        <dl class="c-cta-navi-tel" id="cta-navi-tel">
+          <div class="c-cta-navi-tel__inner">
+            <dt class="c-cta-navi-tel__title">
+              <button type="button" class="c-cta-navi__btn --tel" data-js-cta-navi-tel="#cta-navi-tel">
+                <span class="u-sp-only">Tel</span>
+                <span class="u-pc-only u-to-pc-v">電話で<br>お問い合わせ</span>
+              </button>
+            </dt>
+            <dd class="c-cta-navi-tel__desc">
+              <div class="__inner">
+                <a href="tel:0120-321-719" class="__tel-num">0120-321-719</a>
+                <span class="__hours">営業時間 9:30~18:00(水曜定休)</span>
+              </div>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div class="c-cta-navi__considering">
+        <a href="#" class="c-cta-navi__btn-considering">
+          <span class="u-sp-only">検討中</span>
+          <span class="u-pc-only u-to-pc-v">検討中リスト<br>閲覧履歴</span>
         </a>
       </div>
     </div>
@@ -136,280 +172,539 @@
               <div class="l-col-pc-container">
                 <div class="l-col-pc-3">
 
-                  <!-- 再検索ナビゲーション -->
-                  <article class="c-re-search">
-                    <header class="c-re-search__header">
-                      <h2>再検索ナビゲーション</h2>
-                    </header>
-                    <div class="c-re-search__body">
-                      <section class="c-re-search-sect">
-                        <header class="re-search-sect__header">
-                          <h3 class="re-search-sect__h">選択中の区</h3>
+                  <div class="c-modal-re-search" id="re-search" data-js-modal-target>
+                    <button class="c-modal-re-search__close u-sp-only" type="button" data-js-modal-close>❌️</button>
+                    <!-- 再検索ナビゲーション -->
+                    <article class="c-re-search">
+                      <form action="#" id="sys-form" method="post">
+                        <header class="c-re-search__header">
+                          <h2 class="c-re-search__h">再検索ナビゲーション</h2>
                         </header>
-                        <div class="re-search-sect__body">
-                          <ul class="re-search-list --col1">
-                            <li><label><input type="checkbox" class="form-input-check">港区</label>(<span
-                                class="re-search-list__count">321</span>)</li>
-                            <li><label><input type="checkbox" class="form-input-check" checked>渋谷区</label>(<span
-                                class="re-search-list__count">45</span>)</li>
-                            <li><label><input type="checkbox" class="form-input-check">杉並区</label>(<span
-                                class="re-search-list__count">1234</span>)</li>
-                          </ul>
-                          <div class="re-search-result">
-                            <dl class="re-search-result__desc">
-                              <dt>検索対象お部屋数</dt>
-                              <dd>
-                                <span class="re-search-result__count sys-vacant_rooms">123</span>件
-                              </dd>
-                            </dl>
-                            <div><button class="btn --impact">お部屋を再検索</button></div>
-                          </div>
-                        </div>
-                      </section>
-                      <section class="c-re-search-sect">
-                        <header class="re-search-sect__header">
-                          <h3 class="re-search-sect__h">検索結果の絞り込み</h3>
-                        </header>
-                        <div class="re-search-sect__body">
-                          <!-- 賃料 -->
-                          <section class="re-search-toggle-sect">
-                            <header class="re-search-toggle-sect__header">
-                              <h4 class="re-search-toggle-sect__h">賃料</h4>
-                              <button class="re-search-toggle-sect__btn">↕️</button>
+                        <div class="c-re-search__body">
+                          <section class="c-re-search-sect ">
+                            <header class="c-re-search-sect__header">
+                              <h3 class="c-re-search-sect__h">選択中の区</h3>
                             </header>
-                            <div class="re-search-toggle-sect__body">
-                              <div class="re-search-toggle-sect__inner">
-                                <div class="re-search-toggle-sect__content">
-                                  <div class="re-search-toggle-sect__block">
-                                    <select name="" id="">
-                                      <option value="" selected="">下限なし</option>
-                                      <option value="100">10万円以上</option>
-                                      <option value="110">11万円以上</option>
-                                    </select>
-                                    〜
-                                    <select name="" id="">
-                                      <option value="" selected="">下限なし</option>
-                                      <option value="100">10万円以上</option>
-                                      <option value="110">11万円以上</option>
-                                    </select>
-                                  </div>
-                                  <div class="re-search-toggle-sect__block">
-                                    <ul class="re-search-list --col1">
-                                      <li><label><input type="checkbox" name="" id="">管理費/共益費含む</input></label></li>
-                                      <li><label><input type="checkbox" name="" id="">礼金なし</input></label></li>
-                                      <li><label><input type="checkbox" name="" id="">敷金なし</input></label></li>
-                                      <li><label><input type="checkbox" name="" id="">礼金１ヶ月以下</input></label></li>
-                                      <li><label><input type="checkbox" name="" id="">フリーレント付き</input></label></li>
-                                    </ul>
-                                  </div>
-                                </div>
+                            <div class="c-re-search-sect__body">
+                              <ul class="c-form-list --col-1 c-re-search-selected-areas">
+                                <li class="c-form-list__item">
+                                  <label class="c-form-label --checkbox">
+                                    <input type="checkbox" class="sys-SEARCH_AREA_NO sys-recalc"
+                                      name="SEARCH_AREA_NO[##]" value="##" checked>
+                                    <span class="c-form-label__text">港区<span class="__count">(321)</span></span>
+                                  </label>
+                                </li>
+                                <li class="c-form-list__item">
+                                  <label class="c-form-label --checkbox">
+                                    <input type="checkbox" class="sys-SEARCH_AREA_NO sys-recalc"
+                                      name="SEARCH_AREA_NO[##]" value="##" checked>
+                                    <span class="c-form-label__text">渋谷区<span class="__count">(533)</span></span>
+                                  </label>
+                                </li>
+                                <li class="c-form-list__item">
+                                  <label class="c-form-label --checkbox">
+                                    <input type="checkbox" class="sys-SEARCH_AREA_NO sys-recalc"
+                                      name="SEARCH_AREA_NO[##]" value="##" checked>
+                                    <span class="c-form-label__text">杉並区<span class="__count">(89)</span></span>
+                                  </label>
+                                </li>
+                              </ul>
+                              <div class="c-re-search-result u-mt-24">
+                                <dl class="c-re-search-result__desc">
+                                  <dt>検索対象お部屋数</dt>
+                                  <dd>
+                                    <span class="c-re-search-result__count sys-vacant_rooms">123</span>件
+                                  </dd>
+                                  <dd><button class="btn --impact --w100">お部屋を再検索</button></dd>
+                                </dl>
                               </div>
                             </div>
                           </section>
-                          <!-- 間取り -->
-                          <section class="re-search-toggle-sect">
-                            <header class="re-search-toggle-sect__header">
-                              <h4 class="re-search-toggle-sect__h">間取り</h4>
-                              <button class="re-search-toggle-sect__btn">↕️</button>
+                          <section class="c-re-search-sect">
+                            <header class="c-re-search-sect__header">
+                              <h3 class="c-re-search-sect__h">検索結果の絞り込み</h3>
                             </header>
-                            <div class="re-search-toggle-sect__body">
-                              <div class="re-search-toggle-sect__inner">
-                                <div class="re-search-toggle-sect__content">
-                                  <div class="re-search-toggle-sect__block">
-                                    <ul class="re-search-list --col2">
-                                      <li><label><input type="checkbox" name="" id="">1R〜1K</input></label></li>
-                                      <li><label><input type="checkbox" name="" id="">1DK〜1LDK</input></label></li>
-                                      <li><label><input type="checkbox" name="" id="">2K〜2LDK</input></label></li>
-                                      <li><label><input type="checkbox" name="" id="">3K〜3LDK</input></label></li>
-                                      <li><label><input type="checkbox" name="" id="">4LDK〜</input></label></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <!-- 専有面積 -->
-                          <section class="re-search-toggle-sect">
-                            <header class="re-search-toggle-sect__header">
-                              <h4 class="re-search-toggle-sect__h">専有面積</h4>
-                              <button class="re-search-toggle-sect__btn">↕️</button>
-                            </header>
-                            <div class="re-search-toggle-sect__body">
-                              <div class="re-search-toggle-sect__inner">
-                                <div class="re-search-toggle-sect__content">
-                                  <div class="re-search-toggle-sect__block">
-                                    <select name="" id="">
-                                      <option value="" selected="">
-                                        指定なし
-                                      </option>
-                                      <option value="10">
-                                        10㎡以上
-                                      </option>
-                                      <option value="20">
-                                        20㎡以上
-                                      </option>
-                                      <option value="30">
-                                        30㎡以上
-                                      </option>
-                                      <option value="40">
-                                        40㎡以上
-                                      </option>
-                                    </select>
-                                    〜
-                                    <select name="" id="">
-                                      <option value="" selected="">
-                                        指定なし
-                                      </option>
-                                      <option value="10">
-                                        10㎡以上
-                                      </option>
-                                      <option value="20">
-                                        20㎡以上
-                                      </option>
-                                      <option value="30">
-                                        30㎡以上
-                                      </option>
-                                    </select>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <!-- 築年数 -->
-                          <section class="re-search-toggle-sect">
-                            <header class="re-search-toggle-sect__header">
-                              <h4 class="re-search-toggle-sect__h">築年数</h4>
-                              <button class="re-search-toggle-sect__btn">↕️</button>
-                            </header>
-                            <div class="re-search-toggle-sect__body">
-                              <div class="re-search-toggle-sect__inner">
-                                <div class="re-search-toggle-sect__content">
-                                  <div class="re-search-toggle-sect__block">
-                                    <ul class="re-search-list --col2">
-                                      <li><label><input type="radio" name="" id="">1R〜1K</label></li>
-                                      <li><label><input type="radio" name="" id="">1DK〜1LDK</label></li>
-                                      <li><label><input type="radio" name="" id="">2K〜2LDK</label></li>
-                                      <li><label><input type="radio" name="" id="">3K〜3LDK</label></li>
-                                      <li><label><input type="radio" name="" id="">4LDK〜</label></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <!-- 駅から徒歩 -->
-                          <section class="re-search-toggle-sect">
-                            <header class="re-search-toggle-sect__header">
-                              <h4 class="re-search-toggle-sect__h">駅から徒歩</h4>
-                              <button class="re-search-toggle-sect__btn">↕️</button>
-                            </header>
-                            <div class="re-search-toggle-sect__body">
-                              <div class="re-search-toggle-sect__inner">
-                                <div class="re-search-toggle-sect__content">
-                                  <div class="re-search-toggle-sect__block">
-                                    <ul class="re-search-list --col2">
-                                      <li><label><input type="radio" name="" id="">指定なし</label></li>
-                                      <li><label><input type="radio" name="" id="">1分以内</label></li>
-                                      <li><label><input type="radio" name="" id="">3分以内</label></li>
-                                      <li><label><input type="radio" name="" id="">5分以内</label></li>
-                                      <li><label><input type="radio" name="" id="">10分以内</label></li>
-                                      <li><label><input type="radio" name="" id="">15分以内</label></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <!-- 他条件 -->
-                          <section class="re-search-toggle-sect">
-                            <header class="re-search-toggle-sect__header">
-                              <h4 class="re-search-toggle-sect__h">他条件</h4>
-                              <button class="re-search-toggle-sect__btn">↕️</button>
-                            </header>
-                            <div class="re-search-toggle-sect__body">
-                              <div class="re-search-toggle-sect__inner">
-                                <div class="re-search-toggle-sect__content">
-                                  <div class="re-search-toggle-sect__block">
-                                    <ul class="re-search-list --col2">
-                                      <li><label><input type="checkbox" name="" id="">駐車場あり</label></li>
-                                      <li><label><input type="checkbox" name="" id="">当社限定物件</label></li>
-                                      <li><label><input type="checkbox" name="" id="">専任物件</label></li>
-                                      <li><label><input type="checkbox" name="" id="">定期借家を含まない</label></li>
-                                      <li><label><input type="checkbox" name="" id="">三井の賃貸物件</label></li>
-                                      <li><label><input type="checkbox" name="" id="">申込無し物件のみ表示</label></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <!-- 入居可能日 -->
-                          <section class="re-search-toggle-sect">
-                            <header class="re-search-toggle-sect__header">
-                              <h4 class="re-search-toggle-sect__h">入居可能日</h4>
-                              <button class="re-search-toggle-sect__btn">↕️</button>
-                            </header>
-                            <div class="re-search-toggle-sect__body">
-                              <div class="re-search-toggle-sect__inner">
-                                <div class="re-search-toggle-sect__content">
-                                  <div class="re-search-toggle-sect__block">
-                                    <select name="MOVE_PLN_YMD" class="sys-recalc">
-                                      <option value="" selected="">
-                                        指定なし
-                                      </option>
-                                      <option value="0">
-                                        即可
-                                      </option>
-                                      <option value="1">
-                                        今月中
-                                      </option>
-                                      <option value="2">
-                                        翌月まで
-                                      </option>
-                                      <option value="3">
-                                        翌々月まで
-                                      </option>
-                                    </select>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <!-- より詳細な絞り込み -->
-                          <section class="re-search-toggle-sect">
-                            <header class="re-search-toggle-sect__header">
-                              <h4 class="re-search-toggle-sect__h">より詳細な絞り込み</h4>
-                              <button class="re-search-toggle-sect__btn">↕️</button>
-                            </header>
-                            <div class="re-search-toggle-sect__body">
-                              <div class="re-search-toggle-sect__inner">
-                                <div class="re-search-toggle-sect__content">
-                                  <div class="re-search-toggle-sect__block --detail-search">
-                                    <p>ペット可、ピアノ可、フロントサービス、ルーフバルコニーなどの設備やマンションブランドの絞り込みができます</p>
-                                    <button type="button" class="btn --normal"></button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <!-- 結果 + 再検索 -->
-                          <div class="re-search-normal-sect">
-                            <div class="re-search-result">
-                              <dl class="re-search-result__desc">
-                                <dt>検索対象お部屋数</dt>
-                                <dd>
-                                  <span class="re-search-result__count sys-vacant_rooms">123</span>件
-                                </dd>
-                              </dl>
-                              <div><button class="btn --impact">お部屋を再検索</button></div>
-                            </div>
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </article>
+                            <div class="re-search-sect__body">
 
-                </div>
+                              <!-- 賃料 -->
+                              <section class="c-re-search-toggle-sect">
+                                <header class="c-re-search-toggle-sect__header">
+                                  <h4 class="c-re-search-toggle-sect__h">賃料</h4>
+                                  <button class="c-re-search-toggle-sect__btn --is-open"
+                                    data-js-toggle="#re-search-rent" type="button"></button>
+                                </header>
+                                <div class="c-re-search-toggle-sect__body --is-open" id="re-search-rent">
+                                  <div class="c-re-search-toggle-sect__inner">
+                                    <div class="c-re-search-toggle-sect__content">
+                                      <div class="c-re-search-toggle-sect__block">
+                                        <div class="c-form-select-range --w-max">
+                                          <label class="c-form-label --select">
+                                            <select name="RENT_AMT_MIN"
+                                              class="c-input-select --w-max u-fz-12 sys-recalc">
+                                              <option value="">下限なし</option>
+                                              <option value="100">10万円以上</option>
+                                              <option value="110">11万円以上</option>
+                                              <option value="120">12万円以上</option>
+                                              <option value="130">13万円以上</option>
+                                              <option value="140">14万円以上</option>
+                                              <option value="150">15万円以上</option>
+                                              <option value="160">16万円以上</option>
+                                              <option value="170">17万円以上</option>
+                                              <option value="180">18万円以上</option>
+                                              <option value="190">19万円以上</option>
+                                              <option value="200">20万円以上</option>
+                                              <option value="225">22.5万円以上</option>
+                                              <option value="250">25万円以上</option>
+                                              <option value="275">27.5万円以上</option>
+                                              <option value="300">30万円以上</option>
+                                              <option value="350">35万円以上</option>
+                                              <option value="400">40万円以上</option>
+                                              <option value="450">45万円以上</option>
+                                              <option value="500">50万円以上</option>
+                                              <option value="600">60万円以上</option>
+                                              <option value="700">70万円以上</option>
+                                              <option value="800">80万円以上</option>
+                                              <option value="900">90万円以上</option>
+                                              <option value="1000">100万円以上</option>
+                                              <option value="1100">110万円以上</option>
+                                              <option value="1200">120万円以上</option>
+                                              <option value="1300">130万円以上</option>
+                                              <option value="1400">140万円以上</option>
+                                              <option value="1500">150万円以上</option>
+                                              <option value="2000">200万円以上</option>
+                                            </select>
+                                          </label>
+                                          〜
+                                          <label class="c-form-label --select">
+                                            <select name="RENT_AMT_MAX"
+                                              class="c-input-select --w-max u-fz-12 sys-recalc">
+                                              <option value="">上限なし</option>
+                                              <option value="100">10万円以下</option>
+                                              <option value="110">11万円以下</option>
+                                              <option value="120">12万円以下</option>
+                                              <option value="130">13万円以下</option>
+                                              <option value="140">14万円以下</option>
+                                              <option value="150">15万円以下</option>
+                                              <option value="160">16万円以下</option>
+                                              <option value="170">17万円以下</option>
+                                              <option value="180">18万円以下</option>
+                                              <option value="190">19万円以下</option>
+                                              <option value="200">20万円以下</option>
+                                              <option value="225">22.5万円以下</option>
+                                              <option value="250">25万円以下</option>
+                                              <option value="275">27.5万円以下</option>
+                                              <option value="300">30万円以下</option>
+                                              <option value="350">35万円以下</option>
+                                              <option value="400">40万円以下</option>
+                                              <option value="450">45万円以下</option>
+                                              <option value="500">50万円以下</option>
+                                              <option value="600">60万円以下</option>
+                                              <option value="700">70万円以下</option>
+                                              <option value="800">80万円以下</option>
+                                              <option value="900">90万円以下</option>
+                                              <option value="1000">100万円以下</option>
+                                              <option value="1100">110万円以下</option>
+                                              <option value="1200">120万円以下</option>
+                                              <option value="1300">130万円以下</option>
+                                              <option value="1400">140万円以下</option>
+                                              <option value="1500">150万円以下</option>
+                                              <option value="2000">200万円以下</option>
+                                            </select>
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <div class="c-re-search-toggle-sect__block">
+                                        <ul class="c-form-list --col-1">
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" class="sys-recalc" name="MNGMNT_COST" value="1">
+                                              <span class="c-form-label__text">管理費/共益費含む</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" class="sys-recalc" name="MNGMNT_COST" value="1">
+                                              <span class="c-form-label__text">礼金なし</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" class="sys-recalc" name="MNGMNT_COST" value="1">
+                                              <span class="c-form-label__text">敷金なし</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" class="sys-recalc" name="MNGMNT_COST" value="1">
+                                              <span class="c-form-label__text">礼金１ヶ月以下</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" class="sys-recalc" name="MNGMNT_COST" value="1">
+                                              <span class="c-form-label__text">フリーレント付き</span>
+                                            </label>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+
+                              <!-- 間取り -->
+                              <section class="c-re-search-toggle-sect">
+                                <header class="c-re-search-toggle-sect__header">
+                                  <h4 class="c-re-search-toggle-sect__h">間取り</h4>
+                                  <button class="c-re-search-toggle-sect__btn --is-open" type="button"
+                                    data-js-toggle="#re-search-madori"></button>
+                                </header>
+                                <div class="c-re-search-toggle-sect__body --is-open" id="re-search-madori">
+                                  <div class="c-re-search-toggle-sect__inner">
+                                    <div class="c-re-search-toggle-sect__content">
+                                      <div class="c-re-search-toggle-sect__block">
+                                        <ul class="c-form-list --col-2">
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" name="1R" class="sys-recalc" value="1">
+                                              <span class="c-form-label__text">1R〜1K</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" name="1LDK" class="sys-recalc" value="1">
+                                              <span class="c-form-label__text">1DK〜1LDK</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" name="2LDK" class="sys-recalc">
+                                              <span class="c-form-label__text">2K〜2LDK</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" name="3LDK" class="sys-recalc">
+                                              <span class="c-form-label__text">3K〜3LDK</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" name="4LDK" class="sys-recalc">
+                                              <span class="c-form-label__text">4LDK〜</span>
+                                            </label>
+                                          </li>
+
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+
+                              <!-- 専有面積 -->
+                              <section class="c-re-search-toggle-sect">
+                                <header class="c-re-search-toggle-sect__header">
+                                  <h4 class="c-re-search-toggle-sect__h">専有面積</h4>
+                                  <button class="c-re-search-toggle-sect__btn" type="button"
+                                    data-js-toggle="#re-search-space"></button>
+                                </header>
+                                <div class="c-re-search-toggle-sect__body" id="re-search-space">
+                                  <div class="c-re-search-toggle-sect__inner">
+                                    <div class="c-re-search-toggle-sect__content">
+                                      <div class="c-form-select-range --w-max">
+                                        <label class="c-form-label --select">
+                                          <select name="AREA_MIN" class="c-input-select --w-max sys-recalc">
+                                            <option value="">指定なし</option>
+                                            <option value="10">10㎡以上</option>
+                                            <option value="20">20㎡以上</option>
+                                            <option value="30">30㎡以上</option>
+                                            <option value="40">40㎡以上</option>
+                                            <option value="50">50㎡以上</option>
+                                            <option value="60">60㎡以上</option>
+                                            <option value="70">70㎡以上</option>
+                                            <option value="80">80㎡以上</option>
+                                            <option value="90">90㎡以上</option>
+                                            <option value="100">100㎡以上</option>
+                                            <option value="150">150㎡以上</option>
+                                            <option value="200">200㎡以上</option>
+                                          </select>
+                                        </label>
+                                        〜
+                                        <label class="c-form-label --select">
+                                          <select name="AREA_MAX" class="c-input-select --w-max sys-recalc">
+                                            <option value="">指定なし</option>
+                                            <option value="10">10㎡以上</option>
+                                            <option value="20">20㎡以上</option>
+                                            <option value="30">30㎡以上</option>
+                                            <option value="40">40㎡以上</option>
+                                            <option value="50">50㎡以上</option>
+                                            <option value="60">60㎡以上</option>
+                                            <option value="70">70㎡以上</option>
+                                            <option value="80">80㎡以上</option>
+                                            <option value="90">90㎡以上</option>
+                                            <option value="100">100㎡以上</option>
+                                            <option value="150">150㎡以上</option>
+                                            <option value="200">200㎡以上</option>
+                                          </select>
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+
+                              <!-- 築年数 -->
+                              <section class="c-re-search-toggle-sect">
+                                <header class="c-re-search-toggle-sect__header">
+                                  <h4 class="c-re-search-toggle-sect__h">築年数</h4>
+                                  <button class="c-re-search-toggle-sect__btn" type="button"
+                                    data-js-toggle="#re-search-years"></button>
+                                </header>
+                                <div class="c-re-search-toggle-sect__body" id="re-search-years">
+                                  <div class="c-re-search-toggle-sect__inner">
+                                    <div class="c-re-search-toggle-sect__content">
+                                      <div class="c-re-search-toggle-sect__block">
+                                        <ul class="c-form-list --col-2">
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="CPLT_YMD" class="sys-recalc" value=""
+                                                checked="">
+                                              <span class="c-form-label__text">指定なし</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="CPLT_YMD" class="sys-recalc" value="0">
+                                              <span class="c-form-label__text">新築</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="CPLT_YMD" class="sys-recalc" value="1">
+                                              <span class="c-form-label__text">1年以内</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="CPLT_YMD" class="sys-recalc" value="3">
+                                              <span class="c-form-label__text">3年以内</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="CPLT_YMD" class="sys-recalc" value="5">
+                                              <span class="c-form-label__text">5年以内</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="CPLT_YMD" class="sys-recalc" value="10">
+                                              <span class="c-form-label__text">10年以内</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="CPLT_YMD" class="sys-recalc" value="15">
+                                              <span class="c-form-label__text">15年以内</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="CPLT_YMD" class="sys-recalc" value="20">
+                                              <span class="c-form-label__text">20年以内</span>
+                                            </label>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+
+                              <!-- 駅から徒歩 -->
+                              <section class="c-re-search-toggle-sect">
+                                <header class="c-re-search-toggle-sect__header">
+                                  <h4 class="c-re-search-toggle-sect__h">駅から徒歩</h4>
+                                  <button class="c-re-search-toggle-sect__btn --is-open" type="button"
+                                    data-js-toggle="#re-search-walk-time"></button>
+                                </header>
+                                <div class="c-re-search-toggle-sect__body --is-open" id="re-search-walk-time">
+                                  <div class="c-re-search-toggle-sect__inner">
+                                    <div class="c-re-search-toggle-sect__content">
+                                      <div class="c-re-search-toggle-sect__block">
+                                        <ul class="c-form-list --col-2">
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="WALK_TIME" class="sys-recalc" value=""
+                                                checked="">
+                                              <span class="c-form-label__text">指定なし</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="WALK_TIME" class="sys-recalc" value="1">
+                                              <span class="c-form-label__text">1分以内</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="WALK_TIME" class="sys-recalc" value="3">
+                                              <span class="c-form-label__text">3分以内</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="WALK_TIME" class="sys-recalc" value="5">
+                                              <span class="c-form-label__text">5分以内</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="WALK_TIME" class="sys-recalc" value="10">
+                                              <span class="c-form-label__text">10分以内</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --radio">
+                                              <input type="radio" name="WALK_TIME" class="sys-recalc" value="15">
+                                              <span class="c-form-label__text">15分以内</span>
+                                            </label>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+
+                              <!-- 他条件 -->
+                              <section class="c-re-search-toggle-sect">
+                                <header class="c-re-search-toggle-sect__header">
+                                  <h4 class="c-re-search-toggle-sect__h">他条件</h4>
+                                  <button class="c-re-search-toggle-sect__btn --is-open" type="button"
+                                    data-js-toggle="#re-search-others"></button>
+                                </header>
+                                <div class="c-re-search-toggle-sect__body --is-open" id="re-search-others">
+                                  <div class="c-re-search-toggle-sect__inner">
+                                    <div class="c-re-search-toggle-sect__content">
+                                      <div class="c-re-search-toggle-sect__block">
+                                        <ul class="c-form-list --col-1">
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" name="PARKING" class="u-visually-hidden sys-recalc"
+                                                value="1">
+                                              <span class="c-form-label__text">PARKING</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" name="limited_flag"
+                                                class="u-visually-hidden sys-recalc" value="1">
+                                              <span class="c-form-label__text">当社限定物件</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" name="FULL_TIME_FLG"
+                                                class="u-visually-hidden sys-recalc" value="1">
+                                              <span class="c-form-label__text">専任物件</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" name="^PERIOD_FLG"
+                                                class="u-visually-hidden sys-recalc" value="1">
+                                              <span class="c-form-label__text">定期借家を含まない</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" name="IMPORT_TYPE"
+                                                class="u-visually-hidden sys-recalc" value="1">
+                                              <span class="c-form-label__text">三井の賃貸物件</span>
+                                            </label>
+                                          </li>
+                                          <li class="c-form-list__item">
+                                            <label class="c-form-label --checkbox">
+                                              <input type="checkbox" name="no_app" class="u-visually-hidden sys-recalc"
+                                                value="1">
+                                              <span class="c-form-label__text">申込無し物件のみ表示</span>
+                                            </label>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+
+                              <!-- 入居可能日 -->
+                              <section class="c-re-search-toggle-sect">
+                                <header class="c-re-search-toggle-sect__header">
+                                  <h4 class="c-re-search-toggle-sect__h">入居可能日</h4>
+                                  <button class="c-re-search-toggle-sect__btn --is-open" type="button"
+                                    data-js-toggle="#re-search-movein"></button>
+                                </header>
+                                <div class="c-re-search-toggle-sect__body --is-open" id="re-search-movein">
+                                  <div class="c-re-search-toggle-sect__inner">
+                                    <div class="c-re-search-toggle-sect__content">
+                                      <div class="c-re-search-toggle-sect__block">
+                                        <label class="c-form-label --select">
+                                          <select name="MOVE_PLN_YMD" class="c-input-select --w-140 sys-recalc">
+                                            <option value="">指定なし</option>
+                                            <option value="0">即可</option>
+                                            <option value="1">今月中</option>
+                                            <option value="2">翌月まで</option>
+                                            <option value="3">翌々月まで</option>
+                                          </select>
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+
+                              <!-- より詳細な絞り込み -->
+                              <section class="c-re-search-toggle-sect">
+                                <header class="c-re-search-toggle-sect__header">
+                                  <h4 class="c-re-search-toggle-sect__h">より詳細な絞り込み</h4>
+                                  <button class="c-re-search-toggle-sect__btn --is-open" type="button"
+                                    data-js-toggle="#re-search-deep"></button>
+                                </header>
+                                <div class="c-re-search-toggle-sect__body --is-open" id="re-search-deep">
+                                  <div class="c-re-search-toggle-sect__inner">
+                                    <div class="c-re-search-toggle-sect__content">
+                                      <div class="c-re-search-toggle-sect__block --detail-search">
+                                        <p class="u-fz-14 u-mb-16">
+                                          ペット可、ピアノ可、フロントサービス、ルーフバルコニーなどの設備やマンションブランドの絞り込みができます</p>
+                                        <button type="button" class="btn --normal --i-filter --icon-before --w100"
+                                          data-js-modal="#search-deep">設定する</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+                              <!-- 結果 + 再検索 -->
+                              <div class="c-re-search-normal-sect">
+                                <div class="c-re-search-result">
+                                  <dl class="c-re-search-result__desc">
+                                    <dt>検索対象お部屋数</dt>
+                                    <dd>
+                                      <span class="c-re-search-result__count sys-vacant_rooms">123</span>件
+                                    </dd>
+                                    <dd><button class="btn --impact --w100">お部屋を再検索</button></dd>
+                                  </dl>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                      </form>
+                    </article>
+                  </div>
+
+                </div><!--/.l-col-pc-3-->
 
                 <!-- 結果カラム -->
                 <div class="l-col-pc-9">
@@ -714,6 +1009,520 @@
       </div><!--/.l-main__content-->
 
     </div><!-- /.l-main -->
+
+    <!-- モーダル:詳細絞り込み -->
+    <div class="c-modal" id="search-deep" data-js-modal-target>
+      <div class="c-modal__inner">
+        <form id="sys-form-more">
+          <article class="c-modal-content c-search-deep" id="sys-dialog-more">
+            <header class="c-modal-content__header">
+              <h2 class="c-modal-content__h">絞り込み条件の追加・変更</h2>
+              <button type="button" class="c-modal-content__header-close" data-js-modal-close>
+                ❌️
+              </button>
+            </header>
+            <div class="c-modal-content__body --scroll">
+              <section class="c-search-deep__sect">
+                <h3 class="c-search-deep__sect-h">建物・お部屋条件</h3>
+                <div class="c-search-deep__sect-body">
+                  <section class="c-search-deep__unit">
+                    <h4 class="c-search-deep__unit-h">建物</h4>
+                    <div class="c-search-deep__unit-body">
+                      <dl class="c-search-deep__list">
+                        <dt class="c-search-deep__list-title">建物仕様</dt>
+                        <dd class="c-search-deep__list-desc">
+                          <ul class="c-form-list --col-pc-4 --col-2">
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
+                                <span class="c-form-label__text">分譲賃貸マンション</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
+                                <span class="c-form-label__text">タワーマンション</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
+                                <span class="c-form-label__text">低層マンション</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
+                                <span class="c-form-label__text">免震・制震マンション</span>
+                              </label>
+                            </li>
+                          </ul>
+                        </dd>
+                      </dl>
+                      <dl class="c-search-deep__list">
+                        <dt class="c-search-deep__list-title">マンションブランド</dt>
+                        <dd class="c-search-deep__list-desc">
+                          <ul class="c-form-list --col-pc-4 --col-2">
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[1]" value="1" type="checkbox" />
+                                <span class="c-form-label__text">パークアクシス</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[2]" value="2" type="checkbox" />
+                                <span class="c-form-label__text">MORI LIVING</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[3]" value="3" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  ラ・トゥール
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[4]" value="4" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  第一マンションズ
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[5]" value="5" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  パークハビオ
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[6]" value="6" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  レジディア
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[7]" value="7" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  カスタリア
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[8]" value="8" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  ガーデン
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[9]" value="9" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  アパートメンツ
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[10]" value="10" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  ベルファース
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[11]" value="11" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  フレンシア
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[12]" value="12" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  コンフォリア
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[36]" value="36" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  プライムメゾン
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[37]" value="37" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  KDX
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[38]" value="38" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  アーバネックス
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[39]" value="39" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  ルフォンプログレ
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[41]" value="41" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  MFPR
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[42]" value="42" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  パークルール
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[43]" value="43" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  パークアクシスプレミア
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[44]" value="44" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  パークコート
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[45]" value="45" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  パークマンション
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[46]" value="46" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  ザ・パークハウス
+                                </span>
+                              </label>
+                            </li>
+                          </ul>
+                        </dd>
+                      </dl>
+                    </div>
+                  </section>
+                  <section class="c-search-deep__unit">
+                    <h4 class="c-search-deep__unit-h">設備施設・設備</h4>
+                    <div class="c-search-deep__unit-body">
+                      <dl class="c-search-deep__list">
+                        <dt class="c-search-deep__list-title">建物仕様</dt>
+                        <dd class="c-search-deep__list-desc">
+                          <ul class="c-form-list --col-pc-4 --col-2">
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
+                                <span class="c-form-label__text">分譲賃貸マンション</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
+                                <span class="c-form-label__text">タワーマンション</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
+                                <span class="c-form-label__text">低層マンション</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
+                                <span class="c-form-label__text">免震・制震マンション</span>
+                              </label>
+                            </li>
+                          </ul>
+                        </dd>
+                      </dl>
+                      <dl class="c-search-deep__list">
+                        <dt class="c-search-deep__list-title">マンションブランド</dt>
+                        <dd class="c-search-deep__list-desc">
+                          <ul class="c-form-list --col-pc-4 --col-2">
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[1]" value="1" type="checkbox" />
+                                <span class="c-form-label__text">パークアクシス</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[2]" value="2" type="checkbox" />
+                                <span class="c-form-label__text">MORI LIVING</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[3]" value="3" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  ラ・トゥール
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[4]" value="4" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  第一マンションズ
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[5]" value="5" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  パークハビオ
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[6]" value="6" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  レジディア
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[7]" value="7" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  カスタリア
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[8]" value="8" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  ガーデン
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[9]" value="9" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  アパートメンツ
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[10]" value="10" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  ベルファース
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[11]" value="11" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  フレンシア
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[12]" value="12" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  コンフォリア
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[36]" value="36" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  プライムメゾン
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[37]" value="37" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  KDX
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[38]" value="38" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  アーバネックス
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[39]" value="39" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  ルフォンプログレ
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[41]" value="41" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  MFPR
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[42]" value="42" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  パークルール
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[43]" value="43" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  パークアクシスプレミア
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[44]" value="44" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  パークコート
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[45]" value="45" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  パークマンション
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="tagb[46]" value="46" type="checkbox" />
+                                <span class="c-form-label__text">
+                                  ザ・パークハウス
+                                </span>
+                              </label>
+                            </li>
+                          </ul>
+                        </dd>
+                      </dl>
+                    </div>
+                  </section>
+
+                </div>
+              </section>
+
+              <hr>
+
+              <section class="c-search-deep__sect">
+                <h3 class="c-search-deep__sect-h">他条件</h3>
+                <div class="c-search-deep__sect-body">
+                  <section class="c-search-deep__unit">
+                    <h4 class="c-search-deep__unit-h">他</h4>
+                    <div class="c-search-deep__unit-body">
+                      <div class="c-search-deep__list">
+                        <div class="c-search-deep__list-desc">
+                          <ul class="c-form-list --col-pc-4 --col-2">
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
+                                <span class="c-form-label__text">分譲賃貸マンション</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
+                                <span class="c-form-label__text">タワーマンション</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
+                                <span class="c-form-label__text">低層マンション</span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-form-label --checkbox">
+                                <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
+                                <span class="c-form-label__text">免震・制震マンション</span>
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </section>
+            </div>
+            <footer class="c-modal-content__footer">
+              <dl class="c-search-brief-result">
+                <dt class="c-search-brief-result__title">検索対象お部屋数</dt>
+                <dd class="c-search-brief-result__count">
+                  <em class="__count sys-vacant_rooms">1234</em>
+                  件
+                </dd>
+                <dd class="c-search-brief-result__btn">
+                  <button class="btn --impact --xl --w100">
+                    お部屋を検索する
+                  </button>
+                </dd>
+              </dl>
+            </footer>
+          </article>
+        </form>
+      </div>
+    </div>
+
+
+
 
   </main>
 

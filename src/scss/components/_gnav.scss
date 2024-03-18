@@ -7,7 +7,7 @@
   left: 100%;
   width: 100%;
   height: 100vh;
-  z-index: 100;
+  z-index: var(--z-index-lv2);
   color: var(--txt-white);
   background-color: transparent;
   transition: background-color var(--animation-normal) var(--animation-easing);
@@ -15,6 +15,7 @@
   &.--is-open {
     left: 0;
     background-color: rgba(0 0 0 / 0.2);
+    // z-index: var(--z-index-lv2);
   }
 
   @include mq {

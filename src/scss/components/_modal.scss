@@ -1,6 +1,7 @@
 // モーダルウィンドウ
 @use "../abstracts/mixins" as *;
 
+// 汎用モーダル
 .c-modal {
   position: fixed;
   width: 100%;
@@ -11,7 +12,15 @@
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 101;
+  z-index: var(--z-index-lv5);
+
+  &.--sp-only {
+    @include mq {
+      position: static;
+      display: block;
+      background-color: transparent;
+    }
+  }
 
   &.--is-open {
     display: flex;
@@ -26,12 +35,30 @@
       max-width: 960px;
     }
   }
+
+  &.--sp-only &__inner {
+    @include mq {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
 
+$c-modal-sp-only: ".c-modal.--sp-only";
+
+// 汎用モーダル デザイン＆レイアウト
 .c-modal-content {
   background-color: var(--bg-white);
   box-shadow: var(--shadow-md);
   border-radius: var(--bdr-radius-md);
+
+  #{$c-modal-sp-only} & {
+    @include mq {
+      background-color: transparent;
+      box-shadow: none;
+      border-radius: 0;
+    }
+  }
 
   &__header {
     background-color: var(--bg-black);
@@ -83,5 +110,69 @@
         padding: 0 var(--space-24) var(--space-24);
       }
     }
+  }
+}
+
+// 再検索ナビ用モーダル
+.c-modal-re-search {
+  position: fixed;
+  overflow: hidden;
+  // z-index: -1;
+  z-index: var(--z-index-lv4);
+  width: 1px;
+  height: 1px;
+  // opacity: 0;
+  clip-path: inset(0 100% 100% 0);
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  justify-content: flex-start;
+  align-items: center;
+  margin: -1px !important;
+
+  // 戻るとき
+  transition:
+    background-color var(--animation-normal),
+    clip-path 0s var(--animation-normal),
+    width 0s var(--animation-normal),
+    height 0s var(--animation-normal);
+
+  &.--is-open {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0 0 0 0);
+    margin: 0 !important;
+    overflow: initial;
+    // opacity: 1;
+    background-color: var(--bg-black-70);
+    transition: background-color var(--animation-normal);
+    z-index: var(--z-index-lv4);
+  }
+
+  @include mq {
+    position: static;
+    background-color: transparent;
+    clip: initial;
+    width: auto;
+    height: auto;
+    margin: 0 !important;
+    overflow: initial;
+    z-index: initial;
+
+    &.--is-open {
+      background-color: transparent;
+    }
+  }
+
+  // 閉じるボタン
+  &__close {
+    display: none;
+  }
+  &.--is-open &__close {
+    display: block;
+    position: absolute;
+    top: var(--space-16);
+    right: var(--space-16);
   }
 }

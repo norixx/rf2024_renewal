@@ -263,6 +263,14 @@
     }
   }
 
+  &.--col-1 &__item {
+    flex: 1 0 100%;
+
+    @include mq {
+      flex: 1 0 100%;
+    }
+  }
+
   &.--col-2 &__item {
     flex: 0 0 calc((100% - var(--col-gap-sp) * 1) / 2);
 
