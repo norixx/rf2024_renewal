@@ -155,6 +155,10 @@
   cursor: pointer;
   position: relative;
 
+  [type="checkbox"],
+  [type="radio"] {
+    @include visually-hidden;
+  }
   > span {
     display: flex;
     align-items: center;

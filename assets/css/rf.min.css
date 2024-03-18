@@ -561,6 +561,19 @@
   cursor: pointer;
   position: relative;
 }
+.c-input-labellink [type=checkbox],
+.c-input-labellink [type=radio] {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  -webkit-clip-path: inset(0 100% 100% 0);
+          clip-path: inset(0 100% 100% 0);
+  white-space: nowrap !important;
+  border: 0 !important;
+}
 .c-input-labellink > span {
   display: flex;
   align-items: center;
@@ -1222,6 +1235,7 @@
 }
 .c-cta-navi-tel__desc .__hours {
   font-size: var(--fz-12);
+  color: var(--txt-normal);
 }
 .c-cta-navi-tel.--is-open .c-cta-navi-tel__desc {
   grid-template-rows: 1fr;
@@ -3174,7 +3188,7 @@ body {
   }
 }
 
-.site-header {
+.header {
   position: fixed;
   width: 100%;
   background-color: var(--bg-black);
@@ -3186,13 +3200,13 @@ body {
   align-items: center;
 }
 @media screen and (min-width: 768px) {
-  .site-header {
+  .header {
     height: 80px;
     position: relative;
     z-index: var(--z-index-lv1);
   }
 }
-.site-header__container {
+.header__container {
   display: flex;
   padding: 0 var(--space-16);
   justify-content: space-between;
@@ -3200,31 +3214,32 @@ body {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .site-header__container {
+  .header__container {
     padding: 0 var(--space-32);
     min-width: var(--l-container-min);
     height: 100%;
   }
 }
 @media screen and (min-width: 768px) {
-  .site-header__subnav {
+  .header__subnav {
     display: flex;
     align-items: center;
   }
 }
-.site-header__logo {
+.header__logo {
   width: 60px;
   padding: var(--space-8) 0;
 }
 @media screen and (min-width: 768px) {
-  .site-header__logo {
+  .header__logo {
     width: 80px;
     padding: 0;
   }
 }
 
-.site-footer {
+.footer {
   background: var(--bg-gray-xxdark);
+  padding: 0;
 }
 
 .footer-concent {
@@ -3495,11 +3510,12 @@ html.--is-modal-open {
 
 body {
   font-size: var(--fz-md);
-  font-family: var(--ff-base);
+  font-family: var(--ff-base) !important;
   line-height: var(--line-height-base);
   font-weight: 400;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: var(--txt-normal);
 }
 
 a {
@@ -3507,6 +3523,9 @@ a {
   color: var(--color-link);
   transition: all 0.3s;
   text-underline-offset: 0.25em;
+}
+a:hover {
+  text-decoration: none;
 }
 
 button {

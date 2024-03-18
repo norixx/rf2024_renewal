@@ -1,7 +1,8 @@
 @use "../abstracts/mixins" as *;
 
-.site-footer {
+.footer {
   background: var(--bg-gray-xxdark);
+  padding: 0;
 }
 
 .footer-concent {

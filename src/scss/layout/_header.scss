@@ -1,6 +1,6 @@
 @use "../abstracts/mixins" as *;
 
-.site-header {
+.header {
   position: fixed;
   width: 100%;
   background-color: var(--bg-black);

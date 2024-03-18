@@ -19,9 +19,9 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="site-header__container">
-      <div class="site-header__logo">
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">
         <a href="./" style="font-size: 40px"> 🐮 </a>
       </div>
     </div>
@@ -115,7 +115,7 @@
                         <label class="c-search-areas__label c-input-labellink --checkbox" data-name="赤坂・六本木・麻布"
                           data-class="SEARCH_AREA_NO17">
                           <input type="checkbox" name="SEARCH_AREA_NO[17]"
-                            class="u-visually-hidden c-input-checkradio SEARCH_AREA_NO17" />
+                            class="c-input-checkradio SEARCH_AREA_NO17" />
                           <span>
                             <span class="__link"><a href="#">赤坂・六本木・麻布</a></span>
                             <span class="__count">(144件)</span>
@@ -688,32 +688,33 @@
                             </p>
                             <div class="__btn">
                               <span class="btn --normal --icon-before -i-filter --w100"
-                                data-js-modal="#search-deep">設定する</span>
+                                data-js-modal="#sys-dialog-more">設定する</span>
                               <span class="btn --normal --icon-before -i-filter --is-active --w100"
-                                data-js-modal="#search-deep">設定あり</span>
+                                data-js-modal="#sys-dialog-more">設定あり</span>
                             </div>
                           </div>
                         </dd>
                       </div>
                     </dl>
+                    <div class="u-mt-pc-32 u-mt-24">
+                      <dl class="c-search-brief-result">
+                        <dt class="c-search-brief-result__title">
+                          検索対象お部屋数
+                        </dt>
+                        <dd class="c-search-brief-result__count">
+                          <em class="__count sys-vacant_rooms">1234</em>
+                          件
+                        </dd>
+                        <dd class="c-search-brief-result__btn">
+                          <button class="btn --impact --xl --w100">
+                            お部屋を検索する
+                          </button>
+                        </dd>
+                      </dl>
+                    </div>
                   </div>
                 </section>
-                <div class="u-mt-pc-32 u-mt-24">
-                  <dl class="c-search-brief-result">
-                    <dt class="c-search-brief-result__title">
-                      検索対象お部屋数
-                    </dt>
-                    <dd class="c-search-brief-result__count">
-                      <em class="__count sys-vacant_rooms">1234</em>
-                      件
-                    </dd>
-                    <dd class="c-search-brief-result__btn">
-                      <button class="btn --impact --xl --w100">
-                        お部屋を検索する
-                      </button>
-                    </dd>
-                  </dl>
-                </div>
+
               </div>
             </form>
           </div>
@@ -724,7 +725,7 @@
     <!-- /.l-main -->
 
     <!-- モーダル:詳細絞り込み -->
-    <div class="c-modal" id="search-deep" data-js-modal-target>
+    <div class="c-modal" id="sys-dialog-more" data-js-modal-target>
       <div class="c-modal__inner">
         <form id="sys-form-more">
           <article class="c-modal-content c-search-deep" id="sys-dialog-more">
@@ -1235,7 +1236,7 @@
     </div>
   </main>
 
-  <footer class="site-footer">共通フッター</footer>
+  <footer class="footer">共通フッター</footer>
 
   <!-- swiper -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

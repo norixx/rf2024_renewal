@@ -27,11 +27,12 @@ html {
 
 body {
   font-size: var(--fz-md);
-  font-family: var(--ff-base);
+  font-family: var(--ff-base) !important;
   line-height: var(--line-height-base);
   font-weight: 400;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0 0 0/ 0);
+  color: var(--txt-normal);
 }
 
 a {
@@ -39,6 +40,10 @@ a {
   color: var(--color-link);
   transition: all 0.3s;
   text-underline-offset: 0.25em;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 button {
   transition: all 0.3s;
