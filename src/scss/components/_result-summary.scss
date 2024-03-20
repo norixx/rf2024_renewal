@@ -20,6 +20,10 @@
     @include mq {
       font-size: var(--fz-24);
     }
+
+    .__condition {
+      font-weight: var(--fw-bold);
+    }
   }
 
   // ロー
@@ -49,10 +53,10 @@
     // display: block;
     font-size: var(--fz-14);
     line-height: var(--line-height-md);
+    display: flex;
+    align-items: center;
 
     @include mq {
-      display: flex;
-      align-items: center;
       justify-content: center;
       min-height: 48px;
       padding-left: var(--space);
@@ -69,7 +73,7 @@
 
     dt {
       display: inline-block;
-      min-width: 5em;
+      flex: 0 0 6em;
 
       &::after {
         content: ":";
@@ -88,6 +92,7 @@
   &__control {
     display: flex;
     justify-content: flex-end;
+    flex-shrink: 0;
 
     @include mq {
       flex-basis: var(--space);
@@ -142,9 +147,13 @@
   &__display {
     display: flex;
     flex: 1;
+    width: 100%;
+    gap: var(--space-8);
 
     @include mq {
       flex: initial;
+      width: auto;
+      gap: var(--space-32);
     }
   }
 
@@ -157,7 +166,17 @@
     color: var(--txt-dark);
 
     &:not(:last-child) {
-      margin-right: var(--space-16);
+      // margin-right: var(--space-16);
+    }
+
+    &.--order {
+      flex-basis: 50%;
+    }
+    &.--format {
+      flex-basis: 30%;
+    }
+    &.--num {
+      flex-basis: 20%;
     }
 
     @include mq {
@@ -165,8 +184,10 @@
       align-items: center;
       flex: initial;
 
-      &:not(:last-child) {
-        margin-right: var(--space-32);
+      &.--order,
+      &.--format,
+      &.--num {
+        flex-basis: auto;
       }
     }
 

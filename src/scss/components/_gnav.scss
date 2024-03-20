@@ -250,13 +250,13 @@
 
   // 第1階層ナビゲーションリスト
   &-list {
-    padding-bottom: var(--space-24);
-    margin-bottom: var(--space-24);
+    padding-bottom: var(--space-16);
+    margin-bottom: var(--space-16);
     border-bottom: 1px solid var(--bdr-xdark);
 
     > li {
       &:not(:last-child) {
-        margin-bottom: var(--space-32);
+        margin-bottom: var(--space-24);
       }
     }
 
@@ -266,7 +266,7 @@
 
     &__link-text {
       display: block;
-      font-size: var(--fz-24);
+      font-size: var(--fz-20);
       line-height: var(--line-height-sm);
       margin-bottom: var(--space-8);
     }
@@ -324,8 +324,8 @@
   &-user-control {
     font-size: var(--fz-14);
     letter-spacing: var(--letter-space-10);
-    padding-bottom: var(--space-24);
-    margin-bottom: var(--space-24);
+    padding-bottom: var(--space-16);
+    margin-bottom: var(--space-16);
     border-bottom: 1px solid var(--bdr-xdark);
 
     @include mq {
@@ -348,7 +348,12 @@
     border-bottom: none;
   }
 
-  // 言語切替
+  // 言語
+  &-lang {
+    margin-right: var(--space-32);
+  }
+
+  // 言語切替(SPのみ)
   &-lang-switch {
     display: flex;
     justify-content: center;

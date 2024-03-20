@@ -1,0 +1,46 @@
+// ローダー
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.c-loader {
+  --loader-size: 100px;
+  width: var(--loader-size);
+  // height: var(--loader-size);
+  border-radius: var(--bdr-radius-sm);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #eee;
+  gap: var(--space-4);
+  padding: var(--space-8);
+
+  &::before {
+    content: "";
+    flex: 0 0 auto;
+    --img-size: 64px;
+    width: var(--img-size);
+    height: var(--img-size);
+    background: var(--loader) center center no-repeat;
+  }
+
+  // ローダー
+  svg {
+  }
+
+  // キャプション
+  &__caption {
+    color: var(--txt-white);
+    font-size: var(--fz-12);
+  }
+
+  // Type
+  &.--bg-black {
+    background-color: rgba($gray-black, 0.8);
+
+    &__caption {
+      color: var(--txt-white);
+    }
+  }
+}

@@ -26,8 +26,9 @@
 .c-input-select {
   border: 1px solid var(--bdr-form);
   min-height: 32px;
-  padding: var(--space-8);
-  padding-right: var(--space-32);
+  padding-left: var(--space-8);
+  --padding-base: var(--space-32);
+  padding-right: calc(var(--padding-base) + var(--space-8));
   border-radius: var(--bdr-radius-md);
   background-color: var(--bg-white);
   transition: var(--animation-normal);
@@ -39,15 +40,6 @@
   &:focus {
     border: 1px solid var(--bdr-form--hover);
     outline: 2px solid rgba(0 0 0 / 0.2);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    --size: 32px;
-    height: var(--size);
-    width: var(--size);
-    background-color: var(--bg-gray);
   }
 
   $widths: 100, 110, 120, 140, 160, 180, 200, max;
@@ -62,7 +54,70 @@
       }
     }
   }
-}
+
+  // サイズ
+  $sizes: xs, sm, md, lg;
+  @each $size in $sizes {
+    &.--#{$size} {
+      @if ($size == xs) {
+        min-height: 24px;
+        font-size: var(--fz-12);
+        --padding-base: var(--space-24);
+      }
+      @if ($size == sm) {
+        min-height: 24px;
+        font-size: var(--fz-12);
+        --padding-base: var(--space-24);
+      }
+      @if ($size == md) {
+        min-height: 32px;
+        --padding-base: var(--space-32);
+      }
+      @if ($size == lg) {
+        min-height: 40px;
+        --padding-base: var(--space-40);
+      }
+    }
+  }
+  @include mq {
+    @each $size in $sizes {
+      &.--pc-#{$size} {
+        @if ($size == xs) {
+          min-height: 24px;
+          font-size: var(--fz-12);
+          --padding-base: var(--space-24);
+        }
+        @if ($size == sm) {
+          min-height: 24px;
+          font-size: var(--fz-12);
+          --padding-base: var(--space-24);
+        }
+        @if ($size == md) {
+          min-height: 32px;
+          --padding-base: var(--space-32);
+        }
+        @if ($size == lg) {
+          min-height: 40px;
+          --padding-base: var(--space-40);
+        }
+      }
+    }
+  }
+
+  // 昇順、降順
+  option.asc,
+  option.desc {
+    &::after {
+      margin-left: var(--space-4);
+    }
+  }
+  option.asc::after {
+    content: "↑";
+  }
+  option.desc::after {
+    content: "↓";
+  }
+} //c-input-select
 
 // ラベル
 .c-form-label {
@@ -132,8 +187,9 @@
       content: "";
       position: absolute;
       right: 0;
+      top: 0;
       height: 100%;
-      width: 36px;
+      width: 32px;
       border-radius: 0 var(--bdr-radius-md) var(--bdr-radius-md) 0;
       background-color: var(--bg-gray-dark);
       pointer-events: none;
@@ -142,6 +198,59 @@
 
     &:hover::after {
       background-color: var(--bg-black);
+    }
+
+    // サイズ（アイコン用）
+    $sizes: xs, sm, md, lg;
+    @each $size in $sizes {
+      &.--select-#{$size} {
+        &::after {
+          @if ($size == xs) {
+            width: 24px;
+          }
+          @if ($size == sm) {
+            width: 24px;
+          }
+          @if ($size == md) {
+            width: 32px;
+          }
+          @if ($size == lg) {
+            width: 40px;
+          }
+        }
+      }
+    }
+
+    @include mq {
+      @each $size in $sizes {
+        &.--select-pc-#{$size} {
+          &::after {
+            @if ($size == xs) {
+              width: 24px;
+            }
+            @if ($size == sm) {
+              width: 24px;
+            }
+            @if ($size == md) {
+              width: 32px;
+            }
+            @if ($size == lg) {
+              width: 40px;
+            }
+          }
+        }
+      }
+    }
+    // /サイズ
+
+    // 幅
+    &.--w-max {
+      width: 100%;
+    }
+    @include mq {
+      &.--w-pc-max {
+        width: 100%;
+      }
     }
   }
 }

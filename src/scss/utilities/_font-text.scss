@@ -38,6 +38,24 @@
   }
 }
 
+// Align
+.u-ta {
+  $orientation: start, end, center, justify;
+  @each $orientation in $orientation {
+    &-#{$orientation} {
+      text-align: #{$orientation} !important;
+    }
+  }
+
+  @include mq {
+    @each $orientation in $orientation {
+      &-pc-#{$orientation} {
+        text-align: #{$orientation} !important;
+      }
+    }
+  }
+}
+
 // Text
 .u-tt {
   $transforms: uppercase, lowercase, capitalize;

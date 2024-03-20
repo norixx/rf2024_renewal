@@ -8,6 +8,7 @@ import { rf_room_list_link, rf_room_list_toggle } from "./partials/_room-list";
 import { rf_buildroom_main_slide, rf_buildroom_related_slide } from "./partials/_buildroom";
 import rf_modals from "./partials/_modal";
 import rf_cta_navi_tel from "./partials/_cta-navi";
+import rf_select_link from "./partials/_select-link";
 
 // =======================================================
 // Inits
@@ -57,4 +58,9 @@ if (document.querySelector('[data-js-modal]')) {
 // CTAナビ
 if (document.querySelector('[data-js-cta-navi-tel]')) {
   rf_cta_navi_tel()
+}
+
+// セレクトリンク
+if (document.querySelector('[data-js-select-link]')) {
+  rf_select_link()
 }

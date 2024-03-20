@@ -161,4 +161,37 @@
 
 // セクション
 .c-buildroom-sect {
+  &__header {
+  }
+
+  &__h {
+    font-size: var(--fz-18);
+    line-height: var(--line-height-md);
+    letter-spacing: var(--letter-space-10);
+    font-weight: var(--fw-bold);
+
+    @include mq {
+      font-size: var(--fz-24);
+    }
+  }
+
+  &__body {
+    margin-top: var(--space-16);
+
+    @include mq {
+      margin-top: var(--space-24);
+    }
+  }
+
+  // 備考
+  &.--remark {
+    padding: var(--space-16);
+    background-color: var(--bg-gray-xxlight);
+  }
+  &.--remark &__h {
+    font-size: var(--fz-16);
+  }
+  &.--remark &__body {
+    margin-top: var(--space-8);
+  }
 }

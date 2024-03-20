@@ -211,16 +211,54 @@
             <div class="l-container u-justify-content-pc-center">
               <div class="l-col-pc-10">
 
-                <div class="l-buildroom__block --cta">
-                  CTA
+                <div class="l-buildroom__body-block --cta">
+                  <article class="c-cta-contact">
+                    <header class="c-cta-contact__header">
+                      <h3 class="c-cta-contact__h">この物件のお問合せ・内見予約はこちら</h3>
+                    </header>
+                    <div class="c-cta-contact__body">
+                      <div class="c-cta-contact__btn">
+                        <a href="tel:0120-321-719" class="__btn-tel btn --primary-light --cta-contact">
+                          <span class="__tel">0120-321-719</span>
+                          <span class="__tel-sub">営業時間 9:30~18:00(水曜定休)</span>
+                        </a>
+                        <a href="#" class="__btn-web btn --primary-light --cta-contact">
+                          <span class="__web-sub">フォームから<br class="u-pc-only">お問合せ</span>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="c-cta-owner u-mt-16">
+                    <header class="c-cta-owner__header">
+                      <h3 class="c-cta-owner__h">賃貸運営をお考えのオーナーの皆様</h3>
+                      <p class="c-cta-owner__lead">
+                        ご所有の建物、お部屋を貸したいオーナー様はこちらにお問い合わせください。<br>
+                        無料査定、賃貸管理のご相談など、柔軟に承ります。
+                      </p>
+                    </header>
+                    <div class="c-cta-owner__body">
+                      <div class="c-cta-owner__btn">
+                        <a href="tel:0120-496-321" class="btn --normal --cta-owner">
+                          <span class="__tel">0120-496-321</span>
+                          <span class="__sub">
+                            営業時間 9:30~18:00 <br>
+                            定休日 水曜日・年末年始
+                          </span>
+                        </a>
+                        <a href="#" class="btn --normal">サービス詳細</a>
+                      </div>
+                    </div>
+                  </article>
+
                 </div>
 
-                <div class="l-buildroom__block --cms">
+                <div class="l-buildroom__body-block --cms">
                   CMS
                 </div>
 
                 <!-- 空室情報 -->
-                <section class="l-buildroom__block c-buildroom-sect" id="buildroom-vacant">
+                <section class="l-buildroom__body-block c-buildroom-sect" id="buildroom-vacant">
                   <header class="c-buildroom-sect__header">
                     <h2 class="c-buildroom-sect__h">空室情報</h2>
                   </header>
@@ -413,23 +451,36 @@
                 </section>
 
                 <!-- 周辺地図・アクセス -->
-                <section class="l-buildroom__body-block --access">
-                  <header>
-                    <h2>周辺地図・アクセス</h2>
+                <section class="l-buildroom__body-block c-buildroom-sect --access">
+                  <header class="c-buildroom-sect__header">
+                    <h2 class="c-buildroom-sect__h">周辺地図・アクセス</h2>
                   </header>
+                  <div class="c-buildroom-sect__body">
+                    地図
+                  </div>
                 </section>
 
                 <!-- 備考 -->
                 <section class="l-buildroom__body-block c-buildroom-sect --remark">
                   <header class="c-buildroom-sect__header">
-                    <h2>備考</h2>
+                    <h2 class="c-buildroom-sect__h">備考</h2>
                   </header>
+                  <div class="c-buildroom-sect__body">
+                    <ul class="c-buildroom-sect__remark-list c-list-kome u-fz-12 u-color-dark">
+                      <li>掲載の徒歩分数は、建物の出入口を起点とし駅出入口およびバス停などを着点と した概算距離を基に、80m を1 分として算出（端数切り上げ）したものです。</li>
+                      <li>間取り表記のN （納戸）やS （サービスルーム）は、居室以外の空間を表して います。詳細については<a
+                          href="https://www.mitsui-chintai.co.jp/service/annotation/layout.html"
+                          target="_blank">こちら</a>をご確認ください。</li>
+                      <li>（ 申込み有り ）の表示は、現在先着のお申込みをいただいている状態となります。キャンセル待ちのお申込みも、受け付けております。</li>
+
+                    </ul>
+                  </div>
                 </section>
 
                 <!-- このマンションをチェックした人は, -->
                 <section class="l-buildroom__body-block c-buildroom-sect --related">
                   <header class="c-buildroom-sect__header">
-                    <h2>このマンションを...</h2>
+                    <h2 class="c-buildroom-sect__h">このマンションをチェックした人は、こんなマンションもチェックしています。</h2>
                   </header>
                   <div class="c-buildroom-sect__body">
                     コンテンツ
@@ -439,7 +490,7 @@
                 <!-- ブログ -->
                 <section class="l-buildroom__body-block c-buildroom-sect --related">
                   <header class="c-buildroom-sect__header">
-                    <h2>ブログ</h2>
+                    <h2 class="c-buildroom-sect__h">このマンションについて書かれたブログ</h2>
                   </header>
                   <div class="c-buildroom-sect__body">
                     <div class="c-bloglist">
@@ -477,7 +528,7 @@
                           </article>
                         </li>
                       </ul>
-                      <div class="c-bloglist__more">
+                      <div class="c-bloglist__more u-ta-center">
                         <a href="#" class="c-bloglist__more-link btn --normal">このマンションのブログ一覧へ</a>
                       </div>
                     </div>

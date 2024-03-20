@@ -14,4 +14,15 @@
       // padding-bottom: var(--space-80);
     }
   }
+
+  &__body-block {
+    &:not(:first-child) {
+      margin-top: var(--space-40);
+    }
+    @include mq {
+      &:not(:first-child) {
+        margin-top: var(--space-64);
+      }
+    }
+  }
 }

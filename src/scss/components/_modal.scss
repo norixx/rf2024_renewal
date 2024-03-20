@@ -153,7 +153,7 @@ $c-modal-sp-only: ".c-modal.--sp-only";
   @include mq {
     position: static;
     background-color: transparent;
-    clip: initial;
+    clip-path: none;
     width: auto;
     height: auto;
     margin: 0 !important;

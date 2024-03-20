@@ -105,6 +105,7 @@
                         <span class="c-result-summary__term">2K〜2LDK</span>
                         <span class="c-result-summary__term">〜100㎡</span>
                         <span class="c-result-summary__term">10年以内の賃貸物件</span>
+                        10年以内の賃貸物件10年以内の賃貸物件10年以内の賃貸物件10年以内の賃貸物件10年以内の賃貸物件10年以内の賃貸物件10年以内の賃貸物件10年以内の賃貸物件10年以内の賃貸物件10年以内の賃貸物件10年以内の賃貸物件
                       </dd>
                     </dl>
                     <div class="c-result-summary__control">
@@ -128,38 +129,44 @@
                       </dl>
                     </div>
                     <div class="c-result-summary__display">
-                      <dl class="c-result-summary__display-list">
+                      <dl class="c-result-summary__display-list --order">
                         <dt>並び替え</dt>
                         <dd>
-                          <select name="" id="">
-                            <option value="">新着順</option>
-                            <option value="">賃料順</option>
-                            <option value="">間取り順</option>
-                            <option value="">専有面積順</option>
-                            <option value="">築年数順</option>
-                            <option value="">駅からの徒歩分数</option>
-                            <option value="">物件名順</option>
-                          </select>
+                          <label class="c-form-label --select --select-xs --select-pc-md --w-max">
+                            <select name="" id="" class="c-input-select --xs --pc-md --w-max" data-js-select-link>
+                              <option value="22" class="asc">新着順</option>
+                              <option value="333" class="desc">賃料順</option>
+                              <option value="444">間取り順</option>
+                              <option value="555">専有面積順</option>
+                              <option value="666">築年数順</option>
+                              <option value="777">駅からの徒歩分数</option>
+                              <option value="888">物件名順</option>
+                            </select>
+                          </label>
                         </dd>
                       </dl>
-                      <dl class="c-result-summary__display-list">
+                      <dl class="c-result-summary__display-list --format">
                         <dt>表示形式</dt>
                         <dd>
-                          <select name="" id="">
-                            <option value="">建物リスト</option>
-                            <option value="">お部屋リスト</option>
-                          </select>
+                          <label class="c-form-label --select --select-xs --select-pc-md --w-max">
+                            <select name="" id="" class="c-input-select --xs --pc-md --w-max">
+                              <option value="">建物</option>
+                              <option value="">お部屋</option>
+                            </select>
+                          </label>
                         </dd>
                       </dl>
-                      <dl class="c-result-summary__display-list">
+                      <dl class="c-result-summary__display-list --num">
                         <dt>表示件数</dt>
                         <dd>
-                          <select name="" id="">
-                            <option value="">15</option>
-                            <option value="">30</option>
-                            <option value="">45</option>
-                            <option value="">60</option>
-                          </select>
+                          <label class="c-form-label --select --select-xs --select-pc-md --w-max">
+                            <select name="" id="" class="c-input-select --xs --pc-md --w-max">
+                              <option value="">15</option>
+                              <option value="">30</option>
+                              <option value="">45</option>
+                              <option value="">60</option>
+                            </select>
+                          </label>
                         </dd>
                       </dl>
                     </div>
@@ -412,40 +419,51 @@
                                 <div class="c-re-search-toggle-sect__body" id="re-search-space">
                                   <div class="c-re-search-toggle-sect__inner">
                                     <div class="c-re-search-toggle-sect__content">
-                                      <div class="c-form-select-range --w-max">
-                                        <label class="c-form-label --select">
-                                          <select name="AREA_MIN" class="c-input-select --w-max sys-recalc">
-                                            <option value="">指定なし</option>
-                                            <option value="10">10㎡以上</option>
-                                            <option value="20">20㎡以上</option>
-                                            <option value="30">30㎡以上</option>
-                                            <option value="40">40㎡以上</option>
-                                            <option value="50">50㎡以上</option>
-                                            <option value="60">60㎡以上</option>
-                                            <option value="70">70㎡以上</option>
-                                            <option value="80">80㎡以上</option>
-                                            <option value="90">90㎡以上</option>
-                                            <option value="100">100㎡以上</option>
-                                            <option value="150">150㎡以上</option>
-                                            <option value="200">200㎡以上</option>
-                                          </select>
-                                        </label>
-                                        〜
-                                        <label class="c-form-label --select">
-                                          <select name="AREA_MAX" class="c-input-select --w-max sys-recalc">
-                                            <option value="">指定なし</option>
-                                            <option value="10">10㎡以上</option>
-                                            <option value="20">20㎡以上</option>
-                                            <option value="30">30㎡以上</option>
-                                            <option value="40">40㎡以上</option>
-                                            <option value="50">50㎡以上</option>
-                                            <option value="60">60㎡以上</option>
-                                            <option value="70">70㎡以上</option>
-                                            <option value="80">80㎡以上</option>
-                                            <option value="90">90㎡以上</option>
-                                            <option value="100">100㎡以上</option>
-                                            <option value="150">150㎡以上</option>
-                                            <option value="200">200㎡以上</option>
+                                      <div class="c-re-search-toggle-sect__block">
+                                        <div class="c-form-select-range --w-max">
+                                          <label class="c-form-label --select">
+                                            <select name="AREA_MIN" class="c-input-select --w-max sys-recalc">
+                                              <option value="">指定なし</option>
+                                              <option value="10">10㎡以上</option>
+                                              <option value="20">20㎡以上</option>
+                                              <option value="30">30㎡以上</option>
+                                              <option value="40">40㎡以上</option>
+                                              <option value="50">50㎡以上</option>
+                                              <option value="60">60㎡以上</option>
+                                              <option value="70">70㎡以上</option>
+                                              <option value="80">80㎡以上</option>
+                                              <option value="90">90㎡以上</option>
+                                              <option value="100">100㎡以上</option>
+                                              <option value="150">150㎡以上</option>
+                                              <option value="200">200㎡以上</option>
+                                            </select>
+                                          </label>
+                                          〜
+                                          <label class="c-form-label --select">
+                                            <select name="AREA_MAX" class="c-input-select --w-max sys-recalc">
+                                              <option value="">指定なし</option>
+                                              <option value="10">10㎡以上</option>
+                                              <option value="20">20㎡以上</option>
+                                              <option value="30">30㎡以上</option>
+                                              <option value="40">40㎡以上</option>
+                                              <option value="50">50㎡以上</option>
+                                              <option value="60">60㎡以上</option>
+                                              <option value="70">70㎡以上</option>
+                                              <option value="80">80㎡以上</option>
+                                              <option value="90">90㎡以上</option>
+                                              <option value="100">100㎡以上</option>
+                                              <option value="150">150㎡以上</option>
+                                              <option value="200">200㎡以上</option>
+                                            </select>
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <div class="c-re-search-toggle-sect__block">
+                                        <label class="c-form-label --select --w-max">
+                                          <select name="AREA_TSUBO" class="c-input-select --w-max sys-recalc">
+                                            <option value="{{ $val }}">
+                                              {{ $menu }}
+                                            </option>
                                           </select>
                                         </label>
                                       </div>
@@ -722,7 +740,7 @@
                                     <li><span class="c-point --normal --sm">賃料改定</span></li>
                                   </ul>
                                 </div>
-                                <h3 class="c-result-build__title">東京ミッドタウン・レジデンシィズ 22階 １５０２</h3>
+                                <h3 class="c-result-build__title"><a href="#">東京ミッドタウン・レジデンシィズ 22階 １５０２</a></h3>
                                 <div class="c-resutl-tatemono__original-site u-pc-only">
                                   <a href="#" class="btn --normal" target="_blank">オリジナルサイト</a>
                                 </div>
@@ -768,7 +786,12 @@
                                   </thead>
                                   <tbody class="c-room-list__body" id="c-room-list-ID1">
                                     <tr class="c-room-list__body-row"
-                                      data-js-link-room="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                                      data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                                      <td class="c-room-list__col-flag">
+                                        <span class="c-flag --xs">新着</span>
+                                        <span class="c-flag --xs">賃料改定</span>
+                                        <span class="c-flag --xs">礼金改定</span>
+                                      </td>
                                       <td class="c-room-list__col-madori c-room-list__body-madori">
                                         <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803"
                                           target="_blank"><img src="https://picsum.photos/id/345/120/120" alt=""></a>
@@ -801,7 +824,7 @@
                                       </td>
                                     </tr>
                                     <tr class="c-room-list__body-row"
-                                      data-js-link-room="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                                      data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
                                       <td class="c-room-list__col-madori c-room-list__body-madori">
                                         <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803"
                                           target="_blank"><img src="https://picsum.photos/id/345/120/120" alt=""></a>
@@ -834,7 +857,7 @@
                                       </td>
                                     </tr>
                                     <tr class="c-room-list__body-row"
-                                      data-js-link-room="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                                      data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
                                       <td class="c-room-list__col-madori c-room-list__body-madori">
                                         <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803"
                                           target="_blank"><img src="https://picsum.photos/id/345/120/120" alt=""></a>
@@ -867,7 +890,106 @@
                                       </td>
                                     </tr>
                                     <tr class="c-room-list__body-row"
-                                      data-js-link-room="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                                      data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                                      <td class="c-room-list__col-madori c-room-list__body-madori">
+                                        <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803"
+                                          target="_blank"><img src="https://picsum.photos/id/345/120/120" alt=""></a>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__room-num">12階</span>
+                                        <span class="c-room-list__floor-num">1234</span>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__rent">1,200,000円</span>
+                                        <span class="c-room-list__fee">50,000円</span>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__shiki">6.0ヶ月</span>
+                                        <span class="c-room-list__rei">2.0ヶ月</span>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__madori">4LDK</span>
+                                        <span class="c-room-list__sqm">121.78㎡</span>
+                                      </td>
+                                      <td class="c-room-list__td-point">
+                                        <span class="c-point --outline">ポイント名</span>
+                                        <span class="c-point --outline">ポイント名</span>
+                                        <span class="c-point --outline">ポイント名</span>
+                                        <span class="c-point --outline">ポイント名</span>
+                                      </td>
+                                      <td class="c-room-list__col-action">
+                                        <a href="#" class="btn --impact --sm --w100">お問合せ</a>
+                                        <button class="btn --normal --icon-l --bookmark --sm --w100">追加</button>
+                                      </td>
+                                    </tr>
+                                    <tr class="c-room-list__body-row"
+                                      data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                                      <td class="c-room-list__col-madori c-room-list__body-madori">
+                                        <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803"
+                                          target="_blank"><img src="https://picsum.photos/id/345/120/120" alt=""></a>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__room-num">12階</span>
+                                        <span class="c-room-list__floor-num">1234</span>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__rent">1,200,000円</span>
+                                        <span class="c-room-list__fee">50,000円</span>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__shiki">6.0ヶ月</span>
+                                        <span class="c-room-list__rei">2.0ヶ月</span>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__madori">4LDK</span>
+                                        <span class="c-room-list__sqm">121.78㎡</span>
+                                      </td>
+                                      <td class="c-room-list__td-point">
+                                        <span class="c-point --outline">ポイント名</span>
+                                        <span class="c-point --outline">ポイント名</span>
+                                        <span class="c-point --outline">ポイント名</span>
+                                        <span class="c-point --outline">ポイント名</span>
+                                      </td>
+                                      <td class="c-room-list__col-action">
+                                        <a href="#" class="btn --impact --sm --w100">お問合せ</a>
+                                        <button class="btn --normal --icon-l --bookmark --sm --w100">追加</button>
+                                      </td>
+                                    </tr>
+                                    <tr class="c-room-list__body-row"
+                                      data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                                      <td class="c-room-list__col-madori c-room-list__body-madori">
+                                        <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803"
+                                          target="_blank"><img src="https://picsum.photos/id/345/120/120" alt=""></a>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__room-num">12階</span>
+                                        <span class="c-room-list__floor-num">1234</span>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__rent">1,200,000円</span>
+                                        <span class="c-room-list__fee">50,000円</span>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__shiki">6.0ヶ月</span>
+                                        <span class="c-room-list__rei">2.0ヶ月</span>
+                                      </td>
+                                      <td>
+                                        <span class="c-room-list__madori">4LDK</span>
+                                        <span class="c-room-list__sqm">121.78㎡</span>
+                                      </td>
+                                      <td class="c-room-list__td-point">
+                                        <span class="c-point --outline">ポイント名</span>
+                                        <span class="c-point --outline">ポイント名</span>
+                                        <span class="c-point --outline">ポイント名</span>
+                                        <span class="c-point --outline">ポイント名</span>
+                                      </td>
+                                      <td class="c-room-list__col-action">
+                                        <a href="#" class="btn --impact --sm --w100">お問合せ</a>
+                                        <button class="btn --normal --icon-l --bookmark --sm --w100">追加</button>
+                                      </td>
+                                    </tr>
+                                    <tr class="c-room-list__body-row"
+                                      data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
                                       <td class="c-room-list__col-madori c-room-list__body-madori">
                                         <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803"
                                           target="_blank"><img src="https://picsum.photos/id/345/120/120" alt=""></a>

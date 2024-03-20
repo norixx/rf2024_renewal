@@ -2,12 +2,15 @@
 @forward "./breadcrumb";
 @forward "./pagination";
 @forward "./forms";
+@forward "./list";
 @forward "./card";
 @forward "./toggle";
 @forward "./sections";
 @forward "./modal";
-@forward "./cta-navi";
+@forward "./loader";
 
+@forward "./cta";
+@forward "./cta-navi";
 @forward "./gnav";
 @forward "./page-header";
 @forward "./search";

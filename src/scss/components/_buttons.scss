@@ -35,8 +35,24 @@
     background-color: var(--bg-black);
     color: var(--txt-white);
   }
+  &.--primary {
+    background-color: var(--bg-white);
+    border-color: var(--bdr-btn-primary-mid);
+
+    &:hover {
+      border-color: var(--bdr-btn-primary);
+    }
+  }
+  &.--primary-light {
+    background-color: var(--bg-white);
+    border-color: var(--bdr-btn-primary-mid-light);
+
+    &:hover {
+      border-color: var(--bdr-btn-primary);
+    }
+  }
   &.--primary-outline {
-    border-color: var(--bg-primary);
+    border-color: var(--bdr-btn-primary);
   }
 
   // Icon
@@ -46,8 +62,9 @@
     display: inline-block;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 16px;
-    height: 16px;
+    --icon-size: var(--fz-16); //基本サイズ
+    width: var(--icon-size);
+    height: var(--icon-size);
     background-color: #f0f0f0; //暫定
     flex-shrink: 0;
   }
@@ -64,8 +81,7 @@
   &.--icon-lg {
     &::after,
     &::before {
-      width: 24px !important;
-      height: 24px !important;
+      --icon-size: var(--fz-24) !important;
     }
   }
 
@@ -86,6 +102,7 @@
     }
     @if $size == xs {
       &.--#{$size} {
+        --x: var(--space-8);
         --y: var(--space-8);
         font-size: var(--fz-12);
       }
@@ -126,7 +143,8 @@
       }
       @if $size == xs {
         &.--pc-#{$size} {
-          --y: var(--space-10);
+          --x: var(--space-8);
+          --y: var(--space-8);
         }
       }
       @if $size == sm {
@@ -212,5 +230,100 @@
   // Utilities
   &.--no-border {
     border: none !important;
+  }
+
+  // =======================================================
+  // 特徴
+  &.--cta-contact {
+    display: flex;
+    flex-direction: column;
+
+    @include mq {
+      // flex-direction: row;
+    }
+
+    .__tel {
+      font-family: var(--ff-num);
+      font-size: var(--fz-28);
+      line-height: var(--line-height-sm);
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      color: var(--txt-primary);
+
+      &::before {
+        content: "";
+        --icon-size: var(--fz-28);
+        width: var(--icon-size);
+        height: var(--icon-size);
+        // background-size: contain;
+        // background: var(--icon-tel-primary) no-repeat center center;
+        // background-color: var(--bg-primary);
+        background-color: currentColor;
+        mask: var(--icon-tel) no-repeat center center / contain;
+        margin-right: var(--space-8);
+      }
+    }
+
+    .__web-sub {
+      display: flex;
+      // flex-direction: column;
+      align-items: center;
+
+      &::before {
+        content: "";
+        --icon-size: var(--fz-24);
+        width: var(--icon-size);
+        height: var(--icon-size);
+        background-color: var(--bg-primary);
+        mask: var(--icon-mail) no-repeat center center / contain;
+        margin-right: var(--space-8);
+      }
+
+      @include mq {
+        flex-direction: column;
+
+        &::before {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &.--cta-owner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+
+    @include mq {
+      gap: var(--space-24);
+      flex-direction: row;
+    }
+
+    .__tel {
+      display: flex;
+      align-items: center;
+      font-size: var(--fz-20);
+      font-weight: 500;
+      font-family: var(--ff-num);
+
+      &::before {
+        content: "";
+        background-color: currentColor;
+        --icon-size: var(--fz-24);
+        width: var(--icon-size);
+        height: var(--icon-size);
+        mask: var(--icon-tel) no-repeat center center / contain;
+        margin-right: var(--space-8);
+      }
+    }
+
+    .__sub {
+      font-size: var(--fz-12);
+
+      @include mq {
+        text-align: start;
+      }
+    }
   }
 }

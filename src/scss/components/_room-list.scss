@@ -38,20 +38,31 @@
   &__body {
     display: block;
     overflow: hidden;
-    max-height: 400px;
+    max-height: 800px;
     transition: max-height var(--animation-normal) var(--animation-easing);
+
+    @include mq {
+      max-height: 660px;
+    }
   }
 
   &__body-row {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: var(--space-12) 0;
+    gap: var(--space-8);
+
     &:not(:last-child) {
       border-bottom: 1px solid var(--bdr-light);
     }
 
     @include mq {
-      display: flex;
       align-items: center;
       padding: var(--space-12) var(--space-16);
       transition: background var(--animation-normal);
+      flex-wrap: nowrap;
+      gap: 0;
 
       &:hover {
         background: var(--bg-gray-xxlight);
@@ -63,23 +74,73 @@
     td {
       line-height: var(--line-height-sm);
       font-size: var(--fz-14);
-      flex: 1 0 0;
       display: flex;
-      align-items: center;
       flex-direction: column;
+
+      @include mq {
+        align-items: center;
+        flex: 1 0 0;
+      }
     }
 
     td {
       font-family: var(--ff-en-jp);
       row-gap: var(--space-4);
+      margin-left: auto;
+      flex: 0 0 calc(100% - (100px + var(--space-24))); // 画像の幅 + 24px
+
+      @include mq {
+        margin-left: 0;
+        flex: 1 0 0;
+      }
     }
   }
 
+  // &__body-row:nth-child(n + 6) {
+  //   display: none;
+  // }
+  // &__body.--is-open &__body-row:nth-child(n + 6) {
+  //   display: flex;
+  //   transition: display 0s 2s;
+  // }
+
   // COMMON
-  &__col-madori {
+  &__col-flag {
+    flex: 1 0 100% !important;
+    flex-direction: row !important;
+    align-items: center;
+
     @include mq {
-      flex-grow: 0 !important;
-      flex-basis: 100px !important;
+      position: absolute;
+      left: var(--space-16);
+      top: var(--space-16);
+      flex-direction: column !important;
+      align-items: flex-start;
+      gap: var(--space-4);
+    }
+
+    > * {
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-8);
+
+      @include mq {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__col-madori {
+    // flex-basis: 100px !important;
+    margin-left: 0 !important;
+    width: 100px;
+    flex: 0 0 100px !important;
+    position: absolute;
+    left: 0;
+    top: calc(var(--space-12) + var(--space-32)); //trのパディング + 32px
+
+    @include mq {
+      position: static;
+      // flex-grow: 0 !important;
     }
   }
 

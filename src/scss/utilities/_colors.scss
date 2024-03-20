@@ -2,104 +2,154 @@
 @use "../abstracts/mixins" as *;
 
 // Background color
+
 .u-bg {
   &-primary {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-primary) !important;
   }
   &-primary-xxlight {
-    background-color: var(--bg-primary-xxlight);
+    background-color: var(--bg-primary-xxlight) !important;
   }
   &-primary-xlight {
-    background-color: var(--bg-primary-xlight);
+    background-color: var(--bg-primary-xlight) !important;
   }
   &-primary-light {
-    background-color: var(--bg-primary-light);
+    background-color: var(--bg-primary-light) !important;
   }
   &-primary-mid {
-    background-color: var(--bg-primary-mid);
+    background-color: var(--bg-primary-mid) !important;
   }
   &-gray {
-    background-color: var(--bg-gray);
+    background-color: var(--bg-gray) !important;
   }
   &-gray-xxlight {
-    background-color: var(--bg-gray-xxlight);
+    background-color: var(--bg-gray-xxlight) !important;
   }
   &-gray-xlight {
-    background-color: var(--bg-gray-xlight);
+    background-color: var(--bg-gray-xlight) !important;
   }
   &-gray-light {
-    background-color: var(--bg-gray-light);
+    background-color: var(--bg-gray-light) !important;
   }
   &-gray-dark {
-    background-color: var(--bg-gray-dark);
+    background-color: var(--bg-gray-dark) !important;
   }
   &-gray-xdark {
-    background-color: var(--bg-gray-xdark);
+    background-color: var(--bg-gray-xdark) !important;
   }
   &-gray-xxdark {
-    background-color: var(--bg-gray-xxdark);
+    background-color: var(--bg-gray-xxdark) !important;
   }
   &-white {
-    background-color: var(--bg-white);
+    background-color: var(--bg-white) !important;
   }
   &-black {
-    background-color: var(--bg-black);
+    background-color: var(--bg-black) !important;
   }
   &-nearly-black {
-    background-color: var(--bg-nearly-black);
+    background-color: var(--bg-nearly-black) !important;
   }
   &-black-90 {
-    background-color: var(--bg-black-90);
+    background-color: var(--bg-black-90) !important;
   }
 
   @include mq {
     &-pc-primary {
-      background-color: var(--bg-primary);
+      background-color: var(--bg-primary) !important;
     }
     &-pc-primary-xxlight {
-      background-color: var(--bg-primary-xxlight);
+      background-color: var(--bg-primary-xxlight) !important;
     }
     &-pc-primary-xlight {
-      background-color: var(--bg-primary-xlight);
+      background-color: var(--bg-primary-xlight) !important;
     }
     &-pc-primary-light {
-      background-color: var(--bg-primary-light);
+      background-color: var(--bg-primary-light) !important;
     }
     &-pc-primary-mid {
-      background-color: var(--bg-primary-mid);
+      background-color: var(--bg-primary-mid) !important;
     }
     &-pc-gray {
-      background-color: var(--bg-gray);
+      background-color: var(--bg-gray) !important;
     }
     &-pc-gray-xxlight {
-      background-color: var(--bg-gray-xxlight);
+      background-color: var(--bg-gray-xxlight) !important;
     }
     &-pc-gray-xlight {
-      background-color: var(--bg-gray-xlight);
+      background-color: var(--bg-gray-xlight) !important;
     }
     &-pc-gray-light {
-      background-color: var(--bg-gray-light);
+      background-color: var(--bg-gray-light) !important;
     }
     &-pc-gray-dark {
-      background-color: var(--bg-gray-dark);
+      background-color: var(--bg-gray-dark) !important;
     }
     &-pc-gray-xdark {
-      background-color: var(--bg-gray-xdark);
+      background-color: var(--bg-gray-xdark) !important;
     }
     &-pc-gray-xxdark {
-      background-color: var(--bg-gray-xxdark);
+      background-color: var(--bg-gray-xxdark) !important;
     }
     &-pc-white {
-      background-color: var(--bg-white);
+      background-color: var(--bg-white) !important;
     }
     &-pc-black {
-      background-color: var(--bg-black);
+      background-color: var(--bg-black) !important;
     }
     &-pc-nearly-black {
-      background-color: var(--bg-nearly-black);
+      background-color: var(--bg-nearly-black) !important;
     }
     &-pc-black-90 {
-      background-color: var(--bg-black-90);
+      background-color: var(--bg-black-90) !important;
+    }
+  }
+}
+
+// Background color
+.u-color {
+  &-xlight {
+    color: var(--txt-xlight) !important;
+  }
+  &-light {
+    color: var(--txt-light) !important;
+  }
+  &-dark {
+    color: var(--txt-dark) !important;
+  }
+  &-white {
+    color: var(--txt-white) !important;
+  }
+  &-normal {
+    color: var(--txt-normal) !important;
+  }
+  &-primary {
+    color: var(--txt-primary) !important;
+  }
+  &-primary-mid {
+    color: var(--txt-primary-mid) !important;
+  }
+
+  @include mq {
+    &-pc-xlight {
+      color: var(--txt-xlight) !important;
+    }
+    &-pc-light {
+      color: var(--txt-light) !important;
+    }
+    &-pc-dark {
+      color: var(--txt-dark) !important;
+    }
+    &-pc-white {
+      color: var(--txt-white) !important;
+    }
+    &-pc-normal {
+      color: var(--txt-normal) !important;
+    }
+    &-pc-primary {
+      color: var(--txt-primary) !important;
+    }
+    &-pc-primary-mid {
+      color: var(--txt-primary-mid) !important;
     }
   }
 }
