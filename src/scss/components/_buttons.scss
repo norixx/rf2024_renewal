@@ -55,27 +55,44 @@
     border-color: var(--bdr-btn-primary);
   }
 
-  // Icon
+  // アイコン基本
   &.--icon-before::before,
   &.--icon-after::after {
     content: "";
     display: inline-block;
     background-repeat: no-repeat;
     background-position: center center;
-    --icon-size: var(--fz-16); //基本サイズ
+    --icon-size: var(--fz-24); //基本サイズ
     width: var(--icon-size);
     height: var(--icon-size);
-    background-color: #f0f0f0; //暫定
+    background-color: var(--bg-black); //アイコンカラー
     flex-shrink: 0;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
   }
   &.--icon-before {
     &::before {
-      margin-right: 8px;
+      margin-right: var(--space-8);
+    }
+    &.--xs,
+    &.--xxs {
+      &::before {
+        --icon-size: var(--fz-16);
+        margin-right: var(--space-4);
+      }
     }
   }
   &.--icon-after {
     &::after {
-      margin-left: 8px;
+      margin-left: var(--space-8);
+    }
+    &.--xs,
+    &.--xxs {
+      &::after {
+        --icon-size: var(--fz-16);
+        margin-left: var(--space-4);
+      }
     }
   }
   &.--icon-lg {
@@ -84,9 +101,48 @@
       --icon-size: var(--fz-24) !important;
     }
   }
+  &.--icon-primary {
+    background-color: var(--bg-primary);
+  }
+  &.--impact.--icon-before::before,
+  &.--impact.--icon-after::after {
+    background-color: var(--bg-white); //アイコンカラー
+  }
 
-  &.--i-arrow {
-    background-image: url("../img/icons/arrow-right.svg");
+  // アイコン
+  &.--i-arrow-r {
+    &::before,
+    &::after {
+      mask-image: var(--icon-arrow-r);
+    }
+  }
+
+  &.--i-map {
+    &::before,
+    &::after {
+      mask-image: var(--icon-map);
+    }
+  }
+
+  &.--i-mail {
+    &::before,
+    &::after {
+      mask-image: var(--icon-mail);
+    }
+  }
+
+  &.--i-tel {
+    &::before,
+    &::after {
+      mask-image: var(--icon-tel);
+    }
+  }
+
+  &.--i-link-out {
+    &::before,
+    &::after {
+      mask-image: var(--icon-link-out);
+    }
   }
 
   // Size
@@ -150,11 +206,13 @@
       @if $size == sm {
         &.--pc-#{$size} {
           --y: var(--space-10);
+          font-size: var(--fz-14);
         }
       }
       @if $size == md {
         &.--pc-#{$size} {
           --y: var(--space-12);
+          font-size: var(--fz-14);
         }
       }
       @if $size == lg {
@@ -173,11 +231,11 @@
   }
 
   // width
-  &.--w100 {
+  &.--w-100 {
     width: 100%;
   }
 
-  &.--mw400px {
+  &.--mw-400px {
     width: 400px;
     max-width: 100%;
   }

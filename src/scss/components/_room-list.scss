@@ -38,7 +38,7 @@
   &__body {
     display: block;
     overflow: hidden;
-    max-height: 800px;
+    max-height: 1200px;
     transition: max-height var(--animation-normal) var(--animation-easing);
 
     @include mq {
@@ -51,7 +51,8 @@
     // flex-wrap: wrap;
     display: block;
     position: relative;
-    padding: var(--space-12) 0;
+    padding: var(--space-16) 0;
+
     // gap: var(--space-8);
     // flex-direction: column;
     // grid-template-rows: auto auto;
@@ -99,8 +100,8 @@
       // flex: 0 0 calc(100% - (100px + var(--space-24))); // 画像の幅 + 24px
       width: calc(100% - (80px + var(--space-16)));
 
-      &:not(:first-child) {
-        margin-top: var(--space-16);
+      &:nth-child(n + 4) {
+        margin-top: var(--space-14);
       }
 
       @include mq {
@@ -111,7 +112,7 @@
         flex: 1 0 0;
         width: auto;
 
-        &:not(:first-child) {
+        &:nth-child(n + 4) {
           margin-top: 0;
         }
       }
@@ -137,12 +138,14 @@
 
     .__body-flag {
       margin-left: 0;
-      padding: var(--space-8) 0;
+      // padding: var(--space-8) 0;
       margin: 0;
+      margin-bottom: var(--space-16);
       width: auto;
 
       @include mq {
         padding: 0;
+        margin-bottom: 0;
       }
     }
 
@@ -195,6 +198,12 @@
     .__body-control {
       > * {
         flex: 1 0 0;
+      }
+
+      @include mq {
+        > * {
+          flex: 1;
+        }
       }
     }
   } //&__body-row
@@ -250,7 +259,7 @@
   }
 
   &__rent {
-    font-weight: var(--fw-bold);
+    font-weight: var(--fw-semibold);
   }
 
   &__shiki,
@@ -271,30 +280,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: var(--space-16);
-
-    @include mq {
-      padding-top: var(--space-24);
-    }
   }
 
   &__toggle-btn {
     font-size: var(--fz-16);
     font-weight: var(--fw-bold);
+    margin-top: var(--space-16);
+    display: flex;
+    align-items: center;
 
     &::after {
-      content: "+";
-      margin-left: var(--space-16);
+      content: "";
+      --icon-size: var(--fz-24);
+      mask: var(--icon-plus-circle) no-repeat center center / contain;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      margin-left: var(--space-8);
+      background-color: var(--bg-black);
     }
 
     &.--is-open {
       &::after {
-        content: "-";
+        mask-image: var(--icon-minus);
       }
+    }
+
+    &.--is-hide {
+      display: none;
     }
 
     @include mq {
       cursor: pointer;
+      margin-top: var(--space-24);
     }
   }
 }

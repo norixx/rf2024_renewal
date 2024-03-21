@@ -25,7 +25,12 @@
       }
     }
 
-    &-points {
+    &-flag {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      line-height: var(--line-height-100);
+
       @include mq {
         margin-right: var(--space-24);
       }
@@ -193,5 +198,65 @@
   }
   &.--remark &__body {
     margin-top: var(--space-8);
+  }
+}
+
+// 建物・お部屋詳細
+.c-buildroom-detail {
+  font-size: var(--fz-14);
+  line-height: var(--line-height-md);
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--bdr-light);
+
+  &__col {
+    flex: 1 0 100%;
+    display: flex;
+
+    &.--w-pc-50 {
+      @include mq {
+        flex: 1 0 50%;
+      }
+    }
+
+    &.--column {
+      flex-direction: column;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex: 1;
+
+    dt,
+    dd {
+      padding: var(--space-10);
+      border-bottom: 1px solid var(--bdr-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    dt {
+      color: var(--txt-dark);
+      font-weight: var(--fw-normal);
+      font-size: var(--fz-12);
+      background-color: var(--bg-gray-xlight);
+      flex: 0 0 80px;
+      text-align: center;
+
+      @include mq {
+        flex: 0 0 100px;
+        font-size: var(--fz-14);
+      }
+    }
+
+    dd {
+      background: var(--bg-white);
+      flex-direction: column;
+      flex: 1;
+      align-items: flex-start;
+
+      // .__data {}
+    }
   }
 }

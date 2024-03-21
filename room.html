@@ -62,9 +62,9 @@
               <div class="l-container">
                 <section class="c-buildroom__summary">
                   <header class="c-buildroom__summary-header">
-                    <ul class="c-buildroom__summary-points">
-                      <li><span class="c-point --new">新着</span></li>
-                      <li><span class="c-point --normal">賃料改定</span></li>
+                    <ul class="c-buildroom__summary-flag">
+                      <li><span class="c-flag --primary">新着</span></li>
+                      <li><span class="c-flag ">賃料改定</span></li>
                     </ul>
                     <h1 class="c-buildroom__summary-h">東京ミッドタウン・レジデンシィズ</h1>
                     <div class="c-buildroom__summary-links">
@@ -161,17 +161,12 @@
                           </div>
                         </div>
                       </div>
-                      <div class="c-buildroom__summary-vacant-link">
-                        <a href="#buildroom-vacant" class="btn --normal --pc-sm --w100 --icon-r">
-                          空室一覧を見る
-                        </a>
-                      </div>
                     </div>
                     <div class="c-buildroom__summary-overview">
                       <dl class="c-buildroom__summary-overview-list">
                         <div>
                           <dt>所在地</dt>
-                          <dd class="__map"><a href="#" class="btn --normal --xxs --icon-r">地図</a></dd>
+                          <dd class="__map"><a href="#" class="btn --normal --xxs --icon-before --i-map">地図</a></dd>
                           <dd>東京都港区赤坂９丁目７－２</dd>
                         </div>
                         <div>
@@ -207,32 +202,212 @@
             <div class="l-container u-justify-content-pc-center">
               <div class="l-col-pc-10">
 
-                <div class="l-buildroom__block --cta">
-                  CTA
+                <div class="l-buildroom__body-block --cta">
+                  <article class="c-cta-contact">
+                    <header class="c-cta-contact__header">
+                      <h3 class="c-cta-contact__h">この物件のお問合せ・内見予約はこちら</h3>
+                    </header>
+                    <div class="c-cta-contact__body">
+                      <div class="c-cta-contact__btn">
+                        <a href="tel:0120-321-719" class="__btn-tel btn --primary-light --cta-contact">
+                          <span class="__tel">0120-321-719</span>
+                          <span class="__tel-sub">営業時間 9:30~18:00(水曜定休)</span>
+                        </a>
+                        <a href="#" class="__btn-web btn --primary-light --cta-contact">
+                          <span class="__web-sub">フォームから<br class="u-pc-only">お問合せ</span>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+
                 </div>
 
-                <div class="l-buildroom__block --cms">
+                <div class="l-buildroom__body-block --cms">
                   CMS
                 </div>
 
-                <!-- 周辺地図・アクセス -->
-                <section class="l-buildroom__body-block --access">
-                  <header>
-                    <h2>周辺地図・アクセス</h2>
+                <!-- 建物・お部屋詳細情報 -->
+                <section class="l-buildroom__body-block c-buildroom-sect --detail">
+                  <header class="c-buildroom-sect__header">
+                    <h2 class="c-buildroom-sect__h">建物・お部屋詳細情報</h2>
                   </header>
+                  <div class="c-buildroom-sect__body">
+                    <div class="c-buildroom-detail">
+                      <div class="c-buildroom-detail__col --w-pc-50">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>交通</dt>
+                          <dd>
+                            <div class="__data">
+                              <a href="" class="u-td-underline">東京都交通局 大江戸線</a> <a href=""
+                                class="u-td-underline">六本木</a> 徒歩1分<br>
+                              <a href="" class="u-td-underline">東京メトロ 日比谷線</a> <a href="" class="u-td-underline">六本木</a>
+                              徒歩4分<br>
+                              <a href="" class="u-td-underline">東京メトロ 千代田線</a> <a href="" class="u-td-underline">乃木坂</a>
+                              徒歩7分
+                            </div>
+                          </dd>
+                        </dl>
+                      </div>
+                      <div class="c-buildroom-detail__col --w-pc-50 --column">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>入居可能日</dt>
+                          <dd>
+                            応相談
+                          </dd>
+                        </dl>
+                        <dl class="c-buildroom-detail__list">
+                          <dt>案内可能日</dt>
+                          <dd>
+                            即可
+                          </dd>
+                        </dl>
+                        <dl class="c-buildroom-detail__list">
+                          <dt>契約期間</dt>
+                          <dd>
+                            36ヶ月 （定期借家）
+                          </dd>
+                        </dl>
+                      </div>
+                      <div class="c-buildroom-detail__col --w-pc-50">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>規模構造</dt>
+                          <dd>
+                            鉄骨（一部鉄骨鉄筋コンクリート）造   地上25階地下4階建
+                          </dd>
+                        </dl>
+                      </div>
+                      <div class="c-buildroom-detail__col --w-pc-50">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>更新料</dt>
+                          <dd>
+                            無
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="c-buildroom-detail u-mt-16">
+                      <div class="c-buildroom-detail__col --w-pc-50">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>駐車場</dt>
+                          <dd>
+                            相談
+                          </dd>
+                        </dl>
+                      </div>
+                      <div class="c-buildroom-detail__col --w-pc-50 --column">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>方位</dt>
+                          <dd>
+                            北東
+                          </dd>
+                        </dl>
+                      </div>
+                      <div class="c-buildroom-detail__col">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>その他費用</dt>
+                          <dd>
+                            退去時における通常清掃費用 65,260円（税込）
+                          </dd>
+                        </dl>
+                      </div>
+                      <div class="c-buildroom-detail__col">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>専有部・共用部設備</dt>
+                          <dd>
+                            フロント/宅配ロッカー/オートロック/24時間有人管理/自転車置場/バイク置場/敷地内ごみ置場/エレベータ/インターネット/バルコニー/バストイレ/洗濯機/乾燥機/室内洗濯機置/バス有/給湯追い焚き有/床暖房/防犯カメラ/セキュリティシステム/CATV/キッチン有/コンロ有/オープン/ピアノ可
+                          </dd>
+                        </dl>
+                      </div>
+                      <div class="c-buildroom-detail__col">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>備考</dt>
+                          <dd>
+                            ■電子契約不可、ＨＰ掲載禁止<br>
+                            定借3年<br>
+                            再契約可<br>
+                            再契約手数料：55,000円（税込）<br>
+                            工事の内容によって入居可能日に遅れが生じることがあります
+                          </dd>
+                        </dl>
+                      </div>
+
+                      <div class="c-buildroom-detail__col --w-pc-50">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>共用部管理会社</dt>
+                          <dd>
+                            三井不動産ファシリティーズ株式会社
+                          </dd>
+                        </dl>
+                      </div>
+
+                      <div class="c-buildroom-detail__col --w-pc-50 --column">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>保険</dt>
+                          <dd>
+                            借家人賠償責任保険を付帯した火災保険に加入要
+                          </dd>
+                        </dl>
+                        <dl class="c-buildroom-detail__list">
+                          <dt>めやす賃料</dt>
+                          <dd>
+                            非表示
+                          </dd>
+                        </dl>
+                      </div>
+                      <div class="c-buildroom-detail__col --w-pc-50">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>情報更新日</dt>
+                          <dd>
+                            2024年02月19日
+                          </dd>
+                        </dl>
+                      </div>
+                      <div class="c-buildroom-detail__col --w-pc-50">
+                        <dl class="c-buildroom-detail__list">
+                          <dt>取引態様</dt>
+                          <dd>
+                            媒介
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="u-mt-24 u-mt-pc-40 u-ta-center">
+                      <a href="#" class="btn --impact --icon-after --i-arrow-r">この建物の空室一覧 建物ページヘ</a>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- 周辺地図・アクセス -->
+                <section class="l-buildroom__body-block c-buildroom-sect --access">
+                  <header class="c-buildroom-sect__header">
+                    <h2 class="c-buildroom-sect__h">周辺地図・アクセス</h2>
+                  </header>
+                  <div class="c-buildroom-sect__body">
+                    地図
+                  </div>
                 </section>
 
                 <!-- 備考 -->
                 <section class="l-buildroom__body-block c-buildroom-sect --remark">
                   <header class="c-buildroom-sect__header">
-                    <h2>備考</h2>
+                    <h2 class="c-buildroom-sect__h">備考</h2>
                   </header>
+                  <div class="c-buildroom-sect__body">
+                    <ul class="c-buildroom-sect__remark-list c-list-kome u-fz-12 u-color-dark">
+                      <li>掲載の徒歩分数は、建物の出入口を起点とし駅出入口およびバス停などを着点と した概算距離を基に、80m を1 分として算出（端数切り上げ）したものです。</li>
+                      <li>間取り表記のN （納戸）やS （サービスルーム）は、居室以外の空間を表して います。詳細については<a
+                          href="https://www.mitsui-chintai.co.jp/service/annotation/layout.html"
+                          target="_blank">こちら</a>をご確認ください。</li>
+                      <li>（ 申込み有り ）の表示は、現在先着のお申込みをいただいている状態となります。キャンセル待ちのお申込みも、受け付けております。</li>
+
+                    </ul>
+                  </div>
                 </section>
 
                 <!-- このマンションをチェックした人は, -->
                 <section class="l-buildroom__body-block c-buildroom-sect --related">
                   <header class="c-buildroom-sect__header">
-                    <h2>このマンションを...</h2>
+                    <h2 class="c-buildroom-sect__h">このマンションをチェックした人は、こんなマンションもチェックしています。</h2>
                   </header>
                   <div class="c-buildroom-sect__body">
                     コンテンツ
@@ -242,7 +417,7 @@
                 <!-- ブログ -->
                 <section class="l-buildroom__body-block c-buildroom-sect --related">
                   <header class="c-buildroom-sect__header">
-                    <h2>ブログ</h2>
+                    <h2 class="c-buildroom-sect__h">このマンションについて書かれたブログ</h2>
                   </header>
                   <div class="c-buildroom-sect__body">
                     <div class="c-bloglist">
@@ -280,7 +455,7 @@
                           </article>
                         </li>
                       </ul>
-                      <div class="c-bloglist__more">
+                      <div class="c-bloglist__more u-ta-center">
                         <a href="#" class="c-bloglist__more-link btn --normal">このマンションのブログ一覧へ</a>
                       </div>
                     </div>

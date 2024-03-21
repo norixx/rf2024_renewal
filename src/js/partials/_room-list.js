@@ -1,5 +1,8 @@
 // お部屋リスト
+import { rf_get_globals, rf_set_globals } from './_globals'
 
+
+// 部屋リストリンク
 const rf_room_list_link = () => {
   const links = document.querySelectorAll('[data-js-room-link]')
 
@@ -19,34 +22,51 @@ const rf_room_list_link = () => {
   })
 }
 
+// お部屋リストの制御
 const rf_room_list_toggle = () => {
   const openClass = '--is-open'
   let tempText = ''
+  const maxHeightPC = 660
+  const maxHeightSP = 1200
   const toggles = document.querySelectorAll('[data-js-room-toggle]')
 
-  toggles.forEach(toggle => {
-    const target = document.querySelector(toggle.dataset.jsRoomToggle)
-    toggle.addEventListener('click', () => {
 
-      target.classList.toggle(openClass)
-      toggle.classList.toggle(openClass)
+  // トグルボタンのコントロール, 画像の読み込みなどを考慮してwindowロード後
+  window.addEventListener('load', () => {
+    toggles.forEach(toggle => {
+      const target = document.querySelector(toggle.dataset.jsRoomToggle)
 
-      // 高さ
-      if (target.classList.contains(openClass)) {
-        target.style.maxHeight = target.scrollHeight + 'px'
-      } else {
-        target.style.maxHeight = null
+      // トグルボタンの表示・非表示をまず決める（デフォルト: 表示）
+      if (rf_get_globals('window_state') === 'PC' && target.scrollHeight < maxHeightPC) {
+        toggle.classList.add('--is-hide')
+      } else if (rf_get_globals('window_state') === 'SP' && target.scrollHeight < maxHeightSP) {
+        toggle.classList.add('--is-hide')
       }
 
+      // クリックコントロール
+      toggle.addEventListener('click', () => {
 
-      // テキスト
-      if ('jsRoomToggleText' in toggle.dataset) {
-        tempText = toggle.textContent
-        toggle.textContent = toggle.dataset.jsRoomToggleText
-        toggle.dataset.jsRoomToggleText = tempText
-      }
+        target.classList.toggle(openClass)
+        toggle.classList.toggle(openClass)
+
+        // 高さ
+        if (target.classList.contains(openClass)) {
+          target.style.maxHeight = target.scrollHeight + 'px'
+        } else {
+          target.style.maxHeight = null
+        }
+
+
+        // テキスト
+        if ('jsRoomToggleText' in toggle.dataset) {
+          tempText = toggle.textContent
+          toggle.textContent = toggle.dataset.jsRoomToggleText
+          toggle.dataset.jsRoomToggleText = tempText
+        }
+      })
     })
   })
+
 }
 
 export { rf_room_list_link, rf_room_list_toggle }

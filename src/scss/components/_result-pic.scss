@@ -1,0 +1,9 @@
+// 結果ページ 画像スライダー
+@use "../abstracts/mixins" as *;
+
+.c-result-pic-slide {
+  margin: 0 calc(var(--space-16) * -1);
+
+  &__inner {
+  }
+}

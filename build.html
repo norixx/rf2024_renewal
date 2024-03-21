@@ -62,7 +62,7 @@
               <div class="l-container">
                 <section class="c-buildroom__summary">
                   <header class="c-buildroom__summary-header">
-                    <ul class="c-buildroom__summary-points">
+                    <ul class="c-buildroom__summary-flag">
                       <li><span class="c-point --new">新着</span></li>
                       <li><span class="c-point --normal">賃料改定</span></li>
                     </ul>
@@ -166,7 +166,7 @@
                         </div>
                       </div>
                       <div class="c-buildroom__summary-vacant-link">
-                        <a href="#buildroom-vacant" class="btn --normal --pc-sm --w100 --icon-r">
+                        <a href="#buildroom-vacant" class="btn --normal --pc-sm --w-100 --icon-r">
                           空室一覧を見る
                         </a>
                       </div>
@@ -277,170 +277,245 @@
                       </thead>
                       <tbody class="c-room-list__body" id="c-room-list-ID1">
                         <tr class="c-room-list__body-row"
-                          data-js-link-room="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
-                          <td class="c-room-list__col-madori c-room-list__body-madori">
+                          data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                          <td class="c-room-list__col-flag __body-flag">
+                            <span class="c-flag --primary --sm">新着</span>
+                            <span class="c-flag --sm">新築</span>
+                            <span class="c-flag --sm">賃料改定</span>
+                            <span class="c-flag --sm">礼金改定</span>
+                          </td>
+                          <td class="c-room-list__col-madori __body-madori">
                             <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803" target="_blank"><img
                                 src="https://picsum.photos/id/345/120/120" alt=""></a>
                           </td>
-                          <td>
+                          <td class="__body-floor">
                             <span class="c-room-list__room-num">12階</span>
                             <span class="c-room-list__floor-num">1234</span>
                           </td>
-                          <td>
+                          <td class="__body-rent">
                             <span class="c-room-list__rent">1,200,000円</span>
                             <span class="c-room-list__fee">50,000円</span>
                           </td>
-                          <td>
+                          <td class="__body-shikirei">
                             <span class="c-room-list__shiki">6.0ヶ月</span>
                             <span class="c-room-list__rei">2.0ヶ月</span>
                           </td>
-                          <td>
+                          <td class="__body-size">
                             <span class="c-room-list__madori">4LDK</span>
                             <span class="c-room-list__sqm">121.78㎡</span>
                           </td>
-                          <td class="c-room-list__td-point">
-                            <span class="c-flag --outline">当社限定物件</span>
-                            <span class="c-flag --outline">三井の賃貸</span>
-                            <span class="c-flag --outline">駅近</span>
-                            <span class="c-flag --outline">新築</span>
-                            <span class="c-flag --outline">分譲賃貸</span>
-                            <span class="c-flag --outline">フリーレント</span>
+                          <td class="__body-point">
+                            <span class="c-flag --sm --pc-md  --outline">当社限定物件</span>
+                            <span class="c-flag --sm --pc-md  --outline">三井の賃貸</span>
                           </td>
-                          <td class="c-room-list__col-action --wide">
-                            <a href="#" class="btn --impact --sm --w100">お問合せ</a>
-                            <button class="btn --normal --icon-l --bookmark --sm --w100">追加</button>
-                          </td>
-                        </tr>
-                        <tr class="c-room-list__body-row"
-                          data-js-link-room="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
-                          <td class="c-room-list__col-madori c-room-list__body-madori">
-                            <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803" target="_blank"><img
-                                src="https://picsum.photos/id/345/120/120" alt=""></a>
-                          </td>
-                          <td>
-                            <span class="c-room-list__room-num">12階</span>
-                            <span class="c-room-list__floor-num">1234</span>
-                          </td>
-                          <td>
-                            <span class="c-room-list__rent">1,200,000円</span>
-                            <span class="c-room-list__fee">50,000円</span>
-                          </td>
-                          <td>
-                            <span class="c-room-list__shiki">6.0ヶ月</span>
-                            <span class="c-room-list__rei">2.0ヶ月</span>
-                          </td>
-                          <td>
-                            <span class="c-room-list__madori">4LDK</span>
-                            <span class="c-room-list__sqm">121.78㎡</span>
-                          </td>
-                          <td class="c-room-list__td-point">
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
-                          </td>
-                          <td class="c-room-list__col-action">
-                            <a href="#" class="btn --impact --sm --w100">お問合せ</a>
-                            <button class="btn --normal --icon-l --bookmark --sm --w100">追加</button>
-                          </td>
-                        </tr>
-                        <tr class="c-room-list__body-row"
-                          data-js-link-room="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
-                          <td class="c-room-list__col-madori c-room-list__body-madori">
-                            <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803" target="_blank"><img
-                                src="https://picsum.photos/id/345/120/120" alt=""></a>
-                          </td>
-                          <td>
-                            <span class="c-room-list__room-num">12階</span>
-                            <span class="c-room-list__floor-num">1234</span>
-                          </td>
-                          <td>
-                            <span class="c-room-list__rent">1,200,000円</span>
-                            <span class="c-room-list__fee">50,000円</span>
-                          </td>
-                          <td>
-                            <span class="c-room-list__shiki">6.0ヶ月</span>
-                            <span class="c-room-list__rei">2.0ヶ月</span>
-                          </td>
-                          <td>
-                            <span class="c-room-list__madori">4LDK</span>
-                            <span class="c-room-list__sqm">121.78㎡</span>
-                          </td>
-                          <td class="c-room-list__td-point">
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
-                          </td>
-                          <td class="c-room-list__col-action">
-                            <a href="#" class="btn --impact --sm --w100">お問合せ</a>
-                            <button class="btn --normal --icon-l --bookmark --sm --w100">追加</button>
-                          </td>
-                        </tr>
-                        <tr class="c-room-list__body-row"
-                          data-js-link-room="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
-                          <td class="c-room-list__col-madori c-room-list__body-madori">
-                            <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803" target="_blank"><img
-                                src="https://picsum.photos/id/345/120/120" alt=""></a>
-                          </td>
-                          <td>
-                            <span class="c-room-list__room-num">12階</span>
-                            <span class="c-room-list__floor-num">1234</span>
-                          </td>
-                          <td>
-                            <span class="c-room-list__rent">1,200,000円</span>
-                            <span class="c-room-list__fee">50,000円</span>
-                          </td>
-                          <td>
-                            <span class="c-room-list__shiki">6.0ヶ月</span>
-                            <span class="c-room-list__rei">2.0ヶ月</span>
-                          </td>
-                          <td>
-                            <span class="c-room-list__madori">4LDK</span>
-                            <span class="c-room-list__sqm">121.78㎡</span>
-                          </td>
-                          <td class="c-room-list__td-point">
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
-                          </td>
-                          <td class="c-room-list__col-action">
-                            <a href="#" class="btn --impact --sm --w100">お問合せ</a>
-                            <button class="btn --normal --icon-l --bookmark --sm --w100">追加</button>
+                          <td class="c-room-list__col-action --wide __body-control">
+                            <a href="#" class="btn --impact --sm --w-100">お問合せ</a>
+                            <button class="btn --normal --icon-l --bookmark --sm --w-100">追加</button>
                           </td>
                         </tr>
                         <tr class="c-room-list__body-row"
                           data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
-                          <td class="c-room-list__col-madori c-room-list__body-madori">
+                          <td class="c-room-list__col-flag __body-flag">
+                            <span class="c-flag --primary --sm">新着</span>
+                            <span class="c-flag --sm">新築</span>
+                            <span class="c-flag --sm">賃料改定</span>
+                            <span class="c-flag --sm">礼金改定</span>
+                          </td>
+                          <td class="c-room-list__col-madori __body-madori">
                             <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803" target="_blank"><img
                                 src="https://picsum.photos/id/345/120/120" alt=""></a>
                           </td>
-                          <td>
+                          <td class="__body-floor">
                             <span class="c-room-list__room-num">12階</span>
                             <span class="c-room-list__floor-num">1234</span>
                           </td>
-                          <td>
+                          <td class="__body-rent">
                             <span class="c-room-list__rent">1,200,000円</span>
                             <span class="c-room-list__fee">50,000円</span>
                           </td>
-                          <td>
+                          <td class="__body-shikirei">
                             <span class="c-room-list__shiki">6.0ヶ月</span>
                             <span class="c-room-list__rei">2.0ヶ月</span>
                           </td>
-                          <td>
+                          <td class="__body-size">
                             <span class="c-room-list__madori">4LDK</span>
                             <span class="c-room-list__sqm">121.78㎡</span>
                           </td>
-                          <td class="c-room-list__td-point">
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
-                            <span class="c-point --outline">ポイント名</span>
+                          <td class="__body-point">
+                            <span class="c-flag --sm --pc-md  --outline">当社限定物件</span>
+                            <span class="c-flag --sm --pc-md  --outline">三井の賃貸</span>
+                            <span class="c-flag --sm --pc-md  --outline">駅近</span>
+                            <span class="c-flag --sm --pc-md  --outline">新築</span>
+                            <span class="c-flag --sm --pc-md  --outline">分譲賃貸</span>
+                            <span class="c-flag --sm --pc-md  --outline">フリーレント</span>
                           </td>
-                          <td class="c-room-list__col-action">
-                            <a href="#" class="btn --impact --sm --w100">お問合せ</a>
-                            <button class="btn --normal --icon-l --bookmark --sm --w100">追加</button>
+                          <td class="c-room-list__col-action --wide __body-control">
+                            <a href="#" class="btn --impact --sm --w-100">お問合せ</a>
+                            <button class="btn --normal --icon-l --bookmark --sm --w-100">追加</button>
+                          </td>
+                        </tr>
+                        <tr class="c-room-list__body-row"
+                          data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                          <td class="c-room-list__col-flag __body-flag">
+                            <span class="c-flag --primary --sm">新着</span>
+                            <span class="c-flag --sm">新築</span>
+                            <span class="c-flag --sm">賃料改定</span>
+                            <span class="c-flag --sm">礼金改定</span>
+                          </td>
+                          <td class="c-room-list__col-madori __body-madori">
+                            <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803" target="_blank"><img
+                                src="https://picsum.photos/id/345/120/120" alt=""></a>
+                          </td>
+                          <td class="__body-floor">
+                            <span class="c-room-list__room-num">12階</span>
+                            <span class="c-room-list__floor-num">1234</span>
+                          </td>
+                          <td class="__body-rent">
+                            <span class="c-room-list__rent">1,200,000円</span>
+                            <span class="c-room-list__fee">50,000円</span>
+                          </td>
+                          <td class="__body-shikirei">
+                            <span class="c-room-list__shiki">6.0ヶ月</span>
+                            <span class="c-room-list__rei">2.0ヶ月</span>
+                          </td>
+                          <td class="__body-size">
+                            <span class="c-room-list__madori">4LDK</span>
+                            <span class="c-room-list__sqm">121.78㎡</span>
+                          </td>
+                          <td class="__body-point">
+                            <span class="c-flag --sm --pc-md  --outline">当社限定物件</span>
+                            <span class="c-flag --sm --pc-md  --outline">三井の賃貸</span>
+                            <span class="c-flag --sm --pc-md  --outline">駅近</span>
+                            <span class="c-flag --sm --pc-md  --outline">新築</span>
+                            <span class="c-flag --sm --pc-md  --outline">分譲賃貸</span>
+                            <span class="c-flag --sm --pc-md  --outline">フリーレント</span>
+                          </td>
+                          <td class="c-room-list__col-action --wide __body-control">
+                            <a href="#" class="btn --impact --sm --w-100">お問合せ</a>
+                            <button class="btn --normal --icon-l --bookmark --sm --w-100">追加</button>
+                          </td>
+                        </tr>
+                        <tr class="c-room-list__body-row"
+                          data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                          <td class="c-room-list__col-flag __body-flag">
+                            <span class="c-flag --primary --sm">新着</span>
+                            <span class="c-flag --sm">新築</span>
+                            <span class="c-flag --sm">賃料改定</span>
+                            <span class="c-flag --sm">礼金改定</span>
+                          </td>
+                          <td class="c-room-list__col-madori __body-madori">
+                            <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803" target="_blank"><img
+                                src="https://picsum.photos/id/345/120/120" alt=""></a>
+                          </td>
+                          <td class="__body-floor">
+                            <span class="c-room-list__room-num">12階</span>
+                            <span class="c-room-list__floor-num">1234</span>
+                          </td>
+                          <td class="__body-rent">
+                            <span class="c-room-list__rent">1,200,000円</span>
+                            <span class="c-room-list__fee">50,000円</span>
+                          </td>
+                          <td class="__body-shikirei">
+                            <span class="c-room-list__shiki">6.0ヶ月</span>
+                            <span class="c-room-list__rei">2.0ヶ月</span>
+                          </td>
+                          <td class="__body-size">
+                            <span class="c-room-list__madori">4LDK</span>
+                            <span class="c-room-list__sqm">121.78㎡</span>
+                          </td>
+                          <td class="__body-point">
+                            <span class="c-flag --sm --pc-md  --outline">当社限定物件</span>
+                            <span class="c-flag --sm --pc-md  --outline">三井の賃貸</span>
+                            <span class="c-flag --sm --pc-md  --outline">駅近</span>
+                            <span class="c-flag --sm --pc-md  --outline">新築</span>
+                            <span class="c-flag --sm --pc-md  --outline">分譲賃貸</span>
+                            <span class="c-flag --sm --pc-md  --outline">フリーレント</span>
+                          </td>
+                          <td class="c-room-list__col-action --wide __body-control">
+                            <a href="#" class="btn --impact --sm --w-100">お問合せ</a>
+                            <button class="btn --normal --icon-l --bookmark --sm --w-100">追加</button>
+                          </td>
+                        </tr>
+                        <tr class="c-room-list__body-row"
+                          data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                          <td class="c-room-list__col-flag __body-flag">
+                            <span class="c-flag --primary --sm">新着</span>
+                            <span class="c-flag --sm">新築</span>
+                            <span class="c-flag --sm">賃料改定</span>
+                            <span class="c-flag --sm">礼金改定</span>
+                          </td>
+                          <td class="c-room-list__col-madori __body-madori">
+                            <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803" target="_blank"><img
+                                src="https://picsum.photos/id/345/120/120" alt=""></a>
+                          </td>
+                          <td class="__body-floor">
+                            <span class="c-room-list__room-num">12階</span>
+                            <span class="c-room-list__floor-num">1234</span>
+                          </td>
+                          <td class="__body-rent">
+                            <span class="c-room-list__rent">1,200,000円</span>
+                            <span class="c-room-list__fee">50,000円</span>
+                          </td>
+                          <td class="__body-shikirei">
+                            <span class="c-room-list__shiki">6.0ヶ月</span>
+                            <span class="c-room-list__rei">2.0ヶ月</span>
+                          </td>
+                          <td class="__body-size">
+                            <span class="c-room-list__madori">4LDK</span>
+                            <span class="c-room-list__sqm">121.78㎡</span>
+                          </td>
+                          <td class="__body-point">
+                            <span class="c-flag --sm --pc-md  --outline">当社限定物件</span>
+                            <span class="c-flag --sm --pc-md  --outline">三井の賃貸</span>
+                            <span class="c-flag --sm --pc-md  --outline">駅近</span>
+                            <span class="c-flag --sm --pc-md  --outline">新築</span>
+                            <span class="c-flag --sm --pc-md  --outline">分譲賃貸</span>
+                            <span class="c-flag --sm --pc-md  --outline">フリーレント</span>
+                          </td>
+                          <td class="c-room-list__col-action --wide __body-control">
+                            <a href="#" class="btn --impact --sm --w-100">お問合せ</a>
+                            <button class="btn --normal --icon-l --bookmark --sm --w-100">追加</button>
+                          </td>
+                        </tr>
+                        <tr class="c-room-list__body-row"
+                          data-js-room-link="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803">
+                          <td class="c-room-list__col-flag __body-flag">
+                            <span class="c-flag --primary --sm">新着</span>
+                            <span class="c-flag --sm">新築</span>
+                            <span class="c-flag --sm">賃料改定</span>
+                            <span class="c-flag --sm">礼金改定</span>
+                          </td>
+                          <td class="c-room-list__col-madori __body-madori">
+                            <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803" target="_blank"><img
+                                src="https://picsum.photos/id/345/120/120" alt=""></a>
+                          </td>
+                          <td class="__body-floor">
+                            <span class="c-room-list__room-num">12階</span>
+                            <span class="c-room-list__floor-num">1234</span>
+                          </td>
+                          <td class="__body-rent">
+                            <span class="c-room-list__rent">1,200,000円</span>
+                            <span class="c-room-list__fee">50,000円</span>
+                          </td>
+                          <td class="__body-shikirei">
+                            <span class="c-room-list__shiki">6.0ヶ月</span>
+                            <span class="c-room-list__rei">2.0ヶ月</span>
+                          </td>
+                          <td class="__body-size">
+                            <span class="c-room-list__madori">4LDK</span>
+                            <span class="c-room-list__sqm">121.78㎡</span>
+                          </td>
+                          <td class="__body-point">
+                            <span class="c-flag --sm --pc-md  --outline">当社限定物件</span>
+                            <span class="c-flag --sm --pc-md  --outline">三井の賃貸</span>
+                            <span class="c-flag --sm --pc-md  --outline">駅近</span>
+                            <span class="c-flag --sm --pc-md  --outline">新築</span>
+                            <span class="c-flag --sm --pc-md  --outline">分譲賃貸</span>
+                            <span class="c-flag --sm --pc-md  --outline">フリーレント</span>
+                          </td>
+                          <td class="c-room-list__col-action --wide __body-control">
+                            <a href="#" class="btn --impact --sm --w-100">お問合せ</a>
+                            <button class="btn --normal --icon-l --bookmark --sm --w-100">追加</button>
                           </td>
                         </tr>
                       </tbody>

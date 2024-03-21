@@ -20,4 +20,21 @@
 
   // ローダー
   --loader: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3CradialGradient id='a5' cx='.66' fx='.66' cy='.3125' fy='.3125' gradientTransform='scale(1.5)'%3E%3Cstop offset='0' stop-color='%23FFFFFF'%3E%3C/stop%3E%3Cstop offset='.3' stop-color='%23FFFFFF' stop-opacity='.9'%3E%3C/stop%3E%3Cstop offset='.6' stop-color='%23FFFFFF' stop-opacity='.6'%3E%3C/stop%3E%3Cstop offset='.8' stop-color='%23FFFFFF' stop-opacity='.3'%3E%3C/stop%3E%3Cstop offset='1' stop-color='%23FFFFFF' stop-opacity='0'%3E%3C/stop%3E%3C/radialGradient%3E%3Ccircle transform-origin='center' fill='none' stroke='url(%23a5)' stroke-width='15' stroke-linecap='round' stroke-dasharray='200 1000' stroke-dashoffset='0' cx='100' cy='100' r='70'%3E%3CanimateTransform type='rotate' attributeName='transform' calcMode='spline' dur='0.9' values='360;0' keyTimes='0;1' keySplines='0 0 1 1' repeatCount='indefinite'%3E%3C/animateTransform%3E%3C/circle%3E%3Ccircle transform-origin='center' fill='none' opacity='.2' stroke='%23FFFFFF' stroke-width='15' stroke-linecap='round' cx='100' cy='100' r='70'%3E%3C/circle%3E%3C/svg%3E");
+
+  // map
+  --icon-map: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z' fill='black'/%3E%3C/svg%3E%0A");
+
+  // アロー（右）
+  --icon-arrow-r: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 16.6609L10.0707 17.7315L15.9365 11.8658L10.0707 6L9.00067 7.07002L13.7958 11.8651L9 16.6609Z' fill='black'/%3E%3C/svg%3E%0A");
+
+  // リンクアウト
+  --icon-link-out: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z' fill='black'/%3E%3C/svg%3E%0A");
+
+  // プラス
+  --icon-plus: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z' fill='black'/%3E%3C/svg%3E");
+  --icon-plus-circle: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 11V7H13V11H17V13H13V17H11V13H7V11H11ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z' fill='black'/%3E%3C/svg%3E%0A");
+  --icon-plus-circle-fill: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 11H7V13H11V17H13V13H17V11H13V7H11V11Z' fill='black'/%3E%3C/svg%3E%0A");
+
+  // マイナス
+  --icon-minus: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 11V13H5V11H19Z' fill='black'/%3E%3C/svg%3E%0A");
 }

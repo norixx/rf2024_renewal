@@ -65,7 +65,7 @@
               </div>
             </li>
             <li class="gnav-list__item">
-              <div class="gnav-list__link" data-js-gnav-sub="#gnav-rent" data-js-gnav-lv1="rent">
+              <div class="gnav-list__link --is-open" data-js-gnav-sub="#gnav-rent" data-js-gnav-lv1="rent">
                 <span class="gnav-list__link-text">借りたい</span>
                 <p class="gnav-list__lead u-sp-only">厳選した都心の上質な賃貸マンションを<br>数多くご提案します</p>
               </div>
@@ -102,14 +102,14 @@
           </div>
         </div>
 
-        <!-- サブナビゲーションコンテナ -->
-        <div class="gnav-sub-container" id="gnav-sub-container">
+        <!-- サブナビゲーションコンテナ:開閉対象(PC) -->
+        <div class="gnav-sub-container --is-open" id="gnav-sub-container">
           <div class="gnav-sub-container__inner">
 
             <!-- PC用 閉じるボタン -->
             <button class="u-pc-only gnav-sub-container__btn-close" data-js-gnav-sub-container-close>❌️</button>
 
-            <!-- ABOUT US -->
+            <!-- ABOUT US:開閉対象 -->
             <div class="gnav-anim-panel gnav-lv2" id="gnav-aboutus">
               <div class="gnav-lv2__inner u-pos-relative">
                 <section class="gnav-subsect gnav-lower-sect l-col-pc-10">
@@ -135,8 +135,8 @@
 
             </div>
 
-            <!-- 借りたい / 開閉対象 -->
-            <div class="gnav-anim-panel gnav-lv2" id="gnav-rent">
+            <!-- 借りたい:開閉対象 -->
+            <div class="gnav-anim-panel gnav-lv2 --is-open" id="gnav-rent">
               <div class="gnav-lv2__inner u-pos-relative">
 
                 <section class="gnav-subsect gnav-lower-sect l-col-pc-10">
@@ -220,7 +220,7 @@
               </div>
             </div>
 
-            <!-- 貸したい -->
+            <!-- 貸したい:開閉対象 -->
             <div class="gnav-anim-panel gnav-lv2" id="gnav-lend">
               <div class="gnav-lv2__inner">
                 <section class="gnav-subsect gnav-lower-sect l-col-pc-10">貸したい</section>
@@ -388,35 +388,35 @@
               <div class="c-top-search__body">
                 <div class="c-top-search__basic">
                   <ul class="c-top-search__basic-list">
-                    <li class="__item"><a href="/rf/area" class="btn --search-basic --w100"><b>人気エリア</b>から探す</a></li>
-                    <li class="__item"><a href="/rf/ward" class="btn --search-basic --w100"><b>区</b>から探す</a></li>
-                    <li class="__item"><a href="/rf/ensen/" class="btn --search-basic --w100"><b>駅・沿線</b>から探す</a></li>
-                    <li class="__item"><a href="/mapsearch" class="btn --search-basic --w100"><b>地図</b>から探す</a></li>
-                    <li class="__item"><a href="#" class="btn --search-basic --w100"><b>特集</b>から探す</a></li>
+                    <li class="__item"><a href="/rf/area" class="btn --search-basic --w-100"><b>人気エリア</b>から探す</a></li>
+                    <li class="__item"><a href="/rf/ward" class="btn --search-basic --w-100"><b>区</b>から探す</a></li>
+                    <li class="__item"><a href="/rf/ensen/" class="btn --search-basic --w-100"><b>駅・沿線</b>から探す</a></li>
+                    <li class="__item"><a href="/mapsearch" class="btn --search-basic --w-100"><b>地図</b>から探す</a></li>
+                    <li class="__item"><a href="#" class="btn --search-basic --w-100"><b>特集</b>から探す</a></li>
                     <li class="__item"><a href="/premium/"
-                        class="btn --search-basic --w100"><b>プレミアムマンション</b>から探す（未定）</a>
+                        class="btn --search-basic --w-100"><b>プレミアムマンション</b>から探す（未定）</a>
                     </li>
                   </ul>
                 </div>
                 <div class="c-top-search__lists">
                   <ul class="c-top-search__pickup-list">
                     <li class="__item"><a href="/rf/osusume/new"
-                        class="btn --primary --w100 --text-center">“最新”新着<br>物件情報一覧</a>
+                        class="btn --primary --w-100 --text-center">“最新”新着<br>物件情報一覧</a>
                     </li>
-                    <li class="__item"><a href="#" class="btn --primary --w100 --text-center">担当者おすすめ<br>物件情報一覧</a>
+                    <li class="__item"><a href="#" class="btn --primary --w-100 --text-center">担当者おすすめ<br>物件情報一覧</a>
                     </li>
                   </ul>
                   <ul class="c-top-search__user-actions">
                     <li class="__item"><a href="/rf/list/ichiran"
-                        class="btn --primary-black-outline --w100 --bdr-thick">検討中リストに<br>保存したお部屋</a></li>
+                        class="btn --primary-black-outline --w-100 --bdr-thick">検討中リストに<br>保存したお部屋</a></li>
                     <li class="__item"><a href="/rf/list/rirekioheya"
-                        class="btn --primary-black-outline --w100 --bdr-thick">最近見た<br>お部屋</a>
+                        class="btn --primary-black-outline --w-100 --bdr-thick">最近見た<br>お部屋</a>
                     </li>
                     <li class="__item"><a href="/rf/list/jyouken"
-                        class="btn --primary-black-outline --w100 --bdr-thick">保存した<br>検索条件</a>
+                        class="btn --primary-black-outline --w-100 --bdr-thick">保存した<br>検索条件</a>
                     </li>
                     <li class="__item"><a href="/rf/list/rirekijyouken"
-                        class="btn --primary-black-outline --w100 --bdr-thick">最近見た<br>検索条件</a>
+                        class="btn --primary-black-outline --w-100 --bdr-thick">最近見た<br>検索条件</a>
                     </li>
                   </ul>
                 </div>
@@ -817,7 +817,7 @@
                         </li>
                       </ul>
                       <div class="c-newslist__link">
-                        <a href="/topics/pickbk.html" class="btn --normal --mw400px --icon-after">最新情報一覧を見る</a>
+                        <a href="/topics/pickbk.html" class="btn --normal --mw-400px --icon-after">最新情報一覧を見る</a>
                       </div>
                     </div>
                   </section>
@@ -839,7 +839,7 @@
                       </ul>
 
                       <div class="c-newslist__link">
-                        <a href="/topics/" class="btn --normal --mw400px --icon-after">ニュースリリース一覧を見る</a>
+                        <a href="/topics/" class="btn --normal --mw-400px --icon-after">ニュースリリース一覧を見る</a>
                       </div>
                     </div>
                   </section>
@@ -867,9 +867,9 @@
           <dl class="footer-concent-form">
             <dt>個人情報の取り扱いについて同意フォーム</dt>
             <div class="footer-concent-form__links">
-              <dd class="footer-concent-form__detail"><a href="#" class="btn --normal --w100">詳細</a></dd>
-              <dd class="footer-concent-form__ps"><a href="#" class="btn --normal --w100">プライバシーステートメント</a></dd>
-              <dd class="footer-concent-form__form"><a href="#" class="btn --impact --w100">同意フォーム</a></dd>
+              <dd class="footer-concent-form__detail"><a href="#" class="btn --normal --w-100">詳細</a></dd>
+              <dd class="footer-concent-form__ps"><a href="#" class="btn --normal --w-100">プライバシーステートメント</a></dd>
+              <dd class="footer-concent-form__form"><a href="#" class="btn --impact --w-100">同意フォーム</a></dd>
             </div>
           </dl>
         </div>
