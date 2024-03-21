@@ -413,6 +413,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/src\/scss\/components\/_flags.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/components\/_flags.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/src\/scss\/components\/_forms.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -889,7 +904,7 @@
       "oA" : 0,
       "oAP" : "\/assets\/css\/rf.min.css",
       "oF" : 2,
-      "oS" : 1,
+      "oS" : 3,
       "pg" : 0,
       "sct" : 0
     },
