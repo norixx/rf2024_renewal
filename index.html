@@ -52,7 +52,7 @@
 
       <nav class="header__gnav gnav" id="gnav-main">
         <!-- グローバルナビゲーション閉じるボタン -->
-        <button data-js-gnav-close type="button" class="gnav-close u-sp-only" style="font-size: 32px">❌️</button>
+        <button data-js-gnav-close type="button" class="gnav-close"></button>
 
         <div class="gnav-container">
           <ul class="gnav-list" id="gnav-list">
@@ -77,10 +77,31 @@
                 </p>
               </div>
             </li>
-            <li class="gnav-list__item u-pc-only"><a href="#" class="gnav-list__link">資産運用</a></li>
-            <li class="gnav-list__item u-ta-center u-pc-only"><a href="#" class="gnav-list__link">Resident
-                First<br>Channel</a></li>
-            <li class="gnav-list__item u-pc-only"><a href="#" class="gnav-list__link u-tt-uppercase">Service</a></li>
+            <li class="gnav-list__item u-pc-only">
+              <div class="gnav-list__link" data-js-gnav-sub="#gnav-asset-management"
+                data-js-gnav-lv1="asset-management">
+                <span class="gnav-list__link-text">資産活用</span>
+                <p class="gnav-list__lead u-sp-only">分譲マンションのご購入、売却の
+                  ご相談も承ります
+                </p>
+              </div>
+            </li>
+            <li class="gnav-list__item u-ta-center u-pc-only">
+              <div class="gnav-list__link" data-js-gnav-sub="#gnav-resident-first-channel"
+                data-js-gnav-lv1="resident-first-channel">
+                <span class="gnav-list__link-text">Resident First<br>Channel</span>
+                <p class="gnav-list__lead u-sp-only">新しい住まいと暮らしの探しに関わる
+                  様々な情報を発信します
+                </p>
+              </div>
+            </li>
+            <li class="gnav-list__item u-pc-only">
+              <div class="gnav-list__link" data-js-gnav-sub="#gnav-service" data-js-gnav-lv1="service">
+                <span class="gnav-list__link-text u-tt-uppercase">Service</span>
+                <p class="gnav-list__lead u-sp-only">レジデントファーストが提供する各種サービスをご紹介します
+                </p>
+              </div>
+            </li>
           </ul>
 
           <ul class="gnav-site-info">
@@ -93,7 +114,7 @@
             <li><a href="#">検討中リスト</a></li>
             <li><a href="#">閲覧履歴・検索条件</a></li>
             <li><a href="#" class="u-tt-uppercase">Service</a></li>
-            <li><a href="#">ログイン/新規登録</a></li>
+            <li><a href="#">ログイン / 新規登録</a></li>
           </ul>
 
           <div class="gnav-lang-switch">
@@ -107,19 +128,19 @@
           <div class="gnav-sub-container__inner">
 
             <!-- PC用 閉じるボタン -->
-            <button class="u-pc-only gnav-sub-container__btn-close" data-js-gnav-sub-container-close>❌️</button>
+            <button class="gnav-sub-container__btn-close" data-js-gnav-sub-container-close type="button"></button>
 
             <!-- ABOUT US:開閉対象 -->
-            <div class="gnav-anim-panel gnav-lv2" id="gnav-aboutus">
-              <div class="gnav-lv2__inner u-pos-relative">
+            <div class="gnav-anim-panel gnav-sub-content" id="gnav-aboutus">
+              <div class="gnav-sub-content__inner u-pos-relative">
                 <section class="gnav-subsect gnav-lower-sect l-col-pc-10">
-                  <header class="gnav-subsect__header gnav-lower-sect__header">
-                    <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-aboutus">&lt;</span>
-                    <h2 class="gnav-lower-sect__h">About Us</h2>
-                    <p class="gnav-lower-sect__lead u-pc-only">私たちレジデントファーストの思いや<br>
+                  <header class="gnav-subsect__header gnav-lower-sect__header --is-go-back">
+                    <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-aboutus"></span>
+                    <h2 class="gnav-subsect__h gnav-lower-sect__h">About Us</h2>
+                    <p class="gnav-subsect__lead gnav-lower-sect__lead u-pc-only">私たちレジデントファーストの思いや<br>
                       ご提供するサービスをご紹介します</p>
                   </header>
-                  <div class="gnav-lower-sect__content">
+                  <div class="gnav-subsect__content gnav-lower-sect__content">
                     <div class="gnav-subsect-col">
                       <ul class="gnav-sublist">
                         <li><a href="#">サービスについて</a></li>
@@ -136,24 +157,25 @@
             </div>
 
             <!-- 借りたい:開閉対象 -->
-            <div class="gnav-anim-panel gnav-lv2 --is-open" id="gnav-rent">
-              <div class="gnav-lv2__inner u-pos-relative">
+            <div class="gnav-anim-panel gnav-sub-content --is-open" id="gnav-rent">
+              <div class="gnav-sub-content__inner u-pos-relative">
 
                 <section class="gnav-subsect gnav-lower-sect l-col-pc-10">
-                  <header class="gnav-subsect__header gnav-lower-sect__header">
-                    <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-rent">&lt;</span>
-                    <h2 class="gnav-lower-sect__h">借りたい</h2>
-                    <p class="gnav-lower-sect__lead u-pc-only">厳選した都心の上質な賃貸マンションを数多くご提案します</p>
+                  <header class="gnav-subsect__header gnav-lower-sect__header --is-go-back">
+                    <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-rent"></span>
+                    <h2 class="gnav-subsect__h gnav-lower-sect__h">借りたい</h2>
+                    <p class="gnav-subsect__lead gnav-lower-sect__lead u-pc-only">厳選した都心の上質な賃貸マンションを数多くご提案します</p>
                   </header>
 
-                  <div class="gnav-lower-sect__content">
+                  <div class="gnav-subsect__content gnav-lower-sect__content">
                     <!-- col 1 -->
                     <div class="gnav-subsect-col">
+
                       <!-- 検索するSECTION -->
                       <section class="gnav-lower-sect">
 
                         <!-- 下層トグルスイッチ -->
-                        <header class="gnav-lower-sect__header gnav-open-lower" data-js-gnav-sub="#gnav-rent-search">
+                        <header class="gnav-lower-sect__header --is-open-lower" data-js-gnav-sub="#gnav-rent-search">
                           <h3 class="gnav-lower-sect__h">検索する</h3>
                         </header>
 
@@ -162,16 +184,16 @@
                           <!-- 開閉対象 -->
                           <div class="gnav-lower-lv gnav-anim-panel" id="gnav-rent-search">
                             <section class="gnav-lower-sect">
-                              <header class="gnav-lower-sect__header">
-                                <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-rent-search">&lt;</span>
+                              <header class="gnav-lower-sect__header --is-go-back">
+                                <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-rent-search"></span>
                                 <h4 class="gnav-lower-sect__h">検索する</h4>
                               </header>
                               <div class="gnav-lower-sect__content">
                                 <ul class="gnav-sublist">
-                                  <li><a href="#">人気エリアから探す</a></li>
-                                  <li><a href="#">区から探す</a></li>
-                                  <li><a href="#">駅・沿線から探す</a></li>
-                                  <li><a href="#">地図から探す</a></li>
+                                  <li><a href="{{ url('/') }}/area">人気エリアから探す</a></li>
+                                  <li><a href="{{ url('/') }}/ward">区から探す</a></li>
+                                  <li><a href="{{ url('/') }}/ensen">駅・沿線から探す</a></li>
+                                  <li><a href="{{ url('/') }}/mapsearch/">地図から探す</a></li>
                                 </ul>
                               </div>
                             </section>
@@ -181,9 +203,9 @@
 
                       <!-- 最新情報から探す -->
                       <section class="gnav-lower-sect">
-                        <header class="gnav-lower-sect__header gnav-open-lower">
+                        <header class="gnav-lower-sect__header --is-open-lower" data-js-gnav-sub="#gnav-rent-newinfo">
                           <!-- 下層トグルスイッチ -->
-                          <h3 class="gnav-lower-sect__h " data-js-gnav-sub="#gnav-rent-newinfo">
+                          <h3 class="gnav-lower-sect__h">
                             最新情報から探す</h3>
                         </header>
                         <div class="gnav-lower-sect__content">
@@ -191,14 +213,14 @@
                           <!-- 開閉対象 -->
                           <div class="gnav-lower-lv gnav-anim-panel" id="gnav-rent-newinfo">
                             <section class="gnav-lower-sect">
-                              <header class="gnav-lower-sect__header">
-                                <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-rent-newinfo">&lt;</span>
+                              <header class="gnav-lower-sect__header --is-go-back">
+                                <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-rent-newinfo"></span>
                                 <h4 class="gnav-lower-sect__h">最新情報から探す</h4>
                               </header>
                               <div class="gnav-lower-sect__content">
                                 <ul class="gnav-sublist">
-                                  <li><a href="#">おすすめ情報から探す</a></li>
-                                  <li><a href="#">新着情報から探す</a></li>
+                                  <li><a href="/topics/pickbk.html">おすすめ情報から探す</a></li>
+                                  <li><a href="あとで">新着情報から探す</a></li>
                                 </ul>
                               </div>
                             </section>
@@ -209,10 +231,50 @@
 
                     <!-- col 2 -->
                     <div class="gnav-subsect-col">
+
                       <!-- 特集から探す -->
                       <section class="gnav-lower-sect">
+                        <header class="gnav-lower-sect__header --is-open-lower" data-js-gnav-sub="#gnav-rent-feature">
+                          <!-- 下層トグルスイッチ -->
+                          <h3 class="gnav-lower-sect__h">
+                            特集から探す</h3>
+                        </header>
+                        <div class="gnav-lower-sect__content">
 
+                          <!-- 開閉対象 -->
+                          <div class="gnav-lower-lv gnav-anim-panel" id="gnav-rent-feature">
+                            <section class="gnav-lower-sect">
+                              <header class="gnav-lower-sect__header --is-go-back">
+                                <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-rent-feature"></span>
+                                <h4 class="gnav-lower-sect__h">特集から探す</h4>
+                              </header>
+                              <div class="gnav-lower-sect__content">
+                                <ul class="gnav-sublist">
+                                  <li><a href="/premium/">プレミアムマンション</a></li>
+                                  <li><a href="{{ url('/') }}/osusume/new">新築</a></li>
+                                  <li><a href="{{ url('/') }}/result?lin=ALL&cms=1&vop=(0,0,1,0)&get=ensen">当社限定</a>
+                                  </li>
+                                  <li><a href="{{ url('/') }}/osusume/parkaxis">三井不動産企画</a></li>
+                                  <li><a href="/mansion/">分譲賃貸</a></li>
+                                  <li><a href="/newprice/">賃料改定</a></li>
+                                  <li><a
+                                      href="{{ url('/') }}/result?ku=(ALL)&cms=5jjrmzbvnk&vop=(0,0,4,0)&get=ward">フリーレント</a>
+                                  </li>
+                                  <li><a
+                                      href="{{ url('/') }}/result?lin=ALL&equ=(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0)&get=lin">ペット可</a>
+                                  </li>
+                                  <li><a
+                                      href="{{ url('/') }}//result?equ=(0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)&vop=(0,0,4,0)&get=ward">コンシェルジュ付き</a>
+                                  </li>
+                                  <li><a href="/brandmansion/">ブランドマンション</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </section>
+                          </div>
+                        </div>
                       </section>
+
                     </div>
                   </div>
                 </section>
@@ -221,9 +283,110 @@
             </div>
 
             <!-- 貸したい:開閉対象 -->
-            <div class="gnav-anim-panel gnav-lv2" id="gnav-lend">
-              <div class="gnav-lv2__inner">
-                <section class="gnav-subsect gnav-lower-sect l-col-pc-10">貸したい</section>
+            <div class="gnav-anim-panel gnav-sub-content" id="gnav-lend">
+              <div class="gnav-sub-content__inner u-pos-relative">
+                <section class="gnav-subsect gnav-lower-sect l-col-pc-10">
+                  <header class="gnav-subsect__header gnav-lower-sect__header  --is-go-back">
+                    <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-lend"></span>
+                    <h2 class="gnav-subsect__h gnav-lower-sect__h">貸したい</h2>
+                    <p class="gnav-subsect__lead gnav-lower-sect__lead u-pc-only">
+                      賃貸運営をお考えのオーナー様に<br>
+                      最適なプランをご提案します
+                    </p>
+                  </header>
+                  <div class="gnav-subsect__content gnav-lower-sect__content">
+                    <div class="gnav-subsect-col">
+                      <ul class="gnav-sublist">
+                        <li><a href="/owner_overview/">賃貸運営</a></li>
+                        <li><a href="https://form.mitsui-chintai.co.jp/webapp/form/19959_rndb_7/index.do">お問い合わせ</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <!-- 資産活用:開閉対象 -->
+            <div class="gnav-anim-panel gnav-sub-content" id="gnav-asset-management">
+              <div class="gnav-sub-content__inner u-pos-relative">
+                <section class="gnav-subsect gnav-lower-sect l-col-pc-10">
+                  <header class="gnav-subsect__header gnav-lower-sect__header  --is-go-back">
+                    <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-asset-management"></span>
+                    <h2 class="gnav-subsect__h gnav-lower-sect__h">資産活用</h2>
+                    <p class="gnav-subsect__lead gnav-lower-sect__lead u-pc-only">
+                      分譲マンションのご購入、売却の<br>
+                      ご相談も承ります
+                    </p>
+                  </header>
+                  <div class="gnav-subsect__content gnav-lower-sect__content">
+                    <div class="gnav-subsect-col">
+                      <ul class="gnav-sublist">
+                        <li><a href="/owner/mansion/">販売マンション</a></li>
+                        <li><a href="https://form.mitsui-chintai.co.jp/webapp/form/19959_rndb_21/index.do">お問い合わせ</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <!-- RESIDENT FIRST CHANNEL:開閉対象 -->
+            <div class="gnav-anim-panel gnav-sub-content" id="gnav-resident-first-channel">
+              <div class="gnav-sub-content__inner u-pos-relative">
+                <section class="gnav-subsect gnav-lower-sect l-col-pc-10">
+                  <header class="gnav-subsect__header gnav-lower-sect__header  --is-go-back">
+                    <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-resident-first-channel"></span>
+                    <h2 class="gnav-subsect__h gnav-lower-sect__h u-tt-uppercase">Resident First Channel</h2>
+                    <p class="gnav-subsect__lead gnav-lower-sect__lead u-pc-only">
+                      新しい住まいと暮らしの探しに関わる<br>
+                      様々な情報を発信します
+                    </p>
+                  </header>
+                  <div class="gnav-subsect__content gnav-lower-sect__content">
+                    <div class="gnav-subsect-col">
+                      <ul class="gnav-sublist">
+                        <li><a href="/service/resident_first_channel/" class="u-tt-uppercase">News</a></li>
+                        <li><a href="/service/resident_first_channel/#report">マンションレポート</a></li>
+                        <li><a href="/service/resident_first_channel/#shoppingStreet">商店街のある暮らし</a></li>
+                        <li><a href="/service/resident_first_channel/#article">住まいのコラム</a></li>
+                        <li><a href="https://form.mitsui-chintai.co.jp/webapp/form/19959_rndb_258/index.do"
+                            class="u-tt-uppercase">Members登録</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <!-- SERVICE:開閉対象 -->
+            <div class="gnav-anim-panel gnav-sub-content" id="gnav-service">
+              <div class="gnav-sub-content__inner u-pos-relative">
+                <section class="gnav-subsect gnav-lower-sect l-col-pc-10">
+                  <header class="gnav-subsect__header gnav-lower-sect__header --is-go-back">
+                    <span class="gnav-go-back" data-js-gnav-sub-close="#gnav-service"></span>
+                    <h2 class="gnav-subsect__h gnav-lower-sect__h u-tt-uppercase">Service</h2>
+                    <p class="gnav-subsect__lead gnav-lower-sect__lead u-pc-only">
+                      レジデントファーストが提供する<br>
+                      各種サービスをご紹介します
+                    </p>
+                  </header>
+                  <div class="gnav-subsect__content gnav-lower-sect__content">
+                    <div class="gnav-subsect-col">
+                      <ul class="gnav-sublist">
+                        <li><a href="https://mypage.mitsui-chintai.co.jp/rf_web/cstLogin">会員ページ</a></li>
+                        <li><a href="/service/benefit/">ご入居・提携サービス</a></li>
+                        <li><a href="/service/flow/">お部屋探しからご契約まで</a></li>
+                        <li><a href="/service/faq/">よくあるご質問</a></li>
+                        <li><a href="https://www.mitsui-chintai.co.jp/service/pdf/rf-moshikomi.pdf">【仲介業者様向け】
+                            当社仲介事業部取り扱い物件入居申込書</a></li>
+                        <li><a href="/business/">社宅紹介</a></li>
+                        <li><a href="/topics/salescontact.html">営業窓口</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
               </div>
             </div>
 
@@ -243,8 +406,7 @@
         </div>
       </div>
 
-      <button data-js-gnav="#gnav-main" class="gnav-toggle u-sp-only" id="gnav-btn-open" type="button"
-        style="font-size: 32px;">🍔</button>
+      <button data-js-gnav="#gnav-main" class="gnav-toggle u-sp-only" id="gnav-btn-open" type="button"></button>
 
     </div>
 

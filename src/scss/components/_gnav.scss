@@ -14,7 +14,7 @@
 
   &.--is-open {
     left: 0;
-    background-color: rgba(0 0 0 / 0.2);
+    background-color: rgba(0 0 0 / 0.4);
     // z-index: var(--z-index-lv2);
   }
 
@@ -27,8 +27,66 @@
 
   // Gnav開閉🍔ボタン
   &-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --btn-size: var(--space-40);
+    width: var(--btn-size);
+    height: var(--btn-size);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: var(--space-32);
+      height: 1px;
+      background-color: var(--bg-gray-dark);
+      left: 50%;
+      top: 50%;
+      translate: 0 -50%;
+    }
+
+    &::before {
+      translate: -50% calc(-50% - 4px);
+    }
+    &::after {
+      translate: -50% calc(-50% + 4px);
+    }
+
     @include mq {
       display: none;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--space-64);
+    height: var(--space-64);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--animation-normal);
+
+    .gnav.--is-open & {
+      opacity: 1;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      background-color: var(--bg-white);
+      --icon-size: var(--space-24);
+      width: var(--icon-size);
+      height: var(--icon-size);
+      mask: var(--icon-close) no-repeat center center / contain;
+    }
+
+    @include mq {
+      display: none !important;
     }
   }
 
@@ -65,7 +123,6 @@
     width: var(--gnav-sp-width);
     top: 0;
     left: var(--space-64);
-    // height: 100vh;
     z-index: 100;
     left: 100%; //暫定
 
@@ -104,11 +161,31 @@
       right: var(--space-24);
       z-index: 100;
       cursor: pointer;
+      --btn-size: var(--space-40);
+      width: var(--btn-size);
+      height: var(--btn-size);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+
+      &::before {
+        content: "";
+        --icons-size: var(--space-24);
+        width: var(--icons-size);
+        height: var(--icons-size);
+        background: var(--bg-white);
+        mask: var(--icon-close) no-repeat center center / contain;
+      }
+
+      @include mq {
+        display: flex;
+      }
     }
   }
 
-  // PC: Lv2コンテンツ
-  &-lv2 {
+  // PC: Lv2コンテンツ(開閉させるためのコンテナ)
+  &-sub-content {
     @include mq {
       display: grid !important; //gnav-anim-panelの設定を上書き
       grid-template-rows: 0fr;
@@ -132,16 +209,48 @@
   &-subsect {
     @include mq {
       display: flex;
+      flex-direction: row !important;
       margin: 0 auto;
       padding: var(--space-48) 0;
 
       &__header {
+        padding: 0 var(--space-32) 0 0 !important;
+        margin-bottom: var(--space-8);
+        flex: 0 0 30% !important;
+        flex-direction: column;
+        align-items: stretch !important;
+        border-right: 1px solid var(--bdr-xxdark);
       }
+
+      &__h {
+        font-size: var(--fz-32) !important;
+        font-weight: var(--fw-semibold) !important;
+        letter-spacing: var(--letter-space-10);
+        line-height: var(--line-height-sm);
+      }
+
+      &__lead {
+        font-size: var(--fz-14);
+        margin-top: var(--space-16);
+      }
+
+      &__content {
+        padding-left: var(--space-20);
+        flex: 0 1 70% !important;
+      }
+    }
+  }
+
+  // カラム
+  &-subsect-col {
+    @include mq {
+      flex: 0 0 30% !important;
     }
   }
 
   // サブリスト
   &-sublist {
+    flex: 1;
     line-height: var(--line-height-md);
     > li {
       border-bottom: 1px solid var(--bdr-xxdark);
@@ -162,8 +271,26 @@
         border-bottom: none;
 
         > a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: var(--space-8) var(--space-12);
+
+          &:hover {
+            background: var(--bg-gray-xxdark);
+          }
           &:active {
             background: transparent;
+          }
+
+          &::after {
+            content: "";
+            --icon-size: var(--space-16);
+            flex: 0 0 var(--icon-size);
+            width: var(--icon-size);
+            height: var(--icon-size);
+            background: var(--bg-white);
+            mask: var(--icon-arrow-r) no-repeat center center / contain;
           }
         }
       }
@@ -179,6 +306,7 @@
     height: 100vh;
     width: var(--gnav-sp-width);
     background: var(--bg-black); //暫定
+    z-index: var(--z-index-lv1);
 
     &.--is-open {
       // transform: translateX(-40%); //暫定
@@ -209,29 +337,67 @@
 
   // 下層レベル
   &-lower-sect {
+    @include mq {
+      display: flex;
+      flex-direction: column;
+
+      &:not(:first-child) {
+        margin-top: var(--space-32);
+      }
+    }
+
     &__header {
       display: flex;
       align-items: center;
       padding: var(--space-16);
       border-bottom: 1px solid var(--bdr-xdark);
 
+      &.--is-open-lower {
+        justify-content: space-between;
+        border-bottom: 1px solid var(--bdr-xxdark);
+
+        &::after {
+          content: "";
+          --icon-size: var(--space-24);
+          width: var(--icon-size);
+          height: var(--icon-size);
+          background: var(--bg-white);
+          mask: var(--icon-arrow-r) no-repeat center center/ contain;
+        }
+      }
+
+      &.--is-go-back {
+        padding-left: var(--space-4);
+      }
+
       @include mq {
         border-bottom: none;
-        padding: 0;
-        flex: 0 0 30%;
+        padding: 0 var(--space-12);
+        margin-bottom: var(--space-8);
 
-        // 下層オープン
-        &.gnav-open-lower {
+        // 下層オープンボタンはPCでは非表示
+        &.--is-open-lower {
           display: none;
+        }
+
+        &.--is-go-back {
+          padding-left: var(--space-12);
         }
       }
     }
 
     &__h {
       font-size: var(--fz-18);
+      font-weight: var(--fw-bold);
+
+      @include mq {
+        // font-size: var(--fz-16);
+        letter-spacing: var(--letter-space-10);
+      }
     }
 
-    .gnav-open-lower &__h {
+    // 見出し 兼 下層オープン
+    .--is-open-lower &__h {
       font-size: var(--fz-14) !important;
       font-weight: var(--fw-normal) !important;
 
@@ -241,10 +407,16 @@
       }
     }
 
-    @include mq {
-      &__header {
-        flex-direction: column;
-        align-items: stretch;
+    &__content {
+      @include mq {
+        // 下層でも使用しているので、その影響が出ないか要チェック
+        display: flex;
+        flex: 1 1 100%;
+        gap: var(--space-32);
+
+        > * {
+          flex: 1;
+        }
       }
     }
   }
@@ -263,6 +435,21 @@
 
     &__link {
       display: block;
+      padding-right: var(--space-32);
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        translate: 0 -50%;
+        background-color: var(--bg-white);
+        mask: var(--icon-arrow-r) no-repeat center center/ contain;
+        --icon-size: var(--space-24);
+        width: var(--icon-size);
+        height: var(--icon-size);
+      }
     }
 
     &__link-text {
@@ -296,6 +483,11 @@
         font-size: var(--fz-14);
         letter-spacing: var(--letter-space-10);
         cursor: pointer;
+        padding-right: 0;
+
+        &::after {
+          content: none;
+        }
       }
 
       &__link-text {
@@ -311,8 +503,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: var(--space-40);
+    height: var(--space-40);
+
+    &::before {
+      content: "";
+      --icon-size: var(--space-24);
+      width: var(--icon-size);
+      height: var(--icon-size);
+      background-color: var(--bg-white);
+      mask: var(--icon-arrow-r) no-repeat center center/ contain;
+      rotate: 180deg;
+    }
 
     @include mq {
       display: none;
