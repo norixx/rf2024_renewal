@@ -1,0 +1,34 @@
+// アイコン
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.u-icon {
+  display: inline-flex;
+  align-items: center;
+
+  &.--icon-before::before,
+  &.--icon-after::after {
+    content: "";
+    display: inline-block;
+    --icon-size: var(--space-16);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    background-size: contain;
+    background-color: var(--bg-black); //基本カラー
+    mask-position: center center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+  }
+  &.--icon-before::before {
+    margin-right: var(--space-8);
+  }
+  &.--icon-after::after {
+    margin-left: var(--space-8);
+  }
+  &.--i-arrow-r {
+    &::before,
+    &::after {
+      mask-image: var(--icon-arrow-r);
+    }
+  }
+}

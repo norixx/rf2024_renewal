@@ -70,11 +70,13 @@
     mask-repeat: no-repeat;
     mask-position: center center;
     mask-size: contain;
+    transition: background var(--animation-normal);
   }
   &.--icon-before {
     &::before {
       margin-right: var(--space-8);
     }
+    &.--sm,
     &.--xs,
     &.--xxs {
       &::before {
@@ -87,6 +89,7 @@
     &::after {
       margin-left: var(--space-8);
     }
+    &.--sm,
     &.--xs,
     &.--xxs {
       &::after {
@@ -142,6 +145,26 @@
     &::before,
     &::after {
       mask-image: var(--icon-link-out);
+    }
+  }
+
+  &.--i-save {
+    &::before,
+    &::after {
+      mask-image: var(--icon-save);
+    }
+
+    // &:hover::before,
+    // &:hover::after {
+    //   background-color: var(--bg-primary);
+    // }
+
+    &.--is-saved {
+      &::before,
+      &::after {
+        mask-image: var(--icon-save-fill);
+        background-color: var(--bg-primary);
+      }
     }
   }
 
@@ -241,8 +264,9 @@
   }
 
   // Status
-  &.--saved {
-    border-color: var(--bdr-btn-gray-dark);
+  &.--is-saved {
+    border-color: var(--bdr-btn-gray-xdark);
+    background-color: var(--bg-gray-xxlight);
   }
 
   // 検索用ボタン

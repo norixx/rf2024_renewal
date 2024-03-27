@@ -131,17 +131,35 @@
 
   // 開閉ボタン
   &__btn {
-    &::before {
+    --btn-size: var(--space-24);
+    width: var(--btn-size);
+    height: var(--btn-size);
+    display: flex;
+    position: relative;
+
+    &::before,
+    &::after {
       content: "";
-      display: block;
-      width: 24px;
-      height: 24px;
-      background: pink url();
+      width: 16px;
+      height: 2px;
+      background-color: var(--bg-black);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      transition: rotate var(--animation-normal);
       cursor: pointer;
     }
 
+    &::before {
+      // mask: var(--icon-plus) no-repeat center center / contain;
+      // @include mask-icon(--icon-plus);
+      rotate: 90deg;
+    }
+
     &.--is-open::before {
-      background: yellow url();
+      // @include mask-icon(--icon-minus);
+      rotate: 0deg;
     }
   }
 
@@ -180,4 +198,18 @@
 // 選択中のエリア
 .c-re-search-selected-areas {
   font-weight: var(--fw-bold);
+}
+
+.c-re-search-edit {
+  &__method {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    align-items: flex-end;
+    font-size: var(--fz-14);
+
+    .--method-choice {
+      cursor: pointer;
+    }
+  }
 }

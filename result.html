@@ -109,8 +109,13 @@
                       </dd>
                     </dl>
                     <div class="c-result-summary__control">
-                      <button class="btn --normal --saved u-pc-only">検索条件を保存する</button>
-                      <button class="btn --normal --saved u-sp-only --sm">条件保存</button>
+                      <!-- 保存状態: --is-savedをトグル -->
+                      <div class="u-pc-only">
+                        <button class="btn --normal --icon-before --i-save --is-saved">検索条件を保存済</button>
+                      </div>
+                      <div class="u-sp-only">
+                        <button class="btn --normal --icon-before --i-save --is-saved --sm">保存済み</button>
+                      </div>
                     </div>
                   </div>
                   <div class="c-result-summary__row c-result-summary__number-re-order">
@@ -216,6 +221,17 @@
                                   </label>
                                 </li>
                               </ul>
+
+                              <!-- 検索範囲と方法の変更 -->
+                              <div class="c-re-search-edit u-mt-16">
+                                <div class="c-re-search-edit__method">
+                                  <a href="#" class="u-icon --icon-after --i-arrow-r --method-range"
+                                    id="sys-reselect-area">一覧から選び直す</a>
+                                  <!-- popper.js検討 -->
+                                  <span class="u-icon --icon-after --i-arrow-r --method-choice">選び方を変更する</span>
+                                </div>
+                              </div>
+
                               <div class="c-re-search-result u-mt-24">
                                 <dl class="c-re-search-result__desc">
                                   <dt>検索対象お部屋数</dt>

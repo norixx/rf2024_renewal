@@ -264,15 +264,23 @@
 
   &__shiki,
   &__rei {
+    display: inline-flex;
+    align-items: center;
     &::before {
       content: "";
       display: inline-block;
-      background-color: #eee;
       width: 16px;
       height: 16px;
       margin-right: var(--space-4);
       vertical-align: middle;
+      background: var(--bg-primary-xlight) no-repeat center center;
     }
+  }
+  &__shiki::before {
+    background-image: var(--icon-shiki);
+  }
+  &__rei::before {
+    background-image: var(--icon-rei);
   }
 
   // すべてのお部屋を表示
