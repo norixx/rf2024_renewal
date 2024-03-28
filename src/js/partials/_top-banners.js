@@ -1,5 +1,6 @@
 // TOPバナースライダー
 const rf_top_banners = () => {
+  let banner = null
   const args = {
     breakpoints: {
       0: {
@@ -16,8 +17,17 @@ const rf_top_banners = () => {
       },
     },
   }
-  const banner = new Swiper('[data-js-top-banners]', args)
-  console.log(banner)
+
+  const setSwiper = () => {
+    let banner = new Swiper('[data-js-top-banners]', args)
+  }
+
+  const init = () => {
+    setSwiper()
+  }
+
+  init()
+
 }
 
 export default rf_top_banners

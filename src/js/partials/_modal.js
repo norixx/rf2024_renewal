@@ -11,17 +11,19 @@ const rf_modals = () => {
   let openedModals = []
 
   // 開くボタン
-  modalOpenBtns.forEach(btn => {
-    const modalId = btn.dataset.jsModal
-    const targetModal = document.querySelector(modalId)
+  const setOpenModalBtns = () => {
+    modalOpenBtns.forEach(btn => {
+      const modalId = btn.dataset.jsModal
+      const targetModal = document.querySelector(modalId)
 
-    btn.addEventListener('click', () => {
-      targetModal.classList.add(modalOpenClass)
-      html.classList.add(modalOpenHtmlClass)
-      openedModals.push(modalId)
-      // console.log('openedModalsは?', openedModals)
+      btn.addEventListener('click', () => {
+        targetModal.classList.add(modalOpenClass)
+        html.classList.add(modalOpenHtmlClass)
+        openedModals.push(modalId)
+        // console.log('openedModalsは?', openedModals)
+      })
     })
-  })
+  }
 
   // モーダル閉じるアクション
   const _closeModal = (modal) => {
@@ -37,25 +39,34 @@ const rf_modals = () => {
   }
 
   // モーダル制御
-  modals.forEach(modal => {
-    // モーダル本体閉じる
-    modal.addEventListener('click', e => {
-      if (modalTargetName in e.target.dataset) {
-        console.log('モーダルターゲット')
-        _closeModal(modal)
-      }
-    })
-
-    // モーダル閉じるボタン
-    const modalCloses = modal.querySelectorAll('[data-js-modal-close]')
-    modalCloses.forEach(close => {
-      close.addEventListener('click', () => {
-        _closeModal(modal)
+  const setModals = () => {
+    modals.forEach(modal => {
+      // モーダル本体閉じる
+      modal.addEventListener('click', e => {
+        if (modalTargetName in e.target.dataset) {
+          console.log('モーダルターゲット')
+          _closeModal(modal)
+        }
       })
+
+      // モーダル閉じるボタン
+      const modalCloses = modal.querySelectorAll('[data-js-modal-close]')
+      modalCloses.forEach(close => {
+        close.addEventListener('click', () => {
+          _closeModal(modal)
+        })
+      })
+
     })
+  }
 
-  })
 
+  const init = () => {
+    setOpenModalBtns()
+    setModals()
+  }
+
+  init()
 }
 
 export default rf_modals

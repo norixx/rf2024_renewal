@@ -52,4 +52,9 @@
     }
   }
   // &.--lg // 必要あれば作成
+
+  &.--fit-content {
+    width: fit-content;
+    min-width: 0;
+  }
 }

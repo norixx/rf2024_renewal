@@ -1,0 +1,75 @@
+// ブログリスト（建物・部屋ページ）
+@use "../abstracts/mixins" as *;
+
+.c-bloglist {
+  &__list {
+  }
+
+  &__item {
+    margin-bottom: var(--space-16);
+    border-bottom: 1px solid var(--bdr-light);
+
+    @include mq {
+      margin-bottom: var(--space-24);
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    line-height: var(--line-height-md);
+    padding: var(--space-8) 0 var(--space-16);
+    gap: var(--space-4);
+
+    @include mq {
+      gap: var(--space-8);
+      padding: var(--space-8) 0 var(--space-24);
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        translate: 0 1px;
+        scale: 0 1;
+        transform-origin: left center;
+        height: 1px;
+        background-color: var(--bg-black);
+        transition: scale var(--animation-slow) var(--animation-easing);
+        width: 100%;
+      }
+      &:hover {
+        &::after {
+          scale: 1 1;
+        }
+      }
+    }
+  }
+
+  &__date {
+    color: var(--txt-light);
+    font-family: var(--ff-num);
+    font-size: var(--fz-14);
+    letter-spacing: var(--letter-space-10);
+
+    @include mq {
+      flex: 0 0 7em;
+    }
+  }
+
+  &__title {
+    font-weight: var(--fw-normal);
+    font-size: var(--fz-16);
+  }
+
+  &__more {
+    margin-top: var(--space-24);
+
+    @include mq {
+      margin-top: var(--space-40);
+    }
+  }
+}

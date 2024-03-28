@@ -119,6 +119,12 @@
       mask-image: var(--icon-arrow-r);
     }
   }
+  &.--i-arrow-down {
+    &::before,
+    &::after {
+      mask-image: var(--icon-arrow-down);
+    }
+  }
 
   &.--i-map {
     &::before,

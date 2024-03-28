@@ -28,13 +28,18 @@ const rf_prop_slider = () => {
     },
   }
 
-  propSliders.forEach(slider => {
-    const propSlider = new Swiper(slider, args)
-    console.dir(slider)
-    sliders[slider.id] = propSlider
-  })
+  const setSwiper = () => {
+    propSliders.forEach(slider => {
+      const propSlider = new Swiper(slider, args)
+      sliders[slider.id] = propSlider
+    })
+  }
 
-  console.log(sliders)
+  const init = () => {
+    setSwiper()
+  }
+
+  init()
 
 }
 

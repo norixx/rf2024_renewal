@@ -2,6 +2,8 @@
 @use "../abstracts/mixins" as *;
 
 .c-prop-slider {
+  $parent: &;
+
   padding-top: var(--space-8);
   padding-bottom: var(--space-24);
   // padding-right: var(--space-32);
@@ -27,5 +29,86 @@
     .swiper-pagination-progressbar-fill {
       background-color: var(--bg-gray-dark);
     }
+  }
+
+  // ボタン
+  &__btn {
+    --btn-size: var(--space-48);
+    --swiper-navigation-sides-offset: var(--space-16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    border-radius: var(--btn-size);
+    transition: all var(--animation-fast);
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--bdr-normal);
+
+    @include mq {
+      scale: 0 0;
+      --swiper-navigation-sides-offset: var(--space-64);
+    }
+
+    &.swiper-button-disabled,
+    #{$parent}:hover &.swiper-button-disabled {
+      opacity: 0;
+      scale: 0 0;
+    }
+
+    #{$parent}:hover & {
+      @include mq {
+        scale: 1 1;
+      }
+    }
+
+    &.--prev,
+    &.--next {
+      &::after {
+        content: "";
+        font-family: initial;
+        background-color: var(--bg-black);
+        --icon-size: var(--space-24);
+        width: var(--icon-size);
+        height: var(--icon-size);
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-position: center center;
+        transition: translate var(--animation-normal);
+      }
+    }
+    &.--prev {
+      &::after {
+        mask-image: var(--icon-arrow-l);
+      }
+
+      @include mq {
+        &:hover::after {
+          translate: calc(var(--space-4) * -1);
+        }
+      }
+    }
+    &.--next {
+      &::after {
+        mask-image: var(--icon-arrow-r);
+      }
+
+      @include mq {
+        &:hover::after {
+          translate: var(--space-4);
+        }
+      }
+    }
+  }
+
+  // ローダー（ローダー本体はローダーコンポーネント)
+  &__loader {
+    position: absolute;
+    width: auto;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    z-index: var(--z-index-lv1);
   }
 }

@@ -9,6 +9,7 @@ import { rf_buildroom_main_slide, rf_buildroom_related_slide } from "./partials/
 import rf_modals from "./partials/_modal";
 import rf_cta_navi_tel from "./partials/_cta-navi";
 import rf_select_link from "./partials/_select-link";
+import rf_related_prop_slider from "./partials/_related-prop-slider";
 
 // =======================================================
 // Inits
@@ -31,9 +32,14 @@ if (document.querySelector('[data-js-top-banners]')) {
   rf_top_banners()
 }
 
-// 物件スライダー
+// 物件スライダー(TOPページ)
 if (document.querySelector('[data-js-prop-slider]')) {
   rf_prop_slider()
+}
+
+// 物件スライダー(関連）
+if (document.querySelector('[data-js-related-prop-slider]')) {
+  rf_related_prop_slider()
 }
 
 // お部屋リストリンク
