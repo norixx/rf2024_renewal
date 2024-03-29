@@ -9,6 +9,10 @@
   background-color: var(--bg-primary-xxlight);
   padding: var(--space-16);
 
+  &.--waiting {
+    background-color: var(--bg-gray-xlight);
+  }
+
   @include mq {
     flex-direction: row;
     align-items: center;
@@ -23,14 +27,37 @@
     font-size: var(--fz-18);
     letter-spacing: var(--letter-space-10);
     text-align: center;
+    color: var(--txt-primary);
 
     @include mq {
       text-align: start;
     }
   }
 
+  &.--waiting &__h {
+    color: var(--txt-normal);
+  }
+
   &__body {
     flex: 1.1 1 0;
+  }
+  // ボタンカラム - メイン
+  &__btn-main {
+    flex: 1;
+  }
+
+  &__btn-sub {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+
+    @include mq {
+      flex: 0 0 28%;
+    }
+
+    > * {
+      flex: 1;
+    }
   }
 
   &__btn {
@@ -45,6 +72,7 @@
     // Telボタン
     .__btn-tel {
       flex: 1;
+      height: 100%;
     }
   }
 }

@@ -325,9 +325,14 @@
   &.--cta-contact {
     display: flex;
     flex-direction: column;
+    gap: var(--space-4);
 
     @include mq {
       // flex-direction: row;
+    }
+
+    &:has(a) {
+      cursor: initial;
     }
 
     .__tel {
@@ -337,25 +342,54 @@
       display: flex;
       align-items: center;
       font-weight: 500;
-      color: var(--txt-primary);
 
       &::before {
         content: "";
         --icon-size: var(--fz-28);
         width: var(--icon-size);
         height: var(--icon-size);
-        // background-size: contain;
-        // background: var(--icon-tel-primary) no-repeat center center;
-        // background-color: var(--bg-primary);
         background-color: currentColor;
         mask: var(--icon-tel) no-repeat center center / contain;
         margin-right: var(--space-8);
       }
     }
 
+    // ボタン内リンク型
+    .__link {
+      position: relative;
+
+      &.--border {
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 2px;
+          background: currentColor;
+        }
+      }
+      // アイコンの付いているものはボーダーの幅を制限する
+      &.__tel.--border {
+        &::after {
+          width: calc(100% - (28px + 8px));
+        }
+      }
+    }
+
+    // 提携店名
+    .__partner {
+      font-size: var(--fz-16);
+      font-weight: var(--fw-bold);
+      padding-bottom: 2px;
+    }
+
+    .__tel-sub {
+      font-size: var(--fz-12);
+    }
+
     .__web-sub {
       display: flex;
-      // flex-direction: column;
       align-items: center;
 
       &::before {
@@ -363,13 +397,20 @@
         --icon-size: var(--fz-24);
         width: var(--icon-size);
         height: var(--icon-size);
-        background-color: var(--bg-primary);
+        background-color: currentColor;
         mask: var(--icon-mail) no-repeat center center / contain;
         margin-right: var(--space-8);
       }
 
+      &.--icon-primary {
+        &::before {
+          background-color: var(--bg-primary);
+        }
+      }
+
       @include mq {
         flex-direction: column;
+        font-size: var(--fz-12);
 
         &::before {
           margin-right: 0;
