@@ -43,12 +43,18 @@
     border-radius: var(--btn-size);
     transition: all var(--animation-fast);
     background-color: var(--bg-white);
+    // background-color: var(--bg-black);
     box-shadow: var(--shadow-md);
-    border: 1px solid var(--bdr-normal);
+    border: 1px solid var(--bdr-light);
 
     @include mq {
+      opacity: 0;
       scale: 0 0;
       --swiper-navigation-sides-offset: var(--space-64);
+    }
+
+    &:hover {
+      border-color: var(--bdr-black);
     }
 
     &.swiper-button-disabled,
@@ -60,6 +66,7 @@
     #{$parent}:hover & {
       @include mq {
         scale: 1 1;
+        opacity: 1;
       }
     }
 
@@ -68,8 +75,9 @@
       &::after {
         content: "";
         font-family: initial;
-        background-color: var(--bg-black);
         --icon-size: var(--space-24);
+        background-color: var(--bg-black);
+        // background-color: var(--bg-white);
         width: var(--icon-size);
         height: var(--icon-size);
         mask-repeat: no-repeat;
@@ -100,7 +108,13 @@
         }
       }
     }
-  }
+
+    #{$parent}.--related & {
+      @include mq {
+        --swiper-navigation-sides-offset: var(--space-32);
+      }
+    }
+  } //__btn
 
   // ローダー（ローダー本体はローダーコンポーネント)
   &__loader {

@@ -16,11 +16,13 @@ const rf_modals = () => {
       const modalId = btn.dataset.jsModal
       const targetModal = document.querySelector(modalId)
 
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', e => {
+        if (btn.tagName === 'A') {
+          e.preventDefault()
+        }
         targetModal.classList.add(modalOpenClass)
         html.classList.add(modalOpenHtmlClass)
         openedModals.push(modalId)
-        // console.log('openedModalsは?', openedModals)
       })
     })
   }
@@ -59,7 +61,6 @@ const rf_modals = () => {
 
     })
   }
-
 
   const init = () => {
     setOpenModalBtns()

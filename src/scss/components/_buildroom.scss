@@ -261,6 +261,19 @@
   &.--remark &__body {
     margin-top: var(--space-8);
   }
+
+  // めやす賃料
+  &.--guideline {
+    background: var(--bg-gray-xxlight);
+    padding: var(--space-16);
+  }
+  &.--guideline &__body {
+    margin-top: 0;
+  }
+
+  &__guideline {
+    font-size: var(--fz-14);
+  }
 }
 
 // 建物・お部屋詳細
