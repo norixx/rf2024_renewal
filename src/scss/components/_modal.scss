@@ -64,6 +64,7 @@ $c-modal-sp-only: ".c-modal.--sp-only";
     background-color: var(--bg-black);
     padding: var(--space-8) var(--space-40);
     position: relative;
+    border-radius: var(--bdr-radius-md) var(--bdr-radius-md) 0 0;
 
     @include mq {
       padding: var(--space-16);
@@ -128,7 +129,15 @@ $c-modal-sp-only: ".c-modal.--sp-only";
       }
     }
   }
-}
+
+  &__footer {
+    border-radius: 0 0 var(--bdr-radius-md) var(--bdr-radius-md);
+
+    > * {
+      border-radius: 0 0 var(--bdr-radius-md) var(--bdr-radius-md);
+    }
+  }
+} //c-modal-content
 
 // 再検索ナビ用モーダル
 .c-modal-re-search {

@@ -10,6 +10,7 @@ import rf_modals from "./partials/_modal";
 import rf_cta_navi_tel from "./partials/_cta-navi";
 import rf_select_link from "./partials/_select-link";
 import rf_related_prop_slider from "./partials/_related-prop-slider";
+import rf_ward from "./partials/_ward";
 
 // =======================================================
 // Inits
@@ -69,4 +70,9 @@ if (document.querySelector('[data-js-cta-navi-tel]')) {
 // セレクトリンク
 if (document.querySelector('[data-js-select-link]')) {
   rf_select_link()
+}
+
+// 区の選択
+if (document.querySelector(`[data-js-ward-select]`)) {
+  rf_ward()
 }

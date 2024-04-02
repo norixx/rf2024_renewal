@@ -138,7 +138,7 @@
                         <dt>並び替え</dt>
                         <dd>
                           <label class="c-form-label --select --select-xs --select-pc-md --w-max">
-                            <select name="" id="" class="c-input-select --xs --pc-md --w-max" data-js-select-link>
+                            <select name="" id="" class="c-input-select --w-max" data-js-select-link>
                               <option value="22" class="asc">新着順</option>
                               <option value="333" class="desc">賃料順</option>
                               <option value="444">間取り順</option>
@@ -154,7 +154,7 @@
                         <dt>表示形式</dt>
                         <dd>
                           <label class="c-form-label --select --select-xs --select-pc-md --w-max">
-                            <select name="" id="" class="c-input-select --xs --pc-md --w-max">
+                            <select name="" id="" class="c-input-select">
                               <option value="">建物</option>
                               <option value="">お部屋</option>
                             </select>
@@ -165,7 +165,7 @@
                         <dt>表示件数</dt>
                         <dd>
                           <label class="c-form-label --select --select-xs --select-pc-md --w-max">
-                            <select name="" id="" class="c-input-select --xs --pc-md --w-max">
+                            <select name="" id="" class="c-input-select --w-max">
                               <option value="">15</option>
                               <option value="">30</option>
                               <option value="">45</option>
@@ -185,7 +185,8 @@
                 <div class="l-col-pc-3">
 
                   <div class="c-modal-re-search" id="re-search" data-js-modal-target>
-                    <button class="c-modal-re-search__close u-sp-only" type="button" data-js-modal-close>❌️</button>
+                    <button class="c-modal-re-search__close u-sp-only" type="button" data-js-modal-close><span
+                        class="u-visually-hidden">閉じる</span></button>
                     <!-- 再検索ナビゲーション -->
                     <article class="c-re-search">
                       <form action="#" id="sys-form" method="post">
@@ -262,8 +263,7 @@
                                       <div class="c-re-search-toggle-sect__block">
                                         <div class="c-form-select-range --w-max">
                                           <label class="c-form-label --select">
-                                            <select name="RENT_AMT_MIN"
-                                              class="c-input-select --w-max u-fz-12 sys-recalc">
+                                            <select name="RENT_AMT_MIN" class="c-input-select u-fz-12 sys-recalc">
                                               <option value="">下限なし</option>
                                               <option value="100">10万円以上</option>
                                               <option value="110">11万円以上</option>
@@ -297,10 +297,9 @@
                                               <option value="2000">200万円以上</option>
                                             </select>
                                           </label>
-                                          〜
-                                          <label class="c-form-label --select">
-                                            <select name="RENT_AMT_MAX"
-                                              class="c-input-select --w-max u-fz-12 sys-recalc">
+                                          <span>〜</span>
+                                          <label class="c-form-label --select --w-max">
+                                            <select name="RENT_AMT_MAX" class="c-input-select u-fz-12 sys-recalc">
                                               <option value="">上限なし</option>
                                               <option value="100">10万円以下</option>
                                               <option value="110">11万円以下</option>
@@ -437,8 +436,8 @@
                                     <div class="c-re-search-toggle-sect__content">
                                       <div class="c-re-search-toggle-sect__block">
                                         <div class="c-form-select-range --w-max">
-                                          <label class="c-form-label --select">
-                                            <select name="AREA_MIN" class="c-input-select --w-max sys-recalc">
+                                          <label class="c-form-label --select --w-max">
+                                            <select name="AREA_MIN" class="c-input-select sys-recalc">
                                               <option value="">指定なし</option>
                                               <option value="10">10㎡以上</option>
                                               <option value="20">20㎡以上</option>
@@ -455,8 +454,8 @@
                                             </select>
                                           </label>
                                           〜
-                                          <label class="c-form-label --select">
-                                            <select name="AREA_MAX" class="c-input-select --w-max sys-recalc">
+                                          <label class="c-form-label --select --w-max">
+                                            <select name="AREA_MAX" class="c-input-select sys-recalc">
                                               <option value="">指定なし</option>
                                               <option value="10">10㎡以上</option>
                                               <option value="20">20㎡以上</option>
@@ -476,7 +475,7 @@
                                       </div>
                                       <div class="c-re-search-toggle-sect__block">
                                         <label class="c-form-label --select --w-max">
-                                          <select name="AREA_TSUBO" class="c-input-select --w-max sys-recalc">
+                                          <select name="AREA_TSUBO" class="c-input-select sys-recalc">
                                             <option value="{{ $val }}">
                                               {{ $menu }}
                                             </option>
@@ -1401,7 +1400,7 @@
             <header class="c-modal-content__header">
               <h2 class="c-modal-content__h">絞り込み条件の追加・変更</h2>
               <button type="button" class="c-modal-content__header-close" data-js-modal-close>
-                ❌️
+                <span class="u-visually-hidden">閉じる</span>
               </button>
             </header>
             <div class="c-modal-content__body --scroll">

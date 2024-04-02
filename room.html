@@ -69,7 +69,10 @@
                     <h1 class="c-buildroom__summary-h">東京ミッドタウン・レジデンシィズ</h1>
                     <div class="c-buildroom__summary-links">
                       <!-- --is-savedで保存状態 -->
-                      <button class="btn --normal --icon-before --i-save">検討中リストに追加</button>
+                      <button class="__considering btn --normal --xs --pc-md --icon-before --i-save ">
+                        <span class="u-pc-only">検討中リストに追加</span>
+                        <span class="u-sp-only">追加</span>
+                      </button>
                     </div>
                   </header>
 
@@ -114,6 +117,12 @@
                             <div class="swiper-button-next c-buildroom-mv__btn --next"></div>
                             <div class="swiper-pagination c-buildroom-mv__pagination"></div>
                           </div>
+                        </div>
+                        <div class="c-buildroom__summary-mv-tabs c-buildroom-mv-tabs">
+                          <button class="__tab --is-active">間取り</button>
+                          <button class="__tab">お部屋</button>
+                          <button class="__tab">外観・共用部・周辺環境</button>
+                          <button class="__tab">パノラマ・動画</button>
                         </div>
                         <div class="c-buildroom__summary-mv-thumbs js-tatemono-room__summary-mv-thumbs">
                           <div class="js-buildroom-mv-thumbs c-buildroom-mv-thumbs swiper" data-js-buildroom-mv-thumbs>
@@ -416,7 +425,7 @@
                 </aside>
 
                 <!-- めやす賃料 -->
-                <aside class="l-buildroom__body-block c-buildroom-sect --guideline">
+                <aside class="l-buildroom__body-block c-buildroom-sect --guideline u-mt-24">
                   <header class="c-buildroom-sect__header u-visually-hidden">
                     <h2 class="c-buildroom-sect__h">めやす賃料表示</h2>
                   </header>
@@ -535,7 +544,7 @@
                         </li>
                       </ul>
                       <div class="c-bloglist__more u-ta-center">
-                        <a href="#" class="c-bloglist__more-link btn --normal">このマンションのブログ一覧へ</a>
+                        <a href="#" class="c-bloglist__more-link btn --normal --mw-400px">このマンションのブログ一覧へ</a>
                       </div>
                     </div>
                   </div>

@@ -76,6 +76,24 @@
     &::before {
       margin-right: var(--space-8);
     }
+    // 縦方向のときはマージンなし
+    &.--v::before {
+      margin-right: 0;
+      margin-bottom: var(--space-4);
+    }
+    &.--pc-v::before {
+      @include mq {
+        margin-right: 0;
+        margin-bottom: var(--space-4);
+      }
+    }
+    &.--pc-h::before {
+      @include mq {
+        margin-right: var(--space-8);
+        margin-bottom: 0;
+      }
+    }
+
     &.--sm,
     &.--xs,
     &.--xxs {
@@ -83,12 +101,30 @@
         --icon-size: var(--fz-16);
         margin-right: var(--space-4);
       }
+
+      &.--v::before {
+        margin-right: 0;
+        margin-bottom: var(--space-4);
+      }
+      &.--pc-v::before {
+        @include mq {
+          margin-right: 0;
+          margin-bottom: var(--space-4);
+        }
+      }
+      &.--pc-h::before {
+        @include mq {
+          margin-right: var(--space-8);
+          margin-bottom: 0;
+        }
+      }
     }
   }
   &.--icon-after {
     &::after {
       margin-left: var(--space-8);
     }
+
     &.--sm,
     &.--xs,
     &.--xxs {
@@ -181,7 +217,7 @@
     }
   }
 
-  // Size
+  // サイズ
   $sizes: xxs, xs, sm, md, lg, xl;
   @each $size in $sizes {
     @if $size == xxs {
@@ -201,30 +237,32 @@
     }
     @if $size == sm {
       &.--#{$size} {
+        --x: var(--space-10);
         --y: var(--space-10);
       }
     }
     @if $size == md {
       &.--#{$size} {
+        --x: var(--space-16);
         --y: var(--space-12);
       }
     }
     @if $size == lg {
       &.--#{$size} {
+        --x: var(--space-16);
         --y: var(--space-14);
         font-size: var(--fz-16);
       }
     }
     @if $size == xl {
       &.--#{$size} {
+        --x: var(--space-16);
         --y: var(--space-16);
         font-size: var(--fz-16);
       }
     }
-  }
 
-  @include mq {
-    @each $size in $sizes {
+    @include mq {
       @if $size == xxs {
         &.--pc-#{$size} {
           --x: var(--space-8);
@@ -241,18 +279,21 @@
       }
       @if $size == sm {
         &.--pc-#{$size} {
+          --x: var(--space-10);
           --y: var(--space-10);
           font-size: var(--fz-14);
         }
       }
       @if $size == md {
         &.--pc-#{$size} {
+          --x: var(--space-16);
           --y: var(--space-12);
           font-size: var(--fz-14);
         }
       }
       @if $size == lg {
         &.--pc-#{$size} {
+          --x: var(--space-16);
           --y: var(--space-14);
           font-size: var(--fz-16);
         }
@@ -274,6 +315,24 @@
   &.--mw-400px {
     width: 400px;
     max-width: 100%;
+  }
+
+  // 方向
+  &.--v {
+    flex-direction: column;
+    justify-content: center;
+  }
+  &.--h {
+    flex-direction: row;
+  }
+  @include mq {
+    &.--pc-v {
+      flex-direction: column;
+      justify-content: center;
+    }
+    &.--pc-h {
+      flex-direction: row;
+    }
   }
 
   // Status

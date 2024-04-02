@@ -7,10 +7,10 @@ const rf_buildroom_main_slide = () => {
     watchSlidesProgress: true,
     breakpoints: {
       0: {
-        slidesPerView: 4,
+        slidesPerView: 4.5,
       },
       768: {
-        slidesPerView: 8,
+        slidesPerView: 8.5,
       },
     },
   }

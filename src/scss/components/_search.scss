@@ -100,6 +100,18 @@
   }
 } // .c-search-sect
 
+.c-search-subsect {
+  &:not(:first-child) {
+    margin-top: var(--space-24);
+  }
+
+  &__h {
+    font-size: var(--fz-16);
+    line-height: var(--line-height-md);
+    margin-bottom: var(--space-8);
+  }
+}
+
 // 検索（エリア）
 .c-search-areas {
   display: flex;
@@ -122,6 +134,75 @@
   &__label {
     width: 100%;
     height: 100%;
+  }
+}
+
+// 検索（区）
+.c-search-ward {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-56);
+
+  @include mq {
+    flex-direction: row-reverse;
+  }
+
+  &__map {
+    flex: 1 1 47%;
+  }
+
+  &__select {
+    flex: 1 1 53%;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: var(--space-8);
+  }
+  &__item {
+    flex: 0 0 calc((100% - var(--space-8)) / 2);
+    @include mq {
+      flex: 0 0 calc((100% - var(--space-8) * 2) / 3);
+    }
+  }
+}
+
+// 区マップ
+.c-ward-map {
+  width: 100%;
+
+  &__item {
+    cursor: pointer;
+
+    .__boundary,
+    .__text-group > * {
+      transition: fill var(--animation-normal);
+    }
+
+    .__boundary {
+      fill: var(--bg-gray-xxlight);
+    }
+
+    &:hover,
+    &.--is-active {
+      .__boundary {
+        fill: var(--bg-gray-xdark);
+      }
+      .__text-group > * {
+        fill: var(--txt-white);
+      }
+    }
+    &.--is-active {
+      .__boundary {
+        fill: var(--bg-black);
+      }
+    }
+  }
+
+  &__border {
+    border: 1px solid var(--border-normal);
   }
 }
 
