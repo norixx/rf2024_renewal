@@ -217,6 +217,21 @@
     border-color: var(--bdr-black);
     outline: var(--outline-form);
   }
+
+  $sizes: 100;
+  @each $size in $sizes {
+    @if $size == 100 {
+      &.--w-#{$size} {
+        width: 100%;
+      }
+
+      @include mq {
+        &.--w-pc-#{$size} {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 // セレクトボックス
@@ -291,20 +306,6 @@
     }
   }
 
-  // 幅
-  // $widths: 100, 110, 120, 140, 160, 180, 200, max;
-  // @each $width in $widths {
-  //   @if ($width == max) {
-  //     &.--w-max {
-  //       width: 100%;
-  //     }
-  //   } @else {
-  //     &.--w-#{$width} {
-  //       width: #{$width}px;
-  //     }
-  //   }
-  // }
-
   // 昇順、降順
   option.asc,
   option.desc {
@@ -319,6 +320,44 @@
     content: "↓";
   }
 } //c-input-select
+
+// 検索
+.c-input-label-search {
+  border: 1px solid var(--bdr-normal);
+  border-radius: var(--bdr-radius-md);
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-gray-xlight);
+  padding-right: var(--space-8);
+  transition: var(--animation-normal);
+
+  @include mq {
+    background: var(--bg-white);
+    padding-right: var(--space-16);
+  }
+
+  &.--w-100 {
+    width: 100%;
+  }
+
+  &:has(input:focus),
+  &:has(input:focus-visible) {
+    border: 1px solid var(--bdr-black);
+  }
+
+  [type="text"],
+  [type="search"],
+  [type="url"],
+  [type="tel"],
+  [type="number"] {
+    border: none;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
 
 // ラベルリンク（エリア検索などで利用）
 .c-input-label-combo {

@@ -4,13 +4,17 @@
 
 // font
 .u-fw {
-  // normal
-  &-n {
-    font-weight: normal !important;
-  }
+  $weights: normal, semibold, bold;
+  @each $weight in $weights {
+    &-#{$weight} {
+      font-weight: var(--fw-#{$weight}) !important;
+    }
 
-  &-sb {
-    font-weight: 600 !important;
+    @include mq {
+      &-pc-#{$weight} {
+        font-weight: var(--fw-#{$weight}) !important;
+      }
+    }
   }
 }
 

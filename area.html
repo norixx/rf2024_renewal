@@ -86,11 +86,14 @@
                   <dl class="c-search-keyword">
                     <dt>キーワードから探す</dt>
                     <dd>
-                      <form action="#" method="get">
-                        <input type="text" class="c-top-search__keyword-input c-input-text" placeholder="マンション名・地名" />
-                        <button class="c-top-search__btn-keyword form-btn --search">
-                          検索
-                        </button>
+                      <form method="GET" action="/rf/result" accept-charset="UTF-8">
+                        <label class="c-input-label-search --w-100">
+                          <input type="search" class="c-search-keyword__input c-input-text --w-100"
+                            placeholder="マンション名・地名" name="search" id="iptKeyword">
+                          <button
+                            class="c-search-keyword__btn-search btn --no-decoration --icon-before --i-search"><span
+                              class="u-visually-hidden">検索</span></button>
+                        </label>
                       </form>
                     </dd>
                   </dl>

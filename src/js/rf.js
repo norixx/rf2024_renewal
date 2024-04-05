@@ -3,6 +3,7 @@ import rf_responsive_check from "./partials/_responsive";
 import rf_gnav from "./partials/_gnav";
 import rf_toggles from "./partials/_toggles";
 import rf_top_banners from "./partials/_top-banners";
+import rf_todays_count from "./partials/_top-today";
 import rf_prop_slider from "./partials/_prop-slider";
 import { rf_room_list_link, rf_room_list_toggle } from "./partials/_room-list";
 import { rf_buildroom_main_slide, rf_buildroom_related_slide } from "./partials/_buildroom";
@@ -26,6 +27,11 @@ if (document.querySelector('[data-js-gnav]')) {
 // Toggles
 if (document.querySelector('[data-js-toggle]')) {
   rf_toggles()
+}
+
+// TOPページ - 本日掲載
+if (document.querySelector('[data-js-today-target]')) {
+  rf_todays_count()
 }
 
 // Topページ - バナー

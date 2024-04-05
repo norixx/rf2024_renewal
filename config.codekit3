@@ -203,6 +203,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/src\/js\/partials\/_top-today.js" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 1,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/src\/js\/partials\/_top-today-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/src\/js\/partials\/_ward.js" : {
       "bF" : 4,
       "ft" : 64,

@@ -473,22 +473,23 @@
                 ./assets/img/top/mv-sp.webp 800w,
                 ./assets/img/top/mv.webp 1200w" src="./assets/img/top/mv.png" alt="" class="__img">
             </div>
+
+            <!-- スクロールインジケーター -->
             <div class="c-mv__scroll">
               <p>scroll</p>
               <div class="c-mv__scroll-arrow">
-                <img src="" alt="">
               </div>
             </div>
 
-            <!-- アラート -->
-            <div class="c-mv__alert">
+            <!-- 緊急お知らせ -->
+            <!-- <div class="c-mv__alert">
               <div class="l-container">
                 <p class="c-mv__alert-text">
                   <time datetime="2024-01-11">2024.01.11</time>
                   <span><a href="#">緊急時固定お知らせ緊急時固定お知らせ緊急時固定お知らせ緊急時固定お知らせ緊急時固定お知らせ緊急時固定お知らせ</a></span>
                 </p>
               </div>
-            </div>
+            </div> -->
 
           </div>
         </div><!-- /.l-top__mv -->
@@ -526,19 +527,18 @@
             <article class="c-top-search">
               <header class="c-top-search__header">
                 <h2 class="c-top-search__h u-pc-only">賃貸物件を探す</h2>
-                <div class="c-top-search__prop-status">
+                <div class="c-top-search__prop-status" id="top-search-today" data-js-today-target>
                   <dl class="c-top-search__prop-status-list">
                     <dt><b>新着物件</b>(1週間)</dt>
                     <dd>
-                      <span class="__fig">102</span>
+                      <span class="__fig" data-js-today="bld">102</span>
                       <span class="__unit">部屋</span>
                     </dd>
                   </dl>
                   <dl class="c-top-search__prop-status-list">
                     <dt><b>本日掲載中の物件</b></dt>
-                    <!-- 以下数値はAJAXロード -->
                     <dd>
-                      <span class="__fig">1,234</span>
+                      <span class="__fig" data-js-today="room">1,234</span>
                       <span class="__unit">棟</span>
                     </dd>
                     <dd>
@@ -556,30 +556,31 @@
                     <li class="__item"><a href="/rf/ensen/" class="btn --search-basic --w-100"><b>駅・沿線</b>から探す</a></li>
                     <li class="__item"><a href="/mapsearch" class="btn --search-basic --w-100"><b>地図</b>から探す</a></li>
                     <li class="__item"><a href="#" class="btn --search-basic --w-100"><b>特集</b>から探す</a></li>
-                    <li class="__item"><a href="/premium/"
-                        class="btn --search-basic --w-100"><b>プレミアムマンション</b>から探す（未定）</a>
+                    <li class="__item"><a href="/premium/" class="btn --search-basic --w-100"><b>プレミアムマンション</b>から探す</a>
                     </li>
                   </ul>
                 </div>
                 <div class="c-top-search__lists">
                   <ul class="c-top-search__pickup-list">
                     <li class="__item"><a href="/rf/osusume/new"
-                        class="btn --primary --w-100 --text-center">“最新”新着<br>物件情報一覧</a>
+                        class="btn --primary-flat --w-100 u-fw-semibold u-fz-12 u-fz-pc-14">“最新”新着<br>物件情報一覧</a>
                     </li>
-                    <li class="__item"><a href="#" class="btn --primary --w-100 --text-center">担当者おすすめ<br>物件情報一覧</a>
+                    <li class="__item"><a href="#"
+                        class="btn --primary-flat --w-100 u-fw-semibold u-fz-12 u-fz-pc-14">担当者おすすめ<br>物件情報一覧</a>
                     </li>
                   </ul>
                   <ul class="c-top-search__user-actions">
                     <li class="__item"><a href="/rf/list/ichiran"
-                        class="btn --primary-black-outline --w-100 --bdr-thick">検討中リストに<br>保存したお部屋</a></li>
+                        class="btn --impact-outline-primary --w-100 --bdr-lg --no-bdr-radius u-fw-semibold u-fz-12 u-fz-pc-14">検討中リストに<br>保存したお部屋</a>
+                    </li>
                     <li class="__item"><a href="/rf/list/rirekioheya"
-                        class="btn --primary-black-outline --w-100 --bdr-thick">最近見た<br>お部屋</a>
+                        class="btn --impact-outline-primary --w-100 --bdr-lg --no-bdr-radius u-fw-semibold u-fz-12 u-fz-pc-14">最近見た<br>お部屋</a>
                     </li>
                     <li class="__item"><a href="/rf/list/jyouken"
-                        class="btn --primary-black-outline --w-100 --bdr-thick">保存した<br>検索条件</a>
+                        class="btn --impact-outline-primary --w-100 --bdr-lg --no-bdr-radius u-fw-semibold u-fz-12 u-fz-pc-14">保存した<br>検索条件</a>
                     </li>
                     <li class="__item"><a href="/rf/list/rirekijyouken"
-                        class="btn --primary-black-outline --w-100 --bdr-thick">最近見た<br>検索条件</a>
+                        class="btn --impact-outline-primary --w-100 --bdr-lg --no-bdr-radius u-fw-semibold u-fz-12 u-fz-pc-14">最近見た<br>検索条件</a>
                     </li>
                   </ul>
                 </div>
@@ -588,9 +589,13 @@
                     <dt>キーワードから探す</dt>
                     <dd>
                       <form method="GET" action="/rf/result" accept-charset="UTF-8">
-                        <input type="search" class="c-search-keyword__input c-input-text" placeholder="マンション名・地名"
-                          name="search" id="iptKeyword">
-                        <button class="c-search-keyword__btn-search form-btn --search">検索</button>
+                        <label class="c-input-label-search --w-100">
+                          <input type="search" class="c-search-keyword__input c-input-text --w-100"
+                            placeholder="マンション名・地名" name="search" id="iptKeyword">
+                          <button
+                            class="c-search-keyword__btn-search btn --no-decoration --icon-before --i-search"><span
+                              class="u-visually-hidden">検索</span></button>
+                        </label>
                       </form>
                     </dd>
                   </dl>
@@ -871,41 +876,113 @@
             </div>
           </section>
 
+          <!-- Park Axis -->
           <section class="c-sect c-sect-parkaxis">
-            <header class="c-sect-parkaxis__header">
-              <div class="l-container">
+            <div class="l-container">
+              <header class="c-sect-parkaxis__header">
                 <h2 class="c-sect-parkaxis__h">
-                  parkaxis
+                  <img src="./assets/img/top/dummy/logo-parkaxis.webp" alt="三井の賃貸 Park Axis">
                 </h2>
                 <p class="c-sect-parkaxis__lead">都市での時間を、自分らしく、積み重ねる。<br>
                   三井不動産レジデンシャルの賃貸レジデンス「パークアクシス」シリーズ</p>
-              </div>
-            </header>
-            <div class="c-sect__body">
-              <div class="l-container">
-                優先度（低）なので後回しになります
+              </header>
+              <div class="c-sect__body">
+                <div class="c-parkaxis-list">
+                  <article class="c-parkaxis-list__item --main">
+                    <a href="/parkaxis/" target="_blank">
+                      <div class="c-parkaxis-list__img">
+                        <img src="assets/img/top/dummy/parkaxis01.webp" alt="">
+                      </div>
+                      <h3 class="c-parkaxis-list__h">
+                        PARK AXIS（パークアクシス）のご紹介
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="c-parkaxis-list__item --main">
+                    <a href="https://www.mitsui-chintai.co.jp/rf/pickuparea/pax_upper2bed" target="_blank">
+                      <div class="c-parkaxis-list__img">
+                        <img src="assets/img/top/dummy/parkaxis02.webp" alt="">
+                      </div>
+                      <h3 class="c-parkaxis-list__h">
+                        人気の2️DK〜2LDK以上のお部屋
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="c-parkaxis-list__item">
+                    <a href="/resident/original/paxpremier_omotesando/" target="_blank">
+                      <div class="c-parkaxis-list__img">
+                        <img src="assets/img/top/dummy/parkaxis03.webp" alt="">
+                      </div>
+                      <h3 class="c-parkaxis-list__h">
+                        パークアクシスプレミア表参道
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="c-parkaxis-list__item">
+                    <a href="/resident/original/aoyama-tower/" target="_blank">
+                      <div class="c-parkaxis-list__img">
+                        <img src="assets/img/top/dummy/parkaxis04.webp" alt="">
+                      </div>
+                      <h3 class="c-parkaxis-list__h">
+                        パークアクシス青山一丁目タワー
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="c-parkaxis-list__item">
+                    <a href="/resident/original/pax_takinogawa_lb/" target="_blank">
+                      <div class="c-parkaxis-list__img">
+                        <img src="assets/img/top/dummy/parkaxis05.webp" alt="">
+                      </div>
+                      <h3 class="c-parkaxis-list__h">
+                        パークアクシス滝野川ラブリーズ
+                      </h3>
+                    </a>
+                  </article>
+                  <article class="c-parkaxis-list__item">
+                    <a href="/resident/original/pax_kuramae_kasugadoori/" target="_blank">
+                      <div class="c-parkaxis-list__img">
+                        <img src="assets/img/top/dummy/parkaxis06.webp" alt="">
+                      </div>
+                      <h3 class="c-parkaxis-list__h">
+                        パークアクシス蔵前・春日通り
+                      </h3>
+                    </a>
+                  </article>
+                </div>
               </div>
             </div>
           </section>
 
+          <!-- リクエスト -->
           <section class="c-sect --alternate">
-            <header class="c-sect__header">
-              <div class="l-container">
+            <div class="l-container">
+              <header class="c-sect__header">
                 <h2 class="c-sect__h">
                   <span class="__en">Request From Our Customers</span>
                   お客様からのリクエスト物件
                 </h2>
                 <p class="c-sect__lead">日々の接客のなかでお客様からのリクエストが多いテーマでお部屋をご提案いたします</p>
-              </div>
-            </header>
-            <div class="c-sect__body">
-              <div class="l-container">
-                優先度（低）なので後回しになります
+              </header>
+              <div class="c-sect__body">
+                <div class="c-request">
+                  <section class="c-request__item">
+                    <a href="/service/new_life_style/managed_properties/" class="c-request__link" target="_blank">
+                      <img src="./assets/img/top/dummy/request01.webp" alt="" class="c-request__img">
+                      <h3 class="c-request__h"><span class="__text">おすすめ分譲賃貸マンション</span></h3>
+                    </a>
+                  </section>
+                  <section class="c-request__item">
+                    <a href="/rf/osusume/base_isolation_vibration_control" class="c-request__link" target="_blank">
+                      <img src="./assets/img/top/dummy/request02.webp" alt="" class="c-request__img">
+                      <h3 class="c-request__h"><span class="__text">制震・免震マンション</span></h3>
+                    </a>
+                  </section>
+                </div>
               </div>
             </div>
-
           </section>
 
+          <!-- ニュース -->
           <section class="c-sect">
             <header class="c-sect__header">
               <div class="l-container">
@@ -1033,12 +1110,12 @@
       <div class="l-container l-col-container u-justify-content-pc-center">
         <div class="l-col-pc-10 u-w-sp-100">
           <nav class="footer-nav-main">
-            <div class="footer-nav-main__col footer-nav-main__col-about">
+            <div class="footer-nav-main__col --about">
               <ul class="footer-nav-lv1-list footer-nav-list">
                 <li>
                   <h3 class="footer-nav-lv1-h footer-nav-toggler u-tt-uppercase toggle-sp-only"
-                    data-js-toggle="#footer-about-us">About
-                    Us</h3>
+                    data-js-toggle="#footer-about-us"><span class="__text">
+                      About Us</span><span class="__icon"><span class="u-visually-hidden">開閉</span></span></h3>
                   <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-about-us">
                     <div class="toggle-target__inner">
                       <ul class="footer-nav-sublist">
@@ -1052,18 +1129,20 @@
                 </li>
               </ul>
             </div>
-            <div class="footer-nav-main__col footer-nav-main__col-rent">
+            <div class="footer-nav-main__col --rent">
               <ul class="footer-nav-lv1-list footer-nav-list footer-nav-rent">
                 <li>
-                  <h3 class="footer-nav-lv1-h footer-nav-toggler toggle-sp-only --is-open"
-                    data-js-toggle="#footer-rent">
-                    借りたい</h3>
-                  <div class="footer-nav-toggle toggle-target toggle-target-sp-only --is-open" id="footer-rent">
+                  <h3 class="footer-nav-lv1-h footer-nav-toggler toggle-sp-only" data-js-toggle="#footer-rent"
+                    aria-expand="false" aria-control="footer-rent">
+                    <span class="__text">借りたい</span><span class="__icon"><span
+                        class="u-visually-hidden">開閉</span></span>
+                  </h3>
+                  <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-rent">
                     <div class="toggle-target__inner">
                       <div class="footer-nav-rent__container">
                         <div class="footer-nav-rent__col">
                           <h4 class="footer-nav-lv2-h">検索する</h4>
-                          <ul class="footer-nav-lv2-list footer-nav-list">
+                          <ul class="footer-nav-lv2-list footer-nav-sublist">
                             <li><a href="#">人気エリアから探す</a></li>
                             <li><a href="#">区から探す</a></li>
                             <li><a href="#">駅・沿線から探す</a></li>
@@ -1071,7 +1150,7 @@
                         </div>
                         <div class="footer-nav-rent__col">
                           <h4 class="footer-nav-lv2-h">最新情報から探す</h4>
-                          <ul class="footer-nav-lv2 footer-nav-list">
+                          <ul class="footer-nav-lv2 footer-nav-sublist">
                             <li><a href="#">おすすめ情報から探す</a></li>
                             <li><a href="#">新着情報から探す</a></li>
                           </ul>
@@ -1085,7 +1164,6 @@
                             <li><a href="#">三井不動産企画</a></li>
                             <li><a href="#">分譲賃貸</a></li>
                             <li><a href="#">賃料改定</a></li>
-                            <li><a href="#">賃料改定</a></li>
                             <li><a href="#">フリーレント</a></li>
                             <li><a href="#">ペット可</a></li>
                             <li><a href="#">こだわり条件</a></li>
@@ -1096,7 +1174,7 @@
                 </li>
               </ul>
             </div>
-            <div class="footer-nav-main__col footer-nav-main__col-other">
+            <div class="footer-nav-main__col --other">
               <ul class="footer-nav-lv1-list">
                 <li><a href="#">貸したい</a></li>
                 <li><a href="#">資産活用</a></li>
@@ -1109,78 +1187,82 @@
           </nav>
           <nav class="footer-nav-base">
             <ul class="footer-nav-base-list">
-              <li><a href="#">サイトマップ</a></li>
-              <li><a href="#">プライバシーステートメント</a></li>
-              <li><a href="#">特定個人情報基本方針</a></li>
-              <li><a href="#">個人情報の取り扱いについて</a></li>
-              <li><a href="#">個人情報の開示等手続きについて</a></li>
-              <li><a href="#">Cookieおよびアクセスログについて</a></li>
-              <li><a href="#">サイトポリシー</a></li>
-              <li><a href="#">三井不動産グループソーシャルメディアガイドライン</a></li>
+              <li class="footer-nav-base-list__item"><a href="#">サイトマップ</a></li>
+              <li class="footer-nav-base-list__item"><a href="#">プライバシーステートメント</a></li>
+              <li class="footer-nav-base-list__item"><a href="#">特定個人情報基本方針</a></li>
+              <li class="footer-nav-base-list__item"><a href="#">個人情報の取り扱いについて</a></li>
+              <li class="footer-nav-base-list__item"><a href="#">個人情報の開示等手続きについて</a></li>
+              <li class="footer-nav-base-list__item"><a href="#">Cookieおよびアクセスログについて</a></li>
+              <li class="footer-nav-base-list__item"><a href="#">サイトポリシー</a></li>
+              <li class="footer-nav-base-list__item"><a href="#">三井不動産グループソーシャルメディアガイドライン</a></li>
             </ul>
           </nav>
           <nav class="footer-nav-district">
-            <h3 class="footer-nav-district__h" data-js-toggle="#footer-district-popular">人気エリア</h3>
-            <div class="footer-district-container" id="footer-district-popular">
-              <ul class="footer-district-list">
-                <li><a href="#">赤坂・六本木・麻布</a></li>
-                <li><a href="#">芝公園・虎ノ門・新橋</a></li>
-                <li><a href="#">番町・飯田橋・麹町</a></li>
-                <li><a href="#">白金・白金台・高輪</a></li>
-                <li><a href="#">恵比寿・代官山・広尾</a></li>
-                <li><a href="#">代々木上原・松濤・代々木</a></li>
-                <li><a href="#">早稲田・落合・神楽坂</a></li>
-                <li><a href="#">日本橋・人形町・銀座</a></li>
-                <li><a href="#">本郷・湯島・小石川</a></li>
-                <li><a href="#">芝浦・三田・芝</a></li>
-                <li><a href="#">豊洲・月島・勝どき</a></li>
-                <li><a href="#">戸越・五反田・大崎</a></li>
-                <li><a href="#">祐天寺・学芸大学・自由が丘</a></li>
-                <li><a href="#">駒沢・用賀・二子玉川</a></li>
-                <li><a href="#">池尻・三宿・駒場</a></li>
-                <li><a href="#">東中野・高円寺・阿佐ヶ谷</a></li>
-                <li><a href="#">成城・砧</a></li>
-                <li><a href="#">上野・浅草・門前仲町</a></li>
-                <li><a href="#">池袋・板橋・王子</a></li>
-              </ul>
-              <ul class="footer-district-list">
-                <li><a href="#">青山</a></li>
-                <li><a href="#">渋谷</a></li>
-                <li><a href="#">東京・大手町</a></li>
-                <li><a href="#">新宿</a></li>
-                <li><a href="#">品川</a></li>
-                <li><a href="#">目黒・中目黒</a></li>
-                <li><a href="#">神田・御茶ノ水・秋葉原</a></li>
-                <li><a href="#">初台・幡ヶ谷・笹塚</a></li>
-              </ul>
-            </div>
-            <h3 class="footer-nav-district__h" data-js-toggle="#footer-district-23">区名(23区)</h3>
-            <div class="footer-district-contaienr" id="footer-district-23">
-              <ul class="footer-district-list">
-                <li><a href="#">港区</a></li>
-                <li><a href="#">渋谷区</a></li>
-                <li><a href="#">中央区</a></li>
-                <li><a href="#">新宿区</a></li>
-                <li><a href="#">文京区</a></li>
-                <li><a href="#">目黒区</a></li>
-                <li><a href="#">品川区</a></li>
-                <li><a href="#">世田谷区</a></li>
-                <li><a href="#">大田区</a></li>
-                <li><a href="#">江東区</a></li>
-                <li><a href="#">台東区</a></li>
-                <li><a href="#">墨田区</a></li>
-                <li><a href="#">中野区</a></li>
-                <li><a href="#">豊島区</a></li>
-                <li><a href="#">杉並区</a></li>
-                <li><a href="#">板橋区</a></li>
-                <li><a href="#">北区</a></li>
-                <li><a href="#">練馬区</a></li>
-                <li><a href="#">荒川区</a></li>
-                <li><a href="#">足立区</a></li>
-                <li><a href="#">葛飾区</a></li>
-                <li><a href="#">江戸川区</a></li>
-              </ul>
-            </div>
+            <section class="footer-nav-district__sect">
+              <h3 class="footer-nav-district__h" data-js-toggle="#footer-district-popular">人気エリア</h3>
+              <div class="footer-nav-district__body" id="footer-district-popular">
+                <ul class="footer-nav-district__list">
+                  <li><a href="#">赤坂・六本木・麻布</a></li>
+                  <li><a href="#">芝公園・虎ノ門・新橋</a></li>
+                  <li><a href="#">番町・飯田橋・麹町</a></li>
+                  <li><a href="#">白金・白金台・高輪</a></li>
+                  <li><a href="#">恵比寿・代官山・広尾</a></li>
+                  <li><a href="#">代々木上原・松濤・代々木</a></li>
+                  <li><a href="#">早稲田・落合・神楽坂</a></li>
+                  <li><a href="#">日本橋・人形町・銀座</a></li>
+                  <li><a href="#">本郷・湯島・小石川</a></li>
+                  <li><a href="#">芝浦・三田・芝</a></li>
+                  <li><a href="#">豊洲・月島・勝どき</a></li>
+                  <li><a href="#">戸越・五反田・大崎</a></li>
+                  <li><a href="#">祐天寺・学芸大学・自由が丘</a></li>
+                  <li><a href="#">駒沢・用賀・二子玉川</a></li>
+                  <li><a href="#">池尻・三宿・駒場</a></li>
+                  <li><a href="#">東中野・高円寺・阿佐ヶ谷</a></li>
+                  <li><a href="#">成城・砧</a></li>
+                  <li><a href="#">上野・浅草・門前仲町</a></li>
+                  <li><a href="#">池袋・板橋・王子</a></li>
+                </ul>
+                <ul class="footer-nav-district__list">
+                  <li><a href="#">青山</a></li>
+                  <li><a href="#">渋谷</a></li>
+                  <li><a href="#">東京・大手町</a></li>
+                  <li><a href="#">新宿</a></li>
+                  <li><a href="#">品川</a></li>
+                  <li><a href="#">目黒・中目黒</a></li>
+                  <li><a href="#">神田・御茶ノ水・秋葉原</a></li>
+                  <li><a href="#">初台・幡ヶ谷・笹塚</a></li>
+                </ul>
+              </div>
+            </section>
+            <section class="footer-nav-district__sect">
+              <h3 class="footer-nav-district__h" data-js-toggle="#footer-district-23">区名(23区)</h3>
+              <div class="footer-nav-district__body" id="footer-district-23">
+                <ul class="footer-nav-district__list">
+                  <li><a href="#">港区</a></li>
+                  <li><a href="#">渋谷区</a></li>
+                  <li><a href="#">中央区</a></li>
+                  <li><a href="#">新宿区</a></li>
+                  <li><a href="#">文京区</a></li>
+                  <li><a href="#">目黒区</a></li>
+                  <li><a href="#">品川区</a></li>
+                  <li><a href="#">世田谷区</a></li>
+                  <li><a href="#">大田区</a></li>
+                  <li><a href="#">江東区</a></li>
+                  <li><a href="#">台東区</a></li>
+                  <li><a href="#">墨田区</a></li>
+                  <li><a href="#">中野区</a></li>
+                  <li><a href="#">豊島区</a></li>
+                  <li><a href="#">杉並区</a></li>
+                  <li><a href="#">板橋区</a></li>
+                  <li><a href="#">北区</a></li>
+                  <li><a href="#">練馬区</a></li>
+                  <li><a href="#">荒川区</a></li>
+                  <li><a href="#">足立区</a></li>
+                  <li><a href="#">葛飾区</a></li>
+                  <li><a href="#">江戸川区</a></li>
+                </ul>
+              </div>
+            </section>
           </nav>
           <aside class="footer-groups">
             <ul class="footer-groups-list">

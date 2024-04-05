@@ -7,29 +7,38 @@ const rf_toggles = () => {
   const togglePCClass = 'toggle-pc-only'
   const toggleClass = '--is-open'
 
-  console.dir(toggles)
-  toggles.forEach(toggle => {
-    const target = document.querySelector(toggle.dataset.jsToggle)
-    // 初動
-    if (toggle.classList.contains(toggleClass) && !target.classList.contains(toggleClass)) {
-      target.classList.add(toggleClass)
-    }
-
-    // レスポンシブチェック
-    toggle.addEventListener('click', e => {
-      const self = e.target
-
-      if (self.classList.contains(toggleSPClass) && rf_get_globals('window_state') !== 'SP') {
-        return
+  const setToggleControl = () => {
+    toggles.forEach(toggle => {
+      const target = document.querySelector(toggle.dataset.jsToggle)
+      // 初動 - トグルボタンに--is-openがついていればターゲットにも追加
+      if (toggle.classList.contains(toggleClass) && !target.classList.contains(toggleClass)) {
+        target.classList.add(toggleClass)
       }
-      if (self.classList.contains(togglePCClass) && rf_get_globals('window_state') !== 'PC') {
-        return
-      }
-      self.classList.toggle(toggleClass)
-      // const target = document.querySelector(toggle.dataset.toggle)
-      target.classList.toggle(toggleClass)
+
+      // レスポンシブチェック
+      toggle.addEventListener('click', e => {
+        // const self = e.target
+        // SP
+        if (toggle.classList.contains(toggleSPClass) && rf_get_globals('window_state') !== 'SP') {
+          return
+        }
+        // PC
+        if (toggle.classList.contains(togglePCClass) && rf_get_globals('window_state') !== 'PC') {
+          return
+        }
+        toggle.classList.toggle(toggleClass)
+        // const target = document.querySelector(toggle.dataset.toggle)
+        target.classList.toggle(toggleClass)
+      })
     })
-  })
+  }
+
+  const init = () => {
+    setToggleControl()
+  }
+
+  init()
+
 }
 
 export default rf_toggles

@@ -1,5 +1,6 @@
 const rf_ward = () => {
   const dataProp = 'jsWardSelect'
+  const form = document.querySelector('#sys-form')
   const btns = Array.from(document.querySelectorAll('[data-js-ward-select]'))
   const checkBoxes = btns.filter(btn => btn.tagName === 'INPUT')
   const boundaries = btns.filter(btn => btn.tagName === 'g')
@@ -87,8 +88,30 @@ const rf_ward = () => {
     })
   }
 
+  // すべてのチェックを外す - 画面戻ったときの対策
+  const clearAllCheckboxes = () => {
+    btns.forEach(btn => {
+      console.dir(btn)
+      if (btn.tagName === 'INPUT') {
+        console.log(btn.checked)
+        console.log(btn.defaultChecked)
+        btn.setAttribute('autocomplete', 'off')
+        btn.checked = false
+      }
+    })
+  }
+
+  const resetForm = () => {
+    console.log('reset!')
+    form.reset()
+  }
 
   const init = () => {
+    // resetForm()
+    clearAllCheckboxes()
+    // window.addEventListener('load', () => {
+    //   console.log('loaded!')
+    // })
     setToggleAction()
   }
 

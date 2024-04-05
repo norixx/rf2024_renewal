@@ -2,13 +2,12 @@
 $ff: "Noto Sans JP", "Hiragino Sans", "Meiryo", "Hiragino Kaku Gothic ProN", sans-serif;
 $ff-en-jp: "Roboto", "Noto Sans JP", "Hiragino Sans", "Meiryo", "Hiragino Kaku Gothic ProN", sans-serif;
 $ff-en: "Roboto", sans-serif;
-$ff-en-shoulder: "Montserrat", "Noto Sans JP", "Hiragino Sans", sans-serif;
+$ff-en-montserrat: "Montserrat", "Noto Sans JP", "Hiragino Sans", sans-serif;
 $ff-serif: "Noto Serif JP", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", serif;
 
 $fw-normal: 400;
 $fw-semibold: 500;
 $fw-bold: 600;
-$fw-en-bold: 500;
 
 $fz-10: 10px;
 $fz-11: 11px;
@@ -162,6 +161,8 @@ $z-index-lv5: 500;
   --bg-black-90: rgba(0 0 0 / 0.9);
   --bg-black-80: rgba(0 0 0 / 0.8);
   --bg-black-70: rgba(0 0 0 / 0.7);
+  --bg-alert: #{$alert};
+  --bg-alert-trans: #{$alert-trans};
 
   --bg-black-gradient-rb: linear-gradient(#{$gradient-dir-rb}, #{$gray0} 0%, #{$gray-black} 100%);
 
@@ -183,6 +184,7 @@ $z-index-lv5: 500;
   --bdr-btn-gray-xlight: #{$gray6};
   --bdr-btn-gray-dark: #{$gray3};
   --bdr-btn-gray-xdark: #{$gray2};
+  --bdr-btn-black: #{$gray-black};
   --bdr-btn-gray--hover: #{$gray-black};
   --bdr-btn-gray--checked: #{$gray-black};
   --bdr-btn-primary: #{$primary};
@@ -202,6 +204,7 @@ $z-index-lv5: 500;
   --txt-normal: #{$gray-black};
   --txt-primary: #{$primary};
   --txt-primary-mid: #{$primary-mid};
+  --txt-alert: #{$alert};
 
   // alert
   --alert: #{$alert};
@@ -221,7 +224,7 @@ $z-index-lv5: 500;
   --ff-en-jp: #{$ff-en-jp};
   --ff-num: #{$ff-en};
   --ff-serif: #{$ff-serif};
-  --ff-en-shoulder: #{$ff-en-shoulder};
+  --ff-en-montserrat: #{$ff-en-montserrat};
 
   // Size
   --fz-10: #{$fz-10};
@@ -242,7 +245,7 @@ $z-index-lv5: 500;
   --fw-normal: #{$fw-normal};
   --fw-semibold: #{$fw-semibold};
   --fw-bold: #{$fw-bold};
-  --fw-en-bold: #{$fw-en-bold};
+  --fw-en-bold: #{$fw-semibold};
 
   // Line height
   --line-height-200: #{$line-height-200};

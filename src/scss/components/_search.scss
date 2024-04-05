@@ -67,6 +67,11 @@
   dt {
     font-weight: var(--fw-bold);
     letter-spacing: var(--letter-space-10);
+    margin-bottom: var(--space-8);
+  }
+
+  dd {
+    flex: 1;
   }
 
   @include mq {
@@ -141,7 +146,7 @@
 .c-search-ward {
   display: flex;
   flex-direction: column;
-  gap: var(--space-56);
+  gap: var(--space-48);
 
   @include mq {
     flex-direction: row-reverse;

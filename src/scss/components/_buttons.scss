@@ -14,6 +14,7 @@
   padding-bottom: var(--y);
   border-radius: var(--bdr-radius-md);
   border: 1px solid transparent;
+  background-color: var(--bg-white);
   font-size: var(--fz-14);
   text-align: center;
   transition: var(--animation-normal);
@@ -35,6 +36,9 @@
     background-color: var(--bg-black);
     color: var(--txt-white);
   }
+  &.--impact-outline {
+    border-color: var(--bdr-btn-black);
+  }
   &.--primary {
     background-color: var(--bg-white);
     border-color: var(--bdr-btn-primary-mid);
@@ -53,6 +57,22 @@
   }
   &.--primary-outline {
     border-color: var(--bdr-btn-primary);
+  }
+  &.--primary-flat {
+    background-color: var(--bg-primary-xlight);
+    color: var(--txt-primary);
+
+    &:hover {
+      background: var(--bg-primary-light);
+    }
+  }
+  &.--impact-outline-primary {
+    border: 1px solid var(--bdr-btn-black);
+
+    &:hover {
+      border-color: var(--bdr-btn-primary);
+      color: var(--txt-primary);
+    }
   }
 
   // アイコン基本
@@ -76,7 +96,13 @@
     &::before {
       margin-right: var(--space-8);
     }
-    // 縦方向のときはマージンなし
+
+    // デコレーションなしはマージンなし
+    &.--no-decoration::before {
+      margin-right: 0;
+    }
+
+    // 方向 - 縦方向のときはマージンなし
     &.--v::before {
       margin-right: 0;
       margin-bottom: var(--space-4);
@@ -94,6 +120,7 @@
       }
     }
 
+    // サイズで調整
     &.--sm,
     &.--xs,
     &.--xxs {
@@ -125,6 +152,11 @@
       margin-left: var(--space-8);
     }
 
+    &.--no-decoration::after {
+      margin-left: 0;
+    }
+
+    // サイズで調整
     &.--sm,
     &.--xs,
     &.--xxs {
@@ -207,6 +239,13 @@
         mask-image: var(--icon-save-fill);
         background-color: var(--bg-primary);
       }
+    }
+  }
+
+  &.--i-search {
+    &::before,
+    &::after {
+      mask-image: var(--icon-search);
     }
   }
 
@@ -307,6 +346,25 @@
     }
   }
 
+  // 枠線ボーダー
+  $thicknesses: md, lg, xl;
+  @each $thickness in $thicknesses {
+    @if $thickness == md {
+      &.--bdr-#{$thickness} {
+        border-width: 1px;
+      }
+    }
+    @if $thickness == lg {
+      &.--bdr-#{$thickness} {
+        border-width: 2px;
+      }
+    }
+    @if $thickness == xl {
+      &.--bdr-#{$thickness} {
+        border-width: 3px;
+      }
+    }
+  }
   // width
   &.--w-100 {
     width: 100%;
@@ -341,6 +399,21 @@
     background-color: var(--bg-gray-xxlight);
   }
 
+  // Utilities
+  &.--no-border {
+    border: none !important;
+  }
+  &.--no-decoration {
+    border: none;
+    padding: 0;
+    background: none;
+  }
+  &.--no-bdr-radius {
+    border-radius: 0 !important;
+  }
+
+  // =======================================================
+  // 特徴
   // 検索用ボタン
   &.--search-basic {
     align-items: center;
@@ -354,16 +427,18 @@
     background-position: left top;
     border-radius: var(--bdr-radius-sm);
     font-size: var(--fz-12);
-    padding: var(--space-16) var(--space-8);
+    padding: var(--space-8) var(--space-4);
     transition: var(--animation-normal);
 
     &:hover {
-      background-position: right top;
+      // background-position: right top;
+      background-color: var(--bg-primary);
+      background-image: none;
     }
 
     b {
       font-weight: var(--fw-bold);
-      font-size: var(--fz-16);
+      font-size: var(--fz-14);
     }
 
     &.--current {
@@ -378,16 +453,14 @@
 
     @include mq {
       padding: var(--space-24) var(--space-8);
+
+      b {
+        font-size: var(--fz-16);
+      }
     }
   } //.--search-basic
 
-  // Utilities
-  &.--no-border {
-    border: none !important;
-  }
-
-  // =======================================================
-  // 特徴
+  // CTA
   &.--cta-contact {
     display: flex;
     flex-direction: column;
