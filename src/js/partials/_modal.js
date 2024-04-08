@@ -28,7 +28,7 @@ const rf_modals = () => {
   }
 
   // モーダル閉じるアクション
-  const _closeModal = (modal) => {
+  const closeModal = (modal) => {
     // console.log('モーダル閉じる, openedModalsは?', openedModals)
     console.log(modal.id)
     const index = openedModals.indexOf(modal);
@@ -47,7 +47,7 @@ const rf_modals = () => {
       modal.addEventListener('click', e => {
         if (modalTargetName in e.target.dataset) {
           console.log('モーダルターゲット')
-          _closeModal(modal)
+          closeModal(modal)
         }
       })
 
@@ -55,7 +55,7 @@ const rf_modals = () => {
       const modalCloses = modal.querySelectorAll('[data-js-modal-close]')
       modalCloses.forEach(close => {
         close.addEventListener('click', () => {
-          _closeModal(modal)
+          closeModal(modal)
         })
       })
 

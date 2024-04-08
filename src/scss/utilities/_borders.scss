@@ -1,0 +1,15 @@
+// Borders
+@use "../abstracts/mixins" as *;
+
+// .u-bdr {
+//   border-style: solid;
+
+//   $directions: "left", "right", "top", "bottom", "all";
+//   @each $dir in $directions {
+//     @if $dir == "all" {
+//       &--#{$dir} {
+//         border-width: 1px;
+//       }
+//     }
+//   }
+// }

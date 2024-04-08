@@ -494,6 +494,29 @@
         font-size: var(--fz-14);
         line-height: var(--line-height-md);
         margin-bottom: 0;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          height: 1px;
+          width: 100%;
+          background-color: var(--bg-white);
+          transition: scale var(--animation-normal);
+          scale: 0 1;
+        }
+
+        &:hover::after {
+          scale: 1 1;
+        }
+      }
+
+      &__link.--is-open &__link-text {
+        &::after {
+          scale: 1 1;
+        }
       }
     }
   }
@@ -554,12 +577,17 @@
   // 言語
   &-lang {
     margin-right: var(--space-32);
+    font-size: var(--fz-12);
+    letter-spacing: var(--letter-space-10);
   }
 
   // 言語切替(SPのみ)
   &-lang-switch {
     display: flex;
     justify-content: center;
+    gap: var(--space-32);
+    font-size: var(--fz-14);
+    letter-spacing: var(--letter-space-10);
 
     @include mq {
       display: none;

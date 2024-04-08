@@ -137,6 +137,15 @@ $c-modal-sp-only: ".c-modal.--sp-only";
       border-radius: 0 0 var(--bdr-radius-md) var(--bdr-radius-md);
     }
   }
+
+  &__footer-btns {
+    display: flex;
+    gap: var(--space-16);
+    padding: var(--space-16);
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-gray-xxlight);
+  }
 } //c-modal-content
 
 // 再検索ナビ用モーダル

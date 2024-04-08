@@ -137,27 +137,11 @@
     display: flex;
     position: relative;
 
-    &::before,
-    &::after {
-      content: "";
-      width: 16px;
-      height: 2px;
-      background-color: var(--bg-black);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-      transition: rotate var(--animation-normal);
+    @include toggle-icon(var(--bg-black)) {
       cursor: pointer;
     }
 
-    &::before {
-      // mask: var(--icon-plus) no-repeat center center / contain;
-      // @include mask-icon(--icon-plus);
-      rotate: 90deg;
-    }
-
-    &.--is-open::before {
+    &.--is-open::after {
       // @include mask-icon(--icon-minus);
       rotate: 0deg;
     }

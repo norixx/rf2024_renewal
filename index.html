@@ -105,21 +105,22 @@
           </ul>
 
           <ul class="gnav-site-info">
-            <li><a href="#">ニュースリリース</a></li>
-            <li><a href="#">Resident First Channel</a></li>
-            <li><a href="#">お問い合わせ</a></li>
+            <li><a href="/topics">ニュースリリース</a></li>
+            <li><a href="/service/resident_first_channel/">Resident First Channel</a></li>
+            <li><a href="https://form.mitsui-chintai.co.jp/webapp/form/19959_rndb_6/index.do" target="_blank">お問い合わせ</a>
+            </li>
           </ul>
 
           <ul class="gnav-user-control">
-            <li><a href="#">検討中リスト</a></li>
-            <li><a href="#">閲覧履歴・検索条件</a></li>
-            <li><a href="#" class="u-tt-uppercase">Service</a></li>
-            <li><a href="#">ログイン / 新規登録</a></li>
+            <li><a href="{{ url('/') }}/list/ichiran">検討中リスト</a></li>
+            <li><a href="{{ url('/') }}/list/rirekioheya">閲覧履歴・検索条件</a></li>
+            <li><a href="/service/" class="u-tt-uppercase">Service</a></li>
+            <li><a href="https://mypage.mitsui-chintai.co.jp/rf_web/cstLogin" target="_blank">ログイン / 新規登録</a></li>
           </ul>
 
           <div class="gnav-lang-switch">
-            <a href="#">日本語</a>
-            <a href="#">英語</a>
+            <a href="{{ Lob::langSwitch() }}">日本語</a>
+            <a href="{{ Lob::langSwitch(true) }}">英語</a>
           </div>
         </div>
 
@@ -143,11 +144,11 @@
                   <div class="gnav-subsect__content gnav-lower-sect__content">
                     <div class="gnav-subsect-col">
                       <ul class="gnav-sublist">
-                        <li><a href="#">サービスについて</a></li>
-                        <li><a href="#">会社概要</a></li>
-                        <li><a href="#">採用情報</a></li>
-                        <li><a href="#">アクセス</a></li>
-                        <li><a href="#">グループ紹介</a></li>
+                        <li><a href="/service">サービスについて</a></li>
+                        <li><a href="/company/">会社概要</a></li>
+                        <li><a href="https://www.mitsui-chintai.co.jp/company/recruit/" target="_blank">採用情報</a></li>
+                        <li><a href="/company/accessmap">アクセス</a></li>
+                        <li><a href="/company/group">グループ紹介</a></li>
                       </ul>
                     </div>
                   </div>
@@ -1119,11 +1120,11 @@
                   <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-about-us">
                     <div class="toggle-target__inner">
                       <ul class="footer-nav-sublist">
-                        <li><a href="#">サービスについて</a></li>
-                        <li><a href="#">会社概要</a></li>
-                        <li><a href="#">採用情報</a></li>
-                        <li><a href="#">アクセス</a></li>
-                        <li><a href="#">グループ紹介</a></li>
+                        <li><a href="/service/">サービスについて</a></li>
+                        <li><a href="/company/">会社概要</a></li>
+                        <li><a href="https://www.mitsui-chintai.co.jp/company/recruit/" target="_blank">採用情報</a></li>
+                        <li><a href="/company/accessmap">アクセス</a></li>
+                        <li><a href="/company/group">グループ紹介</a></li>
                       </ul>
                     </div>
                 </li>
@@ -1134,8 +1135,10 @@
                 <li>
                   <h3 class="footer-nav-lv1-h footer-nav-toggler toggle-sp-only" data-js-toggle="#footer-rent"
                     aria-expand="false" aria-control="footer-rent">
-                    <span class="__text">借りたい</span><span class="__icon"><span
-                        class="u-visually-hidden">開閉</span></span>
+                    <span class="__text">借りたい</span>
+                    <span class="__icon">
+                      <span class="u-visually-hidden">開閉</span>
+                    </span>
                   </h3>
                   <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-rent">
                     <div class="toggle-target__inner">
@@ -1143,160 +1146,209 @@
                         <div class="footer-nav-rent__col">
                           <h4 class="footer-nav-lv2-h">検索する</h4>
                           <ul class="footer-nav-lv2-list footer-nav-sublist">
-                            <li><a href="#">人気エリアから探す</a></li>
-                            <li><a href="#">区から探す</a></li>
-                            <li><a href="#">駅・沿線から探す</a></li>
+                            <li><a href="{{ url('/') }}/area">人気エリアから探す</a></li>
+                            <li><a href="{{ url('/') }}/ward">区から探す</a></li>
+                            <li><a href="{{ url('/') }}/ensen">駅・沿線から探す</a></li>
+                            <li><a href="{{ url('/') }}/mapsearch/">地図から探す</a></li>
                           </ul>
                         </div>
                         <div class="footer-nav-rent__col">
                           <h4 class="footer-nav-lv2-h">最新情報から探す</h4>
                           <ul class="footer-nav-lv2 footer-nav-sublist">
-                            <li><a href="#">おすすめ情報から探す</a></li>
-                            <li><a href="#">新着情報から探す</a></li>
+                            <li><a href="/topics/pickbk.html">おすすめ情報から探す</a></li>
+                            <li><a href="あとで">新着情報から探す</a></li>
                           </ul>
                         </div>
                         <div class="footer-nav-rent__col">
                           <h4 class="footer-nav-lv2-h">特集から探す</h4>
                           <ul class="footer-nav-list footer-nav-sublist">
-                            <li><a href="#">プレミアムマンション</a></li>
-                            <li><a href="#">新築</a></li>
-                            <li><a href="#">当社限定</a></li>
-                            <li><a href="#">三井不動産企画</a></li>
-                            <li><a href="#">分譲賃貸</a></li>
-                            <li><a href="#">賃料改定</a></li>
-                            <li><a href="#">フリーレント</a></li>
-                            <li><a href="#">ペット可</a></li>
-                            <li><a href="#">こだわり条件</a></li>
+                            <li><a href="/premium/">プレミアムマンション</a></li>
+                            <li><a href="{{ url('/') }}/osusume/new">新築</a></li>
+                            <li><a href="{{ url('/') }}/result?lin=ALL&cms=1&vop=(0,0,1,0)&get=ensen">当社限定</a>
+                            </li>
+                            <li><a href="{{ url('/') }}/osusume/parkaxis">三井不動産企画</a></li>
+                            <li><a href="/mansion/">分譲賃貸</a></li>
+                            <li><a href="/newprice/">賃料改定</a></li>
+                            <li><a
+                                href="{{ url('/') }}/result?ku=(ALL)&cms=5jjrmzbvnk&vop=(0,0,4,0)&get=ward">フリーレント</a>
+                            </li>
+                            <li><a
+                                href="{{ url('/') }}/result?lin=ALL&equ=(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0)&get=lin">ペット可</a>
+                            </li>
+                            <li><a
+                                href="{{ url('/') }}//result?equ=(0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)&vop=(0,0,4,0)&get=ward">コンシェルジュ付き</a>
+                            </li>
+                            <li><a href="/brandmansion/">ブランドマンション</a>
+                            </li>
+                            <!-- これの扱いがよくわからない <li><a href="#">こだわり条件</a></li> -->
                           </ul>
                         </div>
                       </div>
                     </div>
+                  </div>
                 </li>
               </ul>
             </div>
             <div class="footer-nav-main__col --other">
               <ul class="footer-nav-lv1-list">
-                <li><a href="#">貸したい</a></li>
+                <li><a href="/owner_overview/">賃貸運営</a></li>
                 <li><a href="#">資産活用</a></li>
-                <li><a href="#">RESIDENTFIRST CHANNEL</a></li>
-                <li><a href="#">会員ページ</a></li>
-                <li><a href="#">English</a></li>
-                <li><a href="#">ニュースリリース</a></li>
+                <li><a href="/service/resident_first_channel/">RESIDENTFIRST CHANNEL</a></li>
+                <li><a href="https://mypage.mitsui-chintai.co.jp/rf_web/cstLogin" target="_blank">会員ページ</a></li>
+                <li><a href="{{ Lob::langSwitch(true) }}">English</a></li>
+                <li><a href="/topics">ニュースリリース</a></li>
               </ul>
             </div>
           </nav>
           <nav class="footer-nav-base">
             <ul class="footer-nav-base-list">
-              <li class="footer-nav-base-list__item"><a href="#">サイトマップ</a></li>
-              <li class="footer-nav-base-list__item"><a href="#">プライバシーステートメント</a></li>
-              <li class="footer-nav-base-list__item"><a href="#">特定個人情報基本方針</a></li>
-              <li class="footer-nav-base-list__item"><a href="#">個人情報の取り扱いについて</a></li>
-              <li class="footer-nav-base-list__item"><a href="#">個人情報の開示等手続きについて</a></li>
-              <li class="footer-nav-base-list__item"><a href="#">Cookieおよびアクセスログについて</a></li>
-              <li class="footer-nav-base-list__item"><a href="#">サイトポリシー</a></li>
-              <li class="footer-nav-base-list__item"><a href="#">三井不動産グループソーシャルメディアガイドライン</a></li>
+              <li class="footer-nav-base-list__item"><a href="/sitemap">サイトマップ</a></li>
+              <li class="footer-nav-base-list__item"><a href="/info/01">プライバシーステートメント</a></li>
+              <li class="footer-nav-base-list__item"><a href="/info/06">特定個人情報基本方針</a></li>
+              <li class="footer-nav-base-list__item"><a href="/info/02">個人情報の取り扱いについて</a></li>
+              <li class="footer-nav-base-list__item"><a href="/info/03">個人情報の開示等手続きについて</a></li>
+              <li class="footer-nav-base-list__item"><a href="/info/07">Cookieおよびアクセスログについて</a></li>
+              <li class="footer-nav-base-list__item"><a href="/info/04">サイトポリシー</a></li>
+              <li class="footer-nav-base-list__item"><a href="/info/05">三井不動産グループソーシャルメディアガイドライン</a></li>
             </ul>
           </nav>
           <nav class="footer-nav-district">
             <section class="footer-nav-district__sect">
-              <h3 class="footer-nav-district__h" data-js-toggle="#footer-district-popular">人気エリア</h3>
-              <div class="footer-nav-district__body" id="footer-district-popular">
-                <ul class="footer-nav-district__list">
-                  <li><a href="#">赤坂・六本木・麻布</a></li>
-                  <li><a href="#">芝公園・虎ノ門・新橋</a></li>
-                  <li><a href="#">番町・飯田橋・麹町</a></li>
-                  <li><a href="#">白金・白金台・高輪</a></li>
-                  <li><a href="#">恵比寿・代官山・広尾</a></li>
-                  <li><a href="#">代々木上原・松濤・代々木</a></li>
-                  <li><a href="#">早稲田・落合・神楽坂</a></li>
-                  <li><a href="#">日本橋・人形町・銀座</a></li>
-                  <li><a href="#">本郷・湯島・小石川</a></li>
-                  <li><a href="#">芝浦・三田・芝</a></li>
-                  <li><a href="#">豊洲・月島・勝どき</a></li>
-                  <li><a href="#">戸越・五反田・大崎</a></li>
-                  <li><a href="#">祐天寺・学芸大学・自由が丘</a></li>
-                  <li><a href="#">駒沢・用賀・二子玉川</a></li>
-                  <li><a href="#">池尻・三宿・駒場</a></li>
-                  <li><a href="#">東中野・高円寺・阿佐ヶ谷</a></li>
-                  <li><a href="#">成城・砧</a></li>
-                  <li><a href="#">上野・浅草・門前仲町</a></li>
-                  <li><a href="#">池袋・板橋・王子</a></li>
-                </ul>
-                <ul class="footer-nav-district__list">
-                  <li><a href="#">青山</a></li>
-                  <li><a href="#">渋谷</a></li>
-                  <li><a href="#">東京・大手町</a></li>
-                  <li><a href="#">新宿</a></li>
-                  <li><a href="#">品川</a></li>
-                  <li><a href="#">目黒・中目黒</a></li>
-                  <li><a href="#">神田・御茶ノ水・秋葉原</a></li>
-                  <li><a href="#">初台・幡ヶ谷・笹塚</a></li>
-                </ul>
+              <h3 class="footer-nav-district__h footer-nav-toggler toggle-sp-only"
+                data-js-toggle="#footer-district-popular">
+                <span class="__text">人気エリア</span>
+                <span class="__icon"><span class="u-visually-hidden">開閉</span></span>
+              </h3>
+              <div class="footer-nav-district__body toggle-target toggle-target-sp-only" id="footer-district-popular">
+                <div class="toggle-target__inner">
+                  <ul class="footer-nav-district__list">
+                    <li><a href="{{ url('/') }}/area/赤坂・六本木・麻布">赤坂・六本木・麻布</a></li>
+                    <li><a href="{{ url('/') }}/area/芝公園・虎ノ門・新橋">芝公園・虎ノ門・新橋</a></li>
+                    <li><a href="{{ url('/') }}/area/番町・飯田橋・麹町">番町・飯田橋・麹町</a></li>
+                    <li><a href="{{ url('/') }}/area/白金・白金台・高輪">白金・白金台・高輪</a></li>
+                    <li><a href="{{ url('/') }}/area/恵比寿・代官山・広尾">恵比寿・代官山・広尾</a></li>
+                    <li><a href="{{ url('/') }}/area/代々木上原・松濤・代々木">代々木上原・松濤・代々木</a></li>
+                    <li><a href="{{ url('/') }}/area/早稲田・落合・神楽坂">早稲田・落合・神楽坂</a></li>
+                    <li><a href="{{ url('/') }}/area/日本橋・人形町・銀座">日本橋・人形町・銀座</a></li>
+                    <li><a href="{{ url('/') }}/area/本郷・湯島・小石川">本郷・湯島・小石川</a></li>
+                    <li><a href="{{ url('/') }}/area/芝浦・三田・芝">芝浦・三田・芝</a></li>
+                    <li><a href="{{ url('/') }}/area/豊洲・月島・勝どき">豊洲・月島・勝どき</a></li>
+                    <li><a href="{{ url('/') }}/area/戸越・五反田・大崎">戸越・五反田・大崎</a></li>
+                    <li><a href="{{ url('/') }}/area/祐天寺・学芸大学・自由が丘">祐天寺・学芸大学・自由が丘</a></li>
+                    <li><a href="{{ url('/') }}/area/駒沢・用賀・二子玉川">駒沢・用賀・二子玉川</a></li>
+                    <li><a href="{{ url('/') }}/area/池尻・三宿・駒場">池尻・三宿・駒場</a></li>
+                    <li><a href="{{ url('/') }}/area/東中野・高円寺・阿佐ヶ谷">東中野・高円寺・阿佐ヶ谷</a></li>
+                    <li><a href="{{ url('/') }}/area/成城・砧">成城・砧</a></li>
+                    <li><a href="{{ url('/') }}/area/上野・浅草・門前仲町">上野・浅草・門前仲町</a></li>
+                    <li><a href="{{ url('/') }}/area/池袋・板橋・王子">池袋・板橋・王子</a></li>
+                  </ul>
+                  <ul class="footer-nav-district__list u-pb-24 u-pb-pc-0">
+                    <li><a href="{{ url('/') }}/pickuparea/aoyama">青山</a></li>
+                    <li><a href="{{ url('/') }}/pickuparea/shibuya_st">渋谷</a></li>
+                    <li><a href="{{ url('/') }}/pickuparea/tokyo">東京・大手町</a></li>
+                    <li><a href="{{ url('/') }}/pickuparea/shinjuku_st">新宿</a></li>
+                    <li><a href="{{ url('/') }}/pickuparea/shinagawa_st">品川</a></li>
+                    <li><a href="{{ url('/') }}/pickuparea/meguro_nakameguro">目黒・中目黒</a></li>
+                    <li><a href="{{ url('/') }}/pickuparea/kanda_ochanomizu_akihabara">神田・御茶ノ水・秋葉原</a></li>
+                    <li><a href="{{ url('/') }}/pickuparea/hatsudai_hatagaya_sasazuka">初台・幡ヶ谷・笹塚</a></li>
+                  </ul>
+                </div>
               </div>
             </section>
             <section class="footer-nav-district__sect">
-              <h3 class="footer-nav-district__h" data-js-toggle="#footer-district-23">区名(23区)</h3>
-              <div class="footer-nav-district__body" id="footer-district-23">
-                <ul class="footer-nav-district__list">
-                  <li><a href="#">港区</a></li>
-                  <li><a href="#">渋谷区</a></li>
-                  <li><a href="#">中央区</a></li>
-                  <li><a href="#">新宿区</a></li>
-                  <li><a href="#">文京区</a></li>
-                  <li><a href="#">目黒区</a></li>
-                  <li><a href="#">品川区</a></li>
-                  <li><a href="#">世田谷区</a></li>
-                  <li><a href="#">大田区</a></li>
-                  <li><a href="#">江東区</a></li>
-                  <li><a href="#">台東区</a></li>
-                  <li><a href="#">墨田区</a></li>
-                  <li><a href="#">中野区</a></li>
-                  <li><a href="#">豊島区</a></li>
-                  <li><a href="#">杉並区</a></li>
-                  <li><a href="#">板橋区</a></li>
-                  <li><a href="#">北区</a></li>
-                  <li><a href="#">練馬区</a></li>
-                  <li><a href="#">荒川区</a></li>
-                  <li><a href="#">足立区</a></li>
-                  <li><a href="#">葛飾区</a></li>
-                  <li><a href="#">江戸川区</a></li>
-                </ul>
+              <h3 class="footer-nav-district__h footer-nav-toggler  toggle-sp-only"
+                data-js-toggle="#footer-district-23">
+                <span class="__text">区名(23区)</span>
+                <span class="__icon"><span class="u-visually-hidden">開閉</span></span>
+              </h3>
+              <div class="footer-nav-district__body toggle-target toggle-target-sp-only" id="footer-district-23">
+                <div class="toggle-target__inner">
+                  <ul class="footer-nav-district__list u-pb-24 u-pb-pc-0">
+                    <li><a href="{{ url('/') }}/ward/Minato-ku">港区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Shibuya-ku">渋谷区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Chuo-ku">中央区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Shinjuku-ku">新宿区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Bunkyo-ku">文京区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Chiyoda-ku">千代田区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Meguro-ku">目黒区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Shinagawa-ku">品川区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Setagaya-ku">世田谷区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Oota-ku">大田区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Koto-ku">江東区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Taito-ku">台東区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Sumida-ku">墨田区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Nakano-ku">中野区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Toshima-ku">豊島区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Suginami-ku">杉並区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Itabashi-ku">板橋区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Kita-ku">北区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Nerima-ku">練馬区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Arakawa-ku">荒川区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Adachi-ku">足立区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Katsushika-ku">葛飾区</a></li>
+                    <li><a href="{{ url('/') }}/ward/Edogawa-ku">江戸川区</a></li>
+                  </ul>
+                </div>
               </div>
             </section>
           </nav>
           <aside class="footer-groups">
             <ul class="footer-groups-list">
-              <li><a href="#" target="_blank"><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#" target="_blank"><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#" target="_blank"><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#" target="_blank"><img src="" alt="" loading="lazy"></a></li>
+              <li><a href="http://mfhl.mitsui-chintai.co.jp/" target="_blank"><img
+                    src="/assets/img/common/bn-mf-residential-lease.webp" alt="三井不動産レジデンシャルリース" loading="lazy"></a></li>
+              <li><a href="http://www.mitsui-accommo.co.jp/" target="_blank"><img
+                    src="/assets/img/common/bn-acommodation-first.webp" alt="三井不動産グループ Accomodation First"
+                    loading="lazy"></a>
+              </li>
+              <li><a href="http://mfhl.mitsui-chintai.co.jp/residentassistance" target="_blank"><img
+                    src="/assets/img/common/bn-resident-assistance.webp" alt="レジデントアシスタンス株式会社" loading="lazy"></a>
+              </li>
+              <li><a href="https://mfhl.mitsui-chintai.co.jp/ri/" target="_blank"><img
+                    src="/assets/img/common/bn-resident-insurance.webp" alt="レジデントインシュアランス少額短期保険株式会社"
+                    loading="lazy"></a>
+              </li>
             </ul>
           </aside>
           <aside class="footer-group-services">
-            <h2 class="footer-grop-services__h">三井不動産グループの住まいに関する具体的なサービス内容については、各事業サイトをご覧ください</h2>
-            <ul class="footer-group-services-list">
-              <li><a href="#"><span>&nbsp;</span><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#"><span>住んでからの安心サポートなら</span><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#"><span>すまいとくらしの総合情報サイトなら</span><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#"><span>新築の住まい探しなら</span><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#"><span>不動産の売却・購入なら</span><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#"><span>注文住宅・賃貸建築・医院建築のことなら</span><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#"><span>住まいのリフォーム・リノベーションなら</span><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#"><span>空間デザイン・インテリア販売なら</span><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#"><span>マンション管理のトータルサポートなら</span><img src="" alt="" loading="lazy"></a></li>
-              <li><a href="#"><span>シニアのためのサービスレジデンスなら</span><img src="" alt="" loading="lazy"></a></li>
+            <h2 class="footer-group-services__h">三井不動産グループの住まいに関する具体的なサービス内容については、各事業サイトをご覧ください</h2>
+            <ul class="footer-group-services__list">
+              <li><a href="http://www.mitsuifudosan.co.jp/" target="_blank"><span>&nbsp;</span><img
+                    src="/assets/img/common/bn-mf.webp" alt="三井不動産" loading="lazy"></a></li>
+              <li><a href="http://31loop.jp/membership/view/s.php" target="_blank"><span>住んでからの安心サポートなら</span><img
+                    src="/assets/img/common/bn-sumai-loop.webp" alt="すまいLOOP" loading="lazy"></a></li>
+              <li><a href="https://www.mitsui-mall.com/?rfrmtd=mitsuichintai"
+                  target="_blank"><span>すまいとくらしの総合情報サイトなら</span><img src="/assets/img/common/bn-mitsukete.webp"
+                    alt="三井でみつけて" loading="lazy"></a></li>
+              <li><a href="http://www.31sumai.com/" target="_blank"><span>新築の住まい探しなら</span><img
+                    src="/assets/img/common/bn-sumai.webp" alt="三井のすまい" loading="lazy"></a></li>
+              <li><a href="http://www.rehouse.co.jp/" target="_blank"><span>不動産の売却・購入なら</span><img
+                    src="/assets/img/common/bn-rehouse.webp" alt="三井のリハウス" loading="lazy"></a></li>
+              <li><a href="http://www.mitsuihome.co.jp/" target="_blank"><span>注文住宅・賃貸建築・医院建築のことなら</span><img
+                    src="/assets/img/common/bn-home.webp" alt="三井ホーム" loading="lazy"></a></li>
+              <li><a href="http://www.mitsui-reform.com/" target="_blank"><span>住まいのリフォーム・リノベーションなら</span><img
+                    src="/assets/img/common/bn-reform.webp" alt="三井のリフォーム" loading="lazy"></a></li>
+              <li><a href="https://www.mitsui-designtec.co.jp/" target="_blank"><span>空間デザイン・インテリア販売なら</span><img
+                    src="/assets/img/common/bn-design-tech.webp" alt="三井デザインテック" loading="lazy"></a></li>
+              <li><a href="http://www.mitsui-kanri.co.jp/" target="_blank"><span>マンション管理のトータルサポートなら</span><img
+                    src="/assets/img/common/bn-mf-residential-service.webp" alt="三井不動産レジデンシャルサービス" loading="lazy"></a>
+              </li>
+              <li><a href="https://www.mfrw.co.jp/" target="_blank"><span>シニアのためのサービスレジデンスなら</span><img
+                    src="/assets/img/common/bn-park-wellstate.webp" alt="三井不動産レジデンシャルウェルネス" loading="lazy"></a>
+              </li>
             </ul>
             <div class="footer-csr-group-link">
-              <a href="#" target="_blank"><img src="" alt="" loading="lazy"></a>
-              <a href="#" target="_blank"><img src="" alt="" loading="lazy"></a>
+              <a href="https://www.mitsuifudosan.co.jp/esg_csr/index.html" target="_blank"><img
+                  src="/assets/img/common/bn-and-earth.webp" alt="&EARTH" loading="lazy"></a>
+              <a href="https://www.mitsuifudosan.co.jp/" target="_blank"><img src="/assets/img/common/bn-mf-group.webp"
+                  alt="三井不動産グループ" loading="lazy"></a>
             </div>
           </aside>
           <div class="footer-company-desc">
-            <div class="footer-company-desc__detail">
+            <p class="footer-company-desc__detail">
               東京都知事（2）第96482号 （一社） 不動産流通経営協会会員 （公社） 首都圏不動産公正取引協議会加盟<br>
               〒107-0052 東京都港区赤坂八丁目4番14号 青山タワープレイス4階<br>
               三井の賃貸「いちばんに、住む人のこと。」 東京都心を中心とした豊富な賃貸マンションのご紹介。
-            </div>
+            </p>
             <p class="footer-company-desc__slogan">
               理想の高級賃貸物件は見つかりましたか？エリアや駅などの条件面を変えて検索すればきっと理想の物件に巡り合えます。<br>
               都心の高級賃貸物件探しは[三井の賃貸]レジデントファーストで！

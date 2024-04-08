@@ -52,6 +52,37 @@
   border: 0 !important;
 }
 
+// マスクアイコン
 @mixin mask-icon($icon) {
   mask: var(#{$icon}) no-repeat center center / contain;
+}
+
+// =======================================================
+// トグル +-
+// 親要素が --is-openを持つことで変化させるようにする
+// 親要素の指定方法サンプルコード
+// &.--is-open *** {
+//   &::after {
+//     rotate: 0deg;
+//   }
+// }
+@mixin toggle-icon($bg-color) {
+  // ライン部分
+  &::before,
+  &::after {
+    content: "";
+    background-color: $bg-color;
+    width: var(--space-16);
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    transition: rotate var(--animation-normal);
+    @content;
+  }
+  // 縦ライン
+  &::after {
+    rotate: 90deg;
+  }
 }
