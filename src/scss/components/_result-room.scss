@@ -1,0 +1,187 @@
+// お部屋リストコンポーネント
+@use "../abstracts/mixins" as *;
+
+.c-result-room {
+  $parent: &;
+
+  background: var(--bg-white);
+  border: 1px solid var(--bdr-light);
+  padding: var(--space-16);
+  transition: var(--animation-normal);
+  cursor: pointer;
+  line-height: var(--line-height-md);
+
+  &:hover {
+    background: var(--bg-gray-xxlight);
+    border-color: var(--bdr-dark);
+  }
+
+  &__h {
+    font-size: var(--fz-14);
+    font-weight: var(--fw-semibold);
+    margin-bottom: var(--space-16);
+  }
+
+  &__pic-area {
+    aspect-ratio: 4 / 3;
+    margin: 0 calc(var(--space-16) * -1) var(--space-16);
+    position: relative;
+
+    .c-loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      z-index: var(--z-index-lv1);
+    }
+  }
+
+  &__flags {
+    position: absolute;
+    left: var(--space-16);
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    z-index: var(--z-index-lv1);
+  }
+
+  &__slide,
+  &__slide-inner {
+    height: 100%;
+  }
+
+  &__slide-btn {
+    --swiper-navigation-sides-offset: 0;
+    --swiper-navigation-size: var(--space-24);
+    width: var(--swiper-navigation-size);
+    height: var(--swiper-navigation-size);
+    background-color: rgba(0 0 0 /0.4);
+
+    &:hover {
+      background-color: rgba(0 0 0 /0.6);
+    }
+
+    &.swieper-button-disabled {
+      opacity: 0.2;
+    }
+
+    &::after {
+      content: "";
+      --icon-size: var(--space-24);
+      font-family: initial;
+      background-color: var(--bg-white);
+      width: var(--icon-size);
+      height: var(--icon-size);
+      mask: var(--icon-arrow-r) no-repeat center center / contain;
+    }
+
+    &.--prev {
+      &::after {
+        rotate: 180deg;
+      }
+    }
+    &.--next {
+    }
+
+    // 画像が１枚以下場合スライドなし=>ボタンを表示しない
+    #{$parent}__pic-area.--is-no-slide & {
+      display: none;
+    }
+  }
+
+  &__slide-dummy {
+  }
+
+  &__slide-dummy,
+  &__slide-item {
+    padding: 0 var(--space-16);
+    aspect-ratio: 4 / 3;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+  }
+
+  &__flash-msg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: var(--z-index-lv1);
+    color: var(--txt-white);
+    line-height: var(--line-height-sm);
+    font-size: var(--fz-12);
+    border-radius: var(--bdr-radius-sm);
+    padding: var(--space-8);
+    background: rgba(0 0 0 /0.6);
+    transition: opacity var(--animation-normal);
+    white-space: nowrap;
+
+    &.--is-deactive {
+      opacity: 0;
+    }
+  }
+
+  &__desc {
+    font-family: var(--ff-en-jp);
+    font-size: var(--fz-14);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+    margin-bottom: var(--space-12);
+
+    // .__group {
+    // }
+
+    dt {
+      font-size: var(--fz-11);
+      color: var(--txt-dark);
+    }
+
+    dd {
+      display: flex;
+      gap: var(--space-4);
+      // justify-content: baseline;
+      align-items: baseline;
+    }
+
+    .__rent {
+      font-size: var(--fz-16);
+      font-weight: var(--fw-semibold);
+    }
+  }
+
+  &__points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+
+    > li {
+      display: block;
+      flex: 0 0 calc((100% - (var(--space-4) * 2)) / 3);
+
+      > * {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+
+  &__controls {
+    margin-bottom: var(--space-16);
+    display: flex;
+    gap: var(--space-8);
+
+    > * {
+      flex: 1;
+    }
+  }
+
+  &__access {
+    font-size: var(--fz-12);
+  }
+}

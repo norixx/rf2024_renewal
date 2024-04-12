@@ -12,6 +12,8 @@ import rf_cta_navi_tel from "./partials/_cta-navi";
 import rf_select_link from "./partials/_select-link";
 import rf_related_prop_slider from "./partials/_related-prop-slider";
 import rf_ward from "./partials/_ward";
+import rf_result_room_slide from "./partials/_result-room-slide";
+import rfLoader from "./partials/_loader";
 
 // =======================================================
 // Inits
@@ -83,12 +85,18 @@ const rf_init = () => {
     rf_ward()
   }
 
+  // 検索結果 - お部屋リストスライド
+  if (document.querySelector('[data-js-result-room-slide]')) {
+    rf_result_room_slide()
+  }
+
   const test = () => {
     console.log('TESTSTSTSTSTSTS!!!')
   }
 
   // グローバル変数・関数はRF_GLOBALSにまとめ、windowにアサインする
   const RF_GLOBALS = {
+    rfLoader,
     test
   }
   window['RF_GLOBALS'] = RF_GLOBALS

@@ -1,0 +1,33 @@
+// 検索結果 - 建物
+@use "../abstracts/mixins" as *;
+
+.l-result-room {
+  // 結果リスト
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    --list-gap: var(--space-32);
+    gap: var(--list-gap);
+
+    &__item {
+      flex: 1 0 100%;
+      width: 100%; //Swiper用に設定しておかないと幅が超拡大する
+    }
+
+    @include mq {
+      &__item {
+        flex: 0 0 calc((100% - (var(--space-32) * 2)) / 3);
+        width: calc((100% - (var(--space-32) * 2)) / 3); //Swiper用に設定しておかないと幅が超拡大する
+      }
+    }
+  }
+
+  // コンタクト
+  &__contact {
+    margin-top: var(--space-40);
+
+    @include mq {
+      margin-top: var(--space-64);
+    }
+  }
+}

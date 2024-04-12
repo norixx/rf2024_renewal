@@ -595,3 +595,29 @@
     }
   }
 }
+
+.c-toggle-btn {
+  // ライン部分
+  &::before,
+  &::after {
+    content: "";
+    background: var(--bg-black);
+    width: var(--space-16);
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    transition: rotate var(--animation-normal);
+  }
+  // 縦ライン
+  &::after {
+    rotate: 90deg;
+  }
+
+  // 要素に直接--is-openが追加された場合
+  &.--is-open::after,
+  .--is-open &::after {
+    rotate: 0deg;
+  }
+}

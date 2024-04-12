@@ -296,160 +296,45 @@
   }
 } //filter
 
-// フォームのリスト系
-.c-form-list {
-  display: flex;
-  // flex-direction: column;
-  align-items: flex-start;
-  flex-wrap: wrap;
+// チェックボックスコンボ - 沿線選択などで利用
+.c-search-check-combo {
+  // &.--toggle-sp {
+  // }
 
-  //デフォルトギャップ
-  --list-gap: var(--space-10);
-  gap: var(--list-gap);
+  &__header {
+    display: flex;
+    background-color: var(--bg-gray-xlight);
+    padding: var(--space-12);
+
+    @include mq {
+      padding: var(--space-16);
+    }
+  }
+
+  &__toggle {
+    position: relative;
+    --btn-size: var(--space-24);
+    width: var(--btn-size);
+    height: var(--btn-size);
+    margin-left: auto;
+    background: var(--bg-gray);
+
+    // &::before,
+    // &::after {
+    //   background-color: var(--bg-white);
+    // }
+
+    @include mq {
+      display: none;
+    }
+  }
+}
+
+// 沿線、駅選択
+.c-search-ensen-combo {
+  margin-top: 1px;
 
   @include mq {
-    //デフォルトギャップ
-    --list-gap: var(--space-24);
-  }
-
-  // カラム幅を意識したレイアウト用
-  // ギャップ
-  --col-gap-sp: var(--space-10);
-  --row-gap-sp: var(--space-10);
-  --col-gap-pc: var(--space-16);
-  --row-gap-pc: var(--space-10);
-
-  &[class*="--col-"] {
-    column-gap: var(--col-gap-sp);
-    row-gap: var(--row-gap-sp);
-    @include mq {
-      column-gap: var(--col-gap-pc);
-      row-gap: var(--row-gap-pc);
-    }
-  }
-  &[class*="--col-sp-"] {
-    @include mq(sp) {
-      column-gap: var(--col-gap-sp);
-      row-gap: var(--row-gap-sp);
-    }
-  }
-  &[class*="--col-pc-"] {
-    @include mq {
-      column-gap: var(--col-gap-pc);
-      row-gap: var(--row-gap-pc);
-    }
-  }
-
-  &__item {
-    flex: 1 0 100%;
-    line-height: 1;
-
-    @include mq {
-      flex: initial;
-    }
-  }
-
-  &.--col-1 &__item {
-    flex: 1 0 100%;
-
-    @include mq {
-      flex: 1 0 100%;
-    }
-  }
-
-  &.--col-2 &__item {
-    flex: 0 0 calc((100% - var(--col-gap-sp) * 1) / 2);
-
-    @include mq {
-      flex: 0 0 calc((100% - var(--col-gap-pc) * 1) / 2);
-    }
-  }
-  &.--col-sp-2 &__item {
-    @include mq(sp) {
-      flex: 0 0 calc((100% - var(--col-gap-sp) * 1) / 2);
-    }
-  }
-  &.--col-pc-2 &__item {
-    @include mq {
-      flex: 0 0 calc((100% - var(--col-gap-pc) * 1) / 2);
-    }
-  }
-  &.--col-3 &__item {
-    flex: 0 0 calc((100% - var(--col-gap-sp) * 2) / 3);
-
-    @include mq {
-      flex: 0 0 calc((100% - var(--col-gap-pc) * 2) / 3);
-    }
-  }
-  &.--col-sp-3 &__item {
-    @include mq(sp) {
-      flex: 0 0 calc((100% - var(--col-gap-sp) * 2) / 3);
-    }
-  }
-  &.--col-pc-3 &__item {
-    @include mq {
-      flex: 0 0 calc((100% - var(--col-gap-pc) * 2) / 3);
-    }
-  }
-  &.--col-4 &__item {
-    flex: 0 0 calc((100% - var(--col-gap-sp) * 3) / 4);
-
-    @include mq {
-      flex: 0 0 calc((100% - var(--col-gap-pc) * 3) / 4);
-    }
-  }
-  &.--col-sp-4 &__item {
-    @include mq(sp) {
-      flex: 0 0 calc((100% - var(--col-gap-sp) * 3) / 4);
-    }
-  }
-  &.--col-pc-4 &__item {
-    @include mq {
-      flex: 0 0 calc((100% - var(--col-gap-pc) * 3) / 4);
-    }
-  }
-} //.c-form-list
-
-// 結果（簡易表示）
-.c-search-brief-result {
-  background-color: var(--bg-gray-xxlight);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: var(--space-16);
-  --gap: var(--space-4);
-  gap: var(--gap);
-
-  @include mq {
-    --gap: var(--space-32);
-    text-align: start;
-    // padding: var(--space-24);
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-
-  &__btn {
-    @include mq {
-      flex: 0 0 25%;
-    }
-  }
-
-  &__title {
-    font-weight: var(--fw-bold);
-    letter-spacing: var(--letter-space-10);
-  }
-
-  &__count {
-    .__count {
-      font-family: var(--ff-num);
-      letter-spacing: var(--letter-space-10);
-      font-style: normal;
-      font-weight: var(--fw-semibold);
-      font-size: var(--fz-28);
-
-      @include mq {
-      }
-    }
+    margin-top: var(--space-32);
   }
 }

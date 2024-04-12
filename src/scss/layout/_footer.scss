@@ -362,13 +362,13 @@
     @include toggle-icon(var(--bg-white));
   }
 
-  &.--is-open {
-    .__icon {
-      &::after {
-        rotate: 0deg;
-      }
-    }
-  }
+  // &.--is-open {
+  //   .__icon {
+  //     &::after {
+  //       rotate: 0deg;
+  //     }
+  //   }
+  // }
 
   @include mq {
     .__icon {

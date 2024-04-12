@@ -11,7 +11,11 @@ const rf_room_list_link = () => {
       e.stopPropagation()
       const clicked = e.target
 
-      if (clicked.tagName === 'A' || clicked.tagName === 'BUTTON') {
+      if (
+        clicked.tagName === 'A' ||
+        clicked.tagName === 'BUTTON' ||
+        clicked.closest('.swiper-initialized') //動いているswiperは中止対象
+      ) {
         console.log('インタラクティブ要素なので中止')
         return
       }

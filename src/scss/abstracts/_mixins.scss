@@ -66,7 +66,7 @@
 //     rotate: 0deg;
 //   }
 // }
-@mixin toggle-icon($bg-color) {
+@mixin toggle-icon($bg-color: transparent) {
   // ライン部分
   &::before,
   &::after {
@@ -84,5 +84,11 @@
   // 縦ライン
   &::after {
     rotate: 90deg;
+  }
+
+  // 要素に直接--is-openが追加された場合
+  &.--is-open::after,
+  .--is-open &::after {
+    rotate: 0deg;
   }
 }
