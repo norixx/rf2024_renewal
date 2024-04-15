@@ -3,11 +3,11 @@
 
 .c-step-indicator {
   --content-width: var(--space-80);
-  --content-gap: 4rem;
-  --icon-size: 2rem;
-  --color-base: #ccc;
-  --color-current: #000;
-  --color-completed: #000;
+  --content-gap: var(--space-64);
+  --icon-size: var(--space-32);
+  --color-base: var(--bg-gray-xlight);
+  --color-current: var(--bg-black);
+  --color-completed: var(--bg-black);
 
   counter-reset: number 0;
   list-style: none;
@@ -19,11 +19,11 @@
 
   //   ステップ数 - 数に応じて間隔を狭める
   &.--step-3 {
-    --content-gap: 3rem;
+    --content-gap: var(--space-48);
   }
 
   &.--step-4 {
-    --content-gap: 1rem;
+    --content-gap: var(--space-16);
   }
 
   &__item {
@@ -34,12 +34,12 @@
     align-items: center;
     width: var(--content-width);
     text-align: center;
-    font-size: 12px;
+    font-size: var(--fz-12);
     position: relative;
 
     &::before {
       content: counter(number);
-      font-size: 16px;
+      font-size: var(--fz-16);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -48,17 +48,18 @@
       width: var(--icon-size);
       height: var(--icon-size);
       background-color: var(--color-base);
-      color: #fff;
+      color: var(--bg-white);
       border-radius: var(--icon-size);
-      margin-bottom: 0.5em;
+      margin-bottom: var(--space-8);
       position: relative;
       z-index: 1;
     }
 
     &.--is-completed {
       &::before {
-        content: "✓";
+        content: "";
         background-color: var(--color-completed);
+        background: var(--icon-check);
       }
     }
 
