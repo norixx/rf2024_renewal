@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>エリア検索</title>
+  <title>沿線から探す - 駅の選択</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -37,9 +37,7 @@
               <li>
                 <a href="#">「三井の賃貸」レジデントファーストトップ</a>
               </li>
-              <li><a href="#">区から探す</a></li>
-              <li><a href="#">港区</a></li>
-              <li><a href="#">東京ミッドタウン・レジデンシィズ</a></li>
+              <li><a href="#">沿線から探す</a></li>
             </ul>
           </div>
         </div>
@@ -52,8 +50,8 @@
             <div class="l-container">
               <header class="c-page-header">
                 <h1 class="c-page-header__h">
-                  <span class="__en">Search by Popular Area</span>
-                  人気エリアから探す
+                  <span class="__en">Search by Train Station</span>
+                  沿線から探す
                 </h1>
               </header>
             </div>
@@ -64,13 +62,13 @@
               <div class="c-search">
                 <ul class="c-search__list">
                   <li class="c-search__list-item">
-                    <a href="#" class="__link btn --search-basic --current"><b>人気エリア</b>から探す</a>
+                    <a href="#" class="__link btn --search-basic"><b>人気エリア</b>から探す</a>
                   </li>
                   <li class="c-search__list-item">
                     <a href="#" class="__link btn --search-basic"><b>区</b>から探す</a>
                   </li>
                   <li class="c-search__list-item">
-                    <a href="#" class="__link btn --search-basic"><b>駅・沿線</b>から探す</a>
+                    <a href="#" class="__link btn --search-basic --current"><b>駅・沿線</b>から探す</a>
                   </li>
                   <li class="c-search__list-item">
                     <a href="#" class="__link btn --search-basic"><b>地図</b>から探す</a>
@@ -103,227 +101,369 @@
           </div>
 
           <div class="l-search__body">
-            <form action="#" method="post" id="sys-form">
-              <input type="text" name="_token" value="cN29XhCXLQMQmiI6shPEpG1Sidn8Y9CO5lImS5UN" style="display: none" />
-              <div class="l-container">
+            <div class="l-container">
+
+              <ol class="c-search-ensen-steps c-step-indicator u-mb-24">
+                <li class="c-step-indicator__item --is-completed"><span>沿線の選択</span></li>
+                <li class="c-step-indicator__item --is-current"><span>駅の選択</span></li>
+              </ol>
+
+              <form action="###" method="post" id="form-ensen-step2" data-js-form-checkbox>
+                <input type="text" name="_token" value="###" style="display:none;">
+
                 <section class="c-search-sect">
                   <div class="c-search-sect__header">
                     <h2 class="c-search-sect__h">
-                      ご希望のエリアをクリックして選択してください
+                      お探しの沿線を選択してください
                     </h2>
                   </div>
                   <div class="c-search-sect__body">
-                    <ul class="c-search-areas">
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="赤坂・六本木・麻布"
-                          data-class="SEARCH_AREA_NO17">
-                          <input type="checkbox" name="SEARCH_AREA_NO[17]"
-                            class="c-input-checkradio SEARCH_AREA_NO17" />
-                          <span>
-                            <span class="__link"><a href="#">赤坂・六本木・麻布</a></span>
-                            <span class="__count">(144件)</span>
+                    <div class="c-search-selected-choices">
+                      <dl class="c-search-selected-choices__list">
+                        <dt>選択中の沿線</dt>
+                        <dd>
+                          <span>日比谷線</span>
+                          <span>東西線</span>
+                          <span>丸の内方南</span>
+                          <span>半蔵門線</span>
+                          <span>副都心線</span>
+                          <span>都電荒川線</span>
+                          <span>都営新宿線</span>
+                          <span>山手線</span>
+                          <span>東海道線</span>
+                          <span>根岸線</span>
+                          <span>東横線</span>
+                          <span>田園都市線</span>
+                          <span>小田急線</span>
+                          <span>相鉄線</span>
+                          <span>京成線</span>
+                        </dd>
+                      </dl>
+                      <div class="c-search-selected-choices__back">
+                        <a href="{{ $url }}/rf/ensen" class="__btn btn --icon-before --i-arrow-l">沿線を選び直す</a>
+                      </div>
+                    </div>
+
+                    <section class="c-search-check-combo c-search-ensen-combo">
+                      <header class="c-search-check-combo__header">
+                        <label class="c-input-label --checkbox --lg">
+                          <input type="checkbox" class="sys-all-line" data-class="com-##" autocomplete="off">
+                          <span class="c-input-label__text">
+                            なんとかまとめ線
                           </span>
                         </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="芝公園・虎ノ門・新橋"
-                          data-class="SEARCH_AREA_NO18">
-                          <input type="checkbox" name="SEARCH_AREA_NO[18]"
-                            class="c-input-checkradio SEARCH_AREA_NO18" />
-                          <span>
-                            <span class="__link"><a href="#">芝公園・虎ノ門・新橋</a></span>
-                            <span class="__count">(144件)</span>
+                        <button type="button" data-js-toggle="#ensen-line1"
+                          class="c-search-check-combo__toggle c-toggle-btn toggle-sp-only"><span
+                            class="u-visually-hidden">開閉</span></button>
+                      </header>
+                      <div class="c-search-check-combo__body toggle-target toggle-target-sp-only" id="ensen-line1">
+                        <div class="toggle-target__inner">
+                          <ul class="c-form-list --col-pc-4 --gap-lg u-py-16 u-px-12 u-p-pc-16">
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off" checked>
+                                <span>
+                                  <span>リンクじゃないやつ</span>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off" checked>
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+
+                    <section class="c-search-check-combo c-search-ensen-combo">
+                      <header class="c-search-check-combo__header">
+                        <label class="c-input-label --checkbox --lg">
+                          <input type="checkbox" class="sys-all-line" data-class="com-##" autocomplete="off">
+                          <span class="c-input-label__text">
+                            なんとかまとめ線
                           </span>
                         </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="番町・飯田橋・麹町"
-                          data-class="SEARCH_AREA_NO19">
-                          <input type="checkbox" name="SEARCH_AREA_NO[19]"
-                            class="c-input-checkradio SEARCH_AREA_NO19" />
-                          <span>
-                            <span class="__link"><a href="#">番町・飯田橋・麹町</a></span>
-                            <span class="__count">(144件)</span>
+                        <button type="button" data-js-toggle="#ensen-line2"
+                          class="c-search-check-combo__toggle c-toggle-btn toggle-sp-only"><span
+                            class="u-visually-hidden">開閉</span></button>
+                      </header>
+                      <div class="c-search-check-combo__body toggle-target toggle-target-sp-only" id="ensen-line2">
+                        <div class="toggle-target__inner">
+                          <ul class="c-form-list --col-pc-4 --gap-lg u-py-16 u-px-12 u-p-pc-16">
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+
+                    <section class="c-search-check-combo c-search-ensen-combo">
+                      <header class="c-search-check-combo__header">
+                        <label class="c-input-label --checkbox --lg">
+                          <input type="checkbox" class="sys-all-line" data-class="com-##" autocomplete="off">
+                          <span class="c-input-label__text">
+                            なんとかまとめ線
                           </span>
                         </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="白金・白金台・高輪橋・麹町"
-                          data-class="SEARCH_AREA_NO20">
-                          <input type="checkbox" name="SEARCH_AREA_NO[20]"
-                            class="c-input-checkradio SEARCH_AREA_NO20" />
-                          <span>
-                            <span class="__link"><a href="#">白金・白金台・高輪橋・麹町</a></span>
-                            <span class="__count">(144件)</span>
+                        <button type="button" data-js-toggle="#ensen-line3"
+                          class="c-search-check-combo__toggle c-toggle-btn toggle-sp-only"><span
+                            class="u-visually-hidden">開閉</span></button>
+                      </header>
+                      <div class="c-search-check-combo__body toggle-target toggle-target-sp-only" id="ensen-line3">
+                        <div class="toggle-target__inner">
+                          <ul class="c-form-list --col-pc-4 --gap-lg u-py-16 u-px-12 u-p-pc-16">
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+
+                    <section class="c-search-check-combo c-search-ensen-combo">
+                      <header class="c-search-check-combo__header">
+                        <label class="c-input-label --checkbox --lg">
+                          <input type="checkbox" class="sys-all-line" data-class="com-##" autocomplete="off">
+                          <span class="c-input-label__text">
+                            なんとかまとめ線
                           </span>
                         </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="恵比寿・代官山・広尾"
-                          data-class="SEARCH_AREA_NO21">
-                          <input type="checkbox" name="SEARCH_AREA_NO[21]"
-                            class="c-input-checkradio SEARCH_AREA_NO21" />
-                          <span>
-                            <span class="__link"><a href="#">恵比寿・代官山・広尾</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="代々木上原・松濤・代々木"
-                          data-class="SEARCH_AREA_NO22">
-                          <input type="checkbox" name="SEARCH_AREA_NO[22]"
-                            class="c-input-checkradio SEARCH_AREA_NO22" />
-                          <span>
-                            <span class="__link"><a href="#">代々木上原・松濤・代々木</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="早稲田・落合・神楽坂"
-                          data-class="SEARCH_AREA_NO23">
-                          <input type="checkbox" name="SEARCH_AREA_NO[23]"
-                            class="c-input-checkradio SEARCH_AREA_NO23" />
-                          <span>
-                            <span class="__link"><a href="#">早稲田・落合・神楽坂</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="日本橋・人形町・銀座"
-                          data-class="SEARCH_AREA_NO24">
-                          <input type="checkbox" name="SEARCH_AREA_NO[24]"
-                            class="c-input-checkradio SEARCH_AREA_NO24" />
-                          <span>
-                            <span class="__link"><a href="#">日本橋・人形町・銀座</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="本郷・湯島・小石川"
-                          data-class="SEARCH_AREA_NO25">
-                          <input type="checkbox" name="SEARCH_AREA_NO[25]"
-                            class="c-input-checkradio SEARCH_AREA_NO25" />
-                          <span>
-                            <span class="__link"><a href="#">本郷・湯島・小石川</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="芝浦・三田・芝"
-                          data-class="SEARCH_AREA_NO26">
-                          <input type="checkbox" name="SEARCH_AREA_NO[26]"
-                            class="c-input-checkradio SEARCH_AREA_NO26" />
-                          <span>
-                            <span class="__link"><a href="#">芝浦・三田・芝</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="豊洲・月島・勝どき"
-                          data-class="SEARCH_AREA_NO27">
-                          <input type="checkbox" name="SEARCH_AREA_NO[27]"
-                            class="c-input-checkradio SEARCH_AREA_NO27" />
-                          <span>
-                            <span class="__link"><a href="#">豊洲・月島・勝どき</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="戸越・五反田・大崎"
-                          data-class="SEARCH_AREA_NO28">
-                          <input type="checkbox" name="SEARCH_AREA_NO[28]"
-                            class="c-input-checkradio SEARCH_AREA_NO28" />
-                          <span>
-                            <span class="__link"><a href="#">戸越・五反田・大崎</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="祐天寺・学芸大学・自由が丘"
-                          data-class="SEARCH_AREA_NO29">
-                          <input type="checkbox" name="SEARCH_AREA_NO[29]"
-                            class="c-input-checkradio SEARCH_AREA_NO29" />
-                          <span>
-                            <span class="__link"><a href="#">祐天寺・学芸大学・自由が丘</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="駒沢・用賀・二子玉川"
-                          data-class="SEARCH_AREA_NO30">
-                          <input type="checkbox" name="SEARCH_AREA_NO[30]"
-                            class="c-input-checkradio SEARCH_AREA_NO30" />
-                          <span>
-                            <span class="__link"><a href="#">駒沢・用賀・二子玉川</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="池尻・三宿・駒場"
-                          data-class="SEARCH_AREA_NO31">
-                          <input type="checkbox" name="SEARCH_AREA_NO[31]"
-                            class="c-input-checkradio SEARCH_AREA_NO31" />
-                          <span>
-                            <span class="__link"><a href="#">池尻・三宿・駒場</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="成城・砧"
-                          data-class="SEARCH_AREA_NO32">
-                          <input type="checkbox" name="SEARCH_AREA_NO[32]"
-                            class="c-input-checkradio SEARCH_AREA_NO32" />
-                          <span>
-                            <span class="__link"><a href="#">成城・砧</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="東中野・高円寺・阿佐ヶ谷"
-                          data-class="SEARCH_AREA_NO33">
-                          <input type="checkbox" name="SEARCH_AREA_NO[33]"
-                            class="c-input-checkradio SEARCH_AREA_NO33" />
-                          <span>
-                            <span class="__link"><a href="#">東中野・高円寺・阿佐ヶ谷</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="上野・浅草・門前仲町"
-                          data-class="SEARCH_AREA_NO34">
-                          <input type="checkbox" name="SEARCH_AREA_NO[34]"
-                            class="c-input-checkradio SEARCH_AREA_NO34" />
-                          <span>
-                            <span class="__link"><a href="#">上野・浅草・門前仲町</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                      <li class="c-search-areas__item">
-                        <label class="c-search-areas__label c-input-label-combo --checkbox" data-name="池袋・板橋・王子"
-                          data-class="SEARCH_AREA_NO35">
-                          <input type="checkbox" name="SEARCH_AREA_NO[35]"
-                            class="c-input-checkradio SEARCH_AREA_NO35" />
-                          <span>
-                            <span class="__link"><a href="#">池袋・板橋・王子</a></span>
-                            <span class="__count">(144件)</span>
-                          </span>
-                        </label>
-                      </li>
-                    </ul>
+                        <button type="button" data-js-toggle="#ensen-line4"
+                          class="c-search-check-combo__toggle c-toggle-btn toggle-sp-only"><span
+                            class="u-visually-hidden">開閉</span></button>
+                      </header>
+                      <div class="c-search-check-combo__body toggle-target toggle-target-sp-only" id="ensen-line4">
+                        <div class="toggle-target__inner">
+                          <ul class="c-form-list --col-pc-4 --gap-lg u-py-16 u-px-12 u-p-pc-16">
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" autocomplete="off">
+                                <span>
+                                  <a href="#" class="__link">なんとか線</a>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+
                   </div>
                 </section>
 
@@ -414,31 +554,31 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input type="checkbox" name="MNGMNT_COST" class="sys-recalc" value="1" />
-                                管理費/共益費含む
+                                <span class="c-input-label__text">管理費/共益費含む</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input type="checkbox" name="REWARD_AMT_0" class="sys-recalc" value="1" />
-                                礼金なし
+                                <span class="c-input-label__text">礼金なし</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input type="checkbox" name="DEPO_AMT" class="sys-recalc" />
-                                敷金なし
+                                <span class="c-input-label__text">敷金なし</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input type="checkbox" name="REWARD_AMT_1" class="sys-recalc" />
-                                礼金１ヶ月以下 
+                                <span class="c-input-label__text">礼金１ヶ月以下 </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input type="checkbox" name="free_rent" class="sys-recalc" />
-                                フリーレント付き
+                                <span class="c-input-label__text">フリーレント付き</span>
                               </label>
                             </li>
                           </ul>
@@ -451,31 +591,31 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input type="checkbox" name="1R" class="sys-recalc" value="1" />
-                                1R〜1K
+                                <span class="c-input-label__text">1R〜1K</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input type="checkbox" name="1LDK" class="sys-recalc" value="1" />
-                                1DK〜1LDK
+                                <span class="c-input-label__text">1DK〜1LDK</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input type="checkbox" name="2LDK" class="sys-recalc" />
-                                2K〜2LDK
+                                <span class="c-input-label__text">2K〜2LDK</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input type="checkbox" name="3LDK" class="sys-recalc" />
-                                3K〜3LDK
+                                <span class="c-input-label__text">3K〜3LDK</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input type="checkbox" name="4LDK" class="sys-recalc" />
-                                4LDK〜
+                                <span class="c-input-label__text">4LDK〜</span>
                               </label>
                             </li>
                           </ul>
@@ -530,49 +670,49 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="CPLT_YMD" class="sys-recalc" value="" checked />
-                                指定なし
+                                <span class="c-input-label__text">指定なし</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="CPLT_YMD" class="sys-recalc" value="0" />
-                                新築
+                                <span class="c-input-label__text">新築</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="CPLT_YMD" class="sys-recalc" value="1" />
-                                1年以内
+                                <span class="c-input-label__text">1年以内</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="CPLT_YMD" class="sys-recalc" value="3" />
-                                3年以内
+                                <span class="c-input-label__text">3年以内</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="CPLT_YMD" class="sys-recalc" value="5" />
-                                5年以内
+                                <span class="c-input-label__text">5年以内</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="CPLT_YMD" class="sys-recalc" value="10" />
-                                10年以内
+                                <span class="c-input-label__text">10年以内</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="CPLT_YMD" class="sys-recalc" value="15" />
-                                15年以内
+                                <span class="c-input-label__text">15年以内</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="CPLT_YMD" class="sys-recalc" value="20" />
-                                20年以内
+                                <span class="c-input-label__text">20年以内</span>
                               </label>
                             </li>
                           </ul>
@@ -585,37 +725,37 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="WALK_TIME" class="sys-recalc" value="" checked />
-                                指定なし
+                                <span class="c-input-label__text">指定なし</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="WALK_TIME" class="sys-recalc" value="1" />
-                                1分以内
+                                <span class="c-input-label__text">1分以内</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="WALK_TIME" class="sys-recalc" value="3" />
-                                3分以内
+                                <span class="c-input-label__text">3分以内</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="WALK_TIME" class="sys-recalc" value="5" />
-                                5分以内
+                                <span class="c-input-label__text">5分以内</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="WALK_TIME" class="sys-recalc" value="10" />
-                                10分以内
+                                <span class="c-input-label__text">10分以内</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --radio">
                                 <input type="radio" name="WALK_TIME" class="sys-recalc" value="15" />
-                                15分以内
+                                <span class="c-input-label__text">15分以内</span>
                               </label>
                             </li>
                           </ul>
@@ -627,38 +767,42 @@
                           <ul class="c-form-list --layout-pc-h">
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
-                                <input type="checkbox" name="PARKING" class="sys-recalc" value="1" />
-                                PARKING
+                                <input type="checkbox" name="PARKING" class="u-visually-hidden sys-recalc" value="1" />
+                                <span class="c-input-label__text">PARKING</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
-                                <input type="checkbox" name="limited_flag" class="sys-recalc" value="1" />
-                                当社限定物件
+                                <input type="checkbox" name="limited_flag" class="u-visually-hidden sys-recalc"
+                                  value="1" />
+                                <span class="c-input-label__text">当社限定物件</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
-                                <input type="checkbox" name="FULL_TIME_FLG" class="sys-recalc" value="1" />
-                                専任物件
+                                <input type="checkbox" name="FULL_TIME_FLG" class="u-visually-hidden sys-recalc"
+                                  value="1" />
+                                <span class="c-input-label__text">専任物件</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
-                                <input type="checkbox" name="^PERIOD_FLG" class="sys-recalc" value="1" />
-                                定期借家を含まない
+                                <input type="checkbox" name="^PERIOD_FLG" class="u-visually-hidden sys-recalc"
+                                  value="1" />
+                                <span class="c-input-label__text">定期借家を含まない</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
-                                <input type="checkbox" name="IMPORT_TYPE" class="sys-recalc" value="1" />
-                                三井の賃貸物件
+                                <input type="checkbox" name="IMPORT_TYPE" class="u-visually-hidden sys-recalc"
+                                  value="1" />
+                                <span class="c-input-label__text">三井の賃貸物件</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
-                                <input type="checkbox" name="no_app" class="sys-recalc" value="1" />
-                                申込無し物件のみ表示
+                                <input type="checkbox" name="no_app" class="u-visually-hidden sys-recalc" value="1" />
+                                <span class="c-input-label__text">申込無し物件のみ表示</span>
                               </label>
                             </li>
                           </ul>
@@ -716,8 +860,10 @@
                   </div>
                 </section>
 
-              </div>
-            </form>
+              </form>
+
+            </div>
+
           </div>
         </section>
       </div>
@@ -749,25 +895,25 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
-                                分譲賃貸マンション
+                                <span class="c-input-label__text">分譲賃貸マンション</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
-                                タワーマンション
+                                <span class="c-input-label__text">タワーマンション</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
-                                低層マンション
+                                <span class="c-input-label__text">低層マンション</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
-                                免震・制震マンション
+                                <span class="c-input-label__text">免震・制震マンション</span>
                               </label>
                             </li>
                           </ul>
@@ -780,133 +926,173 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[1]" value="1" type="checkbox" />
-                                パークアクシス
+                                <span class="c-input-label__text">パークアクシス</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[2]" value="2" type="checkbox" />
-                                MORI LIVING
+                                <span class="c-input-label__text">MORI LIVING</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[3]" value="3" type="checkbox" />
-                                ラ・トゥール
+                                <span class="c-input-label__text">
+                                  ラ・トゥール
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[4]" value="4" type="checkbox" />
-                                第一マンションズ
+                                <span class="c-input-label__text">
+                                  第一マンションズ
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[5]" value="5" type="checkbox" />
-                                パークハビオ
+                                <span class="c-input-label__text">
+                                  パークハビオ
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[6]" value="6" type="checkbox" />
-                                レジディア
+                                <span class="c-input-label__text">
+                                  レジディア
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[7]" value="7" type="checkbox" />
-                                カスタリア
+                                <span class="c-input-label__text">
+                                  カスタリア
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[8]" value="8" type="checkbox" />
-                                ガーデン
+                                <span class="c-input-label__text">
+                                  ガーデン
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[9]" value="9" type="checkbox" />
-                                アパートメンツ
+                                <span class="c-input-label__text">
+                                  アパートメンツ
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[10]" value="10" type="checkbox" />
-                                ベルファース
+                                <span class="c-input-label__text">
+                                  ベルファース
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[11]" value="11" type="checkbox" />
-                                フレンシア
+                                <span class="c-input-label__text">
+                                  フレンシア
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[12]" value="12" type="checkbox" />
-                                コンフォリア
+                                <span class="c-input-label__text">
+                                  コンフォリア
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[36]" value="36" type="checkbox" />
-                                プライムメゾン
+                                <span class="c-input-label__text">
+                                  プライムメゾン
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[37]" value="37" type="checkbox" />
-                                KDX
+                                <span class="c-input-label__text">
+                                  KDX
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[38]" value="38" type="checkbox" />
-                                アーバネックス
+                                <span class="c-input-label__text">
+                                  アーバネックス
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[39]" value="39" type="checkbox" />
-                                ルフォンプログレ
+                                <span class="c-input-label__text">
+                                  ルフォンプログレ
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[41]" value="41" type="checkbox" />
-                                MFPR
+                                <span class="c-input-label__text">
+                                  MFPR
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[42]" value="42" type="checkbox" />
-                                パークルール
+                                <span class="c-input-label__text">
+                                  パークルール
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[43]" value="43" type="checkbox" />
-                                パークアクシスプレミア
+                                <span class="c-input-label__text">
+                                  パークアクシスプレミア
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[44]" value="44" type="checkbox" />
-                                パークコート
+                                <span class="c-input-label__text">
+                                  パークコート
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[45]" value="45" type="checkbox" />
-                                パークマンション
+                                <span class="c-input-label__text">
+                                  パークマンション
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[46]" value="46" type="checkbox" />
-                                ザ・パークハウス
+                                <span class="c-input-label__text">
+                                  ザ・パークハウス
+                                </span>
                               </label>
                             </li>
                           </ul>
@@ -924,25 +1110,25 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
-                                分譲賃貸マンション
+                                <span class="c-input-label__text">分譲賃貸マンション</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
-                                タワーマンション
+                                <span class="c-input-label__text">タワーマンション</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
-                                低層マンション
+                                <span class="c-input-label__text">低層マンション</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
-                                免震・制震マンション
+                                <span class="c-input-label__text">免震・制震マンション</span>
                               </label>
                             </li>
                           </ul>
@@ -955,133 +1141,173 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[1]" value="1" type="checkbox" />
-                                パークアクシス
+                                <span class="c-input-label__text">パークアクシス</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[2]" value="2" type="checkbox" />
-                                MORI LIVING
+                                <span class="c-input-label__text">MORI LIVING</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[3]" value="3" type="checkbox" />
-                                ラ・トゥール
+                                <span class="c-input-label__text">
+                                  ラ・トゥール
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[4]" value="4" type="checkbox" />
-                                第一マンションズ
+                                <span class="c-input-label__text">
+                                  第一マンションズ
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[5]" value="5" type="checkbox" />
-                                パークハビオ
+                                <span class="c-input-label__text">
+                                  パークハビオ
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[6]" value="6" type="checkbox" />
-                                レジディア
+                                <span class="c-input-label__text">
+                                  レジディア
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[7]" value="7" type="checkbox" />
-                                カスタリア
+                                <span class="c-input-label__text">
+                                  カスタリア
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[8]" value="8" type="checkbox" />
-                                ガーデン
+                                <span class="c-input-label__text">
+                                  ガーデン
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[9]" value="9" type="checkbox" />
-                                アパートメンツ
+                                <span class="c-input-label__text">
+                                  アパートメンツ
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[10]" value="10" type="checkbox" />
-                                ベルファース
+                                <span class="c-input-label__text">
+                                  ベルファース
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[11]" value="11" type="checkbox" />
-                                フレンシア
+                                <span class="c-input-label__text">
+                                  フレンシア
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[12]" value="12" type="checkbox" />
-                                コンフォリア
+                                <span class="c-input-label__text">
+                                  コンフォリア
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[36]" value="36" type="checkbox" />
-                                プライムメゾン
+                                <span class="c-input-label__text">
+                                  プライムメゾン
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[37]" value="37" type="checkbox" />
-                                KDX
+                                <span class="c-input-label__text">
+                                  KDX
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[38]" value="38" type="checkbox" />
-                                アーバネックス
+                                <span class="c-input-label__text">
+                                  アーバネックス
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[39]" value="39" type="checkbox" />
-                                ルフォンプログレ
+                                <span class="c-input-label__text">
+                                  ルフォンプログレ
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[41]" value="41" type="checkbox" />
-                                MFPR
+                                <span class="c-input-label__text">
+                                  MFPR
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[42]" value="42" type="checkbox" />
-                                パークルール
+                                <span class="c-input-label__text">
+                                  パークルール
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[43]" value="43" type="checkbox" />
-                                パークアクシスプレミア
+                                <span class="c-input-label__text">
+                                  パークアクシスプレミア
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[44]" value="44" type="checkbox" />
-                                パークコート
+                                <span class="c-input-label__text">
+                                  パークコート
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[45]" value="45" type="checkbox" />
-                                パークマンション
+                                <span class="c-input-label__text">
+                                  パークマンション
+                                </span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="tagb[46]" value="46" type="checkbox" />
-                                ザ・パークハウス
+                                <span class="c-input-label__text">
+                                  ザ・パークハウス
+                                </span>
                               </label>
                             </li>
                           </ul>
@@ -1107,25 +1333,25 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
-                                分譲賃貸マンション
+                                <span class="c-input-label__text">分譲賃貸マンション</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
-                                タワーマンション
+                                <span class="c-input-label__text">タワーマンション</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
-                                低層マンション
+                                <span class="c-input-label__text">低層マンション</span>
                               </label>
                             </li>
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox">
                                 <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
-                                免震・制震マンション
+                                <span class="c-input-label__text">免震・制震マンション</span>
                               </label>
                             </li>
                           </ul>

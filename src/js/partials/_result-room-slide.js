@@ -137,7 +137,7 @@ const rf_result_room_slide = () => {
     if (btn.classList.contains(disabled_class)) return false
 
     // ローダー作成 - _loader.js
-    const loader = new RF_GLOBALS.rfLoader(pic_area)
+    const loader = new RF_GLOBALS.RfLoader(pic_area)
 
     // ボタン無効化
     btn.classList.add(disabled_class)

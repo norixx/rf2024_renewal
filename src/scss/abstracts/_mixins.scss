@@ -1,12 +1,14 @@
+@use "./variables" as *;
+
 // media query
 @mixin mq($breakpoint: md) {
   @if $breakpoint == "md" {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $bp-md) {
       @content;
     }
   }
   @if $breakpoint == "sp" {
-    @media screen and (max-width: 767.98px) {
+    @media screen and (max-width: $bp-sm-max) {
       @content;
     }
   }

@@ -17,6 +17,27 @@
   }
 }
 
+.u-d {
+  $values: block, inline, inline-block, none, flex, inline-flex;
+  @each $val in $values {
+    &-#{$val} {
+      display: #{$val} !important;
+    }
+  }
+  @include mq {
+    @each $val in $values {
+      &-pc-#{$val} {
+        display: #{$val} !important;
+      }
+    }
+  }
+}
+
 .u-visually-hidden {
   @include visually-hidden;
+}
+.u-visually-pc-hidden {
+  @include mq {
+    @include visually-hidden;
+  }
 }

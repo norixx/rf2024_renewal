@@ -132,6 +132,12 @@
     color: var(--txt-alert) !important;
   }
 
+  &-hover-alert {
+    &:hover {
+      color: var(--txt-alert) !important;
+    }
+  }
+
   @include mq {
     &-pc-xlight {
       color: var(--txt-xlight) !important;

@@ -1,0 +1,18 @@
+// リスト
+
+.u-list {
+  list-style: none;
+
+  &.--kome {
+    > li {
+      --margin: calc(1em + var(--space-4));
+      margin-left: var(--margin);
+
+      &::before {
+        content: "※";
+        float: left;
+        margin-left: calc(var(--margin) * -1);
+      }
+    }
+  }
+}

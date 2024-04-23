@@ -1,4 +1,6 @@
 // import rf_globals from './partials/_globals';
+import RfLoader from "./partials/_loader";
+import RfCheckboxStatus from "./partials/_checkbox-status";
 import rf_responsive_check from "./partials/_responsive";
 import rf_gnav from "./partials/_gnav";
 import rf_toggles from "./partials/_toggles";
@@ -13,11 +15,18 @@ import rf_select_link from "./partials/_select-link";
 import rf_related_prop_slider from "./partials/_related-prop-slider";
 import rf_ward from "./partials/_ward";
 import rf_result_room_slide from "./partials/_result-room-slide";
-import rfLoader from "./partials/_loader";
+import rf_search_ensen_checkbox from "./partials/_seach-enesen";
 
 // =======================================================
 // Inits
 const rf_init = () => {
+  // グローバル変数・関数はRF_GLOBALSにまとめ、windowにアサインする
+  const RF_GLOBALS = {
+    RfLoader,
+    RfCheckboxStatus,
+  }
+  window['RF_GLOBALS'] = RF_GLOBALS
+
   // Viewport checker (SP or PC)
   rf_responsive_check()
 
@@ -90,17 +99,10 @@ const rf_init = () => {
     rf_result_room_slide()
   }
 
-  const test = () => {
-    console.log('TESTSTSTSTSTSTS!!!')
+  // 検索 - 駅・沿線チェックボックス
+  if (document.querySelector('[data-js-form-checkbox]')) {
+    rf_search_ensen_checkbox()
   }
-
-  // グローバル変数・関数はRF_GLOBALSにまとめ、windowにアサインする
-  const RF_GLOBALS = {
-    rfLoader,
-    test
-  }
-  window['RF_GLOBALS'] = RF_GLOBALS
-
 }
 
 rf_init()

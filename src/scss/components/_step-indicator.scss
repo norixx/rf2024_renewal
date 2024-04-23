@@ -2,12 +2,14 @@
 @use "../abstracts/mixins" as *;
 
 .c-step-indicator {
-  --content-width: var(--space-80);
-  --content-gap: var(--space-64);
-  --icon-size: var(--space-32);
-  --color-base: var(--bg-gray-xlight);
+  --content-width: 5rem;
+  --content-gap: 4rem;
+  --icon-base-size: var(--space-32);
+  --icon-size: var(--space-24);
+  --color-base: var(--bg-gray-light);
   --color-current: var(--bg-black);
-  --color-completed: var(--bg-black);
+  --color-completed: var(--bg-gray-dark);
+  --color-txt-base: var(--txt-xlight);
 
   counter-reset: number 0;
   list-style: none;
@@ -19,54 +21,91 @@
 
   //   ステップ数 - 数に応じて間隔を狭める
   &.--step-3 {
-    --content-gap: var(--space-48);
+    --content-gap: 3rem;
   }
 
   &.--step-4 {
-    --content-gap: var(--space-16);
+    --content-gap: 1rem;
   }
 
   &__item {
     counter-increment: number 1;
-    display: flex;
     flex: 0 0 auto;
-    flex-direction: column;
     align-items: center;
-    width: var(--content-width);
     text-align: center;
     font-size: var(--fz-12);
     position: relative;
 
-    &::before {
-      content: counter(number);
-      font-size: var(--fz-16);
+    // span
+    > * {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      line-height: 1;
-      font-weight: semibold;
-      width: var(--icon-size);
-      height: var(--icon-size);
-      background-color: var(--color-base);
-      color: var(--bg-white);
-      border-radius: var(--icon-size);
-      margin-bottom: var(--space-8);
+      width: var(--content-width);
       position: relative;
-      z-index: 1;
+      color: var(--color-txt-base);
+
+      // ●
+      &::before {
+        content: "";
+        font-size: var(--fz-16);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        font-weight: semibold;
+        width: var(--icon-base-size);
+        height: var(--icon-base-size);
+        background-color: var(--color-base);
+        color: var(--txt-white);
+        border-radius: var(--icon-base-size);
+        margin-bottom: 0.5em;
+        position: relative;
+        z-index: 1;
+      }
+
+      // 数字
+      &::after {
+        content: counter(number);
+        position: absolute;
+        left: 50%;
+        top: calc((var(--icon-base-size) - var(--icon-size)) / 2);
+        translate: -50% 0;
+        color: #fff;
+        width: var(--icon-size);
+        height: var(--icon-size);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--fz-16);
+        font-family: var(--ff-num);
+      }
     }
 
     &.--is-completed {
-      &::before {
-        content: "";
-        background-color: var(--color-completed);
-        background: var(--icon-check);
+      > * {
+        color: var(--color-completed);
+
+        &::before {
+          background: var(--color-completed);
+        }
+        &::after {
+          content: "";
+          mask: var(--icon-check) no-repeat center center / contain;
+          background-color: var(--bg-white);
+        }
       }
     }
 
     &.--is-current {
-      font-weight: bold;
-      &::before {
-        background: var(--color-current);
+      > * {
+        color: var(--color-current);
+        font-weight: var(--fw-semibold);
+
+        &::before {
+          background: var(--color-current);
+        }
       }
     }
 
@@ -76,8 +115,8 @@
       position: absolute;
       height: var(--height);
       background-color: var(--color-base);
-      top: calc(var(--icon-size) / 2 - var(--height) / 2);
-      --space: (var(--content-width) / 2 - var(--icon-size) / 2);
+      top: calc(var(--icon-base-size) / 2 - var(--height) / 2);
+      --space: (var(--content-width) / 2 - var(--icon-base-size) / 2);
       width: calc(var(--space) * 2 + var(--content-gap) + 4px);
       // left:
       left: calc((var(--content-gap) + var(--space) + 2px) * -1);
@@ -102,7 +141,7 @@
     }
 
     &__item {
-      font-size: 14px;
+      font-size: var(--fz-14);
     }
   }
 }

@@ -32,6 +32,11 @@
       gap: var(--space-4);
       line-height: var(--line-height-100);
 
+      // フラグをブロックレベルに変換し余白が出ないように調整
+      > li > * {
+        display: block;
+      }
+
       @include mq {
         flex-direction: column;
         margin-right: var(--space-24);
@@ -40,7 +45,7 @@
 
     &-links {
       display: flex;
-      flex: 0 0 64px;
+      flex: 0 1 auto;
 
       .__considering {
         flex: 1;

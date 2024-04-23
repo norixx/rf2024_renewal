@@ -23,7 +23,8 @@
     cursor: pointer;
   }
 
-  // Type
+  // =======================================================
+  // タイプ
   &.--normal {
     background-color: var(--bg-white);
     border-color: var(--bdr-btn-gray);
@@ -75,7 +76,8 @@
     }
   }
 
-  // アイコン基本
+  // =======================================================
+  // アイコン構造
   &.--icon-before::before,
   &.--icon-after::after {
     content: "";
@@ -99,7 +101,7 @@
 
     // デコレーションなしはマージンなし
     &.--no-decoration::before {
-      margin-right: 0;
+      margin-right: 0 !important;
     }
 
     // 方向 - 縦方向のときはマージンなし
@@ -133,27 +135,55 @@
         margin-right: 0;
         margin-bottom: var(--space-4);
       }
-      &.--pc-v::before {
-        @include mq {
+    }
+
+    &.--md {
+      &::before {
+        --icon-size: var(--fz-24);
+        margin-right: var(--space-8);
+      }
+    }
+
+    @include mq {
+      &.--no-pc-decoration::before {
+        margin-right: 0 !important;
+      }
+      &.--sm,
+      &.--xs,
+      &.--xxs {
+        &.--pc-v::before {
           margin-right: 0;
           margin-bottom: var(--space-4);
         }
-      }
-      &.--pc-h::before {
-        @include mq {
+        &.--pc-h::before {
           margin-right: var(--space-8);
           margin-bottom: 0;
         }
       }
+      &.--pc-sm,
+      &.--pc-xs,
+      &.--pc-xxs {
+        &::before {
+          --icon-size: var(--fz-16);
+          margin-right: var(--space-4);
+        }
+      }
+      &.--pc-md {
+        &::before {
+          --icon-size: var(--fz-24);
+          margin-right: var(--space-8);
+        }
+      }
     }
   }
+
   &.--icon-after {
     &::after {
       margin-left: var(--space-8);
     }
 
     &.--no-decoration::after {
-      margin-left: 0;
+      margin-left: 0 !important;
     }
 
     // サイズで調整
@@ -165,28 +195,82 @@
         margin-left: var(--space-4);
       }
     }
+
+    &.--md {
+      &::before {
+        --icon-size: var(--fz-24);
+        margin-right: var(--space-8);
+      }
+    }
+
+    @include mq {
+      &.--pc-sm,
+      &.--pc-xs,
+      &.--pc-xxs {
+        &::after {
+          --icon-size: var(--fz-16);
+          margin-left: var(--space-4);
+        }
+      }
+      &.--pc-md {
+        &::before {
+          --icon-size: var(--fz-24);
+          margin-right: var(--space-8);
+        }
+      }
+      &.--no-pc-decoration::after {
+        margin-left: 0 !important;
+      }
+    }
   }
+
+  //アイコンの大きさ（アイコンのみ）
   &.--icon-lg {
     &::after,
     &::before {
       --icon-size: var(--fz-24) !important;
     }
   }
+
+  // アイコンの色
   &.--icon-primary {
     background-color: var(--bg-primary);
+  }
+  &.--icon-gray {
+    &::before,
+    &::after {
+      background-color: var(--bg-gray);
+    }
+  }
+  &.--icon-hover-alert {
+    &:hover::before,
+    &:hover::after {
+      background-color: var(--bg-alert);
+    }
   }
   &.--impact.--icon-before::before,
   &.--impact.--icon-after::after {
     background-color: var(--bg-white); //アイコンカラー
   }
 
-  // アイコン
+  // =======================================================
+  // アイコンの種類
+  // 矢印系
+  // 左
+  &.--i-arrow-l {
+    &::before,
+    &::after {
+      mask-image: var(--icon-arrow-l);
+    }
+  }
+  // 右
   &.--i-arrow-r {
     &::before,
     &::after {
       mask-image: var(--icon-arrow-r);
     }
   }
+  // 下
   &.--i-arrow-down {
     &::before,
     &::after {
@@ -194,6 +278,7 @@
     }
   }
 
+  // マップ,地図
   &.--i-map {
     &::before,
     &::after {
@@ -201,6 +286,7 @@
     }
   }
 
+  // メール
   &.--i-mail {
     &::before,
     &::after {
@@ -208,6 +294,7 @@
     }
   }
 
+  // 電話,TEL
   &.--i-tel {
     &::before,
     &::after {
@@ -215,6 +302,7 @@
     }
   }
 
+  // 外部リンク
   &.--i-link-out {
     &::before,
     &::after {
@@ -222,6 +310,7 @@
     }
   }
 
+  // 保存, ブックマーク
   &.--i-save {
     &::before,
     &::after {
@@ -233,6 +322,7 @@
     //   background-color: var(--bg-primary);
     // }
 
+    // 保存された状態
     &.--is-saved {
       &::before,
       &::after {
@@ -242,6 +332,7 @@
     }
   }
 
+  // 検索
   &.--i-search {
     &::before,
     &::after {
@@ -249,6 +340,7 @@
     }
   }
 
+  // 再検索
   &.--i-re-search {
     &::before,
     &::after {
@@ -256,6 +348,37 @@
     }
   }
 
+  // ゴミ箱
+  &.--i-trash {
+    &::before,
+    &::after {
+      mask-image: var(--icon-trash);
+    }
+  }
+
+  // 星
+  &.--i-star {
+    &::before,
+    &::after {
+      mask-image: var(--icon-star);
+    }
+
+    &.--is-saved {
+      &::before,
+      &::after {
+        mask-image: var(--icon-star-fill);
+        background-color: var(--bg-primary);
+      }
+    }
+  }
+  &.--i-star-fill {
+    &::before,
+    &::after {
+      mask-image: var(--icon-star-fill);
+    }
+  }
+
+  // =======================================================
   // サイズ
   $sizes: xxs, xs, sm, md, lg, xl;
   @each $size in $sizes {
@@ -346,6 +469,13 @@
     }
   }
 
+  //フレックス
+  &.--grow-1 {
+    flex-grow: 1;
+  }
+
+  // =======================================================
+  // 枠線
   // 枠線ボーダー
   $thicknesses: md, lg, xl;
   @each $thickness in $thicknesses {
@@ -365,6 +495,9 @@
       }
     }
   }
+
+  // =======================================================
+  // 幅
   // width
   &.--w-100 {
     width: 100%;
@@ -375,6 +508,7 @@
     max-width: 100%;
   }
 
+  // =======================================================
   // 方向
   &.--v {
     flex-direction: column;
@@ -393,13 +527,26 @@
     }
   }
 
-  // Status
+  // =======================================================
+  // ステータス
   &.--is-saved {
     border-color: var(--bdr-btn-gray-xdark);
     background-color: var(--bg-gray-xxlight);
   }
 
-  // Utilities
+  &.--is-disabled,
+  &:disabled {
+    background-color: var(--bg-gray-light) !important;
+    color: var(--txt-white) !important;
+    // pointer-events: none;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  // =======================================================
+  // ユーティリティ
   &.--no-border {
     border: none !important;
   }
@@ -410,6 +557,25 @@
   }
   &.--no-bdr-radius {
     border-radius: 0 !important;
+  }
+  &.--no-padding {
+    padding: 0 !important;
+  }
+  @include mq {
+    &.--no-pc-border {
+      border: none !important;
+    }
+    &.--no-pc-decoration {
+      border: none;
+      padding: 0;
+      background: none;
+    }
+    &.--no-pc-bdr-radius {
+      border-radius: 0 !important;
+    }
+    &.---no-pc-padding {
+      padding: 0 !important;
+    }
   }
 
   // =======================================================

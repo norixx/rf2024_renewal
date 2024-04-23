@@ -332,9 +332,131 @@
 
 // 沿線、駅選択
 .c-search-ensen-combo {
-  margin-top: 1px;
+  margin-top: var(--space-24);
+  &:not(:first-of-type) {
+    margin-top: 1px;
+  }
 
   @include mq {
     margin-top: var(--space-32);
+
+    &:not(:first-of-type) {
+      margin-top: var(--space-32);
+    }
+  }
+}
+
+// 検索コントロールエリア - ボタン等
+.c-search-controls {
+  background-color: var(--bg-gray-xxlight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-16);
+  --gap: var(--space-4);
+  gap: var(--gap);
+}
+
+// 結果（簡易表示）
+.c-search-brief-result {
+  background-color: var(--bg-gray-xxlight);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: var(--space-16);
+  --gap: var(--space-4);
+  gap: var(--gap);
+
+  @include mq {
+    --gap: var(--space-32);
+    text-align: start;
+    // padding: var(--space-24);
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__btn {
+    @include mq {
+      flex: 0 0 25%;
+    }
+  }
+
+  &__title {
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--letter-space-10);
+  }
+
+  &__count {
+    .__count {
+      font-family: var(--ff-num);
+      letter-spacing: var(--letter-space-10);
+      font-style: normal;
+      font-weight: var(--fw-semibold);
+      font-size: var(--fz-28);
+
+      @include mq {
+      }
+    }
+  }
+}
+
+//選択中のxx
+.c-search-selected-choices {
+  container: choice / inline-size;
+
+  &__list {
+    display: flex;
+    border: 1px solid var(--bdr-normal);
+    @container choice (max-width: 600px) {
+      flex-direction: column;
+    }
+
+    dt {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-8);
+      font-size: var(--fz-14);
+      font-weight: var(--fw-semibold);
+      background-color: var(--bg-black);
+      color: var(--txt-white);
+      min-width: 8em;
+
+      @include mq {
+        padding: var(--space-16);
+      }
+    }
+
+    dd {
+      display: flex;
+      align-items: center;
+      --choice-gap: var(--space-4);
+      row-gap: var(--choice-gap);
+      column-gap: calc(var(--choice-gap) * 2);
+      padding: var(--space-8);
+      font-size: var(--fz-14);
+      flex-wrap: wrap;
+      line-height: var(--line-height-md);
+
+      @include mq {
+        padding: var(--space-16);
+      }
+    }
+  }
+  &__back {
+    .__btn {
+      // display: block;
+      width: 100%;
+      background-color: var(--bg-gray-xxlight);
+      text-align: center;
+      padding: var(--space-4);
+      font-size: var(--fz-14);
+
+      &:hover {
+        background-color: var(--bg-gray-xlight);
+      }
+    }
   }
 }

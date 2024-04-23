@@ -1,5 +1,12 @@
 // ローダー
-class rfLoader {
+/**
+ * ローダー
+ * @param {string} target - ローダーを挿入するターゲット（指定がなければbody）
+ * @param {string} msg - ローダーのメッセージ（キャプション） default: 'Loading...'
+ * @param {string} size - ローダーのサイズ（スタイルシートを参照） default: 'md'
+ * @param {string} style - ローダーのスタイル（スタイルシートを参照） default: '--bg-black'
+ */
+class RfLoader {
   #settings = {
     target: document.body,
     msg: 'Loading...',
@@ -40,4 +47,4 @@ class rfLoader {
   }
 }
 
-export default rfLoader
+export default RfLoader

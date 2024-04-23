@@ -127,50 +127,6 @@
   }
 } //.c-form-list
 
-// 結果（簡易表示）
-.c-search-brief-result {
-  background-color: var(--bg-gray-xxlight);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: var(--space-16);
-  --gap: var(--space-4);
-  gap: var(--gap);
-
-  @include mq {
-    --gap: var(--space-32);
-    text-align: start;
-    // padding: var(--space-24);
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-
-  &__btn {
-    @include mq {
-      flex: 0 0 25%;
-    }
-  }
-
-  &__title {
-    font-weight: var(--fw-bold);
-    letter-spacing: var(--letter-space-10);
-  }
-
-  &__count {
-    .__count {
-      font-family: var(--ff-num);
-      letter-spacing: var(--letter-space-10);
-      font-style: normal;
-      font-weight: var(--fw-semibold);
-      font-size: var(--fz-28);
-
-      @include mq {
-      }
-    }
-  }
-}
-
 // ラベル
 .c-input-label {
   $parent: ".c-input-label";
@@ -187,9 +143,46 @@
   // チェックボックス
   &.--checkbox,
   &.--radio {
-    [type="checkbox"],
-    [type="radio"] {
-      @include visually-hidden;
+    display: flex;
+
+    // [type="checkbox"],
+    // [type="radio"] {
+    //   @include visually-hidden;
+    // }
+    input:where([type="checkbox"], [type="radio"]) {
+      appearance: none;
+      accent-color: var(--bg-black);
+      --size: var(--space-20);
+      width: var(--size);
+      height: var(--size);
+      margin-right: var(--space-8);
+      border: 2px solid var(--bg-gray);
+      background-color: var(--bg-white);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      transition: border-color var(--animation-normal);
+    }
+    input:where([type="checkbox"]) {
+      border-radius: var(--bdr-radius-md);
+    }
+    input:where([type="radio"]) {
+      border-radius: var(--size);
+    }
+
+    &:hover input:where([type="checkbox"], [type="radio"]) {
+      border-color: var(--bg-gray-dark);
+    }
+
+    input:where([type="checkbox"]:checked, [type="radio"]:checked) {
+      border: none;
+      background-color: var(--bg-black);
+    }
+    input:where([type="checkbox"]:checked) {
+      background-image: url(../img/common/ico-check-wh.svg);
+    }
+    input:where([type="radio"]:checked) {
+      background-image: url(../img/common/ico-radio-wh.svg);
     }
 
     > span {
@@ -198,21 +191,25 @@
       align-items: flex-start;
 
       // チェックボックス、ラジオボタン用スペース
-      &::before {
-        content: "";
-        --icon-size: var(--space-20);
-        width: var(--icon-size);
-        height: var(--icon-size);
-        flex: 0 0 var(--icon-size);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
-        margin-right: var(--space-8);
-      }
+      // &::before {
+      //   content: "";
+      //   --icon-size: var(--space-20);
+      //   width: var(--icon-size);
+      //   height: var(--icon-size);
+      //   flex: 0 0 var(--icon-size);
+      //   background-size: contain;
+      //   background-repeat: no-repeat;
+      //   background-position: center center;
+      //   margin-right: var(--space-8);
+      // }
     }
 
-    &.--lg > span::before {
-      --icon-size: var(--space-24);
+    // &.--lg > span::before {
+    //   --icon-size: var(--space-24);
+    //   margin-right: var(--space-10);
+    // }
+    &.--lg input:where([type="checkbox"], [type="radio"]) {
+      --size: var(--space-24);
       margin-right: var(--space-10);
     }
 
@@ -227,6 +224,16 @@
       color: var(--txt-dark);
     }
   } //--checkbox, --radio
+
+  //テキストがなく単体で使用する場合
+  &.--no-text {
+    &.--checkbox,
+    &.--radio {
+      input:where([type="checkbox"], [type="radio"]) {
+        margin-right: 0;
+      }
+    }
+  }
 
   &.--checkbox > span::before {
     background-image: var(--icon-checkbox);

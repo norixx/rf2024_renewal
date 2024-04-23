@@ -45,12 +45,12 @@
 
       <!-- メインコンテンツ -->
       <div class="l-main__content u-pt-pc-64 u-pt-40">
-        <div class="l-search">
+        <section class="l-search">
           <div class="l-search__header">
             <div class="l-container">
               <header class="c-page-header">
                 <h1 class="c-page-header__h">
-                  <span class="__en">Search by Popular Area</span>
+                  <span class="__en">Search by Train Station</span>
                   沿線から探す
                 </h1>
               </header>
@@ -101,26 +101,29 @@
           </div>
 
           <div class="l-search__body">
-            <form action="#" method="post" id="sys-form">
-              <input type="text" name="_token" value="cN29XhCXLQMQmiI6shPEpG1Sidn8Y9CO5lImS5UN" style="display: none" />
-              <div class="l-container">
+            <div class="l-container">
 
-                <ol class="c-search-ensen-guide">
-                  <li>沿線の選択</li>
-                  <li>駅の選択</li>
-                </ol>
+              <ol class="c-search-ensen-steps c-step-indicator u-mb-24">
+                <li class="c-step-indicator__item --is-current"><span>沿線の選択</span></li>
+                <li class="c-step-indicator__item"><span>駅の選択</span></li>
+              </ol>
 
-                <section class="c-search-sect">
-                  <div class="c-search-sect__header">
-                    <h2 class="c-search-sect__h">
-                      お探しの沿線を選択してください
-                    </h2>
-                  </div>
-                  <div class="c-search-sect__body">
+              <section class="c-search-sect">
+                <div class="c-search-sect__header">
+                  <h2 class="c-search-sect__h">
+                    お探しの沿線を選択してください
+                  </h2>
+                </div>
+                <div class="c-search-sect__body">
+
+                  <form method="post" id="form-ensen-step1" data-js-form-checkbox>
+                    <input type="text" name="_token" value="###" style="display:none;">
+
                     <section class="c-search-check-combo c-search-ensen-combo">
                       <header class="c-search-check-combo__header">
                         <label class="c-input-label --checkbox --lg">
-                          <input type="checkbox" class="sys-all-line" data-class="com-##" autocomplete="off">
+                          <input type="checkbox" data-js-checkbox-target class="sys-all-line" data-class="com-##"
+                            autocomplete="off">
                           <span class="c-input-label__text">
                             なんとかまとめ線
                           </span>
@@ -135,7 +138,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -145,7 +148,17 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off" checked>
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off" checked>
+                                <span>
+                                  <span>リンクじゃないやつ</span>
+                                  <span class="__count">(123)</span>
+                                </span>
+                              </label>
+                            </li>
+                            <li class="c-form-list__item">
+                              <label class="c-input-label --checkbox --lg">
+                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off" checked>
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -155,7 +168,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off" checked>
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -165,7 +178,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -175,17 +188,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
-                                <span>
-                                  <a href="#" class="__link">なんとか線</a>
-                                  <span class="__count">(123)</span>
-                                </span>
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox --lg">
-                                <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -200,7 +203,8 @@
                     <section class="c-search-check-combo c-search-ensen-combo">
                       <header class="c-search-check-combo__header">
                         <label class="c-input-label --checkbox --lg">
-                          <input type="checkbox" class="sys-all-line" data-class="com-##" autocomplete="off">
+                          <input type="checkbox" data-js-checkbox-target class="sys-all-line" data-class="com-##"
+                            autocomplete="off">
                           <span class="c-input-label__text">
                             なんとかまとめ線
                           </span>
@@ -215,7 +219,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -225,7 +229,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off" checked>
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -235,7 +239,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off" checked>
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -245,7 +249,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -255,7 +259,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -265,7 +269,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -280,7 +284,8 @@
                     <section class="c-search-check-combo c-search-ensen-combo">
                       <header class="c-search-check-combo__header">
                         <label class="c-input-label --checkbox --lg">
-                          <input type="checkbox" class="sys-all-line" data-class="com-##" autocomplete="off">
+                          <input type="checkbox" data-js-checkbox-target class="sys-all-line" data-class="com-##"
+                            autocomplete="off">
                           <span class="c-input-label__text">
                             なんとかまとめ線
                           </span>
@@ -295,7 +300,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -305,7 +310,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off" checked>
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -315,7 +320,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off" checked>
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -325,7 +330,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -335,7 +340,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -345,7 +350,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -360,7 +365,8 @@
                     <section class="c-search-check-combo c-search-ensen-combo">
                       <header class="c-search-check-combo__header">
                         <label class="c-input-label --checkbox --lg">
-                          <input type="checkbox" class="sys-all-line" data-class="com-##" autocomplete="off">
+                          <input type="checkbox" data-js-checkbox-target class="sys-all-line" data-class="com-##"
+                            autocomplete="off">
                           <span class="c-input-label__text">
                             なんとかまとめ線
                           </span>
@@ -375,7 +381,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -385,7 +391,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off" checked>
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -395,7 +401,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off" checked>
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -405,7 +411,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -415,7 +421,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -425,7 +431,7 @@
                             <li class="c-form-list__item">
                               <label class="c-input-label --checkbox --lg">
                                 <input name="LINE_CD[##,###]" value="##,###" type="checkbox"
-                                  class="com-## c-input-checkradio" autocomplete="off">
+                                  class="com-## c-input-checkradio" data-js-checkbox-target autocomplete="off">
                                 <span>
                                   <a href="#" class="__link">なんとか線</a>
                                   <span class="__count">(123)</span>
@@ -436,13 +442,21 @@
                         </div>
                       </div>
                     </section>
-                  </div>
-                </section>
 
-              </div>
-            </form>
+                    <div class="u-mt-40">
+                      <div class="c-search-controls">
+                        <button type="submit" class="btn --impact --icon-after --i-arrow-r --mw-400px --is-disabled"
+                          disabled id="form-ensen-submit">続いて駅を選択する</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </section>
+
+            </div>
+
           </div>
-        </div>
+        </section>
       </div>
       <!--/.l-main__content-->
     </div>

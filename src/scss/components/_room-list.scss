@@ -5,6 +5,10 @@
   display: block;
   border-bottom: 1px solid var(--bdr-light);
 
+  &.--no-bdr-btm {
+    border-bottom: none;
+  }
+
   // HEAD
   &__head {
     display: none;
@@ -20,6 +24,7 @@
     @include mq {
       display: flex;
       align-items: center;
+      gap: var(--space-8);
     }
 
     th {
@@ -53,12 +58,6 @@
     position: relative;
     padding: var(--space-16) 0;
 
-    // gap: var(--space-8);
-    // flex-direction: column;
-    // grid-template-rows: auto auto;
-    // grid-template-columns: 100px auto;
-    // justify-content: start;
-
     &:not(:last-child) {
       border-bottom: 1px solid var(--bdr-light);
     }
@@ -69,9 +68,9 @@
       padding: var(--space-12) var(--space-16);
       transition: background var(--animation-normal);
       flex-wrap: nowrap;
-      gap: 0;
+      gap: var(--space-8);
 
-      &:hover {
+      &[data-js-room-link]:hover {
         background: var(--bg-gray-xxlight);
         cursor: pointer;
       }
@@ -99,6 +98,11 @@
       margin-left: auto;
       // flex: 0 0 calc(100% - (100px + var(--space-24))); // 画像の幅 + 24px
       width: calc(100% - (80px + var(--space-16)));
+
+      &.--fill {
+        margin-left: 0;
+        width: 100%;
+      }
 
       &:nth-child(n + 4) {
         margin-top: var(--space-14);
@@ -196,8 +200,10 @@
     }
 
     .__body-control {
+      align-items: stretch;
+
       > * {
-        flex: 1 0 0;
+        flex: 1 0 auto;
       }
 
       @include mq {
