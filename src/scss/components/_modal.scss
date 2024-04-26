@@ -186,14 +186,14 @@ $c-modal-sp-only: ".c-modal.--sp-only";
   }
 
   @include mq {
-    position: static;
+    position: relative;
     background-color: transparent;
     clip-path: none;
     width: auto;
     height: auto;
     margin: 0 !important;
     overflow: initial;
-    z-index: initial;
+    z-index: 1;
 
     &.--is-open {
       background-color: transparent;

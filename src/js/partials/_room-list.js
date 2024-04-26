@@ -1,5 +1,5 @@
 // お部屋リスト
-import { rf_get_globals, rf_set_globals } from './_globals'
+import { rf_get_globals, rf_set_globals } from './_global-setting'
 
 
 // 部屋リストリンク

@@ -53,7 +53,7 @@
     overflow-y: scroll;
 
     @include mq {
-      overflow-y: auto;
+      overflow-y: visible;
       max-height: none;
     }
   }
@@ -181,7 +181,9 @@
 
 // 選択中のエリア
 .c-re-search-selected-areas {
-  font-weight: var(--fw-bold);
+  label {
+    font-weight: var(--fw-semibold);
+  }
 }
 
 .c-re-search-edit {

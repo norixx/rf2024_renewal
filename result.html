@@ -11,7 +11,17 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@400;500&display=swap"
     rel="stylesheet">
+
+  <!-- tippy.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/svg-arrow.min.css"
+    integrity="sha512-ymN7o+FS8QZbFrwWACqZtheeTIk1zdbp7Rlz3ioSay7zdaskEVInnfm/QkKuJnZvNI0rWiUDQWG63nDdj78shg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/animations/shift-away.min.css"
+    integrity="sha512-7bgVzb6QcjutEwmmwMZSEHs6mPElvk0iTB/ywwOqGchLuPakyurzbbqNbiw8elsUrIwk+lVkTPHE23cbLgW2lw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="./assets/css/rf.min.css">
+
 </head>
 
 <body>
@@ -229,8 +239,23 @@
                                   <a href="#" class="u-icon --icon-after --i-arrow-r --method-range"
                                     id="sys-reselect-area" data-js-modal="#sys-dialog-area">一覧から選び直す</a>
 
-                                  <!-- popper.js検討 -->
-                                  <span class="u-icon --icon-after --i-arrow-r --method-choice">選び方を変更する</span>
+                                  <span class="u-icon --icon-after --i-arrow-r --method-choice"
+                                    data-js-search-change-method data-js-search-method="#search-choices">選び方を変更する</span>
+                                  <div style="display: none;">
+                                    <div id="search-choices" class="c-search-change-method">
+                                      <ul class="c-search-change-method__list">
+                                        <li><a href="{{ url('/') }}/area"
+                                            class="u-icon --icon-before --icon-white --i-arrow-r">エリアから探す</a></li>
+                                        <li><a href="{{ url('/') }}/ward"
+                                            class="u-icon --icon-before --icon-white --i-arrow-r">区から探す</a></li>
+                                        <li><a href="/mapsearch"
+                                            class="u-icon --icon-before --icon-white --i-arrow-r">地図から探す</a>
+                                        </li>
+                                        <li><a href="{{ url('/') }}/ensen"
+                                            class="u-icon --icon-before --icon-white --i-arrow-r">沿線から探す</a></li>
+                                      </ul>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
 
@@ -1438,7 +1463,7 @@
           <footer class="c-modal-content__footer">
             <div class="c-modal-content__footer-btns">
               <button class="btn --impact">再検索</button>
-              <button class="btn --normal" type="button">閉じる</button>
+              <button class="btn --normal" type="button" data-js-modal-close>閉じる</button>
             </div>
           </footer>
         </article>
@@ -1879,6 +1904,9 @@
 
   </main>
 
+  <!-- tippy.js -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
 
   <script src="assets/js/rf.min.js"></script>
 </body>

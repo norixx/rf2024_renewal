@@ -31,4 +31,12 @@
       mask-image: var(--icon-arrow-r);
     }
   }
+
+  // color
+  &.--icon-white {
+    &::before,
+    &::after {
+      background: var(--bg-white);
+    }
+  }
 }

@@ -1,0 +1,28 @@
+// 検索方法の変更
+.c-search-change-method {
+  padding: var(--space-8);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    line-height: var(--line-height-md);
+
+    a {
+      // color: var(--txt-normal);
+    }
+  }
+}
+
+// tippy.js style override
+.tippy-box[data-theme~="rf"] {
+  background-color: var(--bg-gray-xxdark);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+.tippy-box[data-theme~="rf"] > .tippy-svg-arrow svg {
+  clip-path: inset(-2px 0px 0px 0px);
+  filter: drop-shadow(0 0 3px rgb(0 0 0 / 0.4));
+}
+.tippy-box[data-theme~="rf"] > .tippy-svg-arrow svg path {
+  fill: var(--bg-gray-xxdark);
+}

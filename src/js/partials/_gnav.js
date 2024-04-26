@@ -1,4 +1,4 @@
-import { rf_get_globals } from './_globals'
+import { rf_get_globals } from './_global-setting'
 
 const rf_gnav = () => {
   let _isOpen = false //グローバルナビゲーションの開閉状態

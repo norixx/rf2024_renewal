@@ -1,5 +1,5 @@
 // Toggle 共通
-import { rf_get_globals } from './_globals'
+import { rf_get_globals } from './_global-setting'
 
 const rf_toggles = () => {
   const toggles = document.querySelectorAll('[data-js-toggle]')

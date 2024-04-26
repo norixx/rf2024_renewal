@@ -1,7 +1,7 @@
-// import rf_globals from './partials/_globals';
+import { rf_get_globals, rf_set_globals } from "./partials/_global-setting";
+import rf_responsive_check from "./partials/_responsive";
 import RfLoader from "./partials/_loader";
 import RfCheckboxStatus from "./partials/_checkbox-status";
-import rf_responsive_check from "./partials/_responsive";
 import rf_gnav from "./partials/_gnav";
 import rf_toggles from "./partials/_toggles";
 import rf_top_banners from "./partials/_top-banners";
@@ -16,19 +16,32 @@ import rf_related_prop_slider from "./partials/_related-prop-slider";
 import rf_ward from "./partials/_ward";
 import rf_result_room_slide from "./partials/_result-room-slide";
 import rf_search_ensen_checkbox from "./partials/_seach-enesen";
+import RfMediaQuery from "./partials/_mediaquery";
+import rf_search_change_method from "./partials/_search-change-method";
 
 // =======================================================
 // Inits
 const rf_init = () => {
-  // グローバル変数・関数はRF_GLOBALSにまとめ、windowにアサインする
-  const RF_GLOBALS = {
-    RfLoader,
-    RfCheckboxStatus,
-  }
-  window['RF_GLOBALS'] = RF_GLOBALS
 
   // Viewport checker (SP or PC)
   rf_responsive_check()
+
+  // グローバル変数、関数、はRF_GLOBALSにまとめ、windowにアサインする
+  window['RF_GLOBALS'] = {
+    ...window['RF_GLOBALS'],
+    RfLoader,
+    RfCheckboxStatus,
+    RfMediaQuery,
+  }
+
+  // rf_set_globals({
+  //   window_state: 'PC',
+  //   breakpoint: 768,
+  // })
+
+
+  console.log(window['RF_GLOBALS'])
+
 
   // Global Navigation
   if (document.querySelector('[data-js-gnav]')) {
@@ -102,6 +115,11 @@ const rf_init = () => {
   // 検索 - 駅・沿線チェックボックス
   if (document.querySelector('[data-js-form-checkbox]')) {
     rf_search_ensen_checkbox()
+  }
+
+  // 検索の方法、選び方の変更
+  if (document.querySelector('[data-js-search-change-method]')) {
+    rf_search_change_method()
   }
 }
 
