@@ -194,12 +194,13 @@
               <div class="l-col-pc-container">
                 <div class="l-col-pc-3">
 
-                  <div class="c-modal-re-search" id="re-search" data-js-modal-target>
-                    <button class="c-modal-re-search__close u-sp-only" type="button" data-js-modal-close><span
-                        class="u-visually-hidden">閉じる</span></button>
-                    <!-- 再検索ナビゲーション -->
-                    <article class="c-re-search">
-                      <form action="#" id="sys-form" method="post">
+                  <form action="#" id="sys-form" method="post">
+                    <div class="c-modal-re-search" id="re-search" data-js-modal-target>
+                      <button class="c-modal-re-search__close u-sp-only" type="button" data-js-modal-close><span
+                          class="u-visually-hidden">閉じる</span></button>
+                      <!-- 再検索ナビゲーション -->
+                      <article class="c-re-search">
+
                         <header class="c-re-search__header">
                           <h2 class="c-re-search__h">再検索ナビゲーション</h2>
                         </header>
@@ -209,7 +210,8 @@
                               <h3 class="c-re-search-sect__h">選択中の区</h3>
                             </header>
                             <div class="c-re-search-sect__body">
-                              <ul class="c-form-list --col-1 c-re-search-selected-areas">
+                              <ul class="c-form-list --col-1 c-re-search-selected u-p-16"
+                                id="c-re-search-selected-areas" aria-hidden="true">
                                 <li class="c-form-list__item">
                                   <label class="c-input-label --checkbox">
                                     <input type="checkbox" class="sys-SEARCH_AREA_NO sys-recalc"
@@ -231,13 +233,54 @@
                                     杉並区<span class="__count">(89)</span>
                                   </label>
                                 </li>
+                                <li class="c-form-list__item">
+                                  <label class="c-input-label --checkbox">
+                                    <input type="checkbox" class="sys-SEARCH_AREA_NO sys-recalc"
+                                      name="SEARCH_AREA_NO[##]" value="##" checked>
+                                    杉並区<span class="__count">(89)</span>
+                                  </label>
+                                </li>
+                                <li class="c-form-list__item">
+                                  <label class="c-input-label --checkbox">
+                                    <input type="checkbox" class="sys-SEARCH_AREA_NO sys-recalc"
+                                      name="SEARCH_AREA_NO[##]" value="##" checked>
+                                    杉並区<span class="__count">(89)</span>
+                                  </label>
+                                </li>
+                                <li class="c-form-list__item">
+                                  <label class="c-input-label --checkbox">
+                                    <input type="checkbox" class="sys-SEARCH_AREA_NO sys-recalc"
+                                      name="SEARCH_AREA_NO[##]" value="##" checked>
+                                    杉並区<span class="__count">(89)</span>
+                                  </label>
+                                </li>
+                                <li class="c-form-list__item">
+                                  <label class="c-input-label --checkbox">
+                                    <input type="checkbox" class="sys-SEARCH_AREA_NO sys-recalc"
+                                      name="SEARCH_AREA_NO[##]" value="##" checked>
+                                    杉並区<span class="__count">(89)</span>
+                                  </label>
+                                </li>
+                                <li class="c-form-list__item">
+                                  <label class="c-input-label --checkbox">
+                                    <input type="checkbox" class="sys-SEARCH_AREA_NO sys-recalc"
+                                      name="SEARCH_AREA_NO[##]" value="##" checked>
+                                    杉並区<span class="__count">(89)</span>
+                                  </label>
+                                </li>
                               </ul>
+                              <button aria-expanded="false" aria-controls="c-re-search-selected"
+                                class="c-re-search-selected-btn-expand" data-js-toggle="#c-re-search-selected-areas"
+                                type="button" data-js-toggle-text="閉じる">すべて表示</button>
 
                               <!-- 検索範囲と方法の変更 -->
-                              <div class="c-re-search-edit u-mt-16">
+                              <div class="c-re-search-edit u-mt-16 u-mr-16">
                                 <div class="c-re-search-edit__method">
                                   <a href="#" class="u-icon --icon-after --i-arrow-r --method-range"
                                     id="sys-reselect-area" data-js-modal="#sys-dialog-area">一覧から選び直す</a>
+
+                                  <button type="button"
+                                    onclick="RF_GLOBALS.rf_modals.openModal('#sys-dialog-area')">AJAXオープンテスト</button>
 
                                   <span class="u-icon --icon-after --i-arrow-r --method-choice"
                                     data-js-search-change-method data-js-search-method="#search-choices">選び方を変更する</span>
@@ -259,7 +302,7 @@
                                 </div>
                               </div>
 
-                              <div class="c-re-search-result u-mt-24">
+                              <div class="c-re-search-result u-mt-24 u-mx-16 u-mb-16">
                                 <dl class="c-re-search-result__desc">
                                   <dt>検索対象お部屋数</dt>
                                   <dd>
@@ -274,7 +317,7 @@
                             <header class="c-re-search-sect__header">
                               <h3 class="c-re-search-sect__h">検索結果の絞り込み</h3>
                             </header>
-                            <div class="re-search-sect__body">
+                            <div class="c-re-search-sect__body">
 
                               <!-- 賃料 -->
                               <section class="c-re-search-toggle-sect">
@@ -753,9 +796,68 @@
                             </div>
                           </section>
                         </div>
-                      </form>
-                    </article>
-                  </div>
+
+                      </article>
+                    </div>
+
+                    <!-- モーダル: 再選択 -->
+                    <div class="c-modal" id="sys-dialog-area" data-js-modal-target>
+                      <div class="c-modal__inner">
+                        <article class="c-modal-content">
+                          <header class="c-modal-content__header">
+                            <h2 class="c-modal-content__h">エリアの再選択</h2>
+                            <button type="button" class="c-modal-content__header-close" data-js-modal-close>
+                              <span class="u-visually-hidden">閉じる</span>
+                            </button>
+                          </header>
+                          <div class="c-modal-content__body --scroll">
+                            <section class="c-search-deep__unit">
+                              <h3 class="c-search-deep__unit-h">エリア</h3>
+                              <div class="c-search-deep__unit-body">
+                                <div class="c-search-deep__list">
+                                  <div class="c-search-deep__list-desc">
+                                    <ul class="c-form-list --col-pc-3 --col-2 --gap-lg" id="sys-dialog-area-list">
+                                      <!-- AJAXで埋める部分: 以下繰り返し用テンプレート -->
+                                      <li class="c-form-list__item">
+                                        <label class="c-input-label --checkbox">
+                                          <input name="SEARCH_AREA_NO[##]" value="#" type="checkbox">
+                                          エリア名
+                                        </label>
+                                      </li>
+                                      <li class="c-form-list__item">
+                                        <label class="c-input-label --checkbox">
+                                          <input name="SEARCH_AREA_NO[##]" value="#" type="checkbox">
+                                          エリア名
+                                        </label>
+                                      </li>
+                                      <li class="c-form-list__item">
+                                        <label class="c-input-label --checkbox">
+                                          <input name="SEARCH_AREA_NO[##]" value="#" type="checkbox">
+                                          エリア名
+                                        </label>
+                                      </li>
+                                      <li class="c-form-list__item">
+                                        <label class="c-input-label --checkbox">
+                                          <input name="SEARCH_AREA_NO[##]" value="#" type="checkbox">
+                                          エリア名
+                                        </label>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                          </div>
+                          <footer class="c-modal-content__footer">
+                            <div class="c-modal-content__footer-btns">
+                              <button class="btn --impact">再検索</button>
+                              <button class="btn --normal" type="button" data-js-modal-close>閉じる</button>
+                            </div>
+                          </footer>
+                        </article>
+                      </div>
+                    </div>
+                  </form>
 
                 </div><!--/.l-col-pc-3-->
 
@@ -1412,63 +1514,7 @@
 
     </div><!-- /.l-main -->
 
-    <!-- モーダル: 再選択 -->
-    <div class="c-modal" id="sys-dialog-area" data-js-modal-target>
-      <div class="c-modal__inner">
-        <article class="c-modal-content">
-          <header class="c-modal-content__header">
-            <h2 class="c-modal-content__h">エリアの再選択</h2>
-            <button type="button" class="c-modal-content__header-close" data-js-modal-close>
-              <span class="u-visually-hidden">閉じる</span>
-            </button>
-          </header>
-          <div class="c-modal-content__body --scroll">
-            <section class="c-search-deep__unit">
-              <h3 class="c-search-deep__unit-h">エリア</h3>
-              <div class="c-search-deep__unit-body">
-                <div class="c-search-deep__list">
-                  <div class="c-search-deep__list-desc">
-                    <ul class="c-form-list --col-pc-3 --col-2" id="sys-dialog-area-list">
-                      <!-- AJAXで埋める部分: 以下繰り返し用テンプレート -->
-                      <li class="c-form-list__item">
-                        <label class="c-input-label --checkbox">
-                          <input name="SEARCH_AREA_NO[##]" value="#" type="checkbox">
-                          エリア名
-                        </label>
-                      </li>
-                      <li class="c-form-list__item">
-                        <label class="c-input-label --checkbox">
-                          <input name="SEARCH_AREA_NO[##]" value="#" type="checkbox">
-                          エリア名
-                        </label>
-                      </li>
-                      <li class="c-form-list__item">
-                        <label class="c-input-label --checkbox">
-                          <input name="SEARCH_AREA_NO[##]" value="#" type="checkbox">
-                          エリア名
-                        </label>
-                      </li>
-                      <li class="c-form-list__item">
-                        <label class="c-input-label --checkbox">
-                          <input name="SEARCH_AREA_NO[##]" value="#" type="checkbox">
-                          エリア名
-                        </label>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <footer class="c-modal-content__footer">
-            <div class="c-modal-content__footer-btns">
-              <button class="btn --impact">再検索</button>
-              <button class="btn --normal" type="button" data-js-modal-close>閉じる</button>
-            </div>
-          </footer>
-        </article>
-      </div>
-    </div>
+
 
     <!-- モーダル:詳細絞り込み -->
     <div class="c-modal" id="search-deep" data-js-modal-target>

@@ -8,7 +8,7 @@ const rf_modals = () => {
   const modalOpenBtns = document.querySelectorAll('[data-js-modal]')
   const modalTargetName = 'jsModalTarget'
   // const modalCloseBtns = document.querySelectorAll('[data-js-modal-close]')
-  let openedModals = []
+  let openedModals = [] //IDを収集
 
   // 開くボタン
   const setOpenModalBtns = () => {
@@ -16,15 +16,19 @@ const rf_modals = () => {
       const modalId = btn.dataset.jsModal
       const targetModal = document.querySelector(modalId)
 
-      btn.addEventListener('click', e => {
-        if (btn.tagName === 'A') {
-          e.preventDefault()
-        }
-        targetModal.classList.add(modalOpenClass)
-        html.classList.add(modalOpenHtmlClass)
-        openedModals.push(modalId)
-      })
+      btn.addEventListener('click', openModal.bind({}, modalId, targetModal, btn))
     })
+  }
+
+  //モーダル開くアクション
+  function openModal(modalId, targetModal, btn, e) {
+    console.log(modalId, targetModal, btn, e)
+    if (btn.tagName === 'A' || btn.tagName === 'BUTTON') {
+      e.preventDefault()
+    }
+    targetModal.classList.add(modalOpenClass)
+    html.classList.add(modalOpenHtmlClass)
+    openedModals.push(modalId)
   }
 
   // モーダル閉じるアクション
@@ -35,6 +39,8 @@ const rf_modals = () => {
     openedModals.splice(index, 1);
     // console.log('モーダル閉じたあと, openedModalsは?', openedModals)
     modal.classList.remove(modalOpenClass)
+
+    // モーダルが多重に開いている場合、すべてのモーダルが閉じていることをチェックしてHTMLからもクラスを削除する
     if (openedModals.length === 0) {
       html.classList.remove(modalOpenHtmlClass)
     }

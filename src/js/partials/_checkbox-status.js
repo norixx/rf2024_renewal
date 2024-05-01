@@ -1,5 +1,6 @@
 /**
- * Checkbox Status
+ * Checkbox Status - チェックボックスのステータスを確認する
+ * constructor
  * @param {HTMLFormElement} form
  * @param {HTMLInputElement[]} checkboxes
  */
@@ -23,7 +24,6 @@ class RfCheckboxStatus {
     elements: null
   };
   #store;
-  // #cb
 
   constructor(form, checkboxes) {
     if (!form || !checkboxes) throw new Error("No Form selected!");

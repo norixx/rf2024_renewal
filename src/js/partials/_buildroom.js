@@ -1,4 +1,4 @@
-// 建物・部屋 共通
+// 建物・部屋 詳細ページ共通
 
 const rf_buildroom_main_slide = () => {
   const mv_thumbs_args = {

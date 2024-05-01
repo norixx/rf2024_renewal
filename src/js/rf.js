@@ -10,6 +10,7 @@ import rf_prop_slider from "./partials/_prop-slider";
 import { rf_room_list_link, rf_room_list_toggle } from "./partials/_room-list";
 import { rf_buildroom_main_slide, rf_buildroom_related_slide } from "./partials/_buildroom";
 import rf_modals from "./partials/_modal";
+import RfModals from "./partials/_modal2";
 import rf_cta_navi_tel from "./partials/_cta-navi";
 import rf_select_link from "./partials/_select-link";
 import rf_related_prop_slider from "./partials/_related-prop-slider";
@@ -32,6 +33,7 @@ const rf_init = () => {
     RfLoader,
     RfCheckboxStatus,
     RfMediaQuery,
+    RfModals,
   }
 
   // rf_set_globals({
@@ -88,8 +90,12 @@ const rf_init = () => {
   }
 
   // モーダル
-  if (document.querySelector('[data-js-modal]')) {
-    rf_modals()
+  // if (document.querySelector('[data-js-modal]')) {
+  //   rf_modals()
+  // }
+  if (document.querySelector('[data-js-modal]') || document.querySelector('[data-js-ajax-modal]')) {
+    RF_GLOBALS.rf_modals = new RF_GLOBALS.RfModals();
+    console.log(RF_GLOBALS.rf_modals)
   }
 
   // CTAナビ

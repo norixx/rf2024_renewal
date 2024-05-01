@@ -28,6 +28,12 @@
   --row-gap-sp: var(--space-10);
   --col-gap-pc: var(--space-16);
   --row-gap-pc: var(--space-10);
+  &.--gap-lg {
+    --col-gap-sp: var(--space-12);
+    --row-gap-sp: var(--space-12);
+    --col-gap-pc: var(--space-16);
+    --row-gap-pc: var(--space-16);
+  }
 
   &[class*="--col-"] {
     column-gap: var(--col-gap-sp);

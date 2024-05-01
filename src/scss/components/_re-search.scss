@@ -83,7 +83,7 @@
   }
 
   &__body {
-    padding: var(--space-16);
+    // padding: var(--space-16);
   }
 }
 
@@ -107,6 +107,12 @@
       width: 100%;
       // flex: 1 0 100%;
     }
+  }
+
+  &__count {
+    font-weight: var(--fw-semibold);
+    font-size: var(--fz-32);
+    font-family: var(--ff-num);
   }
 }
 
@@ -180,13 +186,50 @@
 }
 
 // 選択中のエリア
-.c-re-search-selected-areas {
+.c-re-search-selected {
+  // padding: var(--space-16);
+
+  li:nth-child(n + 6) {
+    display: none;
+  }
+  &.--is-open {
+    li:nth-child(n + 6) {
+      display: list-item;
+    }
+  }
   label {
     font-weight: var(--fw-semibold);
   }
 }
+//すべて表示
+.c-re-search-selected-btn-expand {
+  line-height: var(--line-height-sm);
+  font-weight: var(--fw-semibold);
+  font-family: var(--ff-jp);
+  font-size: var(--fz-14);
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: "";
+    margin-left: var(--space-4);
+    --size: var(--space-16);
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--bg-black);
+    mask: var(--icon-plus-circle) no-repeat center center / contain;
+  }
+
+  &.--is-open::after {
+    mask: var(--icon-minus-circle) no-repeat center center / contain;
+  }
+}
 
 .c-re-search-edit {
+  // padding: 0 var(--space-16);
+
   &__method {
     display: flex;
     flex-direction: column;

@@ -1,4 +1,6 @@
-// グローバル設定
+/**
+ * グローバル変数、グローバル設定
+ */
 window.RF_GLOBALS = {}
 window.RF_GLOBALS.RF_CONFIG = {
   window_state: 'PC',

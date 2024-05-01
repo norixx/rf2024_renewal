@@ -10,10 +10,19 @@ const rf_toggles = () => {
   const setToggleControl = () => {
     toggles.forEach(toggle => {
       const target = document.querySelector(toggle.dataset.jsToggle)
+      let toggle_text
+      // テキスト変更がある場合
+      if (toggle.hasAttribute('data-js-toggle-text')) {
+        toggle_text = toggle.dataset.jsToggleText
+      }
+
       // 初動 - トグルボタンに--is-openがついていればターゲットにも追加
       if (toggle.classList.contains(toggleClass) && !target.classList.contains(toggleClass)) {
         target.classList.add(toggleClass)
+        toggle.setAttribute('data-js-toggle-text', toggle.textContent)
+        toggle.textContent = toggle_text
       }
+
 
       // レスポンシブチェック
       toggle.addEventListener('click', e => {
@@ -26,9 +35,20 @@ const rf_toggles = () => {
         if (toggle.classList.contains(togglePCClass) && rf_get_globals('window_state') !== 'PC') {
           return
         }
+
+        // トグルボタンのテキスト切り替え、クラス切り替え
+        if (toggle.hasAttribute('data-js-toggle-text')) {
+          toggle_text = toggle.getAttribute('data-js-toggle-text')
+          console.log(toggle_text)
+          toggle.setAttribute('data-js-toggle-text', toggle.textContent)
+          toggle.textContent = toggle_text
+        }
         toggle.classList.toggle(toggleClass)
-        // const target = document.querySelector(toggle.dataset.toggle)
+        toggle.setAttribute('aria-expanded', toggle.classList.contains(toggleClass))
+
+        // ターゲットのクラス切り替え
         target.classList.toggle(toggleClass)
+        target.setAttribute('aria-hidden', !toggle.classList.contains(toggleClass))
       })
     })
   }
