@@ -282,6 +282,10 @@
                                   <button type="button"
                                     onclick="RF_GLOBALS.rf_modals.openModal('#sys-dialog-area')">AJAXオープンテスト</button>
 
+                                  <button type="button"
+                                    onclick="console.log('add content', this); this.insertAdjacentHTML('afterend', `<div><p>test</p></div><div data-js-toggle=\'#test\'><p>test</p></div>`);"
+                                    id="add-content">追加</button>
+
                                   <span class="u-icon --icon-after --i-arrow-r --method-choice"
                                     data-js-search-change-method data-js-search-method="#search-choices">選び方を変更する</span>
                                   <div style="display: none;">

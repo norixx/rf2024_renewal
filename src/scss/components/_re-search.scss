@@ -142,6 +142,7 @@
     height: var(--btn-size);
     display: flex;
     position: relative;
+    cursor: pointer;
 
     @include toggle-icon(var(--bg-black)) {
       cursor: pointer;
