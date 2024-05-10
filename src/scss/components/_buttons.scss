@@ -286,6 +286,14 @@
     }
   }
 
+  // 閉じる
+  &.--i-close {
+    &::before,
+    &::after {
+      mask-image: var(--icon-close);
+    }
+  }
+
   // メール
   &.--i-mail {
     &::before,
@@ -782,8 +790,7 @@
   }
 
   // 要素に直接--is-openが追加された場合
-  &.--is-open::after,
-  .--is-open &::after {
+  &.--is-open::after {
     rotate: 0deg;
   }
 }
