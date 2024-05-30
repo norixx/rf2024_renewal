@@ -3,11 +3,11 @@
 @use "../abstracts/mixins" as *;
 
 body {
-  padding-top: 70px;
+  // padding-top: 70px;
 
-  @include mq {
-    padding-top: 0;
-  }
+  // @include mq {
+  //   padding-top: 0;
+  // }
 }
 
 .l-container {

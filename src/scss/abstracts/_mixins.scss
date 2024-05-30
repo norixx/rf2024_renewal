@@ -2,8 +2,14 @@
 
 // media query
 @mixin mq($breakpoint: md) {
+  // Default
   @if $breakpoint == "md" {
     @media screen and (min-width: $bp-md) {
+      @content;
+    }
+  }
+  @if $breakpoint == "lg" {
+    @media screen and (min-width: $bp-lg) {
       @content;
     }
   }

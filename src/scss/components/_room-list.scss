@@ -201,9 +201,10 @@
 
     .__body-control {
       align-items: stretch;
+      flex-wrap: nowrap;
 
       > * {
-        flex: 1 0 auto;
+        flex: 1 1 auto;
       }
 
       @include mq {

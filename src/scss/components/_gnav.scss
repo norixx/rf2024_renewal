@@ -469,13 +469,14 @@
       padding-bottom: 0;
       margin-bottom: 0;
       border-bottom: none;
+      --gap: var(--space-32);
+      column-gap: var(--gap);
 
       > li {
         line-height: var(--line-height-md);
 
         &:not(:last-child) {
           margin-bottom: 0;
-          margin-right: var(--space-32);
         }
       }
 
@@ -518,6 +519,10 @@
           scale: 1 1;
         }
       }
+    }
+
+    @include mq(lg) {
+      --gap: var(--space-64);
     }
   }
 

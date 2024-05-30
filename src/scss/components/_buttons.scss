@@ -386,6 +386,20 @@
     }
   }
 
+  // 絞り込み（フィルター)
+  &.--i-filter {
+    &::before,
+    &::after {
+      mask-image: var(--icon-filter);
+    }
+    &.--is-active {
+      &::before,
+      &::after {
+        mask-image: var(--icon-filter--active);
+      }
+    }
+  }
+
   // =======================================================
   // サイズ
   $sizes: xxs, xs, sm, md, lg, xl;

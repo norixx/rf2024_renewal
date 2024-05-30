@@ -3,7 +3,8 @@
 .header {
   position: fixed;
   width: 100%;
-  background-color: var(--bg-black);
+  // background-color: var(--bg-black);
+  background-color: var(--bg-black-80);
   height: 70px;
   color: var(--txt-white);
   top: 0;
@@ -14,6 +15,7 @@
   @include mq {
     height: 80px;
     position: relative;
+    background-color: var(--bg-black);
     z-index: var(--z-index-lv1);
   }
 
@@ -43,7 +45,7 @@
     padding: var(--space-8) 0;
 
     @include mq {
-      width: 80px;
+      width: 90px;
       padding: 0;
     }
   }
