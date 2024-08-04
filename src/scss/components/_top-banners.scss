@@ -2,6 +2,8 @@
 @use "../abstracts/mixins" as *;
 
 .c-top-banners {
+  $parent: &;
+
   padding-top: var(--space-16);
   padding-bottom: var(--space-16);
   background-color: var(--bg-nearly-black); //イレギュラーカラー
@@ -26,5 +28,82 @@
     border-radius: var(--bdr-radius-md);
     object-fit: cover;
     width: 100%;
+  }
+
+  // 早送り・巻き戻しボタン
+  &__btn {
+    --btn-size: var(--space-48);
+    --swiper-navigation-sides-offset: var(--space-16);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    border-radius: var(--btn-size);
+    transition: var(--animation-fast);
+    background-color: var(--bg-nearly-black);
+    box-shadow: var(--shadow-md);
+
+    @include mq {
+      display: flex;
+      opacity: 0;
+      scale: 0 0;
+      --swiper-navigation-sides-offset: var(--space-64);
+    }
+
+    &:hover {
+      background-color: var(--bg-black);
+    }
+
+    &.swiper-button-disabled,
+    #{$parent}:hover &.swiper-button-disabled {
+      opacity: 0;
+      scale: 0 0;
+    }
+    #{$parent}:hover & {
+      @include mq {
+        scale: 1 1;
+        opacity: 1;
+      }
+    }
+
+    &.--prev,
+    &.--next {
+      &::after {
+        --icon-size: var(--space-24);
+        content: "";
+        font-family: initial;
+        background-color: var(--bg-white);
+        // background-color: var(--bg-white);
+        width: var(--icon-size);
+        height: var(--icon-size);
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-position: center center;
+        transition: translate var(--animation-normal);
+      }
+    }
+    &.--prev {
+      &::after {
+        mask-image: var(--icon-arrow-l);
+      }
+
+      @include mq {
+        &:hover::after {
+          translate: calc(var(--space-4) * -1);
+        }
+      }
+    }
+    &.--next {
+      &::after {
+        mask-image: var(--icon-arrow-r);
+      }
+
+      @include mq {
+        &:hover::after {
+          translate: var(--space-4);
+        }
+      }
+    }
   }
 }

@@ -2,6 +2,10 @@
 const rf_top_banners = () => {
   let banner = null
   const args = {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
     breakpoints: {
       0: {
         slidesPerView: 1.3,
