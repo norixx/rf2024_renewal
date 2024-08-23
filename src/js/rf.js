@@ -10,7 +10,7 @@ import rf_top_banners from "./partials/_top-banners";
 import rf_todays_count from "./partials/_top-today";
 import rf_prop_slider from "./partials/_prop-slider";
 import { rf_room_list_link, rf_room_list_toggle } from "./partials/_room-list";
-import { rf_buildroom_main_slide, rf_buildroom_related_slide } from "./partials/_buildroom";
+import { RFBuildroomSlide, rf_buildroom_main_slide, rf_buildroom_related_slide } from "./partials/_buildroom";
 import rf_cta_navi_tel from "./partials/_cta-navi";
 import rf_select_link from "./partials/_select-link";
 import rf_related_prop_slider from "./partials/_related-prop-slider";
@@ -82,12 +82,21 @@ const rf_init = () => {
   }
 
   // 建物・部屋共通
-  if (document.querySelector('[data-js-buildroom-mv]')) {
-    rf_buildroom_main_slide()
+  // NEW
+  let RFtemp
+  if (document.querySelector('[data-js-buildroom-slide]')) {
+    RFtemp = new RFBuildroomSlide()
+    console.dir(RFtemp)
   }
-  if (document.querySelector('[data-js-buildroom-mv-thumbs]')) {
-    rf_buildroom_related_slide()
-  }
+
+  // 👇️ OLD
+  // if (document.querySelector('[data-js-buildroom-mv]')) {
+  //   rf_buildroom_main_slide()
+  // }
+  // if (document.querySelector('[data-js-buildroom-mv-thumbs]')) {
+  //   rf_buildroom_related_slide()
+  // }
+  //=====
 
   // モーダル
   // if (document.querySelector('[data-js-modal]')) {

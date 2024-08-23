@@ -44,6 +44,8 @@
   font-family: remixicon;
   display: inline-block;
   -webkit-font-smoothing: antialiased;
+
+  @content;
 }
 
 // Visually Hidden

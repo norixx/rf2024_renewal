@@ -1,6 +1,350 @@
 // 建物・部屋 メインビジュアルスライダー
 @use "../abstracts/mixins" as *;
 
+//スライド
+.c-buildroom-slide {
+  &--nophoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // メインスライド関連
+  &__main {
+    position: relative;
+    margin-bottom: var(--space-16);
+
+    .swiper {
+      aspect-ratio: 4 / 3;
+
+      @include mq {
+        aspect-ratio: 16 / 10;
+      }
+    }
+    .swiper-slide {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+      }
+    }
+  }
+
+  // ボタン
+  &__btn {
+    --swiper-navigation-sides-offset: 0;
+    --btn-size: var(--space-32);
+    width: var(--btn-size);
+    height: var(--btn-size);
+    background-color: rgba(0 0 0 / 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--animation-normal);
+
+    &:hover {
+      background-color: rgba(0 0 0 / 0.6);
+    }
+
+    &::after {
+      content: "";
+      --icon-size: var(--space-24);
+      width: var(--icon-size);
+      height: var(--icon-size);
+      font-family: initial;
+      background-color: var(--bg-white);
+      mask-repeat: no-repeat;
+      mask-position: center center;
+      mask-size: contain;
+    }
+
+    &.--prev {
+      &::after {
+        mask-image: var(--icon-arrow-l);
+      }
+    }
+    &.--next {
+      &::after {
+        mask-image: var(--icon-arrow-r);
+      }
+    }
+  }
+
+  &.--is-slide-disabled &__btn {
+    display: none;
+  }
+
+  // ページネーション（フラクション型）
+  &__pagination {
+    width: fit-content;
+    // right: var(--space-8);
+    bottom: var(--space-8);
+    left: var(--space-8);
+    font-size: var(--fz-14);
+    font-family: var(--ff-num);
+    padding: var(--space-8);
+    line-height: var(--line-height-100);
+    color: var(--txt-white);
+    background-color: rgba(0 0 0 / 0.2);
+    border-radius: var(--bdr-radius-md);
+  }
+
+  &.--is-slide-disabled &__pagination {
+    display: none;
+  }
+
+  //拡大ボタン
+  &__btn-open {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: var(--space-40);
+    height: var(--space-40);
+    background: var(--bg-black-70);
+    z-index: var(--z-index-lv2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.--is-hidden {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      background: var(--bg-white);
+      width: var(--space-20);
+      height: var(--space-20);
+      @include mask-icon(--icon-zoomin);
+    }
+
+    @include mq {
+      width: var(--space-32);
+      height: var(--space-32);
+      cursor: pointer;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+
+  // タブ
+  &__tabs {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+
+    button {
+      font-size: var(--fz-12);
+      border-radius: var(--bdr-radius-sm);
+      border: 1px solid var(--bdr-light);
+      background-color: var(--bg-white);
+      padding: var(--space-4) var(--space-8);
+
+      &:hover {
+        border-color: var(--bdr-black);
+      }
+
+
+      &.--is-active {
+        color: var(--txt-white);
+        border-color: var(--bdr-black);
+        background-color: var(--bg-black);
+      }
+    }
+
+    @include mq {
+      button {
+        font-size: var(--fz-14);
+        cursor: pointer;
+      }
+    }
+  }
+
+  // サムネイル
+  &__thumbs {
+    .swiper-slide {
+      aspect-ratio: 1;
+      background-color: var(--bg-white);
+      position: relative;
+      padding: var(--space-4);
+
+      img {
+        aspect-ratio: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+      }
+    }
+
+    .swiper-slide-thumb-active {
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border: 4px solid var(--bdr-primary);
+        opacity: 0.6;
+      }
+    }
+  }
+
+  //ローダー
+  .c-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: var(--z-index-lv1);
+  }
+}
+
+
+
+// モーダル
+.c-buildroom-modal {
+  &__container {
+    width: 90%;
+    max-width: 1100px;
+  }
+
+  // 閉じるボタン
+  &__close {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    width: var(--space-40);
+    height: var(--space-40);
+    z-index: var(--z-index-lv2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: '';
+      @include mask-icon(--icon-close);
+      width: var(--space-24);
+      height: var(--space-24);
+      background-color: var(--bg-white);
+    }
+
+    @include mq {
+      right: 32px;
+      top: 32px;
+    }
+  }
+
+  // モーダルメイン
+  &__slide {
+    margin-bottom: var(--space-16);
+
+    .swiper-wrapper {
+      aspect-ratio: 4 / 3;
+      max-height: 600px;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 var(--space-8);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+      }
+    }
+
+    @include mq {
+      margin-bottom: var(--space-24);
+
+      .swiper-wrapper {
+        aspect-ratio: 16 / 9;
+      }
+    }
+  }
+
+  // ボタン
+  &__btn {
+    --swiper-navigation-sides-offset: 0;
+    --btn-size: var(--space-32);
+    width: var(--btn-size);
+    height: var(--btn-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--animation-normal);
+
+    &::after {
+      content: "";
+      --icon-size: var(--space-32);
+      width: var(--icon-size);
+      height: var(--icon-size);
+      font-family: initial;
+      background-color: var(--bg-white);
+      mask-repeat: no-repeat;
+      mask-position: center center;
+      mask-size: contain;
+    }
+
+    &.--prev {
+      &::after {
+        mask-image: var(--icon-arrow-l);
+      }
+    }
+    &.--next {
+      &::after {
+        mask-image: var(--icon-arrow-r);
+      }
+    }
+
+    @include mq {
+      --btn-size: var(--space-40);
+
+      &::after {
+        --icon-size: var(--space-40);
+      }
+    }
+  }
+
+  // ページネーション
+  &__pagination {
+    width: fit-content;
+    bottom: var(--space-8);
+    left: var(--space-8);
+    font-size: var(--fz-14);
+    font-family: var(--ff-num);
+    padding: var(--space-8);
+    line-height: var(--line-height-100);
+    background-color: var(--bg-black-90);
+    color: var(--txt-white);
+    border-radius: var(--bdr-radius-md);
+  }
+
+
+  // モーダルサムネイル
+  &__thumbs {
+    .swiper-slide {
+
+      img {
+        aspect-ratio: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+      }
+    }
+  }
+}
+
+
+
+// =======================================================
+// OLD
 .c-buildroom-mv {
   &__slide {
     aspect-ratio: 4/3;
@@ -57,17 +401,7 @@
 
   // ページネーション（フラクション型）
   &__pagination {
-    width: fit-content;
-    right: var(--space-8);
-    bottom: var(--space-8);
-    left: initial;
-    font-size: var(--fz-14);
-    font-family: var(--ff-num);
-    padding: var(--space-8);
-    line-height: var(--line-height-100);
-    color: var(--txt-white);
-    background-color: rgba(0 0 0 / 0.2);
-    border-radius: var(--bdr-radius-md);
+    
   }
 }
 

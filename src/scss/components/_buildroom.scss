@@ -1,6 +1,8 @@
 // 建物・部屋ページ共通
 @use "../abstracts/mixins" as *;
 
+// * スライドは _buildroom-mv.scss に記載
+
 // 建物・部屋 メインのサマリー部分
 .c-buildroom {
   background-color: var(--bg-gray-xxlight);
@@ -121,9 +123,6 @@
     &-mv-tabs {
       margin-top: var(--space-8);
     }
-    &-mv-thumbs {
-      // background-color: var(--bg-white);
-    }
 
     &-vacant-link {
       margin-top: var(--space-24);
@@ -199,6 +198,7 @@
     }
   } //&__summary
 }
+
 
 // セクション
 .c-buildroom-sect {
