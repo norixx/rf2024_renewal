@@ -44,3 +44,26 @@
     }
   }
 }
+
+
+// スケルトンローダー
+.c-skelton-loader {
+  &.--is-loading {
+    border-radius: var(--bdr-radius-md);
+    background-color: var(--bg-gray-xlight);
+    background-image: linear-gradient(90deg, var(--bg-gray-light) 0%, var(--bg-gray-xlight) 10%, var(--bg-gray-light) 15%);
+    animation: skelton-loader 2s linear infinite;
+    background-size: 200%;
+  }
+}
+@keyframes skelton-loader {
+  0% {
+    background-position: 0 0;
+  }
+  30%,70% {
+      background-position: -100% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

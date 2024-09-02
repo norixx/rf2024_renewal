@@ -67,8 +67,8 @@
       align-items: center;
       padding: var(--space-12) var(--space-16);
       transition: background var(--animation-normal);
-      flex-wrap: nowrap;
       gap: var(--space-8);
+      flex-wrap: wrap;
 
       &[data-js-room-link]:hover {
         background: var(--bg-gray-xxlight);
@@ -231,10 +231,11 @@
     gap: 2px !important;
 
     @include mq {
-      position: absolute;
-      left: var(--space-16);
-      top: var(--space-16);
-      flex-direction: column !important;
+      // position: absolute;
+      // left: var(--space-16);
+      // top: var(--space-16);
+      // flex: 0 0 10% !important;
+      // flex-direction: column !important;
       align-items: flex-start;
     }
   }
