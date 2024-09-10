@@ -150,7 +150,7 @@
     }
 
     .__item {
-      --min-height: 80px;
+      --min-height: 110px;
       flex: 1 0 calc((100% - var(--basic-gap) * 2) / 3);
       text-align: center;
       min-height: var(--min-height);

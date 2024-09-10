@@ -1074,11 +1074,20 @@ class RFBuildroomSlide {
 
       // 写真データの存在チェックし、データがまったくない場合の処理
       // 建物
-      if(RF_page_key === 'build' && !data.length) {
+      if(
+        RF_page_key === 'build' && 
+        !data.length && 
+        typeof RF_firstbuild_photo === 'undefined'
+      ) {
         throw "No data";
       }
       // 部屋
-      if(RF_page_key === 'room' && !data.length && !dataBuild.length) {
+      if(
+        RF_page_key === 'room' && 
+        !data.length &&
+        !dataBuild.length &&
+        typeof RF_firstbuild_photo === 'undefined'
+      ) {
         throw "No data";
       }
 

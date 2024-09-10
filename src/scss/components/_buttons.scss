@@ -607,15 +607,15 @@
     align-items: center;
     flex-direction: column;
     color: var(--txt-white);
-    line-height: var(--line-height-md);
+    line-height: var(--line-height-sm);
     border: none;
     background-color: var(--bg-black);
     background-image: var(--bg-black-gradient-rb);
     background-size: 200% auto;
     background-position: left top;
     border-radius: var(--bdr-radius-sm);
-    font-size: var(--fz-12);
-    padding: var(--space-8) var(--space-4);
+    font-size: var(--fz-11);
+    padding: var(--space-12) var(--space-4);
     transition: var(--animation-normal);
 
     &:hover {
@@ -639,12 +639,61 @@
       color: var(--txt-normal);
     }
 
+    // アイコン
+    &[class*="--icon"] {
+      &::before {
+        content: '';
+        width: var(--space-24);
+        height: var(--space-24);
+        margin-bottom: var(--space-8);
+        background-color: var(--bg-white);
+      }
+    }
+    &.--icon-popular-area {
+      &::before {
+        @include mask-icon('--icon-popular-area');
+      }
+    }
+    &.--icon-map {
+      &::before {
+        @include mask-icon('--icon-map-book');
+      }
+    }
+    &.--icon-ward {
+      &::before {
+        @include mask-icon('--icon-ward');
+      }
+    }
+    &.--icon-train {
+      &::before {
+        @include mask-icon('--icon-train');
+      }
+    }
+    &.--icon-featured-article {
+      &::before {
+        @include mask-icon('--icon-featured-article');
+      }
+    }
+    &.--icon-premium-mansion {
+      &::before {
+        @include mask-icon('--icon-premium-mansion');
+      }
+    }
+
     @include mq {
       padding: var(--space-24) var(--space-8);
 
       b {
         font-size: var(--fz-16);
       }
+
+      &[class*="--icon"] {
+        &::before {
+          width: var(--space-32);
+          height: var(--space-32);
+        }
+      }
+
     }
   } //.--search-basic
 
