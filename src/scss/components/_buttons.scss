@@ -25,6 +25,7 @@
 
   // =======================================================
   // タイプ
+  // 通常ボタン(グレー枠線,白背景)
   &.--normal {
     background-color: var(--bg-white);
     border-color: var(--bdr-btn-gray);
@@ -33,40 +34,23 @@
       border-color: var(--bdr-btn-gray--hover);
     }
   }
+
+  // インパクト（黒背景、白文字）
   &.--impact {
     background-color: var(--bg-black);
     color: var(--txt-white);
+
+    &:hover {
+      background-color: var(--bg-black-90);
+    }
   }
+
+  // インパクト (黒枠線、白背景)
   &.--impact-outline {
     border-color: var(--bdr-btn-black);
   }
-  &.--primary {
-    background-color: var(--bg-white);
-    border-color: var(--bdr-btn-primary-mid);
 
-    &:hover {
-      border-color: var(--bdr-btn-primary);
-    }
-  }
-  &.--primary-light {
-    background-color: var(--bg-white);
-    border-color: var(--bdr-btn-primary-mid-light);
-
-    &:hover {
-      border-color: var(--bdr-btn-primary);
-    }
-  }
-  &.--primary-outline {
-    border-color: var(--bdr-btn-primary);
-  }
-  &.--primary-flat {
-    background-color: var(--bg-primary-xlight);
-    color: var(--txt-primary);
-
-    &:hover {
-      background: var(--bg-primary-light);
-    }
-  }
+  // インパクトアウトライン(黒枠線、マウスオーバーでオレンジ枠線、オレンジ文字）
   &.--impact-outline-primary {
     border: 1px solid var(--bdr-btn-black);
 
@@ -75,6 +59,42 @@
       color: var(--txt-primary);
     }
   }
+
+  // プライマリーボタン(白背景、オレンジ枠線)
+  &.--primary {
+    background-color: var(--bg-white);
+    border-color: var(--bdr-btn-primary-mid);
+
+    &:hover {
+      border-color: var(--bdr-btn-primary);
+    }
+  }
+
+  // プライマリーライトボタン(白背景、オレンジ枠線）
+  &.--primary-light {
+    background-color: var(--bg-white);
+    border-color: var(--bdr-btn-primary-mid-light);
+
+    &:hover {
+      border-color: var(--bdr-btn-primary);
+    }
+  }
+
+  // プライマリーアウトライン(オレンジ枠線)
+  &.--primary-outline {
+    border-color: var(--bdr-btn-primary);
+  }
+
+  // プライマリーフラットボタン(マウスオーバーで薄オレンジ背景)
+  &.--primary-flat {
+    background-color: var(--bg-primary-xlight);
+    color: var(--txt-primary);
+
+    &:hover {
+      background: var(--bg-primary-light);
+    }
+  }
+  
 
   // =======================================================
   // アイコン構造
