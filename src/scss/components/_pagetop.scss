@@ -1,0 +1,41 @@
+@use '../abstracts/mixins'  as *;
+
+.c-pagetop {
+  --size: 40px;
+  position: fixed;
+  right: 10px;
+  bottom: 70px;
+  z-index: var(--z-index-lv1);
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--bg-black-70);
+  cursor: pointer;
+  transition: var(--animation-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+
+  &.--is-show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &:hover {
+    background-color: var(--bg-black-90);
+  }
+
+  &::before {
+    content: '';
+    @include mask-icon(--icon-arrow-up);
+    width: var(--space-20);
+    height: var(--space-20);
+    background-color:var(--bg-white);
+  }
+
+  @include mq {
+    right: var(--space-28);
+    bottom: var(--space-28);
+  }
+}

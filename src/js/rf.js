@@ -1,4 +1,4 @@
-import { rf_get_globals, rf_set_globals } from "./partials/_global-setting";
+// import { rf_get_globals, rf_set_globals } from "./partials/_global-setting";
 import rf_responsive_check from "./partials/_responsive";
 import RfLoader from "./partials/_loader";
 import RfCheckboxStatus from "./partials/_checkbox-status";
@@ -19,6 +19,7 @@ import rf_result_room_slide from "./partials/_result-room-slide";
 import rf_search_ensen_checkbox from "./partials/_seach-enesen";
 import RfMediaQuery from "./partials/_mediaquery";
 import rf_search_change_method from "./partials/_search-change-method";
+import pagetop from "./partials/_pagetop";
 
 // =======================================================
 // Inits
@@ -53,6 +54,11 @@ const rf_init = () => {
   // Toggles
   if (document.querySelector('[data-js-toggle]')) {
     rf_toggles()
+  }
+
+  // Pagetop
+  if(document.querySelector('[data-js-pagetop]')) {
+    pagetop()
   }
 
   // TOPページ - 本日掲載

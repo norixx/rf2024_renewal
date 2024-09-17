@@ -836,7 +836,7 @@ class RFBuildroomSlide {
     try {
       const loaded = await this.#checkPhotoLoad(photoData, firstKey === 'panorama');
       console.log('loaded: ', loaded)
-      /* finallyで対応
+      /* TODO: finallyで対応したので削除予定
       if (loaded) {
         // ローダーを削除
         this.#loader.removeLoader()
@@ -924,15 +924,15 @@ class RFBuildroomSlide {
   // 2-2. 部屋ページでの外観データを保存
   #sortBuildDataAndSave(buildData) {
     // 建物メイン写真がある場合はグローバル変数から配列先頭に保存
-    if(typeof RF_firstbuild_photo !== 'undefined') {
-      this.#photos.build.unshift(RF_firstbuild_photo)
-    }
+    // if(typeof RF_firstbuild_photo !== 'undefined') {
+    //   this.#photos.build.unshift(RF_firstbuild_photo)
+    // }
 
     // 建物、外観、共用、周辺写真をまとめてexteriorに格納
     buildData.forEach((elm) => {
       switch(elm.part) {
         // 建物、外観、共用部、周辺
-        // case '001': //建物メイン写真(グローバル変数から取得)
+        case '001': //建物メイン写真(部屋ページの場合はJSONから取得)
         case '002':
         case '003':
         case '004':
@@ -1060,19 +1060,18 @@ class RFBuildroomSlide {
       const fetchedData = await fetch(RF_gallery_url)
       const data = await fetchedData.json();
 
-      console.log('取得したデータ(JSON): ', data)
+      console.log('取得した'+ RF_page_key +'データ(JSON): ', data)
 
       // 部屋ページでは外観写真データも取得する
       let dataBuild = []
       if(RF_page_key === 'room') {
-        console.log('部屋ページなので、外観写真も取得する')
+        console.log('部屋ページなので、外観写真も取得')
         let fetchedBuildData = await fetch(RF_gallery_url)
         dataBuild = await fetchedBuildData.json();
-
         console.log('【部屋】取得したデータ(外観)(JSON): ', dataBuild)
       }
 
-      // 写真データの存在チェックし、データがまったくない場合の処理
+      // 写真データがまったくない場合は処理をエラー処理へ飛ばす
       // 建物
       if(
         RF_page_key === 'build' && 
@@ -1092,11 +1091,10 @@ class RFBuildroomSlide {
       }
 
       //存在すればデータをソート
-      console.dir(data)
+      console.log('部屋写真',data)
       this.#sortDataAndSave(data)
       // 部屋ページ専用（外観写真があればソートする）
       if(RF_page_key === 'room' && dataBuild.length > 0) {
-        console.log(dataBuild)
         this.#sortBuildDataAndSave(dataBuild)
       }
 

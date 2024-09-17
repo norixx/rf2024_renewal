@@ -213,6 +213,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/src\/js\/partials\/_pagetop.js" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 1,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/src\/js\/partials\/_pagetop-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/src\/js\/partials\/_prop-slider.js" : {
       "bF" : 4,
       "ft" : 64,
@@ -301,6 +312,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/src\/js\/partials\/_temp.jsx" : {
+      "bF" : 4,
+      "ft" : 64,
+      "ma" : 1,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/src\/js\/partials\/_temp-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/src\/js\/partials\/_toggles.js" : {
       "bF" : 4,
       "ft" : 64,
@@ -341,36 +363,6 @@
       "mi" : 1,
       "oA" : 1,
       "oAP" : "\/src\/js\/partials\/_ward-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/src\/js\/partials\/Untitled-1-min.js" : {
-      "bF" : 4,
-      "ft" : 64,
-      "ma" : 1,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/src\/js\/partials\/Untitled-1-min-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
-    "\/src\/js\/partials\/Untitled-1-min.js.map" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/src\/js\/partials\/Untitled-1-min.js.map",
-      "oF" : 0
-    },
-    "\/src\/js\/partials\/Untitled-1.jsx" : {
-      "bF" : 4,
-      "ft" : 64,
-      "ma" : 1,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/src\/js\/partials\/Untitled-1-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -741,6 +733,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/src\/scss\/components\/_page-header.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/src\/scss\/components\/_pagetop.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/src\/scss\/components\/_pagetop.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,

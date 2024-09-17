@@ -84,8 +84,14 @@
                         <div class="c-buildroom-slide__main c-skelton-loader --is-loading" data-js-buildroom-slide-container>
                           <div class="swiper">
                             <div class="swiper-wrapper">
-                              <div class="swiper-slide c-buildroom-slide__item">
+                              <!-- 建物初期画像 -->
+                              <!-- <div class="swiper-slide c-buildroom-slide__item">
                                 <img src="https://mfhl.mitsui-chintai.co.jp/websearch/image/07498/07498a.jpg" onerror="this.onerror='';this.src='https://www.mitsui-chintai.co.jp/rf/assets/img/common/missing.png'" loading="lazy" class="c-buildroom-slide__img">
+                              </div> -->
+
+                              <!-- 間取り初期画像 -->
+                              <div class="swiper-slide c-buildroom-slide__item">
+                                <img src="https://mfhl.mitsui-chintai.co.jp/websearch/image/06884/0688400602c.jpg" onerror="this.onerror='';this.src='https://www.mitsui-chintai.co.jp/rf/assets/img/common/missing.png'" loading="lazy" class="c-buildroom-slide__img">
                               </div>
                             </div>
                             <div class="swiper-button-prev c-buildroom-slide__btn --prev"></div>
@@ -890,14 +896,17 @@
     const RF_lang = 'ja'
 
     //建物or部屋フラグ（グローバル）
-    const RF_page_key = 'build'
+    const RF_page_key = 'room'
 
     // No photo画像
     const RF_gallery_nophoto = '/assets/img/common/nophoto.webp'
     const RF_gallery_nofloorplan = '/assets/img/common/nofloorplan.webp'
 
-    // 建物写真1枚目（ダミー）
+    // 建物写真1枚目 - 建物ページでのみ必要
     const RF_firstbuild_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/10502/10502a.jpg';
+
+    // 間取り写真 - 部屋ページでのみ必要
+    const RF_firstfloorplan_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/06884/0688400602c.jpg';
 
     // 取得URL
     const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7498';
