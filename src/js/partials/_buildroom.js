@@ -62,6 +62,9 @@ class RFBuildroomSlide {
 
   // 間取り0件フラグ
   #isFloorData = true
+
+  // 画像ロードエラーフラグ
+  #isLoaded = true
   
   // メインスライド（Swiper）設定
   #swiperMainSetting = {
@@ -261,6 +264,26 @@ class RFBuildroomSlide {
     
   }
 
+  // 画像ロードエラーの場合の処理
+  #removeErrorDataProcess() {
+    console.log('サムネイルコンテナを表示します。')
+    // サムネイルコンテナを隠す - TODO: CSS対応
+    this.#thumbSlideContainer.classList.remove('--is-hidden')
+  }
+  #setErrorDataProcess() {
+    console.log('画像がありません。ボタン系を非表示にします。')
+    // モーダルボタンorパノラマオープンボタンを非表示
+    this.#showHideModalBtn(false)
+
+    // Swiperを無効化する
+    this.#swipers.mainSlide.disable()
+    this.#swipers.thumbSlide.disable()
+
+    // サムネイルコンテナを隠す
+    this.#thumbSlideContainer.classList.add('--is-hidden')
+    
+  }
+
   // 💡. スライドを全撤去
   #removeAllSlides() {
     this.#swipers.mainSlide.removeAllSlides()
@@ -447,7 +470,7 @@ class RFBuildroomSlide {
           errorCounter++
 
           if(errorCounter >= min) {
-            reject(false);
+            reject(true);
           }
         }
 
@@ -680,7 +703,7 @@ class RFBuildroomSlide {
 
   // ===
   
-  // 5-1.モーダルオープンボタンを押したとき、アクティブインデックスを更新するイベントを設定
+  // 6-1.モーダルオープンボタンを押したとき、アクティブインデックスを更新するイベントを設定
   // モーダルのSwiperをメインSwiperと同期させるため
   #setModalActiveIndex() {
     this.#btnOpenModal.addEventListener('click', () => {
@@ -689,7 +712,7 @@ class RFBuildroomSlide {
     })
   }
 
-  // 5. モーダルウィンドウ制御
+  // 6. モーダルウィンドウ制御
   #setModalWindowAction() {
     // ⏹️モーダル開くボタン追加
     this.#setModalOpenBtn()
@@ -722,7 +745,7 @@ class RFBuildroomSlide {
 
   // ===
 
-  // 4. Swiper初期化（初回のみ）
+  // 5. Swiper初期化（初回のみ）
   #setSwiper() {
     console.log('Swiper初期化')
     // メインサムネイル
@@ -760,24 +783,13 @@ class RFBuildroomSlide {
     this.#swipers.mainSlide.controller.control = [this.#swipers.modalMainSlide] // モーダルメイン ↔ メイン
     this.#swipers.modalMainSlide.controller.control = [this.#swipers.mainSlide] // メイン ↔ モーダルメイン
 
-    // 5.モーダルとパノラマオープンボタンの追加
-    this.#setModalWindowAction()
-
-    // 6.タブの設定
-    this.#setTabs()
-
-    // 間取り写真がない場合の処理
-    const key = this.#getCurrentSlide()
-    if (key === 'floorplan' && !this.#isFloorData) {
-      // 間取り写真なしの処理
-      this.#setNoFloorDataProcess()
-    }
+    // 6以降の処理をsetInitPhotosへ移動    
 
   }
 
   // ===
 
-  // 3-1. 初回SwiperのスライドHTML配列を文字列化して挿入する
+  // 4. 初回SwiperのスライドHTML配列を文字列化して挿入する
   #insertInitSlides(key) {
     let html = ''
 
@@ -791,16 +803,14 @@ class RFBuildroomSlide {
 
     this.#slideWrapper.insertAdjacentHTML('beforeend', html)
     this.#thumbWrapper.insertAdjacentHTML('beforeend', html)
-
-    // TODO: 間取りで且つ間取り画像がない場合、間取りなし処理を入れる
     
   }
 
+  // ===
+
   // 3. 初期データを処理
   async #setInitPhotos() {
-    // if(this.#photos.build.length !== 0) {
     // 初回のキーチェック
-    // const key = 'build' 
     let firstKey = ''// 初回のキー
 
     // データの中で最初に空ではないキーをチェックする
@@ -817,6 +827,7 @@ class RFBuildroomSlide {
 
         if (this.#photos[key].length > 0) return true
       })
+
     } else if (RF_page_key === 'room') {
       // 部屋ページでは常に最初は間取りになる
       firstKey = 'floorplan'
@@ -870,12 +881,29 @@ class RFBuildroomSlide {
       }
       */
     } 
-    catch (err) {
+    catch (loadError) {
       console.log('初期写真の取得に失敗')
-      console.error(err)
+      console.error(loadError)
+
+      // checkPhotoLoadのrejectからtrueが返される
+      // TODO: この下の間取りの処理と統合する
+      if(RF_page_key === 'build' && loadError) {
+        console.log('建物の初期写真取得の失敗。nophotoに差し替えます')
+        this.#photos[firstKey] = [RF_gallery_nophoto]
+
+        const photoData = this.#getSlideData(firstKey)
+        const data = this.#convertToSwiperHTML(photoData);
+        
+        // 配列にHTMLデータを追加
+        this.#setSlideHTMLData(firstKey, data)
+
+        // 画像ロードエラー
+        this.#isLoaded = false
+      }
+
 
       // 間取り写真のみ取得エラーを起こした場合、何も表示されないとまずいので、nophoto画像に差し替える
-      if(firstKey === 'floorplan') {
+      if(firstKey === 'floorplan' && loadError) {
         console.log('間取りの写真取得失敗、nophotoに差し替え')
         // データをnophotoに差し替え
         this.#photos.floorplan = [RF_gallery_nofloorplan]
@@ -904,17 +932,35 @@ class RFBuildroomSlide {
       // this.#setSlideHTMLData(key, data) //💡. スライドHTML(配列)をデータに追加
 
       // 固定表示の1枚目を削除
-      // TODO: 現状入れていない。必要なければ削除
       // https://www.jamesbaum.co.uk/blether/vanilla-js-equivalent-jquery-find-parent-data-remove-class-empty-append/#empty
       while (this.#slideWrapper.firstChild) {
         this.#slideWrapper.removeChild(this.#slideWrapper.firstChild)
       }
 
-      // 3-1. 初回はSwiperスライドのHTMLを挿入
+      // 4. SwiperスライドのHTMLを挿入(初回)
       this.#insertInitSlides(firstKey)
 
-      // 4. Swiperを初期化
+      // 5. Swiperを初期化
       this.#setSwiper()
+
+      // 6.モーダルとパノラマオープンボタンの追加
+      this.#setModalWindowAction()
+
+      // 7.タブの設定
+      this.#setTabs()
+
+      // 間取り写真がない場合の処理
+      const key = this.#getCurrentSlide()
+      if (key === 'floorplan' && !this.#isFloorData) {
+        // 間取り写真なしの処理
+        this.#setNoFloorDataProcess()
+      }
+
+      // 画像ロードエラーの場合の処理
+      if (!this.#isLoaded) {
+        this.#setErrorDataProcess()
+      }
+
     }
       
   }
@@ -960,6 +1006,7 @@ class RFBuildroomSlide {
       this.#photos.build.unshift(RF_firstbuild_photo)
     }
     data.forEach((elm) => {
+      console.log(elm.filename)
       switch(elm.part) {
         // 外観
         // case '001': //建物メイン写真(グローバル変数から取得に変更)
@@ -1007,7 +1054,10 @@ class RFBuildroomSlide {
 
     // 間取りだけは特別で、写真がない場合でもタブ表示し、写真を挿入する
     console.log('間取り写真枚数', this.#photos.floorplan.length)
-    if(RF_page_key === 'room' && this.#photos.floorplan.length === 0) {
+    if(
+      RF_page_key === 'room' && 
+      this.#photos.floorplan.length === 0
+    ) {
       console.log('sort時に間取り写真が一枚もない')
       // フラグ設定
       this.#isFloorData = false
@@ -1016,7 +1066,7 @@ class RFBuildroomSlide {
       this.#photos.floorplan.push(RF_gallery_nofloorplan);
     }
 
-    console.log('フォトデータ', this.#photos)
+    console.log('フォトデータ(this.#photos)', this.#photos)
   }
 
   // 2-1. パノラマのデータを保存(存在すれば)
@@ -1044,16 +1094,8 @@ class RFBuildroomSlide {
       /*
         テストデータ
 
-        建物
-        RF_gallery_url - 通常
-        RF_gallery_url_nodata - 建物・外観データがない
-        RF_gallery_url_fake - データが全くない
-        RF_gallery_url_onephoto - 建物写真が1枚のみ
-        --
-        部屋
-        部屋ページは外観写真も含めるので、合わせてリクエストする必要がある
-        RF_gallery_room_url - 通常間取り＋部屋写真
-        RF_gallery_room_nofloor_url - 間取り写真がない(リンク切れしている)
+        建物,部屋データ(このJSではなく、ページ側で取得したいJSONを切り替え)
+        RF_gallery_url
         TODO: 間取り写真が無いJSONデータを用意する
 
       */
@@ -1091,7 +1133,6 @@ class RFBuildroomSlide {
       }
 
       //存在すればデータをソート
-      console.log('部屋写真',data)
       this.#sortDataAndSave(data)
       // 部屋ページ専用（外観写真があればソートする）
       if(RF_page_key === 'room' && dataBuild.length > 0) {
@@ -1100,6 +1141,8 @@ class RFBuildroomSlide {
 
       // 3. 初期データを挿入
       this.#setInitPhotos()
+
+      // 4~は setInitPhotos内のfinallyで実行
 
 
     } catch (err) {
@@ -1115,7 +1158,7 @@ class RFBuildroomSlide {
   // 1. init
   async #init()  {
     try {
-      //データ取得
+      //2. データ取得
       this.#fetchPhotoData();
 
     } catch (err) {
