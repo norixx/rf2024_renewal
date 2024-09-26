@@ -910,15 +910,15 @@
     const RF_gallery_nofloorplan = '/assets/img/common/nophoto.webp'
 
     // 建物写真1枚目(静的表示用) - 建物ページでのみ必要
-    // const RF_firstbuild_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/10502/10502a.jpg';
-    const RF_firstbuild_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/73937/73937a.jpg"'; //建物メイン写真(リンク切れ)
+    const RF_firstbuild_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/10502/10502a.jpg';
+    // const RF_firstbuild_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/73937/73937a.jpg"'; //建物メイン写真(リンク切れ)
 
     // 間取り写真１枚目(静的表示用) - 部屋ページでのみ必要
     // const RF_firstfloorplan_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/06884/0688400602c.jpg';
     const RF_firstfloorplan_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/62816/6281602006c.jpg'; //間取り写真(リンク切れ)
 
     // 取得URL
-    const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7498';
+    const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7498'; //建物(通常)
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/10322'; //建物・外観データがないパターン(部屋はある)
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/73937'; //建物・外観データがないパターン(間取りはある/建物メイン写真がリンク切れ)
     // const RF_gallery_url = 'http://rf.dev.example.com/rf/photo/10502' //No fucking data what so ever
@@ -926,123 +926,123 @@
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7587'; //1枚のみのパターン
 
     // 部屋
-    // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/10171/302'
+    // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/10171/302' // 部屋(通常)
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/62816/2006' //間取り写真がリンク切れしている(404)パターン
 
     //部屋ページ用建物写真(外観・共用部)
     const RF_gellery_tatemono_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7498'
 
     // パノラマ写真
-    // const RF_gallery_panorama = [
-    //   {
-    //       "ROOM_NO":99999,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/248.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_0000.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":718,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/249.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u3000718",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_718.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":1118,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/255.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_1118.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":1206,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/480.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30001206",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_1206.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":1402,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/256.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30001402",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_1402.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":1704,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/257.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30001704",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_1704.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":1902,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/258.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30001902",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_1902.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":2015,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/442.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002015",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2015.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":2016,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/501.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002016",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2016.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":2303,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/259.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002303",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2303.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":2312,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/502.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002312\u53f7\u5ba4",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2312.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":2805,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/260.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002805",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2805.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":2901,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/481.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002901",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2901.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":2910,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/261.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002910",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2910.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":3101,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/262.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30003101",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_3101.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":3203,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/263.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30003203",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_3203.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":3801,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/443.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30003801",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_3801.mp4"
-    //   },
-    //   {
-    //       "ROOM_NO":3807,
-    //       "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/264.jpg",
-    //       "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30003807",
-    //       "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_3807.mp4"
-    //   }
-    // ]
+    const RF_gallery_panorama = [
+      {
+          "ROOM_NO":99999,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/248.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_0000.mp4"
+      },
+      {
+          "ROOM_NO":718,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/249.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u3000718",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_718.mp4"
+      },
+      {
+          "ROOM_NO":1118,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/255.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_1118.mp4"
+      },
+      {
+          "ROOM_NO":1206,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/480.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30001206",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_1206.mp4"
+      },
+      {
+          "ROOM_NO":1402,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/256.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30001402",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_1402.mp4"
+      },
+      {
+          "ROOM_NO":1704,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/257.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30001704",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_1704.mp4"
+      },
+      {
+          "ROOM_NO":1902,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/258.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30001902",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_1902.mp4"
+      },
+      {
+          "ROOM_NO":2015,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/442.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002015",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2015.mp4"
+      },
+      {
+          "ROOM_NO":2016,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/501.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002016",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2016.mp4"
+      },
+      {
+          "ROOM_NO":2303,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/259.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002303",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2303.mp4"
+      },
+      {
+          "ROOM_NO":2312,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/502.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002312\u53f7\u5ba4",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2312.mp4"
+      },
+      {
+          "ROOM_NO":2805,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/260.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002805",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2805.mp4"
+      },
+      {
+          "ROOM_NO":2901,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/481.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002901",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2901.mp4"
+      },
+      {
+          "ROOM_NO":2910,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/261.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30002910",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_2910.mp4"
+      },
+      {
+          "ROOM_NO":3101,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/262.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30003101",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_3101.mp4"
+      },
+      {
+          "ROOM_NO":3203,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/263.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30003203",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_3203.mp4"
+      },
+      {
+          "ROOM_NO":3801,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/443.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30003801",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_3801.mp4"
+      },
+      {
+          "ROOM_NO":3807,
+          "filename":"http:\/\/www.mitsui-chintai.co.jp\/rf\/photo\/62816\/0\/264.jpg",
+          "alt":"\u829d\u6d66\u30a2\u30a4\u30e9\u30f3\u30c9\u3000\u30a8\u30a2\u30bf\u30ef\u30fc\u30003807",
+          "url":"http:\/\/www.mitsui-chintai.co.jp\/vtr\/62816_3807.mp4"
+      }
+    ]
    
     // -- パノラマデータここまで
   
