@@ -1400,8 +1400,8 @@
   },
   "projectAttributes" : {
     "creationDate" : 730771903.98158598,
-    "displayValue" : "rf2024",
-    "displayValueWasSetByUser" : 0,
+    "displayValue" : "RF2024",
+    "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-pink",
     "iconImageWasSetByUser" : 0
   },

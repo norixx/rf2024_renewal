@@ -73,6 +73,10 @@ $primary-light: rgba(251, 235, 221, 1);
 $primary-mid-light: rgba(252, 172, 97, 1);
 $primary-mid: rgba(251, 149, 53, 1);
 
+$alternate: rgba(107, 75, 61, 1);
+$alternate-light: rgba(135, 95, 78, 1);
+$alternate-dark: rgba(88, 62, 51, 1);
+
 $alert: rgb(242, 76, 5);
 $alert-trans: rgb(242 76 5 / 0.9);
 
@@ -163,6 +167,11 @@ $z-index-lv5: 500;
   --bg-primary-xxlight: #{$primary-xxlight};
   --bg-primary-xlight: #{$primary-xlight};
   --bg-primary-light: #{$primary-light};
+
+  --bg-alternate: #{$alternate};
+  --bg-alternate-light: #{$alternate-light};
+  --bg-alternate-dark: #{$alternate-dark};
+
   --bg-gray-xxlight: #{$gray9};
   --bg-gray-xlight: #{$gray8};
   --bg-gray-light: #{$gray6};
@@ -176,10 +185,11 @@ $z-index-lv5: 500;
   --bg-black-90: rgba(0 0 0 / 0.9);
   --bg-black-80: rgba(0 0 0 / 0.8);
   --bg-black-70: rgba(0 0 0 / 0.7);
+  --bg-black-gradient-rb: linear-gradient(#{$gradient-dir-rb}, #{$gray0} 0%, #{$gray-black} 100%);
+
   --bg-alert: #{$alert};
   --bg-alert-trans: #{$alert-trans};
 
-  --bg-black-gradient-rb: linear-gradient(#{$gradient-dir-rb}, #{$gray0} 0%, #{$gray-black} 100%);
 
   // border(基本グレー)
   --bdr-xlight: #{$gray8};

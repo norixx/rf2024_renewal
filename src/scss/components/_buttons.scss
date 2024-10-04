@@ -60,7 +60,7 @@
     }
   }
 
-  // プライマリーボタン(白背景、オレンジ枠線)
+  // プライマリーボタン(白背景、オレンジ枠線(中)、ホバー: オレンジ枠線)
   &.--primary {
     background-color: var(--bg-white);
     border-color: var(--bdr-btn-primary-mid);
@@ -94,6 +94,17 @@
       background: var(--bg-primary-light);
     }
   }
+
+  //オルタナティブボタン(フィル, 白文字)
+  &.--alternate {
+    background-color: var(--bg-alternate);
+    color: var(--txt-white);
+
+    &:hover {
+      background-color: var(--bg-alternate-light);
+    }
+  }
+
   
 
   // =======================================================
@@ -197,6 +208,7 @@
     }
   }
 
+  // アイコン(後ろ)
   &.--icon-after {
     &::after {
       margin-left: var(--space-8);
@@ -269,9 +281,12 @@
     }
   }
   &.--impact.--icon-before::before,
-  &.--impact.--icon-after::after {
+  &.--impact.--icon-after::after,
+  &.--alternate.--icon-before::before,
+  &.--alternate.--icon-after::after {
     background-color: var(--bg-white); //アイコンカラー
   }
+  
 
   // =======================================================
   // アイコンの種類
