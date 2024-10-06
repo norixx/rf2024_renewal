@@ -1,7 +1,7 @@
 // 建物・部屋 詳細ページ共通
 
 // =======================================================
-// NEW 建物・部屋スライド(Swiper)
+// NEW 建物・部屋スライド
 // 参考: https://codepen.io/tea4two/pen/LYvLNME?editors=0010
 class RFBuildroomSlide {
   #swipers = {
@@ -19,8 +19,8 @@ class RFBuildroomSlide {
   // 順番(厳守): 1 建物, 2 間取り, 3 部屋 , 4 外観・共用部・周辺環境写真, 5 パノラマ 
   #photos = {
     build: [],//建物（メイン）
-    floorplan: [], //間取り
-    room: [],//部屋
+    floorplan: [], //間取り・部屋
+    // room: [],//部屋
     exterior: [],//外観・共用部・周辺環境写真
     panorama: [],//パノラマ、動画
     // nophoto: [], // no photo
@@ -30,8 +30,8 @@ class RFBuildroomSlide {
   #photoHTML = {
     build: [],//建物(メイン)
     exterior: [],//外観・共用部・周辺環境写真
-    floorplan: [], //間取り
-    room: [],//部屋
+    floorplan: [], //間取り・部屋
+    // room: [],//部屋
     panorama: [],//パノラマ、動画
   }
 
@@ -41,8 +41,8 @@ class RFBuildroomSlide {
       build: '建物',
       exterior: '外観・共用部・周辺',
       // ↓部屋ページ専用
-      floorplan: '間取り',
-      room: '部屋',
+      floorplan: '間取り・部屋',
+      // room: '部屋',
       // ↓ページ共通
       panorama: 'パノラマ・動画',
     },
@@ -50,8 +50,8 @@ class RFBuildroomSlide {
       build: 'Building',
       exterior: 'Exterior, common spaces, and surroundings',
       // ↓部屋ページ専用
-      floorplan: 'Floor plan',
-      room: 'Room',
+      floorplan: 'Floor plan &amp; Room',
+      // room: 'Room',
       // ↓ページ共通
       panorama: 'Panoramas and videos',
     }
@@ -66,8 +66,8 @@ class RFBuildroomSlide {
   // 画像ロードエラーフラグ
   #isPhotosLoaded = {
     build: true,
-    floorplan: true,
-    room: true,
+    floorplan: true, //間取り・部屋
+    // room: true,
     exterior: true,
     panorama: true,
   }
