@@ -898,17 +898,22 @@
 
 
   <script>
+    // =======================================================
     // 言語フラグ
     const RF_lang = 'ja'
 
+    // =======================================================
     //建物or部屋フラグ(建物: build / 部屋: room)
     const RF_page_key = 'build'
     // const RF_page_key = 'room'
 
+    // =======================================================
     // No photo画像 - 現状、建物も部屋も同じno photo画像を使用
     const RF_gallery_nophoto = '/assets/img/common/nophoto.webp'
     const RF_gallery_nofloorplan = '/assets/img/common/nophoto.webp'
 
+    // =======================================================
+    // 1枚目
     // 建物写真1枚目(静的表示用) - 建物ページでのみ必要
     const RF_firstbuild_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/10502/10502a.jpg';
     // const RF_firstbuild_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/73937/73937a.jpg"'; //建物メイン写真(リンク切れ)
@@ -917,21 +922,25 @@
     // const RF_firstfloorplan_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/06884/0688400602c.jpg';
     const RF_firstfloorplan_photo = 'https://mfhl.mitsui-chintai.co.jp/websearch/image/62816/6281602006c.jpg'; //間取り写真(リンク切れ)
 
+    // =======================================================
     // 取得URL
-    const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7498'; //建物(通常)
-    // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/10322'; //建物・外観データがないパターン(部屋はある)
-    // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/73937'; //建物・外観データがないパターン(間取りはある/建物メイン写真がリンク切れ)
+    // 建物 ===
+    // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7498'; //建物(通常)
+    // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/10322'; //建物・外観データがないパターン(部屋は有り)
+    // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/73937'; //建物・外観データがないパターン(建物メイン写真がリンク切れ/部屋はあり)
     // const RF_gallery_url = 'http://rf.dev.example.com/rf/photo/10502' //No fucking data what so ever
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/12345678'; //データが全くないパターン(フェイクURL)
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7587'; //1枚のみのパターン
+    const RF_gallery_url = 'http://rf.dev.example.com/rf/photo/3830'; //3枚目がエラーを起こす特殊ケース
 
-    // 部屋
+    // 部屋 ===
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/10171/302' // 部屋(通常)
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/62816/2006' //間取り写真がリンク切れしている(404)パターン
 
     //部屋ページ用建物写真(外観・共用部)
     const RF_gellery_tatemono_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7498'
 
+    // =======================================================
     // パノラマ写真
     const RF_gallery_panorama = [
       {

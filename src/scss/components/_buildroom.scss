@@ -44,7 +44,7 @@
         margin-right: var(--space-24);
 
         >li> .c-flag {
-          min-width: 0;
+          min-width: calc(4em + var(--space-8)*2);
         }
       }
     }
