@@ -511,9 +511,11 @@ class RFBuildroomSlide {
         // };
 
         try {
+          counter++;
+          console.log('画像カウンター: ', counter)
+
           await this.#imageDecode(img)
 
-          counter++;
           if (counter >= min) {
             resolve(true);
           }
@@ -525,6 +527,11 @@ class RFBuildroomSlide {
 
           if(errorCounter >= min) {
             reject(true);
+          }
+
+          if (counter >= min) {
+            console.log('エラーありでcounter終了')
+            resolve(true);
           }
         }
 
@@ -940,7 +947,7 @@ class RFBuildroomSlide {
       })
 
     } else if (RF_page_key === 'room') {
-      // 部屋ページでは常に最初は間取りになる
+      // 部屋ページでは常に最初は「間取り・部屋」になる
       firstKey = 'floorplan'
     }
     console.log('firstKey: ', firstKey)
@@ -987,6 +994,7 @@ class RFBuildroomSlide {
 
   /**
    * 2-2. 初期画像を保存
+   * 
    * @param {object} filename 画像データURL 
    * @param {string} part 画像種別番号
    */
@@ -1001,7 +1009,11 @@ class RFBuildroomSlide {
     }
   }
 
-  // 2-2. 部屋ページでの外観データを保存
+  /**
+   * 2-2. 部屋ページでの外観データを保存
+   * 
+   * @param {object} buildData 建物データ配列
+   */
   #sortBuildDataAndSave(buildData) {
     // 建物メイン写真がある場合はグローバル変数から配列先頭に保存
     // if(typeof RF_firstbuild_photo !== 'undefined') {
@@ -1081,7 +1093,8 @@ class RFBuildroomSlide {
         case '133': 
         case '135': 
         case '136': 
-        this.#photos.room.push(elm.filename);
+        // this.#photos.room.push(elm.filename); //間取りに統合
+        this.#photos.floorplan.push(elm.filename);
           break;
       }
     })
@@ -1089,23 +1102,13 @@ class RFBuildroomSlide {
     // 部屋ページの間取り写真だけは特別で、写真が無くてもタブ表示し、nophoto画像を挿入する
     // TODO: 削除予定
     console.log('間取り写真枚数', this.#photos.floorplan.length)
-    // if(
-    //   RF_page_key === 'room' && 
-    //   this.#photos.floorplan.length === 0
-    // ) {
-    //   console.log('sort時に間取り写真が一枚もない')
-    //   // フラグ設定
-    //   this.#isFloorData = false
-
-    //   // no floor plan 画像を入れる
-    //   this.#photos.floorplan.push(RF_gallery_nofloorplan);
-    // }
-
     console.log('ソート後の写真データ(this.#photos)', this.#photos)
   }
 
   /**
-   * 2-1. パノラマのデータを保存(存在すれば)
+   * 2-1. パノラマ・動画のデータを保存(存在すれば)
+   * 
+   * @return void
    */
   #savePanoramaData() {
     if (typeof RF_gallery_panorama !== 'undefined') {
@@ -1159,7 +1162,7 @@ class RFBuildroomSlide {
       } 
       else if(RF_page_key === 'room') {
         img.src = RF_gallery_nofloorplan
-        this.#isPhotosLoaded['floorplan'] = false
+        // this.#isPhotosLoaded['floorplan'] = false
       }
     }
     finally {
