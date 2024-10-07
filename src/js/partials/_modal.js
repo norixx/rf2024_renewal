@@ -85,7 +85,7 @@ class RfModals {
 
   // モーダルを閉じるイベント設定
   #setModalCloseEvent(modal) {
-    // モーダル本体閉じる(モーダルのなにもないところをクリックしたとき閉じる)
+    // モーダル本体閉じる(モーダルの何もないところをクリックしたとき閉じる)
     modal.addEventListener('click', e => {
       if (this.#modalTargetName in e.target.dataset) {
         console.log('モーダルターゲット')
