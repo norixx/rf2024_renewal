@@ -64,22 +64,22 @@
               <div class="c-search">
                 <ul class="c-search__list">
                   <li class="c-search__list-item">
-                    <a href="#" class="__link btn --search-basic"><b>人気エリア</b>から探す</a>
+                    <a href="#" class="__link btn --search-basic --icon-popular-area"><b>人気エリア</b>から探す</a>
                   </li>
                   <li class="c-search__list-item">
-                    <a href="#" class="__link btn --search-basic --current"><b>区</b>から探す</a>
+                    <a href="#" class="__link btn --search-basic --current --icon-ward"><b>区</b>から探す</a>
                   </li>
                   <li class="c-search__list-item">
-                    <a href="#" class="__link btn --search-basic"><b>駅・沿線</b>から探す</a>
+                    <a href="#" class="__link btn --search-basic --icon-train"><b>駅・沿線</b>から探す</a>
                   </li>
                   <li class="c-search__list-item">
-                    <a href="#" class="__link btn --search-basic"><b>地図</b>から探す</a>
+                    <a href="#" class="__link btn --search-basic --icon-map"><b>地図</b>から探す</a>
                   </li>
                   <li class="c-search__list-item">
-                    <a href="#" class="__link btn --search-basic"><b>特集</b>から探す</a>
+                    <a href="#" class="__link btn --search-basic --icon-featured-article"><b>特集</b>から探す</a>
                   </li>
                   <li class="c-search__list-item">
-                    <a href="#" class="__link btn --search-basic"><b>xxx</b>から探す</a>
+                    <a href="#" class="__link btn --search-basic --icon-premium-mansion"><b>プレミアムマンション</b>から探す</a>
                   </li>
                 </ul>
                 <div class="c-search__keyword">
@@ -87,11 +87,12 @@
                     <dt>キーワードから探す</dt>
                     <dd>
                       <form action="#" method="get">
-                        <input type="text" class="c-top-search__keyword-input c-input-text" placeholder="マンション名・地名" />
-                        <button class="c-top-search__btn-keyword form-btn --search">
-                          検索
-                        </button>
+                        <label class="c-input-label-search --w-100">
+                          <input type="search" class="c-search-keyword__input c-input-text --w-100" placeholder="マンション名・地名" name="search" id="iptKeyword">
+                          <button class="c-search-keyword__btn-search btn --no-decoration --icon-before --i-search"><span class="u-visually-hidden">検索</span></button>
+                        </label>
                       </form>
+                      
                     </dd>
                   </dl>
                 </div>
