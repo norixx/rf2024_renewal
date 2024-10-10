@@ -17,8 +17,9 @@
     // margin-top: var(--space-32);
     order: 100; //最後尾に移動させる
     margin-top: var(--space-40);
-
+    
     @include mq {
+      margin-top: var(--space-64);
       // order: initial;
       // margin-top: 0;
     }
