@@ -156,6 +156,7 @@
         dt {
           font-weight: var(--fw-bold);
           font-size: var(--fz-12);
+          color: var(--txt-dark);
         }
 
         > div:not(:first-child) dt {
@@ -165,6 +166,7 @@
         dd {
           flex: 1 0 100%;
           margin-top: 2px;
+          font-size: var(--fz-16);
 
           &.__map {
             margin-top: 0;
