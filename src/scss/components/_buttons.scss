@@ -229,7 +229,7 @@
     }
 
     &.--md {
-      &::before {
+      &::after {
         --icon-size: var(--fz-24);
         margin-right: var(--space-8);
       }
@@ -245,9 +245,9 @@
         }
       }
       &.--pc-md {
-        &::before {
+        &::after {
           --icon-size: var(--fz-24);
-          margin-right: var(--space-8);
+          margin-left: var(--space-8);
         }
       }
       &.--no-pc-decoration::after {

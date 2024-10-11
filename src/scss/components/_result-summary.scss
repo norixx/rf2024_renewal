@@ -2,29 +2,29 @@
 @use "../abstracts/mixins" as *;
 
 .c-result-summary {
-  &__header {
-    text-align: center;
-    padding-bottom: var(--space-8);
-    border-bottom: 1px solid var(--bdr-light);
+  // &__header {
+  //   text-align: center;
+  //   padding-bottom: var(--space-8);
+  //   border-bottom: 1px solid var(--bdr-light);
 
-    @include mq {
-      padding-bottom: var(--space-12);
-    }
-  }
+  //   @include mq {
+  //     padding-bottom: var(--space-12);
+  //   }
+  // }
 
-  &__h {
-    font-size: var(--fz-18);
-    font-weight: var(--fw-bold);
-    letter-spacing: var(--letter-space-10);
+  // &__h {
+  //   font-size: var(--fz-18);
+  //   font-weight: var(--fw-bold);
+  //   letter-spacing: var(--letter-space-10);
 
-    @include mq {
-      font-size: var(--fz-24);
-    }
+  //   @include mq {
+  //     font-size: var(--fz-24);
+  //   }
 
-    .__condition {
-      font-weight: var(--fw-bold);
-    }
-  }
+  //   .__condition {
+  //     font-weight: var(--fw-bold);
+  //   }
+  // }
 
   // ロー
   &__row {
@@ -44,7 +44,8 @@
   // 条件ロー
   &__condition {
     position: relative;
-    --space: 18%;
+    gap: var(--space-16)
+    // --space: 18%;
   }
 
   // 概要
@@ -62,28 +63,23 @@
       padding-left: var(--space);
     }
 
-    dt,
-    dd {
-      display: inline;
+  }
 
-      @include mq {
-        display: block;
-      }
+  // 検索結果タイトル
+  &__title {
+    font-size: var(--fz-16);
+
+    @include mq {
+      font-size: var(--fz-20);
     }
+  }
 
-    dt {
-      display: inline-block;
-      flex: 0 0 6em;
-
+  // 検索ターム
+  &__term {
+    &:not(:last-child){
       &::after {
-        content: ":";
+        content: '/';
         margin-left: var(--space-4);
-        margin-right: var(--space-8);
-        display: inline-block;
-      }
-
-      @include mq {
-        min-width: 0;
       }
     }
   }
@@ -95,7 +91,7 @@
     flex-shrink: 0;
 
     @include mq {
-      flex-basis: var(--space);
+      // flex-basis: var(--space);
 
       // position: absolute;
       // right: 0;
