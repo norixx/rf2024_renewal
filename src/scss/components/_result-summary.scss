@@ -58,7 +58,7 @@
     align-items: center;
 
     @include mq {
-      justify-content: center;
+      // justify-content: center;
       min-height: 48px;
       padding-left: var(--space);
     }
@@ -68,9 +68,14 @@
   // 検索結果タイトル
   &__title {
     font-size: var(--fz-16);
+    font-weight: var(--fw-semibold);
 
     @include mq {
       font-size: var(--fz-20);
+    }
+
+    span {
+      font-weight: var(--fw-semibold);
     }
   }
 
