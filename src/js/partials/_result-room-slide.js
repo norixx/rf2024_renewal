@@ -28,13 +28,14 @@ const rf_result_room_slide = () => {
 
   // フラッシュメッセージ
   const insertFlashMessage = (msg, pic_area) => {
-    const msg_html = `<p class="${flash_msg_class}">${msg}</p>`
-
     // メッセージを表示中は、追加しない
     if (pic_area.querySelector(`.${flash_msg_class}`)) {
-      console.log('NO no no congested right now!!!')
+      console.log('NO no no, traffic jam right now!!!')
       return
     }
+    
+    const msg_html = `<p class="${flash_msg_class}">${msg}</p>`
+
 
     pic_area.insertAdjacentHTML('beforeend', msg_html)
     const msg_inserted = pic_area.querySelector(`.${flash_msg_class}`)
@@ -83,13 +84,15 @@ const rf_result_room_slide = () => {
     let html = ''
     data.forEach(item => {
       // <img src="${item.filename}" alt="${item.part}" loading="lazy">
+      // TODO: エラー画像対策 this.onerror ...
       html += `<div class="c-result-room__slide-item swiper-slide">
-      <img src="${item.thumbnailUrl}" alt="${item.id}" loading="lazy" title="テスト用JSONデータ">
+      <img src="${item.filename}" alt="${item.name}" loading="lazy">
       </div>`
     })
 
     const wrapper = target_slide.querySelector(`.${slide_wrapper_class}`)
 
+    // TODO: 間取りは残すのでこの処理は入れない
     removeAllChildren(target_slide, wrapper)
 
     const new_wrapper = target_slide.querySelector(`.${slide_wrapper_class}`)
@@ -151,8 +154,10 @@ const rf_result_room_slide = () => {
         const target_slide = btn.closest(`.${slide_selector_class}`)
         const id = btn.dataset.jsResultRoomId
         btn.removeEventListener('click', click_handlers[id])
+
         // ハンドラーをオブジェクトから削除（容量節約のため）
         delete click_handlers[id]
+        
         // console.log(click_handlers)
         setSwiper(data, target_slide)
       } else {
