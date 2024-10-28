@@ -1,6 +1,7 @@
-// 検索結果サマリー
-@use "../abstracts/mixins" as *;
+// 検索結果共通
 
+@use "../abstracts/mixins" as *;
+// サマリー
 .c-result-summary {
   // &__header {
   //   text-align: center;
@@ -203,5 +204,17 @@
         margin-bottom: 0;
       }
     }
+  }
+}
+
+// 検索結果なし
+.c-result-noresult {
+  text-align: center;
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-32);
+  
+  @include mq {
+    font-size: var(--fz-18);
+
   }
 }

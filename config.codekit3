@@ -851,7 +851,7 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/src\/scss\/components\/_result-summary.scss" : {
+    "\/src\/scss\/components\/_result.scss" : {
       "aP" : 0,
       "bl" : 0,
       "co" : 0,
@@ -860,7 +860,7 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/src\/scss\/components\/_result-summary.css",
+      "oAP" : "\/src\/scss\/components\/_result.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
