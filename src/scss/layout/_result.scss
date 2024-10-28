@@ -17,4 +17,13 @@
       margin-top: var(--space-64);
     }
   }
+
+  // 結果下のコンタクトについて
+  &__contact {
+    margin-top: var(--space-40);
+
+    @include mq {
+      margin-top: var(--space-64);
+    }
+  }
 }
