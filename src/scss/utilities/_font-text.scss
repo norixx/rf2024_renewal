@@ -61,7 +61,7 @@
   }
 }
 
-// Text
+// Text transform
 .u-tt {
   $transforms: uppercase, lowercase, capitalize;
   @each $transform in $transforms {
@@ -79,6 +79,7 @@
   }
 }
 
+// Text decoration
 .u-td {
   $values: none, underline, line-through;
   @each $value in $values {

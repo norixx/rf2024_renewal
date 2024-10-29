@@ -209,12 +209,25 @@
 
 // 検索結果なし
 .c-result-noresult {
-  text-align: center;
   padding-top: var(--space-32);
   padding-bottom: var(--space-32);
   
+  &__text {
+    text-align: center;
+    &:not(:first-child) {
+      margin-top: var(--space-16);
+    }
+  }
+  
   @include mq {
-    font-size: var(--fz-18);
+    
+    &__text {
+      font-size: var(--fz-18);
+      
+      &:not(:first-child) {
+        margin-top: var(--space-16);
+      }
+    }
 
   }
 }
