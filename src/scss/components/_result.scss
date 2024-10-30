@@ -211,6 +211,7 @@
 .c-result-noresult {
   padding-top: var(--space-32);
   padding-bottom: var(--space-32);
+  flex: 1;
   
   &__text {
     text-align: center;
