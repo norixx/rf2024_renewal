@@ -218,12 +218,16 @@
       margin-top: var(--space-16);
     }
   }
+
+  &__link {
+    margin-top: var(--space-24);
+  }
   
   @include mq {
     
     &__text {
       font-size: var(--fz-18);
-      
+
       &:not(:first-child) {
         margin-top: var(--space-16);
       }

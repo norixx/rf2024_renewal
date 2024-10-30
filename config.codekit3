@@ -1391,6 +1391,22 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/style-guide\/buttons.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/style-guide\/buttons.html",
+      "oF" : 0
+    },
+    "\/style-guide\/index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/style-guide\/index.html",
+      "oF" : 0
+    },
     "\/ward.html" : {
       "cB" : 0,
       "ft" : 8192,
