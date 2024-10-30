@@ -1,9 +1,11 @@
 const rf_todays_count = () => {
+  // TODO: 英語版対応
   const fetchURL = '/rf/today/'
   const target = document.querySelector('[data-js-today-target]')
   // const elementClass = '.c-top-search__prop-status-list'
   const dataID = '#todays-data'
   const targetElements = target.querySelectorAll('[data-js-today]')
+  // TODO: 英語版対応
   const errorMsg = '件数取得エラーが発生しました'
   // const loader = target.querySelector('[data-js-loader]')
 
@@ -21,6 +23,7 @@ const rf_todays_count = () => {
     console.log(data)
     // loader.remove()
     targetElements.forEach(element => {
+      console.log(element)
       element.textContent = data[element.dataset.jsToday]
     })
     // contents.forEach(content => {
