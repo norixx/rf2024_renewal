@@ -26,8 +26,8 @@
   }
 
   // ローダー
-  svg {
-  }
+  // svg {
+  // }
 
   // キャプション
   &__caption {
@@ -35,13 +35,28 @@
     font-size: var(--fz-12);
   }
 
-  // Type
+  // スタイル
   &.--bg-black {
     background-color: rgba($gray-black, 0.8);
 
     &__caption {
       color: var(--txt-white);
     }
+  }
+
+  &.--absolute-center {
+    position: absolute!important;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 10000;
+  }
+  &.--fixed-center {
+    position: fixed!important;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 10000;
   }
 }
 

@@ -1126,7 +1126,9 @@ class RFBuildroomSlide {
    */
   async #fetchPhotoData() {
     //ローダーを挿入
-    this.#loader = new RF_GLOBALS.RfLoader(this.#slideWrapper)
+    this.#loader = new RF_GLOBALS.RfLoader({
+      target: this.#slideWrapper,
+    })
 
 
     // 1. パノラマデータを取得(あれば)

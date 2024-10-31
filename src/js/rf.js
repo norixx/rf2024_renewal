@@ -21,6 +21,8 @@ import RfMediaQuery from "./partials/_mediaquery";
 import rf_search_change_method from "./partials/_search-change-method";
 import pagetop from "./partials/_pagetop";
 
+import rf_test from "./partials/_test";
+
 // =======================================================
 // Inits
 const rf_init = () => {
@@ -68,6 +70,7 @@ const rf_init = () => {
 
   // Topページ - バナー
   if (document.querySelector('[data-js-top-banners]')) {
+    console.log('top slider')
     rf_top_banners()
   }
 
@@ -105,12 +108,11 @@ const rf_init = () => {
   //=====
 
   // モーダル
-  // if (document.querySelector('[data-js-modal]')) {
-  //   rf_modals()
-  // }
-  if (document.querySelector('[data-js-modal]') || document.querySelector('[data-js-ajax-modal]')) {
+  if (
+    document.querySelector('[data-js-modal]') || //ボタン
+    document.querySelector('[data-js-modal-target]') //モーダル本体
+  ) {
     RF_GLOBALS.rf_modals = new RF_GLOBALS.RfModals();
-    console.log(RF_GLOBALS.rf_modals)
   }
 
   // CTAナビ
@@ -141,6 +143,11 @@ const rf_init = () => {
   // 検索の方法、選び方の変更
   if (document.querySelector('[data-js-search-change-method]')) {
     rf_search_change_method()
+  }
+
+  // テスト
+  if(document.querySelector('#ajax-modal-test')) {
+    rf_test()
   }
 }
 

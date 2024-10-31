@@ -36,8 +36,9 @@ class RfModals {
   openModal(modalId) {
     const targetModal = document.querySelector(modalId)
     console.dir(targetModal)
-    targetModal.classList.add(this.#modalOpenClass) //モーダル本体にクラスを追加
-    this.#html.classList.add(this.#modalOpenHtmlClass) //htmlタグにクラスを追加
+
+    targetModal.classList.add(this.#modalOpenClass) //モーダルターゲット(本体)にopenクラスを追加
+    this.#html.classList.add(this.#modalOpenHtmlClass) //htmlタグにopenクラスを追加
     this.#openedModals.push(modalId) //モーダル開くリストに追加
     console.log('opened modals', this.#openedModals)
   }
@@ -45,7 +46,7 @@ class RfModals {
   // 開くボタンにクリックイベントを設定
   #setModalOpenBtnEvent(btn) {
     const modalId = btn.dataset.jsModal
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', e => {
       if (btn.tagName === 'A' || btn.tagName === 'BUTTON') {
         e.preventDefault()
       }
@@ -88,7 +89,7 @@ class RfModals {
     // モーダル本体閉じる(モーダルの何もないところをクリックしたとき閉じる)
     modal.addEventListener('click', e => {
       if (this.#modalTargetName in e.target.dataset) {
-        console.log('モーダルターゲット')
+        console.log('モーダルターゲット(本体)クリックで閉じる')         
         this.#closeModal(modal)
       }
     })

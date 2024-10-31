@@ -2,24 +2,21 @@
 /**
  * ローダー
  * @param {string} target - ローダーを挿入するターゲット（指定がなければbody）
- * @param {string} msg - ローダーのメッセージ（キャプション） default: 'Loading...'
+ * @param {string} msg - ローダーのメッセージ（キャプション） default: 'Loading...' //未使用
  * @param {string} size - ローダーのサイズ（スタイルシートを参照） default: 'md'
  * @param {string} style - ローダーのスタイル（スタイルシートを参照） default: '--bg-black'
  */
 class RfLoader {
   #settings = {
     target: document.body,
-    msg: 'Loading...',
+    msg: 'Loading...', //TODO: 未使用
     size: 'md',
     style: '--bg-black',
     loaderClass: 'c-loader',
     loader: null,
   }
-  constructor(target, msg, size, style) {
-    if (target) this.#settings.target = target
-    if (msg) this.#settings.msg = msg
-    if (size) this.#settings.size = size
-    if (style) this.#settings.style = style
+  constructor(settings = null) {
+    this.#settings = {...this.#settings, ...settings}
     console.log(this.#settings)
     this.#init()
   }

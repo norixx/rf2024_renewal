@@ -52,7 +52,43 @@
     <li><a href="ensen.html" style="color: #fff;">沿線ページ &gt;</a></li>
     <li><a href="ensen-station.html" style="color: #fff;">沿線ページ - 路線 &gt;</a></li>
     <li><a href="list.html" style="color: #fff;">リストページ &gt;</a></li>
+    <li>
+      <a href="#" id="ajax-modal-test" data-js-modal-lazy="#sys-dialog-area" style="color: #fff;">AJAXモーダルテスト</a>
+    </li>
   </ul>
+
+  <!-- モーダル: 再選択 -->
+  <div class="c-modal" id="sys-dialog-area" data-js-modal-target>
+    <div class="c-modal__inner">
+      <article class="c-modal-content">
+        <header class="c-modal-content__header">
+          <h2 class="c-modal-content__h">AJAXオープン用モーダル</h2>
+          <button type="button" class="c-modal-content__header-close" data-js-modal-close>
+            <span class="u-visually-hidden">閉じる</span>
+          </button>
+        </header>
+        <div class="c-modal-content__body --scroll">
+          <section class="c-search-deep__unit">
+            <h3 class="c-search-deep__unit-h">エリア</h3>
+            <div class="c-search-deep__unit-body">
+              <div class="c-search-deep__list">
+                <div class="c-search-deep__list-desc">
+                  AJAXモーダルサンプル
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <footer class="c-modal-content__footer">
+          <div class="c-modal-content__footer-btns">
+            <button class="btn --impact --icon-before --i-search --sm --pc-md">再検索</button>
+            <button class="btn --normal --icon-before --i-close --sm --pc-md" type="button"
+              data-js-modal-close>閉じる</button>
+          </div>
+        </footer>
+      </article>
+    </div>
+  </div>
 
   <header class="header">
     <div class="header__container">
@@ -541,18 +577,18 @@
                   <dl class="c-top-search__prop-status-list">
                     <dt><b>新着物件</b>(1週間)</dt>
                     <dd>
-                      <span class="__fig"><a href="http://141.147.169.110/rf/result?&crevd=7" data-js-today="new">102</a></span>
+                      <span class="__fig"><a href="http://141.147.169.110/rf/result?&crevd=7" data-js-today="new">999</a></span>
                       <span class="__unit">部屋</span>
                     </dd>
                   </dl>
                   <dl class="c-top-search__prop-status-list">
                     <dt><b>本日掲載中の物件</b></dt>
                     <dd>
-                      <span class="__fig" data-js-today="build">1,234</span>
+                      <span class="__fig" data-js-today="build">9,999</span>
                       <span class="__unit">棟</span>
                     </dd>
                     <dd>
-                      <span class="__fig" data-js-today="room">2,340</span>
+                      <span class="__fig" data-js-today="room">9,999</span>
                       <span class="__unit">部屋</span>
                     </dd>
                   </dl>
