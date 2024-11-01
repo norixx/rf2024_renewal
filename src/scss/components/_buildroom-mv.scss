@@ -3,6 +3,8 @@
 
 //スライド
 .c-buildroom-slide {
+  margin-bottom: var(--space-24);
+
   &--nophoto {
     display: flex;
     justify-content: center;

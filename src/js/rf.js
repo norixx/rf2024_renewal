@@ -145,7 +145,7 @@ const rf_init = () => {
     rf_search_change_method()
   }
 
-  // テスト
+  // TODO: テスト(本番化のときに削除)
   if(document.querySelector('#ajax-modal-test')) {
     rf_test()
   }

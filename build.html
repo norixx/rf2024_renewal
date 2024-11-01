@@ -67,8 +67,8 @@
                       <li><span class="c-flag --normal --sm --pc-md">賃料改定</span></li>
                     </ul>
                     <h1 class="c-buildroom__summary-h">東京ミッドタウン・レジデンシィズ</h1>
-                    <div class="c-buildroom__summary-links">
-                      <a href="#" target="_blank"
+                    <div class="c-buildroom__summary-links u-pc-only">
+                      <a href="" target="_blank"
                         class="btn --alternate --xs --pc-md --icon-after --i-link-out">オリジナルサイト</a>
                     </div>
                   </header>
@@ -140,8 +140,15 @@
                       </div>
 
                       <!-- 写真が１つもない場合 -->
-                      <div class="c-buildroom-slide--nophoto">
+                      <!-- <div class="c-buildroom-slide--nophoto">
                         <img src="./assets/img/common/nophoto.webp" alt="no photo" loading="lazy">
+                      </div> -->
+
+                      <div class="c-buildroom__summary-original-site u-sp-only">
+                        <!-- @if ($bld->URL_STRING) -->
+                          <a href="{{ $bld->URL_STRING }}" target="_blank"
+                            class="btn --alternate --xs --pc-md --icon-after --i-link-out --w-100">オリジナルサイト</a>
+                        <!-- @endif -->
                       </div>
 
                       <div class="c-buildroom__summary-vacant-link">
