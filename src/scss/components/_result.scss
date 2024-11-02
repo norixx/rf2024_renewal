@@ -70,7 +70,6 @@
   &__title {
     font-size: var(--fz-16);
     font-weight: var(--fw-semibold);
-    font-feature-settings: "palt" 1;
 
     @include mq {
       font-size: var(--fz-20);
@@ -78,6 +77,18 @@
 
     span {
       font-weight: var(--fw-semibold);
+    }
+  }
+
+  // プリフィックス
+  &__prefix {
+    font-feature-settings: "palt" 1;
+    
+    &::before {
+      content: '【';
+    }
+    &::after {
+      content: '】';
     }
   }
 
