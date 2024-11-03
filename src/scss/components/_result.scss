@@ -31,7 +31,7 @@
   &__row {
     display: flex;
     align-items: center;
-    padding: var(--space-8) 0;
+    padding: var(--space-8) 0 var(--space-16);
 
     &:not(:last-child) {
       border-bottom: 1px solid var(--bdr-light);
@@ -83,7 +83,7 @@
   // プリフィックス
   &__prefix {
     font-feature-settings: "palt" 1;
-    
+
     &::before {
       content: '【';
     }
@@ -129,33 +129,61 @@
 
   &__number {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
+    width: 100%;
+    margin-bottom: var(--space-12);
 
     @include mq {
+      width: auto;
     }
   }
 
   &__number-list {
     display: flex;
     align-items: baseline;
-    font-weight: var(--fw-bold);
+    // flex: 1;
+    white-space: nowrap;
 
     &:not(:last-child) {
-      margin-right: var(--space-24);
+      margin-right: var(--space-16);
     }
 
     dt {
+      font-size: var(--fz-14);
+
       &::after {
         content: ":";
         margin-right: var(--space-4);
       }
     }
+
+    dd {
+      font-size: var(--fz-14);
+    }
+
+    @include mq {
+
+      &:not(:last-child) {
+        margin-right: var(--space-24);
+      }
+
+      dt,dd {
+        font-size: var(--fz-16);
+      }
+
+    }
   }
+
   &__fig {
     font-family: var(--ff-num);
-    font-size: var(--fz-24);
+    font-size: var(--fz-20);
     padding: 0 var(--space-4);
     font-weight: var(--fw-semibold);
+    
+    @include mq {
+      font-size: var(--fz-24);
+
+    }
   }
 
   // 並び替え
