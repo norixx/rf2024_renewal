@@ -427,10 +427,11 @@
     &::after {
       mask-image: var(--icon-filter);
     }
-    &.--is-active {
+    &.--is-saved {
       &::before,
       &::after {
         mask-image: var(--icon-filter--active);
+        background-color: var(--bg-primary);
       }
     }
   }
