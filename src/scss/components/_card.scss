@@ -65,3 +65,23 @@
     }
   }
 }
+
+// レコメンド用カード
+.c-card-recommend {
+  &__img {
+    padding-top: var(--space-16);
+  }
+  &__info {
+    font-size: var(--fz-12);
+  }
+  &__rent {
+    font-weight: var(--fw-semibold);
+    font-family: var(--ff-en-jp);
+    margin-top: 0!important;
+
+    .__price {
+      font-size: var(--fz-18);
+      margin: 0 var(--space-4);
+    }
+  }
+}
