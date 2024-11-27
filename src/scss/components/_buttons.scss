@@ -2,6 +2,8 @@
 @use "../abstracts/mixins" as *;
 
 .btn {
+  // =======================================================
+  // 基本
   --x: 16px;
   --y: 12px;
   display: inline-flex;
@@ -24,8 +26,9 @@
   }
 
   // =======================================================
-  // タイプ
-  // 通常ボタン(グレー枠線,白背景)
+  // タイプ、スタイル
+
+  // 通常ボタン(塗り: 白, 枠線: グレー枠線)
   &.--normal {
     background-color: var(--bg-white);
     border-color: var(--bdr-btn-gray);
@@ -35,7 +38,7 @@
     }
   }
 
-  // インパクト（黒背景、白文字）
+  // インパクト（塗り: 黒, 枠線: なし, マウスオーバー: 黒80%）
   &.--impact {
     background-color: var(--bg-black);
     color: var(--txt-white);
@@ -45,12 +48,12 @@
     }
   }
 
-  // インパクト (黒枠線、白背景)
+  // インパクトアウトライン (塗り: 白, 枠線: 黒)
   &.--impact-outline {
     border-color: var(--bdr-btn-black);
   }
 
-  // インパクトアウトライン(黒枠線、マウスオーバーでオレンジ枠線、オレンジ文字）
+  // インパクトアウトライン-プライマリー(塗り: 白, 枠線: 黒枠線、マウスオーバー: プライマリー枠線、プライマリー文字）
   &.--impact-outline-primary {
     border: 1px solid var(--bdr-btn-black);
 
@@ -60,7 +63,7 @@
     }
   }
 
-  // プライマリーボタン(白背景、オレンジ枠線(中)、ホバー: オレンジ枠線)
+  // プライマリーボタン(塗り: 白, 枠線: プライマリー(中), ホバー: プライマリー)
   &.--primary {
     background-color: var(--bg-white);
     border-color: var(--bdr-btn-primary-mid);
@@ -70,7 +73,7 @@
     }
   }
 
-  // プライマリーライトボタン(白背景、オレンジ枠線）
+  // プライマリーライトボタン(塗り: 白, 枠線: プライマリー）
   &.--primary-light {
     background-color: var(--bg-white);
     border-color: var(--bdr-btn-primary-mid-light);
@@ -80,12 +83,12 @@
     }
   }
 
-  // プライマリーアウトライン(オレンジ枠線)
+  // プライマリーアウトライン(塗り: 白, 枠線: プライマリー)
   &.--primary-outline {
     border-color: var(--bdr-btn-primary);
   }
 
-  // プライマリーフラットボタン(マウスオーバーで薄オレンジ背景)
+  // プライマリー(塗り: 薄プライマリー, 文字: プライマリー)
   &.--primary-flat {
     background-color: var(--bg-primary-xlight);
     color: var(--txt-primary);
@@ -95,7 +98,7 @@
     }
   }
 
-  //オルタナティブボタン(フィル, 白文字)
+  //オルタナティブボタン(塗り: オルタネート, 文字: 白)
   &.--alternate {
     background-color: var(--bg-alternate);
     color: var(--txt-white);
@@ -105,10 +108,19 @@
     }
   }
 
-  
+  &.--alternate-outline {
+    border: 1px solid var(--bdr-btn-alternate);
+    color: var(--txt-alternate);
+
+    &:hover {
+      background-color: var(--bg-alternate);
+      color: var(--txt-white);
+    }
+  }
+
 
   // =======================================================
-  // アイコン構造
+  // アイコンスタイル
   &.--icon-before::before,
   &.--icon-after::after {
     content: "";
@@ -267,6 +279,11 @@
   // アイコンの色
   &.--icon-primary {
     background-color: var(--bg-primary);
+    
+    &::before,
+    &::after {
+      background-color: var(--bg-primary);
+    }
   }
   &.--icon-gray {
     &::before,
@@ -280,11 +297,22 @@
       background-color: var(--bg-alert);
     }
   }
+
+  // ボタンスタイルでのアイコン色
   &.--impact.--icon-before::before,
   &.--impact.--icon-after::after,
   &.--alternate.--icon-before::before,
   &.--alternate.--icon-after::after {
     background-color: var(--bg-white); //アイコンカラー
+  }
+
+  &.--alternate-outline.--icon-before::before,
+  &.--alternate-outline.--icon-after::after {
+    background-color: var(--bg-alternate);
+  }
+  &.--alternate-outline.--icon-before:hover::before,
+  &.--alternate-outline.--icon-after:hover::after {
+    background-color: var(--bg-white);
   }
   
 
@@ -438,6 +466,7 @@
 
   // =======================================================
   // サイズ
+  // サイズキーワード: xxs, xs, sm, md, lg, xl
   $sizes: xxs, xs, sm, md, lg, xl;
   @each $size in $sizes {
     @if $size == xxs {
@@ -527,32 +556,9 @@
     }
   }
 
-
   // フレックス
   &.--grow-1 {
     flex-grow: 1;
-  }
-
-  // =======================================================
-  // 枠線
-  // 枠線ボーダー
-  $thicknesses: md, lg, xl;
-  @each $thickness in $thicknesses {
-    @if $thickness == md {
-      &.--bdr-#{$thickness} {
-        border-width: 1px;
-      }
-    }
-    @if $thickness == lg {
-      &.--bdr-#{$thickness} {
-        border-width: 2px;
-      }
-    }
-    @if $thickness == xl {
-      &.--bdr-#{$thickness} {
-        border-width: 3px;
-      }
-    }
   }
 
   // =======================================================
@@ -586,6 +592,29 @@
       --x: 40px !important;
     }
   }
+
+  // =======================================================
+  // 枠線
+  // 枠線ボーダー
+  $thicknesses: md, lg, xl;
+  @each $thickness in $thicknesses {
+    @if $thickness == md {
+      &.--bdr-#{$thickness} {
+        border-width: 1px;
+      }
+    }
+    @if $thickness == lg {
+      &.--bdr-#{$thickness} {
+        border-width: 2px;
+      }
+    }
+    @if $thickness == xl {
+      &.--bdr-#{$thickness} {
+        border-width: 3px;
+      }
+    }
+  }
+
 
   // =======================================================
   // 方向
@@ -658,7 +687,8 @@
   }
 
   // =======================================================
-  // 特徴
+  // 限定
+
   // 検索用ボタン
   &.--search-basic {
     align-items: center;
