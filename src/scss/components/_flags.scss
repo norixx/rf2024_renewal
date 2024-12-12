@@ -21,20 +21,35 @@
     background: var(--bg-primary-mid-light);
   }
 
+  // =======================================================
   // type
-  &.--outline {
-    background: var(--bg-white) !important;
-    border: 1px solid var(--bdr-primary-mid);
-    color: var(--txt-primary-mid);
-    padding: 1px var(--space-4) !important;
-  }
-  &.--outline-thick {
+  &.--outline-primary-thick {
     background: var(--bg-white) !important;
     border: 2px solid var(--bdr-primary-mid);
     color: var(--txt-primary-mid);
     font-weight: var(--fw-semibold);
   }
+  // &.--outline-primary{}
+  &.--outline-primary-thick {
+    background: var(--bg-white) !important;
+    border: 2px solid var(--bdr-primary-mid);
+    color: var(--txt-primary-mid);
+    font-weight: var(--fw-semibold);
+  }
+  &.--outline {
+    background: var(--bg-white) !important;
+    border: 1px solid var(--bdr-light);
+    color: var(--txt-light);
+    padding: 1px var(--space-4) !important;
+  }
+  // 申込有
+  &.--applied {
 
+  }
+
+
+
+  // =======================================================
   // size
   &.--sm {
     font-size: var(--fz-10);

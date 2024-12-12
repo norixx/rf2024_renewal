@@ -941,9 +941,7 @@
                                         <span class="c-flag --sm">礼金改定</span>
                                       </td>
                                       <td class="c-room-list__col-madori __body-madori">
-                                        <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803"
-                                          target="_blank"><img src="https://picsum.photos/id/345/120/120" alt="">
-                                        </a>
+                                          <img src="https://picsum.photos/id/345/120/120" alt="" data-js-madori-modal="#madori-modal">
                                       </td>
                                       <td class="__body-floor">
                                         <span class="c-room-list__floor-num">12階</span>
@@ -962,10 +960,10 @@
                                         <span class="c-room-list__sqm">121.78㎡</span>
                                       </td>
                                       <td class="__body-point">
-                                        <span class="c-flag --sm --pc-md --outline-thick">当社限定物件</span>
-                                        <span class="c-flag --sm --pc-md --outline-thick">新築</span>
-                                        <span class="c-flag --sm --pc-md --outline-thick">三井の賃貸</span>
-                                        <span class="c-flag --sm --pc-md --outline-thick">フリーレント</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">当社限定物件</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">新築</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">三井の賃貸</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">フリーレント</span>
                                       </td>
                                       <td class="c-room-list__col-action __body-control">
                                         <a href="#"
@@ -984,8 +982,7 @@
                                         <span class="c-flag --outline --sm">申込有</span>
                                       </td>
                                       <td class="c-room-list__col-madori __body-madori">
-                                        <a href="https://www.mitsui-chintai.co.jp/rf/tatemono/6412/803"
-                                          target="_blank"><img src="https://picsum.photos/id/345/120/120" alt=""></a>
+                                        <img src="https://picsum.photos/id/345/120/120" alt="" data-js-madori-modal="#madori-modal">
                                       </td>
                                       <td class="__body-floor">
                                         <span class="c-room-list__floor-num">12階</span>
@@ -1004,10 +1001,10 @@
                                         <span class="c-room-list__sqm">121.78㎡</span>
                                       </td>
                                       <td class="__body-point">
-                                        <span class="c-flag --sm --pc-md --outline-thick">当社限定物件</span>
-                                        <span class="c-flag --sm --pc-md --outline-thick">新築</span>
-                                        <span class="c-flag --sm --pc-md --outline-thick">三井の賃貸</span>
-                                        <span class="c-flag --sm --pc-md --outline-thick">フリーレント</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">当社限定物件</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">新築</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">三井の賃貸</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">フリーレント</span>
                                       </td>
                                       <td class="c-room-list__col-action __body-control">
                                         <a href="#" class="btn --impact --xs --pc-sm --w-100">お問合せ</a>
@@ -1044,10 +1041,10 @@
                                         <span class="c-room-list__sqm">121.78㎡</span>
                                       </td>
                                       <td class="__body-point">
-                                        <span class="c-flag --sm --pc-md --outline-thick">当社限定物件</span>
-                                        <span class="c-flag --sm --pc-md --outline-thick">新築</span>
-                                        <span class="c-flag --sm --pc-md --outline-thick">三井の賃貸</span>
-                                        <span class="c-flag --sm --pc-md --outline-thick">フリーレント</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">当社限定物件</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">新築</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">三井の賃貸</span>
+                                        <span class="c-flag --sm --pc-md --outline-primary-thick">フリーレント</span>
                                       </td>
                                       <td class="c-room-list__col-action __body-control">
                                         <a href="#" class="btn --impact --xs --pc-sm --w-100">お問合せ</a>
@@ -1563,441 +1560,440 @@
 
     </div><!-- /.l-main -->
 
+  </main>
 
+  <!-- モーダル:詳細絞り込み -->
+  <div class="c-modal" id="search-deep" data-js-modal-target>
+    <div class="c-modal__inner">
+      <form id="sys-form-more">
+        <article class="c-modal-content c-search-deep" id="sys-dialog-more">
+          <header class="c-modal-content__header">
+            <h2 class="c-modal-content__h">絞り込み条件の追加・変更</h2>
+            <button type="button" class="c-modal-content__header-close" data-js-modal-close>
+              <span class="u-visually-hidden">閉じる</span>
+            </button>
+          </header>
+          <div class="c-modal-content__body --scroll">
+            <section class="c-search-deep__sect">
+              <h3 class="c-search-deep__sect-h">建物・お部屋条件</h3>
+              <div class="c-search-deep__sect-body">
+                <section class="c-search-deep__unit">
+                  <h4 class="c-search-deep__unit-h">建物</h4>
+                  <div class="c-search-deep__unit-body">
+                    <dl class="c-search-deep__list">
+                      <dt class="c-search-deep__list-title">建物仕様</dt>
+                      <dd class="c-search-deep__list-desc">
+                        <ul class="c-form-list --col-pc-4 --col-2">
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
+                              分譲賃貸マンション
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
+                              タワーマンション
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
+                              低層マンション
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
+                              免震・制震マンション
+                            </label>
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                    <dl class="c-search-deep__list">
+                      <dt class="c-search-deep__list-title">マンションブランド</dt>
+                      <dd class="c-search-deep__list-desc">
+                        <ul class="c-form-list --col-pc-4 --col-2">
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[1]" value="1" type="checkbox" />
+                              パークアクシス
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[2]" value="2" type="checkbox" />
+                              MORI LIVING
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[3]" value="3" type="checkbox" />
+                              ラ・トゥール
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[4]" value="4" type="checkbox" />
+                              第一マンションズ
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[5]" value="5" type="checkbox" />
+                              パークハビオ
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[6]" value="6" type="checkbox" />
+                              レジディア
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[7]" value="7" type="checkbox" />
+                              カスタリア
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[8]" value="8" type="checkbox" />
+                              ガーデン
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[9]" value="9" type="checkbox" />
+                              アパートメンツ
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[10]" value="10" type="checkbox" />
+                              ベルファース
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[11]" value="11" type="checkbox" />
+                              フレンシア
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[12]" value="12" type="checkbox" />
+                              コンフォリア
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[36]" value="36" type="checkbox" />
+                              プライムメゾン
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[37]" value="37" type="checkbox" />
+                              KDX
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[38]" value="38" type="checkbox" />
+                              アーバネックス
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[39]" value="39" type="checkbox" />
+                              ルフォンプログレ
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[41]" value="41" type="checkbox" />
+                              MFPR
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[42]" value="42" type="checkbox" />
+                              パークルール
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[43]" value="43" type="checkbox" />
+                              パークアクシスプレミア
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[44]" value="44" type="checkbox" />
+                              パークコート
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[45]" value="45" type="checkbox" />
+                              パークマンション
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[46]" value="46" type="checkbox" />
+                              ザ・パークハウス
+                            </label>
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </div>
+                </section>
+                <section class="c-search-deep__unit">
+                  <h4 class="c-search-deep__unit-h">設備施設・設備</h4>
+                  <div class="c-search-deep__unit-body">
+                    <dl class="c-search-deep__list">
+                      <dt class="c-search-deep__list-title">建物仕様</dt>
+                      <dd class="c-search-deep__list-desc">
+                        <ul class="c-form-list --col-pc-4 --col-2">
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
+                              分譲賃貸マンション
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
+                              タワーマンション
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
+                              低層マンション
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
+                              免震・制震マンション
+                            </label>
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                    <dl class="c-search-deep__list">
+                      <dt class="c-search-deep__list-title">マンションブランド</dt>
+                      <dd class="c-search-deep__list-desc">
+                        <ul class="c-form-list --col-pc-4 --col-2">
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[1]" value="1" type="checkbox" />
+                              パークアクシス
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[2]" value="2" type="checkbox" />
+                              MORI LIVING
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[3]" value="3" type="checkbox" />
+                              ラ・トゥール
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[4]" value="4" type="checkbox" />
+                              第一マンションズ
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[5]" value="5" type="checkbox" />
+                              パークハビオ
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[6]" value="6" type="checkbox" />
+                              レジディア
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[7]" value="7" type="checkbox" />
+                              カスタリア
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[8]" value="8" type="checkbox" />
+                              ガーデン
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[9]" value="9" type="checkbox" />
+                              アパートメンツ
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[10]" value="10" type="checkbox" />
+                              ベルファース
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[11]" value="11" type="checkbox" />
+                              フレンシア
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[12]" value="12" type="checkbox" />
+                              コンフォリア
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[36]" value="36" type="checkbox" />
+                              プライムメゾン
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[37]" value="37" type="checkbox" />
+                              KDX
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[38]" value="38" type="checkbox" />
+                              アーバネックス
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[39]" value="39" type="checkbox" />
+                              ルフォンプログレ
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[41]" value="41" type="checkbox" />
+                              MFPR
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[42]" value="42" type="checkbox" />
+                              パークルール
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[43]" value="43" type="checkbox" />
+                              パークアクシスプレミア
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[44]" value="44" type="checkbox" />
+                              パークコート
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[45]" value="45" type="checkbox" />
+                              パークマンション
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="tagb[46]" value="46" type="checkbox" />
+                              ザ・パークハウス
+                            </label>
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </div>
+                </section>
 
-    <!-- モーダル:詳細絞り込み -->
-    <div class="c-modal" id="search-deep" data-js-modal-target>
-      <div class="c-modal__inner">
-        <form id="sys-form-more">
-          <article class="c-modal-content c-search-deep" id="sys-dialog-more">
-            <header class="c-modal-content__header">
-              <h2 class="c-modal-content__h">絞り込み条件の追加・変更</h2>
-              <button type="button" class="c-modal-content__header-close" data-js-modal-close>
-                <span class="u-visually-hidden">閉じる</span>
-              </button>
-            </header>
-            <div class="c-modal-content__body --scroll">
-              <section class="c-search-deep__sect">
-                <h3 class="c-search-deep__sect-h">建物・お部屋条件</h3>
-                <div class="c-search-deep__sect-body">
-                  <section class="c-search-deep__unit">
-                    <h4 class="c-search-deep__unit-h">建物</h4>
-                    <div class="c-search-deep__unit-body">
-                      <dl class="c-search-deep__list">
-                        <dt class="c-search-deep__list-title">建物仕様</dt>
-                        <dd class="c-search-deep__list-desc">
-                          <ul class="c-form-list --col-pc-4 --col-2">
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
-                                分譲賃貸マンション
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
-                                タワーマンション
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
-                                低層マンション
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
-                                免震・制震マンション
-                              </label>
-                            </li>
-                          </ul>
-                        </dd>
-                      </dl>
-                      <dl class="c-search-deep__list">
-                        <dt class="c-search-deep__list-title">マンションブランド</dt>
-                        <dd class="c-search-deep__list-desc">
-                          <ul class="c-form-list --col-pc-4 --col-2">
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[1]" value="1" type="checkbox" />
-                                パークアクシス
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[2]" value="2" type="checkbox" />
-                                MORI LIVING
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[3]" value="3" type="checkbox" />
-                                ラ・トゥール
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[4]" value="4" type="checkbox" />
-                                第一マンションズ
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[5]" value="5" type="checkbox" />
-                                パークハビオ
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[6]" value="6" type="checkbox" />
-                                レジディア
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[7]" value="7" type="checkbox" />
-                                カスタリア
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[8]" value="8" type="checkbox" />
-                                ガーデン
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[9]" value="9" type="checkbox" />
-                                アパートメンツ
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[10]" value="10" type="checkbox" />
-                                ベルファース
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[11]" value="11" type="checkbox" />
-                                フレンシア
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[12]" value="12" type="checkbox" />
-                                コンフォリア
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[36]" value="36" type="checkbox" />
-                                プライムメゾン
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[37]" value="37" type="checkbox" />
-                                KDX
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[38]" value="38" type="checkbox" />
-                                アーバネックス
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[39]" value="39" type="checkbox" />
-                                ルフォンプログレ
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[41]" value="41" type="checkbox" />
-                                MFPR
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[42]" value="42" type="checkbox" />
-                                パークルール
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[43]" value="43" type="checkbox" />
-                                パークアクシスプレミア
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[44]" value="44" type="checkbox" />
-                                パークコート
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[45]" value="45" type="checkbox" />
-                                パークマンション
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[46]" value="46" type="checkbox" />
-                                ザ・パークハウス
-                              </label>
-                            </li>
-                          </ul>
-                        </dd>
-                      </dl>
-                    </div>
-                  </section>
-                  <section class="c-search-deep__unit">
-                    <h4 class="c-search-deep__unit-h">設備施設・設備</h4>
-                    <div class="c-search-deep__unit-body">
-                      <dl class="c-search-deep__list">
-                        <dt class="c-search-deep__list-title">建物仕様</dt>
-                        <dd class="c-search-deep__list-desc">
-                          <ul class="c-form-list --col-pc-4 --col-2">
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
-                                分譲賃貸マンション
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
-                                タワーマンション
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
-                                低層マンション
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
-                                免震・制震マンション
-                              </label>
-                            </li>
-                          </ul>
-                        </dd>
-                      </dl>
-                      <dl class="c-search-deep__list">
-                        <dt class="c-search-deep__list-title">マンションブランド</dt>
-                        <dd class="c-search-deep__list-desc">
-                          <ul class="c-form-list --col-pc-4 --col-2">
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[1]" value="1" type="checkbox" />
-                                パークアクシス
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[2]" value="2" type="checkbox" />
-                                MORI LIVING
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[3]" value="3" type="checkbox" />
-                                ラ・トゥール
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[4]" value="4" type="checkbox" />
-                                第一マンションズ
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[5]" value="5" type="checkbox" />
-                                パークハビオ
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[6]" value="6" type="checkbox" />
-                                レジディア
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[7]" value="7" type="checkbox" />
-                                カスタリア
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[8]" value="8" type="checkbox" />
-                                ガーデン
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[9]" value="9" type="checkbox" />
-                                アパートメンツ
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[10]" value="10" type="checkbox" />
-                                ベルファース
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[11]" value="11" type="checkbox" />
-                                フレンシア
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[12]" value="12" type="checkbox" />
-                                コンフォリア
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[36]" value="36" type="checkbox" />
-                                プライムメゾン
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[37]" value="37" type="checkbox" />
-                                KDX
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[38]" value="38" type="checkbox" />
-                                アーバネックス
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[39]" value="39" type="checkbox" />
-                                ルフォンプログレ
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[41]" value="41" type="checkbox" />
-                                MFPR
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[42]" value="42" type="checkbox" />
-                                パークルール
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[43]" value="43" type="checkbox" />
-                                パークアクシスプレミア
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[44]" value="44" type="checkbox" />
-                                パークコート
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[45]" value="45" type="checkbox" />
-                                パークマンション
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="tagb[46]" value="46" type="checkbox" />
-                                ザ・パークハウス
-                              </label>
-                            </li>
-                          </ul>
-                        </dd>
-                      </dl>
-                    </div>
-                  </section>
+              </div>
+            </section>
 
-                </div>
-              </section>
+            <hr>
 
-              <hr>
-
-              <section class="c-search-deep__sect">
-                <h3 class="c-search-deep__sect-h">他条件</h3>
-                <div class="c-search-deep__sect-body">
-                  <section class="c-search-deep__unit">
-                    <h4 class="c-search-deep__unit-h">他</h4>
-                    <div class="c-search-deep__unit-body">
-                      <div class="c-search-deep__list">
-                        <div class="c-search-deep__list-desc">
-                          <ul class="c-form-list --col-pc-4 --col-2">
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
-                                分譲賃貸マンション
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
-                                タワーマンション
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
-                                低層マンション
-                              </label>
-                            </li>
-                            <li class="c-form-list__item">
-                              <label class="c-input-label --checkbox">
-                                <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
-                                免震・制震マンション
-                              </label>
-                            </li>
-                          </ul>
-                        </div>
+            <section class="c-search-deep__sect">
+              <h3 class="c-search-deep__sect-h">他条件</h3>
+              <div class="c-search-deep__sect-body">
+                <section class="c-search-deep__unit">
+                  <h4 class="c-search-deep__unit-h">他</h4>
+                  <div class="c-search-deep__unit-body">
+                    <div class="c-search-deep__list">
+                      <div class="c-search-deep__list-desc">
+                        <ul class="c-form-list --col-pc-4 --col-2">
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="OTHER_SBT_02" value="1" type="checkbox" />
+                              分譲賃貸マンション
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="zk_tower" value="1" type="checkbox" />
+                              タワーマンション
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="zk_lowrize" value="1" type="checkbox" />
+                              低層マンション
+                            </label>
+                          </li>
+                          <li class="c-form-list__item">
+                            <label class="c-input-label --checkbox">
+                              <input class="sys-recalc" name="BLD_SBT_15" value="1" type="checkbox" />
+                              免震・制震マンション
+                            </label>
+                          </li>
+                        </ul>
                       </div>
                     </div>
-                  </section>
-                </div>
-              </section>
-            </div>
-            <footer class="c-modal-content__footer">
-              <dl class="c-search-brief-result">
-                <dt class="c-search-brief-result__title">検索対象お部屋数</dt>
-                <dd class="c-search-brief-result__count">
-                  <em class="__count sys-vacant_rooms">1234</em>
-                  件
-                </dd>
-                <dd class="c-search-brief-result__btn">
-                  <button class="btn --impact --xl --w-100">
-                    お部屋を検索する
-                  </button>
-                </dd>
-              </dl>
-            </footer>
-          </article>
-        </form>
-      </div>
+                  </div>
+                </section>
+              </div>
+            </section>
+          </div>
+          <footer class="c-modal-content__footer">
+            <dl class="c-search-brief-result">
+              <dt class="c-search-brief-result__title">検索対象お部屋数</dt>
+              <dd class="c-search-brief-result__count">
+                <em class="__count sys-vacant_rooms">1234</em>
+                件
+              </dd>
+              <dd class="c-search-brief-result__btn">
+                <button class="btn --impact --xl --w-100">
+                  お部屋を検索する
+                </button>
+              </dd>
+            </dl>
+          </footer>
+        </article>
+      </form>
     </div>
+  </div>
 
-
-  </main>
+  <!-- モーダル:間取りbodyの閉じ前 -->
 
   <!-- tippy.js -->
   <script src="https://unpkg.com/@popperjs/core@2"></script>

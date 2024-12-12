@@ -4,6 +4,7 @@ import RfLoader from "./partials/_loader";
 import RfCheckboxStatus from "./partials/_checkbox-status";
 // import rf_modals from "./partials/_modal.old";
 import RfModals from "./partials/_modal";
+import rf_madori_modal from "./partials/_madori-modal";
 import rf_gnav from "./partials/_gnav";
 import rf_toggles from "./partials/_toggles";
 import rf_top_banners from "./partials/_top-banners";
@@ -148,6 +149,11 @@ const rf_init = () => {
   // TODO: テスト(本番化のときに削除)
   if(document.querySelector('#ajax-modal-test')) {
     rf_test()
+  }
+
+  // 間取りモーダル
+  if(document.querySelector('[data-js-madori-modal]')) {
+    rf_madori_modal()
   }
 }
 

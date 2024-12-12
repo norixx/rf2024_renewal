@@ -193,7 +193,7 @@ $c-modal-sp-only: ".c-modal.--sp-only";
     height: auto;
     margin: 0 !important;
     overflow: initial;
-    z-index: 1;
+    // z-index: var(--z-index-lv4);
 
     &.--is-open {
       background-color: transparent;

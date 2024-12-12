@@ -37,13 +37,14 @@
   }
 
   &__flags {
-    position: absolute;
-    left: var(--space-16);
-    top: 0;
+    // position: absolute;
+    // left: var(--space-16);
+    // top: 0;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-4);
     z-index: var(--z-index-lv1);
+    margin-bottom: var(--space-8);
   }
 
   &__slide,

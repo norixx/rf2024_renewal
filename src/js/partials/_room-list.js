@@ -14,9 +14,10 @@ const rf_room_list_link = () => {
       if (
         clicked.tagName === 'A' ||
         clicked.tagName === 'BUTTON' ||
+        clicked.hasAttribute('data-js-madori-modal') || //間取り画像の場合
         clicked.closest('.swiper-initialized') //動いているswiperは中止対象
       ) {
-        console.log('インタラクティブ要素なので中止')
+        console.log('インタラクティブ要素or間取り画像なので中止')
         return
       }
 

@@ -7,6 +7,7 @@ class RfModals {
   #modalAjaxOpenBtns
   #modalTargetName = 'jsModalTarget'
   #openedModals = []
+  #events = {}
 
   /**
    * Initializes a new instance of the RfModals class.
@@ -32,6 +33,29 @@ class RfModals {
 
   // ===
 
+  // イベント登録
+  on(eventName, callback) {
+    if(!this.#events[eventName]) {
+      this.#events[eventName] = []
+    }
+    this.#events[eventName].push(callback)
+  }
+
+  // イベント発動
+  // dataは発動させる時に渡すデータ。最終的にコールバック関数で受け取るためのもので、データ形式は自由
+  async #emit(eventName, data = null) {
+    if(this.#events[eventName]) {
+      const promises = this.#events[eventName].map(callback => {
+        return Promise.resolve(callback(data))
+      })
+
+      return Promise.all(promises)
+    }
+  }
+
+
+  // ===
+
   // モーダルを開く
   openModal(modalId) {
     const targetModal = document.querySelector(modalId)
@@ -44,14 +68,18 @@ class RfModals {
   }
 
   // 開くボタンにクリックイベントを設定
-  #setModalOpenBtnEvent(btn) {
-    const modalId = btn.dataset.jsModal
-    btn.addEventListener('click', e => {
-      if (btn.tagName === 'A' || btn.tagName === 'BUTTON') {
-        e.preventDefault()
-      }
-      
-      this.openModal(modalId)
+  #setModalOpenBtnEvent(btns) {
+    // check if btns is element or nodelist
+    const btnSet = btns instanceof Element ? [btns] : Array.from(btns)
+    btnSet.forEach(btn => {
+      const modalId = btn.dataset.jsModal
+      btn.addEventListener('click', e => {
+        if (btn.tagName === 'A' || btn.tagName === 'BUTTON') {
+          e.preventDefault()
+        }
+
+        this.openModal(modalId)
+      })
     })
   }
 
@@ -64,8 +92,16 @@ class RfModals {
 
   // ===
 
-  // モーダルを閉じる
-  closeModal(modal) {
+  /**
+   * モーダルを閉じる
+   * 
+   * @param object modal モーダル要素オブジェクト
+   */
+  async closeModal(modal) {
+    // beforeCloseイベント発動
+    // modalはモーダル要素オブジェクト
+    await this.#emit('beforeClose', modal)
+
     // console.log('モーダル閉じる, openedModalsは?', openedModals)
     // console.log(modal.id)
     // console.log(modal instanceof Element)
@@ -87,15 +123,18 @@ class RfModals {
 
   // モーダルを閉じるイベント設定
   #setModalCloseEvent(modal) {
-    // モーダル本体閉じる(モーダルの何もないところをクリックしたとき閉じる)
+    // モーダル本体クリックで閉じる
+    // (モーダルの何もないところをクリックしたとき閉じる)
     modal.addEventListener('click', e => {
+      console.log('モーダル本体クリック',this.#modalTargetName, e.target.dataset)
       if (this.#modalTargetName in e.target.dataset) {
         console.log('モーダルターゲット(本体)クリックで閉じる', modal)
         this.closeModal(modal)
       }
     })
 
-    // モーダル閉じるボタンの設定(モーダル本体からモーダル閉じるボタンを探して設定する)
+    // モーダル閉じるボタンの設定
+    // (モーダル本体からモーダル閉じるボタンを探して設定する)
     const modalCloses = modal.querySelectorAll('[data-js-modal-close]')
     modalCloses.forEach(close => {
       close.addEventListener('click', () => {
@@ -105,7 +144,7 @@ class RfModals {
     })
   }
 
-  // モーダル設定(コンストラクタから呼び出し)
+  // モーダル設定(コンストラクタからのみ呼び出し)
   #setModals() {
     this.#modals.forEach(modal => {
       this.#setModalCloseEvent(modal)
@@ -127,9 +166,14 @@ class RfModals {
 
   // モーダル開くボタンとモーダル本体の設定
   modal(modalObj) {
-    console.log('モーダル作成呼び出し')
-    this.setModalOpenBtn(modalObj.modalOpenBtn)
-    this.setModal(modalObj.modal)
+    if('modalOpenBtn' in modalObj) {
+      console.log('モーダル開くボタンセット')
+      this.setModalOpenBtn(modalObj.modalOpenBtn)
+    }
+    if('modal' in modalObj) {
+      console.log('モーダルセット')
+      this.setModal(modalObj.modal)
+    }
   }
 
 }

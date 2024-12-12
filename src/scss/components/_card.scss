@@ -44,6 +44,10 @@
     font-size: var(--fz-14);
     font-weight: var(--fw-bold);
     display: inline;
+
+    * {
+      font-weight: inherit;
+    }
   }
 
   &__text {
