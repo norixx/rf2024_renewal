@@ -541,6 +541,16 @@
     column-gap: var(--gap);
     row-gap: var(--space-16);
 
+    &.--is-center {
+      justify-content: center;
+    }
+
+    @include mq(sp) {
+      &.--is-sp-center {
+        justify-content: center;
+      }
+    }
+
     > li {
       flex: 0 0 calc((100% - var(--gap)) / 2);
       text-align: center;
@@ -560,6 +570,10 @@
 
     @include mq {
       --gap: var(--space-24);
+
+      &.--is-pc-center {
+        justify-content: center;
+      }
 
       > li {
         flex: 0 0 calc((100% - var(--gap) * 3) / 4);
