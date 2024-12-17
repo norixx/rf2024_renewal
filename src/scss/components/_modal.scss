@@ -298,8 +298,14 @@ $c-modal-sp-only: ".c-modal.--sp-only";
   }
 
   //間取り専用
+  $container: &__container;
   &.--madori-modal {
-
+    #{$container} {
+      width: fit-content;
+      max-width: 500px;
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 
