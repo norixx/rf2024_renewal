@@ -189,7 +189,7 @@
         --size: 24px;
         content: '';
         z-index: 1;
-        background-color: rgba(0 0 0/.15);
+        background-color: rgba(0 0 0/.25);
         width: var(--size);
         height: var(--size);
         right: 0;
@@ -206,7 +206,7 @@
       //   opacity: 1;
       // }
       &:hover::after {
-        background-color: rgba(0 0 0/.3);
+        background-color: rgba(0 0 0/.4);
         // transition: opacity var(--animation-fast);
         // opacity: 1;
         // scale: 1 1;

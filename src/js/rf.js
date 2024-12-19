@@ -38,6 +38,7 @@ const rf_init = () => {
     RfCheckboxStatus,
     RfMediaQuery,
     RfModals,
+    rf_madori_modal,
   }
 
   // rf_set_globals({
@@ -152,7 +153,9 @@ const rf_init = () => {
   }
 
   // 間取りモーダル
-  if(document.querySelector('[data-js-madori-modal]')) {
+  if(
+    document.querySelector('[data-js-madori-modal]') 
+  ) {
     rf_madori_modal()
   }
 }
