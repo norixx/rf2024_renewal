@@ -42,7 +42,7 @@ class RfModals {
   }
 
   // イベント発動
-  // dataは発動させる時に渡すデータ。最終的にコールバック関数で受け取るためのもので、データ形式は自由
+  // dataは発動させる時に渡すデータ。最終的にコールバック関数で受け取るためのもので、イベント発動の際に渡すデータ。データはイベントごとに自由に設定する
   async #emit(eventName, data = null) {
     if(this.#events[eventName]) {
       const promises = this.#events[eventName].map(callback => {

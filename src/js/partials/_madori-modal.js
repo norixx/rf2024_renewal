@@ -29,13 +29,18 @@ const rf_madori_modal = () => {
     // モーダル設定（閉じる制御を追加）
     modal = document.querySelector('#madori-modal')
     modalMadoriContainer = modal.querySelector('#madori-container')
+    // 閉じる際にモーダルの中身を空にする
     RF_GLOBALS.rf_modals.on('beforeClose', modal => {
+      if(modal.id !== 'madori-modal') return
+      console.log('間取りモーダル閉じるイベント')
       modal.querySelector('#madori-container').innerHTML = ''
     })
     RF_GLOBALS.rf_modals.modal({
       modal,
     })
   }
+
+  // TODO: 間取り画像の取得・挿入・エラーハンドリング
 
 
   // クリックイベント(モーダル作成、間取り画像をモーダルに挿入、モーダル開く)設置
@@ -45,13 +50,16 @@ const rf_madori_modal = () => {
       image.addEventListener('click', () => {
         // e.preventDefault()
         // モーダルが有無をチェックして、無ければ作成
-        if(!document.querySelector('.c-buildroom-modal')) {
+        if(!document.querySelector('.c-buildroom-modal.--madori-modal')) {
           console.log('間取りモーダルが無いので作成します')
           createModal()
         }
         // 間取り画像をコピーしてモーダルに挿入
         const imgClone = image.cloneNode(true)
         modalMadoriContainer.insertAdjacentElement('beforeend', imgClone)
+
+        // TODO: 間取り画像を取得して挿入
+        const imgSrc = image.dataset.jsMadoriPhoto
 
         // モーダルを開く
         const modalId = image.dataset.jsMadoriModal

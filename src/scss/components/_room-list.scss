@@ -172,37 +172,44 @@
       }
 
       &::before {
-        --size: 24px;
+        --size: 16px;
         background-color: var(--bg-white);
         width: var(--size);
         height: var(--size);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        right: 0;
+        bottom: 0;
+        transform: translate(-4px, -4px);
         mask: var(--icon-zoomin) no-repeat center center/contain;
         z-index: 2;
-        opacity: 0;
-        transition: opacity var(--animation-fast);
+        // opacity: 0;
+        // transition: opacity var(--animation-fast);
       }
 
       &::after {
+        --size: 24px;
         content: '';
-        inset: 0;
         z-index: 1;
         background-color: rgba(0 0 0/.15);
-        scale: 0 0;
-        opacity: 0;
-        transition: opacity var(--animation-fast), scale 0s var(--animation-fast);
+        width: var(--size);
+        height: var(--size);
+        right: 0;
+        bottom: 0;
+        // inset: 0;
+        // scale: 0 0;
+        // opacity: 0;
+        // transition: opacity var(--animation-fast), scale 0s var(--animation-fast);
+        transition: background-color var(--animation-fast);
       }
 
-      &:hover::before {
-        transition: opacity var(--animation-fast);
-        opacity: 1;
-      }
+      // &:hover::before {
+      //   transition: opacity var(--animation-fast);
+      //   opacity: 1;
+      // }
       &:hover::after {
-        transition: opacity var(--animation-fast);
-        opacity: 1;
-        scale: 1 1;
+        background-color: rgba(0 0 0/.3);
+        // transition: opacity var(--animation-fast);
+        // opacity: 1;
+        // scale: 1 1;
       }
 
       @include mq {

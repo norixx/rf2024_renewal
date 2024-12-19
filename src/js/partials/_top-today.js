@@ -9,11 +9,13 @@ const rf_todays_count = () => {
   const errorMsg = '件数取得エラーが発生しました'
   // const loader = target.querySelector('[data-js-loader]')
 
+  // エラーハンドリング
   const errorHandler = err => {
     console.error(err)
     target.insertAdjacentHTML('beforeend', `<p class="u-color-alert u-fz-14 u-ta-center">${errorMsg}</p>`)
   }
 
+  // コンテンツを挿入
   const insertContent = html => {
     const domParser = new DOMParser()
     const htmlElement = domParser.parseFromString(html, "text/html")

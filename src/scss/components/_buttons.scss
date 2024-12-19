@@ -118,6 +118,17 @@
     }
   }
 
+  &.--white-outline {
+    border: 1px solid var(--bdr-btn-white);
+    color: var(--txt-white);
+    background-color: transparent;
+
+    &:hover {
+      background-color: var(--bg-white);
+      color: var(--txt-normal);
+    }
+  }
+
 
   // =======================================================
   // アイコンスタイル
