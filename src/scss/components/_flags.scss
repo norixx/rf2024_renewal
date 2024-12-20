@@ -44,7 +44,29 @@
   }
   // 申込有
   &.--applied {
+    background-color: var(--bg-gray-dark);
+    color: var(--txt-white);
+    // background-color: var(--bg-gray-white);
+    // color: var(--txt-light);
+    // border: 1px solid var(--bdr-light);
+    // border-top: none;
+    // ==
+    padding: var(--space-2) var(--space-6)!important;
+    display: flex;
+    align-items: center;
+    min-width: fit-content;
+    // font-weight: var(--fw-semibold);
 
+    &::before {
+      --size: 18px;
+      content: '';
+      margin-right: var(--space-2);
+      height: var(--size);
+      width: var(--size);
+      background-color: var(--bg-white);
+      // background-color: var(--bg-gray-dark);
+      @include mask-icon(--icon-check);
+    }
   }
 
 

@@ -178,7 +178,7 @@
     }
 
     &:hover input:where([type="checkbox"], [type="radio"]) {
-      border-color: var(--bg-gray-dark);
+      border-color: var(--bdr-dark);
     }
 
     input:where([type="checkbox"]:checked, [type="radio"]:checked) {

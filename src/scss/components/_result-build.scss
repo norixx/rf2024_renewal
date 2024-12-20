@@ -167,8 +167,13 @@
     font-size: var(--fz-14);
     line-height: var(--line-height-md);
     margin-top: var(--space-16);
+    margin-bottom: var(--space-16);
     border: 5px solid var(--bdr-xlight);
     padding: var(--space-16);
     font-weight: var(--fw-bold);
+
+    @include mq {
+      border-top: none;
+    }
   }
 }

@@ -58,6 +58,10 @@
     position: relative;
     padding: var(--space-16) 0;
 
+    &:first-child {
+      border-top: 1px solid var(--bdr-light);
+    }
+
     &:not(:last-child) {
       border-bottom: 1px solid var(--bdr-light);
     }
@@ -223,18 +227,6 @@
       }
     }
 
-    .__body-flag-applied {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background-color: rgba(0 0 0/.5);
-      color: var(--txt-white);
-      font-size: var(--fz-11);
-      text-align: center;
-      width: 100%;
-
-    }
-
     .__body-floor {
       &::before {
         content: "階数・住戸番号:";
@@ -328,6 +320,13 @@
         flex-basis: 200px !important;
       }
     }
+  }
+
+  // 申込有フラグ
+  &__flag-applied {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 
   &__rent {
