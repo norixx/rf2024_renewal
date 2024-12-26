@@ -1,0 +1,55 @@
+/* Main layout selectors */
+.parent, .parent2 {
+  /* Component selectors */
+  /* Utility classes */
+}
+.parent .container, .parent2 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.parent .header, .parent2 .header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+.parent .nav, .parent2 .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.parent .button, .parent2 .button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.parent .button:hover, .parent2 .button:hover {
+  background-color: #0056b3;
+}
+.parent .card, .parent2 .card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.parent .text-center, .parent2 .text-center {
+  text-align: center;
+}
+.parent .mt-2, .parent2 .mt-2 {
+  margin-top: 2rem;
+}
+.parent .p-1, .parent2 .p-1 {
+  padding: 1rem;
+}
+
+.parent .bb {
+  background-color: yellow;
+}
+
+.parent2 {
+  background-color: #567633;
+}

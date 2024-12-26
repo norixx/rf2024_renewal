@@ -7,10 +7,31 @@
 
   padding: var(--space-16);
   background-color: var(--bg-white);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
+  position: relative;
 
   @include mq {
     padding: var(--space-24);
+  }
+
+
+  // 見出し
+  &__heading {
+    text-align: center;
+    font-size: var(--fz-18);
+    letter-spacing: var(--letter-space-10);
+    margin-bottom: var(--space-16);
+    // color: var(--txt-white);
+    // background-color: var(--bg-gray-xdark);
+    // padding: var(--space-4) var(--space-16);
+    // position: absolute;
+    // bottom: 100%;
+    // border-radius: var(--bdr-radius-md) var(--bdr-radius-md) 0 0;
+
+    
+    @include mq {
+      margin-bottom: var(--space-24);
+    }
   }
 
   // 検索コントロール
@@ -76,7 +97,7 @@
 
   @include mq {
     dt {
-      font-size: var(--fz-18);
+      // font-size: var(--fz-18);
       flex: 0 0 30%;
     }
   }

@@ -60,6 +60,10 @@
 
     &:first-child {
       border-top: 1px solid var(--bdr-light);
+
+      @include mq {
+        border-top: none;
+      }
     }
 
     &:not(:last-child) {
@@ -173,6 +177,7 @@
         content: '';
         pointer-events: none;
         position: absolute;
+        cursor: zoom-in;
       }
 
       &::before {
@@ -224,6 +229,7 @@
       img {
         aspect-ratio: 1/1;
         object-fit: contain;
+        cursor: zoom-in;
       }
     }
 
@@ -327,6 +333,7 @@
     position: absolute;
     right: 0;
     top: 0;
+    border-bottom-left-radius: var(--bdr-radius-sm);
   }
 
   &__rent {

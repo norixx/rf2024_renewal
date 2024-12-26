@@ -1,0 +1,15 @@
+@use './include' as *;
+
+.parent {
+  @extend %nested-styles;
+
+  .bb {
+    background-color: yellow;
+  }
+}
+
+.parent2 {
+  @extend %nested-styles;
+
+  background-color: #567633;
+}
