@@ -44,14 +44,14 @@
   }
   // 申込有
   &.--applied {
-    background-color: var(--bg-gray-dark);
+    background-color: var(--bg-gray);
     color: var(--txt-white);
     // background-color: var(--bg-gray-white);
     // color: var(--txt-light);
     // border: 1px solid var(--bdr-light);
     // border-top: none;
     // ==
-    padding: var(--space-2) var(--space-6)!important;
+    padding: 0 var(--space-4)!important;
     display: flex;
     align-items: center;
     min-width: fit-content;
