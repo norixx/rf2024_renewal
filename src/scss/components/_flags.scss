@@ -58,8 +58,8 @@
     // font-weight: var(--fw-semibold);
 
     &::before {
+      content: none;
       --size: 18px;
-      content: '';
       margin-right: var(--space-2);
       height: var(--size);
       width: var(--size);
