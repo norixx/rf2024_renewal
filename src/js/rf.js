@@ -1,3 +1,6 @@
+// Vendors
+import Toastify from 'toastify-js'
+
 // import { rf_get_globals, rf_set_globals } from "./partials/_global-setting";
 import rf_responsive_check from "./partials/_responsive";
 import RfLoader from "./partials/_loader";

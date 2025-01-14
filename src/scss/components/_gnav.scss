@@ -269,6 +269,7 @@
       // display: none;
       > li {
         border-bottom: none;
+        font-feature-settings: "palt" 1;
 
         > a {
           display: flex;

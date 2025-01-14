@@ -172,8 +172,8 @@
     padding: var(--space-16);
     font-weight: var(--fw-bold);
 
-    @include mq {
-      border-top: none;
-    }
+    // @include mq {
+    //   border-top: none;
+    // }
   }
 }

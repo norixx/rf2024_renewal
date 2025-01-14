@@ -79,6 +79,8 @@ $alternate-dark: rgba(88, 62, 51, 1);
 
 $alert: rgb(242, 76, 5);
 $alert-trans: rgb(242 76 5 / 0.9);
+$success: rgb(133, 184, 132);
+$error: rgb(242, 56, 75);
 
 $shadow-sm: 0px 0px 4px rgba(0, 0, 0, 0.15);
 $shadow-md: 0px 0px 8px rgba(0, 0, 0, 0.15);
@@ -189,6 +191,8 @@ $z-index-lv5: 500;
 
   --bg-alert: #{$alert};
   --bg-alert-trans: #{$alert-trans};
+  --bg-success: #{$success};
+  --bg-error: #{$error};
 
 
   // border(基本グレー)

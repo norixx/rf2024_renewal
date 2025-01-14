@@ -29,6 +29,9 @@
   <!-- swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
+  <!-- Toastify -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
   <link rel="stylesheet" href="./assets/css/rf.min.css">
 
   <script
@@ -90,6 +93,11 @@
     </div>
   </div>
 
+  <!-- トースト -->
+  <div class="toastify c-toast --is-error toastify-right toastify-bottom" aria-live="polite" style="transform: translate(0px, 0px); bottom: 15px; right: 20px; opacity: 1;">データの取得に失敗しました
+    <button type="button" aria-label="Close" class="toast-close">✖</button>
+  </div>
+
   <header class="header">
     <div class="header__container">
 
@@ -112,7 +120,7 @@
                 <p class="gnav-list__lead u-sp-only">厳選した都心の上質な賃貸マンションを<br>数多くご提案します</p>
               </div>
             </li>
-            <li class="gnav-list__item u-mb-0">
+            <li class="gnav-list__item">
               <div class="gnav-list__link" data-js-gnav-sub="#gnav-lend" data-js-gnav-lv1="lend">
                 <span class="gnav-list__link-text">貸したい</span>
                 <p class="gnav-list__lead u-sp-only">賃貸運営をお考えのオーナー様に最適なプランを数多くご提案します
@@ -144,7 +152,7 @@
                 </p>
               </div>
             </li>
-            <li class="gnav-list__item">
+            <li class="gnav-list__item u-mb-0">
               <div class="gnav-list__link" data-js-gnav-sub="#gnav-aboutus" data-js-gnav-lv1="aboutus">
                 <span class="gnav-list__link-text">About Us</span>
                 <p class="gnav-list__lead u-sp-only">私たちレジデントファーストの思いや<br>
@@ -1431,6 +1439,9 @@
 
   <!-- swiper -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Toastify -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
   <script src="./assets/js/rf.min.js"></script>
 </body>
