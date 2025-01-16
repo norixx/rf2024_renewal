@@ -36,6 +36,8 @@
     }
   }
 
+  //便利な使い方のモーダルは別に記載
+
   &.--sp-only &__inner {
     @include mq {
       margin-left: 0;
@@ -378,5 +380,44 @@ $c-modal-sp-only: ".c-modal.--sp-only";
     position: absolute;
     top: var(--space-16);
     right: var(--space-16);
+  }
+}
+
+
+// =======================================================
+// 便利な使い方モーダル
+.c-modal.--convenient-usage {
+  $parent: c-modal;
+
+  .#{$parent}__inner {
+    @include mq {
+      max-width: 500px;
+    }
+  }
+}
+
+.convenient-usage {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-weight: var(--fw-semibold);
+    font-size: var(--fz-16);
+    margin-bottom: var(--space-32);
+    text-align: center;
+  }
+
+  &__img {
+    margin-bottom: var(--space-24);
+    // margin-right: auto;
+    // margin-left: auto;
+    align-self: center;
+    max-width: 250px;
+    height: auto;
+  }
+
+  &__text {
+    line-height: var(--line-height-lg);
+    font-size: var(--fz-14);
   }
 }

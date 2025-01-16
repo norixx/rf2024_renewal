@@ -35,7 +35,8 @@
     width: var(--space-16);
     height: var(--space-16);
     position: relative;
-    margin-left: var(--space-8);
+    margin-left: var(--space-16);
+    flex-shrink: 0;
     
     &::before {
       content: '';

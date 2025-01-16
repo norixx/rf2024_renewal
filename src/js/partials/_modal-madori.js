@@ -2,7 +2,7 @@
 // 対象: 検索結果 > 建物一覧、部屋一覧ページなど
 import EventListenerTracker from './_event-listener-tracker'
 
-const rf_madori_modal = () => {
+const rf_modal_madori = () => {
   let modal = null //モーダル本体（初回クリック時に作成）
   let modalMadoriContainer = null //間取り画像をいれる場所
   const madori_images = document.querySelectorAll('[data-js-madori-modal]')
@@ -114,4 +114,4 @@ const rf_madori_modal = () => {
 
 }
 
-export default rf_madori_modal
+export default rf_modal_madori

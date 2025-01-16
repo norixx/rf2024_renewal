@@ -29,9 +29,7 @@
   <!-- swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-  <!-- Toastify -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
+  <!-- RF2024 CSS -->
   <link rel="stylesheet" href="./assets/css/rf.min.css">
 
   <script
@@ -56,8 +54,9 @@
     <li><a href="ensen-station.html" style="color: #fff;">沿線ページ - 路線 &gt;</a></li>
     <li><a href="list.html" style="color: #fff;">リストページ &gt;</a></li>
     <li>
-      <a href="#" id="ajax-modal-test" data-js-modal-lazy="#sys-dialog-area" style="color: #fff;">AJAXモーダルテスト</a>
+      <a href="#" id="ajax-modal-test" data-js-modal-lazy="#sys-dialog-area" style="color: #fff;">AJAXモーダルテスト &gt;</a>
     </li>
+    <li><button style="color: #fff;" data-js-modal="#modal-convenient-usage">便利な使い方 &gt;</button></li>
   </ul>
 
   <!-- モーダル: 再選択 -->
@@ -97,6 +96,29 @@
   <div class="toastify c-toast --is-error toastify-right toastify-bottom" aria-live="polite" style="transform: translate(0px, 0px); bottom: 15px; right: 20px; opacity: 1;">データの取得に失敗しました
     <button type="button" aria-label="Close" class="toast-close">✖</button>
   </div>
+
+
+  <!-- モーダル: 便利な使い方 -->
+  <div class="c-modal --convenient-usage" id="modal-convenient-usage" data-js-modal-target>
+    <div class="c-modal__inner">
+      <article class="c-modal-content">
+        <header class="c-modal-content__header">
+          <h2 class="c-modal-content__h">便利な使い方</h2>
+          <button type="button" class="c-modal-content__header-close" data-js-modal-close>
+            <span class="u-visually-hidden">閉じる</span>
+          </button>
+        </header>
+        <div class="c-modal-content__body">
+          <section class="convenient-usage">
+            <h3 class="convenient-usage__title">お部屋を追加すると検討中リストに入ります。</h3>
+            <img src="/assets/img/common/convenient-usage.webp" alt="追加 → 追加済" class="convenient-usage__img">
+            <p class="convenient-usage__text">追加したお部屋はオレンジのナビゲーション内の検討中リストに入り、同一デバイス内で一定期間保持されます。まとめてお問い合わせすることもできますのでご活用ください。</p>
+          </section>
+        </div>
+      </article>
+    </div>
+  </div>
+
 
   <header class="header">
     <div class="header__container">
@@ -1186,27 +1208,10 @@
       <div class="l-container l-col-container u-justify-content-pc-center">
         <div class="l-col-pc-10 u-w-sp-100">
           <nav class="footer-nav-main">
-            <div class="footer-nav-main__col --about">
-              <ul class="footer-nav-lv1-list footer-nav-list">
-                <li>
-                  <h3 class="footer-nav-lv1-h footer-nav-toggler u-tt-uppercase toggle-sp-only"
-                    data-js-toggle="#footer-about-us"><span class="__text">
-                      About Us</span><span class="__icon"><span class="u-visually-hidden">開閉</span></span></h3>
-                  <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-about-us">
-                    <div class="toggle-target__inner">
-                      <ul class="footer-nav-sublist">
-                        <li><a href="/service/">サービスについて</a></li>
-                        <li><a href="/company/">会社概要</a></li>
-                        <li><a href="https://www.mitsui-chintai.co.jp/company/recruit/" target="_blank">採用情報</a></li>
-                        <li><a href="/company/accessmap">アクセス</a></li>
-                        <li><a href="/company/group">グループ紹介</a></li>
-                      </ul>
-                    </div>
-                </li>
-              </ul>
-            </div>
+
+            <!-- 借りたい -->
             <div class="footer-nav-main__col --rent">
-              <ul class="footer-nav-lv1-list footer-nav-list footer-nav-rent">
+              <ul class="footer-nav-lv1-list footer-nav-list --rent">
                 <li>
                   <h3 class="footer-nav-lv1-h footer-nav-toggler toggle-sp-only" data-js-toggle="#footer-rent"
                     aria-expand="false" aria-control="footer-rent">
@@ -1218,44 +1223,40 @@
                   <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-rent">
                     <div class="toggle-target__inner">
                       <div class="footer-nav-rent__container">
+
+                        <!-- col1 -->
                         <div class="footer-nav-rent__col">
                           <h4 class="footer-nav-lv2-h">検索する</h4>
                           <ul class="footer-nav-lv2-list footer-nav-sublist">
                             <li><a href="{{ url('/') }}/area">人気エリアから探す</a></li>
                             <li><a href="{{ url('/') }}/ward">区から探す</a></li>
                             <li><a href="{{ url('/') }}/ensen">駅・沿線から探す</a></li>
-                            <li><a href="{{ url('/') }}/mapsearch/">地図から探す</a></li>
+                            <li><a href="/mapsearch/">地図から探す</a></li>
                           </ul>
-                        </div>
-                        <div class="footer-nav-rent__col">
+
                           <h4 class="footer-nav-lv2-h">最新情報から探す</h4>
                           <ul class="footer-nav-lv2 footer-nav-sublist">
-                            <li><a href="/topics/pickbk.html">おすすめ情報から探す</a></li>
-                            <li><a href="あとで">新着情報から探す</a></li>
+                            <li><a href="TODO: URL確認中">おすすめ情報から探す</a></li>
+                            <li><a href="/topics/pickbk.html">新着情報から探す</a></li>
                           </ul>
                         </div>
+
+                        <!-- col2 -->
                         <div class="footer-nav-rent__col">
                           <h4 class="footer-nav-lv2-h">特集から探す</h4>
                           <ul class="footer-nav-list footer-nav-sublist">
+                            <li><a href="/osusume/">特集一覧</a></li>
                             <li><a href="/premium/">プレミアムマンション</a></li>
                             <li><a href="{{ url('/') }}/osusume/new">新築</a></li>
-                            <li><a href="{{ url('/') }}/result?lin=ALL&cms=1&vop=(0,0,1,0)&get=ensen">当社限定</a>
-                            </li>
+                            <li><a href="{{ url('/') }}/osusume/minatoku_gentei">当社限定（港区・渋谷区）</a></li>
+                            <li><a href="{{ url('/') }}/osusume/other_gentei">当社限定（港区・渋谷区以外）</a></li>
                             <li><a href="{{ url('/') }}/osusume/parkaxis">三井不動産企画</a></li>
                             <li><a href="/mansion/">分譲賃貸</a></li>
                             <li><a href="/newprice/">賃料改定</a></li>
-                            <li><a
-                                href="{{ url('/') }}/result?ku=(ALL)&cms=5jjrmzbvnk&vop=(0,0,4,0)&get=ward">フリーレント</a>
-                            </li>
-                            <li><a
-                                href="{{ url('/') }}/result?lin=ALL&equ=(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0)&get=lin">ペット可</a>
-                            </li>
-                            <li><a
-                                href="{{ url('/') }}//result?equ=(0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)&vop=(0,0,4,0)&get=ward">コンシェルジュ付き</a>
-                            </li>
-                            <li><a href="/brandmansion/">ブランドマンション</a>
-                            </li>
-                            <!-- これの扱いがよくわからない <li><a href="#">こだわり条件</a></li> -->
+                            <li><a href="{{ url('/') }}/result?ku=(ALL)&cms=5jjrmzbvnk&vop=(0,0,4,0)&get=ward">フリーレント</a></li>
+                            <li><a href="{{ url('/') }}/result?lin=ALL&equ=(0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0)&get=ensen">ペット可</a></li>
+                            <li><a href="{{ url('/') }}/result?equ=(0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)&vop=(0,0,4,0)&get=ward">コンシェルジュ付き</a></li>
+                            <li><a href="/brandmansion/">ブランドマンション</a></li>
                           </ul>
                         </div>
                       </div>
@@ -1264,7 +1265,136 @@
                 </li>
               </ul>
             </div>
-            <div class="footer-nav-main__col --other">
+
+            <!-- 貸したい, 資産活用 -->
+            <div class="footer-nav-main__col --lend">
+              <!-- 貸したい -->
+              <ul class="footer-nav-lv1-list footer-nav-list --lend">
+                <li>
+                  <h3 class="footer-nav-lv1-h footer-nav-toggler toggle-sp-only" data-js-toggle="#footer-lend"
+                    aria-expand="false" aria-control="footer-rent">
+                    <span class="__text">貸したい</span>
+                    <span class="__icon">
+                      <span class="u-visually-hidden">開閉</span>
+                    </span>
+                  </h3>
+                  <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-lend">
+                    <div class="toggle-target__inner">
+                      <ul class="footer-nav-sublist">
+                        <li><a href="/owner_overview/">賃貸運営</a></li>
+                        <li><a href="https://form.mitsui-chintai.co.jp/webapp/form/19959_rndb_7/index.do">お問い合わせ</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- 資産活用 -->
+              <ul class="footer-nav-lv1-list footer-nav-list --asset">
+                <li>
+                  <h3 class="footer-nav-lv1-h footer-nav-toggler toggle-sp-only" data-js-toggle="#footer-asset"
+                    aria-expand="false" aria-control="footer-rent">
+                    <span class="__text">資産活用</span>
+                    <span class="__icon">
+                      <span class="u-visually-hidden">開閉</span>
+                    </span>
+                  </h3>
+                  <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-asset">
+                    <div class="toggle-target__inner">
+                      <ul class="footer-nav-sublist">
+                        <li><a href="/owner/mansion/">販売マンション</a></li>
+                        <li><a href="https://form.mitsui-chintai.co.jp/webapp/form/19959_rndb_21/index.do">お問い合わせ</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Resident First Channel -->
+            <div class="footer-nav-main__col --rfc">
+              <ul class="footer-nav-lv1-list footer-nav-list --rfc">
+                <li>
+                  <h3 class="footer-nav-lv1-h footer-nav-toggler toggle-sp-only" data-js-toggle="#footer-rfc"
+                    aria-expand="false" aria-control="footer-rfc">
+                    <span class="__text u-tt-uppercase">Resident First Channel</span>
+                    <span class="__icon">
+                      <span class="u-visually-hidden">開閉</span>
+                    </span>
+                  </h3>
+                  <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-rfc">
+                    <div class="toggle-target__inner">
+                      <ul class="footer-nav-sublist">
+                        <li><a href="/service/resident_first_channel/" class="u-tt-uppercase">News</a></li>
+                        <li><a href="/service/resident_first_channel/#report">マンションレポート</a></li>
+                        <li><a href="/service/resident_first_channel/#shoppingStreet">商店街のある暮らし</a></li>
+                        <li><a href="/service/resident_first_channel/#article">住まいのコラム</a></li>
+                        <li><a href="https://form.mitsui-chintai.co.jp/webapp/form/19959_rndb_258/index.do" class="u-tt-uppercase">Resident First Members登録</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Service -->
+            <div class="footer-nav-main__col --service">
+              <ul class="footer-nav-lv1-list footer-nav-list --service">
+                <li>
+                  <h3 class="footer-nav-lv1-h footer-nav-toggler toggle-sp-only" data-js-toggle="#footer-service"
+                    aria-expand="false" aria-control="footer-service">
+                    <span class="__text u-tt-uppercase">Service</span>
+                    <span class="__icon">
+                      <span class="u-visually-hidden">開閉</span>
+                    </span>
+                  </h3>
+                  <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-service">
+                    <div class="toggle-target__inner">
+                      <ul class="footer-nav-sublist">
+                        <li><a href="/topics/salescontact.html">営業窓口</a></li>
+                        <li><a href="https://mypage.mitsui-chintai.co.jp/rf_web/cstLogin">会員ページ</a></li>
+                        <li><a href="https://form.mitsui-chintai.co.jp/webapp/form/19959_rndb_258/index.do">RESIDENT FIRST MEMBERS登録</a></li>
+                        <li><a href="/resident/service/benefit_top.html">ご入居・提携サービス</a></li>
+                        <li><a href="/resident/service/flow.html">お部屋探しからご契約まで</a></li>
+                        <li><a href="/resident/service/faq/">よくあるご質問</a></li>
+                        <li><a href="/business/">社宅紹介</a></li>
+                        <li><a href="https://itandibb.com/top">【仲介会社様向け】当社仲介事業部取り扱い物件入居申込</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- About Us -->
+            <div class="footer-nav-main__col --about">
+              <ul class="footer-nav-lv1-list footer-nav-list --about">
+                <li>
+                  <h3 class="footer-nav-lv1-h footer-nav-toggler toggle-sp-only" data-js-toggle="#footer-about"
+                    aria-expand="false" aria-control="footer-about">
+                    <span class="__text">About Us</span>
+                    <span class="__icon">
+                      <span class="u-visually-hidden">開閉</span>
+                    </span>
+                  </h3>
+                  <div class="footer-nav-toggle toggle-target toggle-target-sp-only" id="footer-about">
+                    <div class="toggle-target__inner">
+                      <ul class="footer-nav-sublist">
+                        <li><a href="/company/">三井の賃貸 レジデントファーストとは</a></li>
+                        <li><a href="/company/outline/">会社情報</a></li>
+                        <li><a href="/company/service/">事業案内</a></li>
+                        <li><a href="/company/recruit_top/">採用情報</a></li>
+                        <li><a href="/company/news/">ニュースリリース</a></li>
+                        <li><a href="/company/contact/">お問い合わせ</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+
+            <!-- <div class="footer-nav-main__col --other">
               <ul class="footer-nav-lv1-list">
                 <li><a href="/owner_overview/">賃貸運営</a></li>
                 <li><a href="#">資産活用</a></li>
@@ -1273,11 +1403,10 @@
                 <li><a href="{{ Lob::langSwitch(true) }}">English</a></li>
                 <li><a href="/topics">ニュースリリース</a></li>
               </ul>
-            </div>
+            </div> -->
           </nav>
           <nav class="footer-nav-base">
             <ul class="footer-nav-base-list">
-              <li class="footer-nav-base-list__item"><a href="/sitemap">サイトマップ</a></li>
               <li class="footer-nav-base-list__item"><a href="/info/01">プライバシーステートメント</a></li>
               <li class="footer-nav-base-list__item"><a href="/info/06">特定個人情報基本方針</a></li>
               <li class="footer-nav-base-list__item"><a href="/info/02">個人情報の取り扱いについて</a></li>
@@ -1285,6 +1414,14 @@
               <li class="footer-nav-base-list__item"><a href="/info/07">Cookieおよびアクセスログについて</a></li>
               <li class="footer-nav-base-list__item"><a href="/info/04">サイトポリシー</a></li>
               <li class="footer-nav-base-list__item"><a href="/info/05">三井不動産グループソーシャルメディアガイドライン</a></li>
+              <li class="footer-nav-base-list__item"><a href="/info/09">カスタマーハラスメントに対する基本方針</a></li>
+            </ul>
+          </nav>
+          <nav class="footer-nav-base --last">
+            <ul class="footer-nav-base-list">
+              <li class="footer-nav-base-list__item"><a href="/sitemap">サイトマップ</a></li>
+              <li class="footer-nav-base-list__item"><a href="{{ url('/') }}/mansion">マンション一覧</a></li>
+              <li class="footer-nav-base-list__item"><a href="{{ Lob::langSwitch(true) }}">English</a></li>
             </ul>
           </nav>
           <nav class="footer-nav-district">
@@ -1440,9 +1577,7 @@
   <!-- swiper -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Toastify -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
+  <!-- RF2024 JS -->
   <script src="./assets/js/rf.min.js"></script>
 </body>
 

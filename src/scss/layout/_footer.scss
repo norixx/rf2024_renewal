@@ -68,27 +68,31 @@
   }
 }
 
+
 .footer-nav-main {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--space-24);
+  justify-content: space-between;
+  // margin-bottom: var(--space-24);
 
   @include mq {
     flex-direction: row;
     // border-bottom: none;
     margin-bottom: var(--space-40);
-    gap: var(--space-56);
   }
-}
 
-.footer-nav-main {
+  // カラム
   &__col {
-    &:not(:last-of-type) {
-      border-bottom: 1px solid var(--bdr-xdark);
-    }
+    // リストの方へ移動 .footer-nav-list
+    // &:not(:last-of-type) {
+    //   border-bottom: 1px solid var(--bdr-xdark);
+    // }
 
-    &:not(:first-of-type) {
-      margin-top: var(--space-16);
+
+    @include mq {
+      &:not(:first-of-type) {
+        margin-top: var(--space-16);
+      }
     }
 
     &.--rent {
@@ -109,17 +113,32 @@
       &:not(:last-of-type) {
         border-bottom: none;
       }
-      // About us カラム
-      &.--about {
-        flex: 0 0 18%;
-      }
 
       // 借りたいカラム
       &.--rent {
         justify-content: space-between;
         flex-direction: row;
-        // width: 56%;
-        flex: 0 0 54%;
+        flex: 0 0 32%;
+      }
+
+      // 貸したいカラム
+      &.--lend {
+        flex: 0 0 12%;
+      }
+
+      // Resident First Channel カラム
+      &.--rfc {
+        flex: 0 0 17%;
+      }
+
+      // Service カラム
+      &.--service {
+        flex: 0 0 15%;
+      }
+
+      // About us カラム
+      &.--about {
+        flex: 0 0 15%;
       }
     }
   }
@@ -130,8 +149,14 @@
   // 見出し
   &-h {
     padding-bottom: var(--space-16);
+    padding-top: var(--space-16);
     font-size: var(--fz-16);
-    line-height: var(--line-height-md);
+    line-height: var(--line-height-sm);
+    
+    @include mq {
+      padding-top: 0;
+      padding-bottom: var(--space-12);
+    }
   }
 
   // リスト
@@ -165,16 +190,37 @@
 // リストLv2
 .footer-nav-lv2 {
   &-h {
-    font-size: var(--fz-16);
+    font-size: var(--fz-14);
     color: var(--txt-xlight);
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-12);
     line-height: var(--line-height-md);
+
+    @include mq {
+      &:not(:first-of-type)  {
+        margin-top: var(--space-24);
+      }
+    }
   }
 }
 
 .footer-nav-list {
   font-size: var(--fz-14);
   line-height: var(--line-height-md);
+  border-bottom: 1px solid var(--bdr-xdark);
+  
+  @include mq {
+    border-bottom: none;
+
+    &:not(:first-of-type) {
+      margin-top: var(--space-32);
+    }
+  }
+
+  // About Us
+  &.--about {
+    // 最後のリストになるのでボーダー無し
+    border-bottom: none;
+  }
 
   li {
     &:not(:last-child) {
@@ -213,17 +259,18 @@
   li {
     a {
       display: inline-flex;
-      align-items: center;
+      // align-items: center;
 
       &::before {
         content: "";
-        display: inline-block;
         --icon-size: var(--space-16);
         width: var(--icon-size);
         height: var(--icon-size);
-        margin-right: 8px;
+        flex-shrink: 0;
+        margin-right: var(--space-6);
         background-color: var(--bg-white);
         mask: var(--icon-arrow-r) no-repeat center center / contain;
+        translate: 0 .2em;
       }
     }
   }
@@ -234,6 +281,7 @@
     li {
       a {
         position: relative;
+        font-feature-settings: "palt" 1;
 
         &::after {
           content: "";
@@ -261,6 +309,7 @@
   &__container {
     display: flex;
     flex-direction: column;
+    gap: 10%;
 
     @include mq {
       flex-direction: row;
@@ -274,11 +323,17 @@
   padding-top: var(--space-16);
   padding-bottom: var(--space-16);
   border-top: 1px solid var(--bdr-dark);
-  border-bottom: 1px solid var(--bdr-dark);
-  margin-bottom: var(--space-24);
+  
+  &.--last {
+    border-bottom: 1px solid var(--bdr-dark);
+    margin-bottom: var(--space-24);
+  }
 
   @include mq {
-    margin-bottom: var(--space-40);
+    
+    &.--last {
+      margin-bottom: var(--space-40);
+    }
   }
 
   &-list {
@@ -287,13 +342,13 @@
     line-height: var(--line-height-md);
     font-size: var(--fz-14);
     row-gap: var(--space-8);
-    column-gap: var(--space-24);
+    // column-gap: var(--space-16);
 
     @include mq {
       flex-direction: row;
       flex-wrap: wrap;
-      row-gap: var(--space-16);
-      column-gap: var(--space-24);
+      row-gap: var(--space-8);
+      column-gap: var(--space-16);
     }
 
     &__item {

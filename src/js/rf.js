@@ -7,7 +7,8 @@ import RfLoader from "./partials/_loader";
 import RfCheckboxStatus from "./partials/_checkbox-status";
 // import rf_modals from "./partials/_modal.old";
 import RfModals from "./partials/_modal";
-import rf_madori_modal from "./partials/_madori-modal";
+import rf_modal_madori from "./partials/_modal-madori";
+import rf_modal_usage from "./partials/_modal-usage";
 import rf_gnav from "./partials/_gnav";
 import rf_toggles from "./partials/_toggles";
 import rf_top_banners from "./partials/_top-banners";
@@ -41,7 +42,7 @@ const rf_init = () => {
     RfCheckboxStatus,
     RfMediaQuery,
     RfModals,
-    rf_madori_modal,
+    rf_modal_madori,
   }
 
   // rf_set_globals({
@@ -159,7 +160,12 @@ const rf_init = () => {
   if(
     document.querySelector('[data-js-madori-modal]') 
   ) {
-    rf_madori_modal()
+    rf_modal_madori()
+  }
+
+  // 便利な使い方モーダル
+  if( document.querySelector('#modal-convenient-usage')) {
+    rf_modal_usage()
   }
 }
 
