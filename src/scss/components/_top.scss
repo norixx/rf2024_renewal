@@ -308,6 +308,7 @@
   &__item {
   }
   &__link {
+    display: block;
     position: relative;
     aspect-ratio: 16 /9;
     transition: var(--animation-normal);
@@ -327,6 +328,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    right: 0;
     line-height: var(--line-height-md);
     letter-spacing: var(--letter-space-10);
     font-size: var(--fz-16);
