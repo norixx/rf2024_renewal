@@ -5,6 +5,7 @@ import Toastify from 'toastify-js'
 import rf_responsive_check from "./partials/_responsive";
 import RfLoader from "./partials/_loader";
 import RfCheckboxStatus from "./partials/_checkbox-status";
+import RfCheckBoxCombo from "./partials/_checkbox-combo";
 // import rf_modals from "./partials/_modal.old";
 import RfModals from "./partials/_modal";
 import rf_modal_madori from "./partials/_modal-madori";
@@ -21,7 +22,8 @@ import rf_select_link from "./partials/_select-link";
 import rf_related_prop_slider from "./partials/_related-prop-slider";
 import rf_ward from "./partials/_ward";
 import rf_result_room_slide from "./partials/_result-room-slide";
-import rf_search_ensen_checkbox from "./partials/_seach-enesen";
+import rf_search_ensen_checkbox from "./partials/_search-enesen";
+import rf_search_area_checkbox from "./partials/_search-area";
 import RfMediaQuery from "./partials/_mediaquery";
 import rf_search_change_method from "./partials/_search-change-method";
 import pagetop from "./partials/_pagetop";
@@ -40,6 +42,7 @@ const rf_init = () => {
     ...window['RF_GLOBALS'],
     RfLoader,
     RfCheckboxStatus,
+    RfCheckBoxCombo,
     RfMediaQuery,
     RfModals,
     rf_modal_madori,
@@ -145,6 +148,12 @@ const rf_init = () => {
   if (document.querySelector('[data-js-form-checkbox]')) {
     rf_search_ensen_checkbox()
   }
+
+  // 検索 - エリアチェックボックス
+  if (document.querySelector('[data-js-form-search-area-checkbox]')) {
+    rf_search_area_checkbox()
+  }
+
 
   // 検索の方法、選び方の変更
   if (document.querySelector('[data-js-search-change-method]')) {

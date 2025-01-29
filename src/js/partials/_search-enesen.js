@@ -10,7 +10,7 @@ const rf_search_ensen_checkbox = () => {
   const btn_disabled_class = '--is-disabled'
   let checkboxes = []
 
-  // 選択・検索ボタンのクラスをトグル
+  // 「選択・検索」ボタンのクラスをトグル
   const toggleBtnClass = (el, status) => {
     const is_disabled = !status
     el.classList.toggle(btn_disabled_class, is_disabled)
@@ -22,6 +22,7 @@ const rf_search_ensen_checkbox = () => {
   }
 
   // チェックボックス操作のコールバック関数
+  // 役割: 沿線の選択の場合 - 「選択・検索」ボタンのクラスをトグルする
   function checkboxCallback() {
     console.log(this)
     const obj = this

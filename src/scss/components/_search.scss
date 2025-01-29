@@ -140,16 +140,47 @@
 
 // 検索（エリア）
 .c-search-areas {
-  display: flex;
-  flex-wrap: wrap;
-  --list-gap: var(--space-4);
-  gap: var(--list-gap);
 
-  @include mq {
-    --list-gap: var(--space-16);
+  &:not(:first-child) {
+    margin-top: var(--space-4);
+
+    @include mq {
+      margin-top: var(--space-32);
+    }
   }
 
-  &__item {
+  &__header {
+    display: flex;
+    background-color: var(--bg-gray-xlight);
+    padding: var(--space-12);
+  }
+
+  &__header .c-input-label input[type="checkbox"] {
+    display: none;
+  }
+
+  &__h {
+    font-weight: var(--fw-semibold);
+    font-size: var(--fz-16);
+    // margin-bottom: .5em;
+  }
+
+  &__h label {
+    font-weight: var(--fw-semibold);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    --list-gap: var(--space-4);
+    gap: var(--list-gap);
+  
+    @include mq {
+      --list-gap: var(--space-16);
+    }
+  }
+
+  &__list-item {
     flex: 1 0 100%;
 
     @include mq {
@@ -157,7 +188,7 @@
     }
   }
 
-  &__label {
+  &__list-label {
     width: 100%;
     height: 100%;
   }

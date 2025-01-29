@@ -7,6 +7,12 @@
 class RfCheckboxStatus {
   #form;
   #checkboxes;
+  #checkBoxObj = {
+    status: null,
+    elements: null
+  };
+  #store;
+
   #validator = {
     get(target, key) {
       console.log("target&key: ", target, key);
@@ -19,11 +25,6 @@ class RfCheckboxStatus {
       return target[key];
     }
   };
-  #checkBoxObj = {
-    status: null,
-    elements: null
-  };
-  #store;
 
   constructor(form, checkboxes) {
     if (!form || !checkboxes) throw new Error("No Form selected!");
