@@ -82,6 +82,7 @@ class RFBuildroomSlide {
       el: ".swiper-pagination",
       type: "fraction",
     },
+    zoom: true,
   }
   // サムネイルスライド(Swiper)設定
   #swiperThumbsSetting = {
@@ -104,13 +105,14 @@ class RFBuildroomSlide {
     freeMode: true,
     spaceBetween: 8,
     breakpoints: {
-        0: {
-          slidesPerView: 4.5,
-        },
-        768: {
-          slidesPerView: 12.5,
-        },
+      0: {
+        slidesPerView: 4.5,
       },
+      768: {
+        slidesPerView: 12.5,
+      },
+    },
+    zoom: true,
   }
   // エラー ===
   #errorMessages = {
@@ -448,7 +450,11 @@ class RFBuildroomSlide {
       // Swiper slideテンプレ
       const nophoto = RF_page_key === 'build' ? RF_gallery_nophoto : RF_gallery_nofloorplan
       dataArr.push(
-        `<div class="swiper-slide" ${panoramaAttr}><img src="${(is_panorama) ? photo.filename : photo}" alt="" class="" loading="lazy" onerror="this.onerror='';this.src='${nophoto}'"></div>`
+        `<div class="swiper-slide" ${panoramaAttr}>
+          <div class="swiper-zoom-container">
+            <img src="${(is_panorama) ? photo.filename : photo}" alt="" class="" loading="lazy" onerror="this.onerror='';this.src='${nophoto}'">
+          </div>
+        </div>`
       );
     });
 

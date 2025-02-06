@@ -10,6 +10,7 @@
   transition: var(--animation-normal);
   cursor: pointer;
   line-height: var(--line-height-md);
+  position: relative;
 
   &:hover {
     background: var(--bg-gray-xxlight);

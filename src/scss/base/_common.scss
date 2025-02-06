@@ -45,10 +45,12 @@ a {
     text-decoration: none;
   }
 }
+input[type="submit"],
 button {
   transition: all 0.3s;
   border: none;
   background: none;
+  font-family: var(--ff-base) !important;
 }
 
 img {

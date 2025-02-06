@@ -149,7 +149,7 @@
                 </p>
               </div>
             </li>
-            <li class="gnav-list__item u-pc-only">
+            <li class="gnav-list__item">
               <div class="gnav-list__link" data-js-gnav-sub="#gnav-asset-management"
                 data-js-gnav-lv1="asset-management">
                 <span class="gnav-list__link-text">資産活用</span>
@@ -158,16 +158,16 @@
                 </p>
               </div>
             </li>
-            <li class="gnav-list__item u-ta-center u-pc-only">
+            <li class="gnav-list__item u-ta-pc-center">
               <div class="gnav-list__link" data-js-gnav-sub="#gnav-resident-first-channel"
                 data-js-gnav-lv1="resident-first-channel">
-                <span class="gnav-list__link-text">Resident First<br>Channel</span>
+                <span class="gnav-list__link-text u-tt-uppercase">Resident First <br class="u-pc-only">Channel</span>
                 <p class="gnav-list__lead u-sp-only">新しい住まいと暮らしの探しに関わる
                   様々な情報を発信します
                 </p>
               </div>
             </li>
-            <li class="gnav-list__item u-pc-only">
+            <li class="gnav-list__item">
               <div class="gnav-list__link" data-js-gnav-sub="#gnav-service" data-js-gnav-lv1="service">
                 <span class="gnav-list__link-text u-tt-uppercase">Service</span>
                 <p class="gnav-list__lead u-sp-only">レジデントファーストが提供する各種サービスをご紹介します
@@ -184,12 +184,14 @@
             </li>
           </ul>
 
+          <!-- 
           <ul class="gnav-site-info">
             <li><a href="/topics">ニュースリリース</a></li>
             <li><a href="/service/resident_first_channel/">Resident First Channel</a></li>
             <li><a href="https://form.mitsui-chintai.co.jp/webapp/form/19959_rndb_6/index.do" target="_blank">お問い合わせ</a>
             </li>
-          </ul>
+          </ul> 
+          -->
 
           <ul class="gnav-user-control">
             <li><a href="{{ url('/') }}/list/ichiran">検討中リスト</a></li>
@@ -493,6 +495,37 @@
 
     <!-- CTAナビ - 通常 -->
     <div class="c-cta-navi">
+      <div class="c-cta-navi__btn-block --web">
+        <a href="#" class="c-cta-navi__btn --web">
+          <span class="u-sp-only">Web問い合わせ</span>
+          <span class="u-pc-only u-to-pc-v">Webで<br>問い合わせ</span>
+        </a>
+      </div>
+      <div class="c-cta-navi__btn-block --tel" id="cta-navi-tel">
+        <dl class="c-cta-navi-tel">
+          <dt class="c-cta-navi-tel__title">
+            <button type="button" class="c-cta-navi__btn --tel" data-js-cta-navi-tel="#cta-navi-tel">
+              <span class="u-pc-only u-to-pc-v">電話で<br>お問い合わせ</span>
+              <span class="u-sp-only">電話問い合わせ</span>
+            </button>
+          </dt>
+          <dd class="c-cta-navi-tel__desc">
+            <div class="c-cta-navi-tel__desc-inner">
+              <a href="tel:0120321719" class="c-cta-navi-tel__desc-tel">0120-321-719</a>
+              <span class="c-cta-navi-tel__desc-hours">営業時間 9:30~18:00（水曜定休）</span>
+            </div>
+          </dd>
+        </dl>
+      </div>
+      <div class="c-cta-navi__btn-block --considering">
+        <a href="#" class="c-cta-navi__btn --considering">
+          <span class="u-sp-only">検討中</span>
+          <span class="u-pc-only u-to-pc-v">検討中リスト<br>閲覧履歴</span>
+        </a>
+      </div>
+    </div>
+     <!--
+    <div class="c-cta-navi">
       <div class="c-cta-navi__contact">
         <a href="https://form.mitsui-chintai.co.jp/webapp/form/19959_rndb_6/index.do" class="c-cta-navi__btn --web"
           target="_blank">
@@ -523,6 +556,7 @@
         </a>
       </div>
     </div>
+  -->
   </header>
 
   
@@ -649,10 +683,10 @@
                 <div class="c-top-search__lists">
                   <ul class="c-top-search__pickup-list">
                     <li class="__item"><a href="/rf/osusume/new"
-                        class="btn --primary-flat --w-100 u-fw-semibold u-fz-12 u-fz-pc-14">“最新”新着<br>物件情報一覧</a>
+                        class="btn --primary-flat --w-100 u-fw-semibold u-fz-14 u-fz-pc-16">“新着”ニュース</a>
                     </li>
                     <li class="__item"><a href="#"
-                        class="btn --primary-flat --w-100 u-fw-semibold u-fz-12 u-fz-pc-14">担当者おすすめ<br>物件情報一覧</a>
+                        class="btn --primary-flat --w-100 u-fw-semibold u-fz-14 u-fz-pc-16">“新着”新規・再募集情報</a>
                     </li>
                   </ul>
                   <ul class="c-top-search__user-actions">

@@ -214,6 +214,9 @@
 // セクション
 .c-buildroom-sect {
   &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__h {
@@ -221,6 +224,7 @@
     line-height: var(--line-height-md);
     letter-spacing: var(--letter-space-10);
     font-weight: var(--fw-bold);
+    flex: 1;
 
     @include mq {
       font-size: var(--fz-24);

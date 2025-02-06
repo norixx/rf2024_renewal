@@ -20,6 +20,7 @@
   font-size: var(--fz-14);
   text-align: center;
   transition: var(--animation-normal);
+  color: var(--txt-normal);
 
   @include mq {
     cursor: pointer;

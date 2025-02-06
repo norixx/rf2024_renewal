@@ -3,6 +3,359 @@
 @use "../abstracts/mixins" as *;
 
 .c-cta-navi {
+  $parent: &;
+  
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  
+  @include mq {
+    right: 0;
+    top: 50%;
+    translate: 0 -50%;
+    width: 64px;
+    flex-direction: column;
+    bottom: auto;
+    left: auto;
+    height: auto;
+  }
+  
+  // =======================================================
+  // ボタンコンテナ
+  &__btn-block {
+    flex: 1;
+    position: relative;
+
+    &.--is-open {
+      #{$parent}__btn {
+        background-color: rgba($primary-mid, 1);
+      }
+    }
+    
+    // web問い合わせ
+    // &.--web {
+      
+    // }
+    
+    // 電話問い合わせ
+    &.--tel {
+      display: flex;
+      width: fit-content;
+      position: relative;
+      left: 0;
+      transition: translate .5s;
+
+      // 暫定(JSで実装)
+      &.--is-open {
+
+        @include mq {
+          translate: calc(-100% + 64px) 0;
+          box-shadow: var(--shadow-sm);
+        }
+
+        #{$parent}-tel__desc {
+          padding-top: 8px;
+          height: 80px;
+          transition: height 0s;
+
+          @include mq {
+            height: auto;
+            padding-top: 0;
+          }
+        }
+        
+        #{$parent}-tel__desc-inner {
+          translate: 0 0;
+          box-shadow: var(--shadow-sm);
+
+          @include mq {
+            box-shadow: none;
+          }
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 16px;
+        background-color: hsla(0, 0%, 100%, .4);
+        top: 50%;
+        left: 0;
+        translate: 0 -50%;
+        
+        @include mq {
+          height: 1px;
+          width: 100%;
+          translate: 0 0;
+          top: auto;
+          top: 0;
+          right: auto;
+          left: 0;
+        }
+      }
+    }
+    
+    // 検討中
+    &.--considering {
+      flex: 0 0 64px;
+      width: 100%;
+      padding: var(--space-4);
+      backdrop-filter: blur(5px);
+      background-color: rgba($primary, 0.9);
+      
+      @include mq {
+        // 左下
+        border-bottom-left-radius: var(--bdr-radius-lg);
+      }
+    }
+    
+    
+  } //__btn-block
+  
+  // =======================================================
+  // ボタン部分
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: var(--line-height-140);
+    text-align: center;
+    color: var(--txt-white);
+    font-size: var(--fz-12);
+    font-weight: var(--fw-semibold);
+    width: 100%;
+    height: 100%;
+    min-width: 64px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    background-color: rgba($primary, 0.9);
+    border: none;
+    text-decoration: none;
+    transition: background-color var(--animation-normal);
+    
+    @include mq {
+      flex-direction: column;
+      padding: var(--space-20) 0;
+      text-align: start;
+      letter-spacing: var(--letter-space-10);
+    }
+    
+    &:hover {
+      background-color: rgba($primary-mid, 1);
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+    
+    
+    // アイコン
+    &::before {
+      --icon-size: 24px;
+
+      content: '';
+      flex: 0 0 var(--icon-size);
+      width: var(--icon-size);
+      height: var(--icon-size);
+      background-color: var(--bg-white);
+      margin-right: var(--space-8);
+      mask-repeat: no-repeat;
+      mask-position: center center;
+      mask-size: contain;
+      
+      @include mq {
+        margin-right: 0;
+        margin-bottom: 8px;
+      }
+    }
+    
+    // web問い合わせ
+    &.--web {
+      @include mq {
+        border-top-left-radius: var(--bdr-radius-lg);
+      }
+
+      &::before {
+        @include mask-icon(--icon-mail);
+      }
+    }
+    
+    // 電話問い合わせ
+    &.--tel {
+      &::before {
+        @include mask-icon(--icon-tel);
+      }
+    }
+    
+    // 検討中
+    &.--considering {
+      flex-direction: column;
+      background-color: var(--bg-white);
+      border-radius: var(--bdr-radius-sm);
+      color: var(--txt-primary);
+      
+      &::before {
+        margin-right: 0;
+        margin-bottom: var(--space-2);
+        background-color: var(--bg-primary);
+        // mask: var(--icon-save) no-repeat center center / contain;
+        @include mask-icon(--icon-save);
+      }
+      
+      @include mq {
+        min-width: 0;
+      }
+    }
+    
+  } // .--btn
+  
+  //コンパクト版ボタン
+  &__btn-block.--sp-compact {
+    @include mq(sp) {
+      flex: 0 0 64px;
+      width: 100%;
+      
+      #{$parent}__btn {
+        flex-direction: column;
+        
+        // アイコン
+        &::before {
+          margin-bottom: var(--space-2);
+          margin-right: 0;
+        }
+      }
+    }
+    
+  } //&__btn-block.--sp-compact
+  
+  // 最初のボタンブロック
+  // > *:not(.c-cta-navi__re-search):first-child &__btn {
+    
+  // }
+  
+  
+  // 電話問い合わせ(dl) .c-cta-navi-tel
+  &-tel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin: 0;
+    
+    @include mq {
+      flex-direction: row;
+    }
+    
+    //dt
+    &__title { 
+      height: 100%;
+      
+      @include mq {
+        flex: 1 0 64px;
+      }
+    }
+    
+    // dd
+    &__desc {
+      position: fixed;
+      bottom: 60px;
+      left: 0;
+      // height: 80px;
+      height: 0;
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      transition: height 0s var(--animation-normal), padding-top 0s var(--animation-normal);
+      
+      
+      @include mq {
+        position: static;
+        width: 240px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--bg-white);
+        white-space: nowrap;
+        margin: 0;
+      }
+    }
+    
+    &__desc-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      flex-direction: column;
+      translate: 0 100%;
+      transition: translate .2s;
+      
+      @include mq {
+        translate: 0 0;
+        transition: none;
+      }
+    }
+    
+    &__desc-tel {
+      font-size: var(--fz-24);
+      font-family: var(--ff-num);
+      color: var(--txt-primary);
+      font-weight: var(--fw-semibold);
+    }
+    
+    &__desc-hours {
+      font-size: var(--fz-12);
+      color: var(--txt-normal);
+      
+      a {
+        color: var(--txt-normal);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // =======================================================
+  // 再検索バージョンボタン
+  &__re-search {
+    display: grid;
+    flex: 1 1 50%;
+    padding: var(--space-6);
+    background: rgba($gray-black, 0.9);
+    backdrop-filter: blur(5px);
+
+    @include mq {
+      display: none;
+    }
+
+  }
+  // 再検索ボタン
+  &__re-search-btn {
+    font-weight: var(--fw-semibold);
+    font-size: clamp(var(--fz-12), 2vw, var(--fz-14))!important;
+
+    &::before {
+      --icon-size: 20px!important;
+      margin-right: var(--space-6)!important;
+      width: var(--icon-size)!important;
+      height: var(--icon-size)!important;
+    }
+  }
+  
+}
+
+// =======================================================
+
+
+.c-cta-navi-old {
   position: fixed;
   z-index: var(--z-index-lv1);
   width: 100%;
@@ -107,10 +460,20 @@
     backdrop-filter: blur(5px);
     background-color: rgba($primary, 0.9);
 
+    @include mq {
+      flex-direction: column;
+      align-items: center;
+      text-align: start;
+      padding: var(--space-10) 0;
+      width: auto;
+      letter-spacing: var(--letter-space-10);
+    }
+
     &:hover {
       background-color: rgba($primary-mid, 1);
     }
 
+    // アイコン
     &::before {
       content: "";
       --icon-size: var(--space-24);
@@ -121,44 +484,41 @@
       mask-repeat: no-repeat;
       mask-position: center center;
       mask-size: contain;
+
+      @include mq {
+        margin-bottom: var(--space-8);
+        margin-right: 0;
+      }
     }
 
     &.--tel {
       height: 100%;
+
+      @include mq {
+        width: 100%;
+      }
+
       &::before {
         mask-image: var(--icon-tel);
       }
     }
 
     &.--web {
+      @include mq {
+        border-top-left-radius: var(--bdr-radius-lg);
+      }
+
       &::before {
         mask-image: var(--icon-mail);
       }
     }
 
-    @include mq {
-      flex-direction: column;
-      align-items: center;
-      text-align: start;
-      padding: var(--space-10) 0;
-      width: auto;
-      letter-spacing: var(--letter-space-10);
-
-      &::before {
-        margin-bottom: var(--space-8);
-        margin-right: 0;
-      }
-
-      &.--tel {
-        width: 100%;
-      }
-    }
   }
 
   // 再検索バージョンボタン
   &.--re-search &__btn {
     flex-direction: column;
-    row-gap: 2px;
+    row-gap: var(--space-2);
 
     &::before {
       margin-right: 0;
@@ -168,8 +528,8 @@
   // 検討中
   &__considering {
     padding: 4px;
-    width: 65px;
-    flex: 0 0 65px;
+    width: 64px;
+    flex: 0 0 64px;
     backdrop-filter: blur(5px);
     background-color: rgba($primary, 0.9);
 
@@ -235,11 +595,6 @@
     transition: var(--animation-normal);
   }
 
-  &.--is-open {
-    @include mq {
-    }
-  }
-
   &__inner {
     height: 100%;
     // flex-direction: column;
@@ -270,76 +625,76 @@
     }
   }
 
-  &__desc {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    width: 100%;
-    white-space: nowrap;
-    line-height: var(--line-height-md);
-    z-index: -1;
-    display: grid;
-    overflow: hidden;
-    height: 0;
-    transition:
-      height 0s var(--animation-normal),
-      padding-top 0s var(--animation-normal);
+  // &__desc {
+  //   position: absolute;
+  //   bottom: 100%;
+  //   left: 0;
+  //   width: 100%;
+  //   white-space: nowrap;
+  //   line-height: var(--line-height-md);
+  //   z-index: -1;
+  //   display: grid;
+  //   overflow: hidden;
+  //   height: 0;
+  //   transition:
+  //     height 0s var(--animation-normal),
+  //     padding-top 0s var(--animation-normal);
 
-    // grid-template-rows: 0fr;
-    // transition: grid-template-rows var(--animation-normal) var(--animation-easing);
+  //   // grid-template-rows: 0fr;
+  //   // transition: grid-template-rows var(--animation-normal) var(--animation-easing);
 
-    @include mq {
-      position: static;
-      height: 100% !important;
-      width: auto;
-      padding: var(--space-16);
-      z-index: auto;
-      display: block;
-      background-color: var(--bg-white);
-      box-shadow: var(--shadow-sm);
-      height: auto;
-    }
+  //   @include mq {
+  //     position: static;
+  //     height: 100% !important;
+  //     width: auto;
+  //     padding: var(--space-16);
+  //     z-index: auto;
+  //     display: block;
+  //     background-color: var(--bg-white);
+  //     box-shadow: var(--shadow-sm);
+  //     height: auto;
+  //   }
 
-    .__inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 0;
-      background-color: var(--bg-white);
-      box-shadow: var(--shadow-sm);
-      translate: 0 100%;
-      transition: translate var(--animation-normal);
-      padding: var(--space-8);
+  //   .__inner {
+  //     display: flex;
+  //     flex-direction: column;
+  //     align-items: center;
+  //     justify-content: center;
+  //     min-height: 0;
+  //     background-color: var(--bg-white);
+  //     box-shadow: var(--shadow-sm);
+  //     translate: 0 100%;
+  //     transition: translate var(--animation-normal);
+  //     padding: var(--space-8);
 
-      @include mq {
-        height: 100%;
-        // padding: var(--space-8) !important;
-        background-color: transparent;
-        box-shadow: none;
-        translate: 0 0;
-      }
-    }
-    .__tel-num {
-      font-size: var(--fz-24);
-      font-family: var(--ff-num);
-      color: var(--txt-primary);
-      font-weight: var(--fw-semibold);
-    }
+  //     @include mq {
+  //       height: 100%;
+  //       // padding: var(--space-8) !important;
+  //       background-color: transparent;
+  //       box-shadow: none;
+  //       translate: 0 0;
+  //     }
+  //   }
+  //   .__tel-num {
+  //     font-size: var(--fz-24);
+  //     font-family: var(--ff-num);
+  //     color: var(--txt-primary);
+  //     font-weight: var(--fw-semibold);
+  //   }
 
-    .__hours {
-      font-size: var(--fz-12);
-      color: var(--txt-normal);
-    }
-  }
+  //   .__hours {
+  //     font-size: var(--fz-12);
+  //     color: var(--txt-normal);
+  //   }
+  // }
 
-  &.--is-open &__desc {
-    grid-template-rows: 1fr;
-    height: 80px;
-    padding-top: 8px;
-    transition: height 0s;
-  }
-  &.--is-open &__desc .__inner {
-    translate: 0 0;
-  }
+  // &.--is-open &__desc {
+  //   grid-template-rows: 1fr;
+  //   height: 80px;
+  //   padding-top: 8px;
+  //   transition: height 0s;
+  // }
+  // &.--is-open &__desc .__inner {
+  //   translate: 0 0;
+  // }
 }
