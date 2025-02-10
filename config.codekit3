@@ -7,7 +7,7 @@
       "uuidString" : "030F51DF-F3CB-47D0-BD02-1AEE8A5CAD64"
     }
   ],
-  "creatorBuild" : "34678",
+  "creatorBuild" : "34680",
   "files" : {
     "\/.gitignore" : {
       "cB" : 0,
@@ -486,7 +486,7 @@
       "bF" : 4,
       "ft" : 64,
       "ma" : 1,
-      "mi" : 0,
+      "mi" : 1,
       "oA" : 0,
       "oAP" : "\/assets\/js\/rf.min.js",
       "oF" : 3,
@@ -3123,7 +3123,7 @@
         "flagValue" : -1
       },
       "drop_console" : {
-        "active" : 0,
+        "active" : 1,
         "flagValue" : -1
       },
       "drop_debugger" : {

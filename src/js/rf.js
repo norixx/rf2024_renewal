@@ -173,9 +173,10 @@ const rf_init = () => {
   }
 
   // 便利な使い方モーダル
-  if( document.querySelector('#modal-convenient-usage')) {
-    rf_modal_usage()
-  }
+  // 2025-02-10 一旦非表示
+  // if( document.querySelector('#modal-convenient-usage')) {
+  //   rf_modal_usage()
+  // }
 }
 
 rf_init()
