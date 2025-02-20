@@ -1,6 +1,6 @@
 const rf_todays_count = () => {
   // TODO: 英語版対応
-  const fetchURL = '/rf/today/'
+  const fetchURL = '/rf/today'
   const target = document.querySelector('[data-js-today-target]')
   // const elementClass = '.c-top-search__prop-status-list'
   const dataID = '#todays-data'

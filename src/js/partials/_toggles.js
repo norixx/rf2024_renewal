@@ -18,6 +18,7 @@ const rf_toggles = () => {
   //   // characterData: true, //対象ノードのテキストデータの変更の監視を有効に
   // };
 
+  // =======================================================
   // テキスト変更のあるトグルの設定
   const setToggleTextAndClass = toggle => {
     const toggleTarget = document.querySelector(toggle.dataset.jsToggle)
@@ -35,6 +36,7 @@ const rf_toggles = () => {
     toggle_text = toggle.dataset.jsToggleText
   }
 
+  // =======================================================
   // ミューテーションオブザーバー
   // const setToggleText = () => {
   //   window.addEventListener('load', () => {
@@ -68,15 +70,18 @@ const rf_toggles = () => {
   //   })
   // }
 
-  // トグルボタンとターゲットのクラス、属性の変更
+  // =======================================================
+  // トグルボタンとターゲットのクラス、属性の変更 テキストの変更もあれば行う
   const toggleAttrAndText = toggle => {
     //ターゲットの取得
     const toggleTarget = document.querySelector(toggle.dataset.jsToggle)
-
+    
     // トグルとターゲットのクラス,ARIA属性の切り替え
     toggle.classList.toggle(toggleClass)
     toggle.setAttribute('aria-expanded', toggle.classList.contains(toggleClass))
     if (toggleTarget) {
+      console.log('トグルターゲットのクラスを切り替えます')
+      console.log('toggle target: ', toggleTarget)
       toggleTarget.classList.toggle(toggleClass)
       toggleTarget.setAttribute('aria-hidden', !toggle.classList.contains(toggleClass))
     }
@@ -88,13 +93,13 @@ const rf_toggles = () => {
     toggle.textContent = toggle_text
   }
 
+  // =======================================================
   // トグルボタンの初期化
   const initToggleControl = () => {
     // AJAX追加されるボタンもあるので、ボタン直接ではなくHTMLクリックに変更
     html.addEventListener('click', e => {
       const target = e.target
       console.dir(target)
-      console.log('target: ', target.closest(`[${toggleSelector}]`))
       let toggle
       if (target.hasAttribute(toggleSelector)) {
         toggle = target
@@ -109,6 +114,7 @@ const rf_toggles = () => {
 
       // レスポンシブチェック - SPかPCでトグルを制御
       // SP
+      console.log('現在のモード: ', rf_get_globals('window_state'))
       if (toggle.classList.contains(toggleSPClass) && rf_get_globals('window_state') !== 'SP') {
         return
       }

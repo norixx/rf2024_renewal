@@ -599,7 +599,13 @@
                     <h2 class="c-buildroom-sect__h">周辺地図・アクセス</h2>
                   </header>
                   <div class="c-buildroom-sect__body">
-                    地図
+                    <!-- 本番ではPHPで出し分けている -->
+                    <div class="u-d-none u-d-pc-block">
+                      iframe地図
+                    </div>
+                    <div class="u-d-block u-d-pc-none">
+                      <div class="btn --normal --md --icon-after --i-link-out --w-100">Google Mapで見る</div>
+                    </div>
                   </div>
                 </section>
 
