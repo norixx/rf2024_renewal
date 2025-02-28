@@ -228,6 +228,8 @@
       @include mq {
         padding: var(--space-4);
         float: none;
+        width: 100px;
+        height: 100px;
       }
 
       img {
@@ -244,6 +246,10 @@
     }
 
     .__body-shikirei {
+      align-items: flex-start!important;
+      flex-grow: 0.7;
+      // min-width: 7em;
+
       &::before {
         content: "敷金・礼金:";
       }
@@ -307,16 +313,17 @@
   }
   &__col-madori {
     margin-left: 0 !important;
-    // width: 100px;
     flex: 0 0 80px !important;
-    // position: absolute;
-    // left: 0;
-    // top: calc(var(--space-12) + var(--space-32)); //trのパディング + 32px
 
     @include mq {
       position: static;
       flex: 0 0 100px !important;
       // flex-grow: 0 !important;
+    }
+  }
+  &__col-shikirei{
+    @include mq {
+      flex-grow: 0.7 !important;
     }
   }
 
@@ -354,10 +361,12 @@
     display: inline-flex;
     align-items: center;
     &::before {
+      --icon-size: 16px;
       content: "";
       display: inline-block;
-      width: 16px;
-      height: 16px;
+      width: var(--icon-size);
+      height: var(--icon-size);
+      flex-shrink: 0;
       margin-right: var(--space-4);
       vertical-align: middle;
       background: var(--bg-primary-xlight) no-repeat center center;
