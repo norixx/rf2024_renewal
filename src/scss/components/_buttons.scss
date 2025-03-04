@@ -95,7 +95,8 @@
     color: var(--txt-primary);
 
     &:hover {
-      background: var(--bg-primary-light);
+      background: var(--bg-primary);
+      color: var(--txt-white);
     }
   }
 
