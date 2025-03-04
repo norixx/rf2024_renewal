@@ -323,7 +323,7 @@
 
                 <!-- 空室情報 -->
                 <section class="l-buildroom__body-block c-buildroom-sect" id="buildroom-vacant">
-                  <header class="c-buildroom-sect__header">
+                  <header class="c-buildroom-sect__header" id="tatemono-id2">
                     <h2 class="c-buildroom-sect__h">空室情報</h2>
                   </header>
                   <div class="c-buildroom-sect__body">
@@ -587,8 +587,11 @@
                       </tbody>
                     </table>
                     <div class="c-room-list__toggle c-result-build__rooms-toggle">
-                      <button type="button" class="c-room-list__toggle-btn --icon-r"
-                        data-js-room-toggle="#c-room-list-ID1" data-js-room-toggle-text="閉じる">すべてのお部屋を表示</button>
+                      <button type="button"
+                        class="c-room-list__toggle-btn --icon-r"
+                        data-js-room-parent="#tatemono-id2"
+                        data-js-room-toggle="#c-room-list-ID1"
+                        data-js-room-toggle-text="閉じる">すべてのお部屋を表示</button>
                     </div>
                   </div>
                 </section>

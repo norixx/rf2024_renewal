@@ -27,7 +27,8 @@ const rf_room_list_link = () => {
   })
 }
 
-// お部屋リストの制御
+
+// お部屋リストの開閉制御
 const rf_room_list_toggle = () => {
   const openClass = '--is-open'
   let tempText = ''
@@ -37,9 +38,13 @@ const rf_room_list_toggle = () => {
 
 
   // トグルボタンのコントロール, 画像の読み込みなどを考慮してwindowロード後
+  // 画像は遅延読み込み(loading=lazy)を採用しているので、window.onloadでなくてもOK
   window.addEventListener('load', () => {
     toggles.forEach(toggle => {
       const target = document.querySelector(toggle.dataset.jsRoomToggle)
+      const parent = document.querySelector(toggle.dataset.jsRoomParent)
+
+      console.log(target, toggle.dataset.jsRoomParent)
 
       // トグルボタンの表示・非表示をまず決める（デフォルト: 表示）
       if (rf_get_globals('window_state') === 'PC' && target.scrollHeight < maxHeightPC) {
@@ -51,11 +56,15 @@ const rf_room_list_toggle = () => {
       // クリックコントロール
       toggle.addEventListener('click', () => {
 
+        console.log(target, parent)
+
         target.classList.toggle(openClass)
         toggle.classList.toggle(openClass)
 
-        // 高さ
-        if (target.classList.contains(openClass)) {
+        const isOpen = target.classList.contains(openClass)
+
+        // 高さを制御
+        if (isOpen) {
           target.style.maxHeight = target.scrollHeight + 'px'
         } else {
           target.style.maxHeight = null
@@ -67,6 +76,11 @@ const rf_room_list_toggle = () => {
           tempText = toggle.textContent
           toggle.textContent = toggle.dataset.jsRoomToggleText
           toggle.dataset.jsRoomToggleText = tempText
+        }
+
+        // 物件のメインまで戻る操作
+        if(!isOpen) {
+          parent.scrollIntoView({ behavior: 'smooth' })
         }
       })
     })
