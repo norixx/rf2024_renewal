@@ -74,10 +74,8 @@
 .c-search-keyword {
   display: flex;
   flex-direction: column;
-
-  @include mq {
-    background: var(--bg-gray-xxlight);
-  }
+  background: var(--bg-nearly-black);
+  padding: var(--space-16);
 
   @include mq {
     padding: var(--space-24) var(--space-32);
@@ -86,9 +84,23 @@
   }
 
   dt {
+    display: flex;
+    align-items: center;
     font-weight: var(--fw-bold);
     letter-spacing: var(--letter-space-10);
     margin-bottom: var(--space-8);
+    color: var(--txt-white);
+
+    &::before {
+      content: '';
+      @include mask-icon(--icon-keyword-search);
+      display: inline-block;
+      --size: 24px;
+      width: var(--size);
+      height: var(--size);
+      margin-right: var(--space-8);
+      background-color: var(--bg-white);
+    }
   }
 
   dd {
