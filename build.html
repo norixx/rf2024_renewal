@@ -920,8 +920,8 @@
 
     // =======================================================
     //建物or部屋フラグ(建物: build / 部屋: room)
-    const RF_page_key = 'build'
-    // const RF_page_key = 'room'
+    // const RF_page_key = 'build'
+    const RF_page_key = 'room'
 
     // =======================================================
     // No photo画像 - 現状、建物も部屋も同じno photo画像を使用
@@ -947,14 +947,17 @@
     // const RF_gallery_url = 'http://rf.dev.example.com/rf/photo/10502' //No fucking data what so ever
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/12345678'; //データが全くないパターン(フェイクURL)
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7587'; //1枚のみのパターン
-    const RF_gallery_url = 'http://rf.dev.example.com/rf/photo/3830'; //3枚中1枚エラーを起こすケース(n枚中 n枚数未満エラーを起こす例)
+    // const RF_gallery_url = 'http://rf.dev.example.com/rf/photo/3830'; //3枚中1枚エラーを起こすケース(n枚中 n枚数未満エラーを起こす例)
 
     // 部屋 ===
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/10171/302' // 部屋(通常)
     // const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/62816/2006' //間取り写真がリンク切れしている(404)パターン
+    const RF_gallery_url = 'https://www.mitsui-chintai.co.jp/rf/photo/8476/710' //外観写真が重複するパターン（2025年10月不具合調査用）
 
     //部屋ページ用建物写真(外観・共用部)
-    const RF_gellery_tatemono_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7498'
+    // const RF_gellery_tatemono_url = 'https://www.mitsui-chintai.co.jp/rf/photo/7498'
+    const RF_gellery_tatemono_url = 'https://www.mitsui-chintai.co.jp/rf/photo/8476'
+
 
     // =======================================================
     // パノラマ写真

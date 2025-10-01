@@ -1035,15 +1035,16 @@ class RFBuildroomSlide {
         case '003':
         case '004':
         case '005':
-        case '031':
-        case '032':
-        case '033':
-        case '034':
-        case '035':
-        case '036':
-        case '037':
-        case '038':
-        case '039':
+        // 以下「周辺」写真が重複するので削除(2025-10-01)
+        // case '031':
+        // case '032':
+        // case '033':
+        // case '034':
+        // case '035':
+        // case '036':
+        // case '037':
+        // case '038':
+        // case '039':
           this.#photos.exterior.push(elm.filename)
           break;
       }
@@ -1223,7 +1224,7 @@ class RFBuildroomSlide {
         throw "No data";
       }
 
-      //存在すればデータをソート
+      // 存在すればデータをソート
       this.#sortDataAndSave(data)
       // 部屋ページ専用（外観写真があればソートする）
       if(RF_page_key === 'room' && dataBuild.length > 0) {
@@ -1263,39 +1264,39 @@ class RFBuildroomSlide {
 
 // =======================================================
 // OLD
-const rf_buildroom_main_slide = () => {
-  const mv_thumbs_args = {
-    spaceBetween: 8,
-    freeMode: true,
-    watchSlidesProgress: true,
-    breakpoints: {
-      0: {
-        slidesPerView: 4.5,
-      },
-      768: {
-        slidesPerView: 8.5,
-      },
-    },
-  }
-  const mv_thumbs = new Swiper('[data-js-buildroom-mv-thumbs]', mv_thumbs_args)
+// const rf_buildroom_main_slide = () => {
+//   const mv_thumbs_args = {
+//     spaceBetween: 8,
+//     freeMode: true,
+//     watchSlidesProgress: true,
+//     breakpoints: {
+//       0: {
+//         slidesPerView: 4.5,
+//       },
+//       768: {
+//         slidesPerView: 8.5,
+//       },
+//     },
+//   }
+//   const mv_thumbs = new Swiper('[data-js-buildroom-mv-thumbs]', mv_thumbs_args)
 
-  const mv_args = {
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    thumbs: {
-      swiper: mv_thumbs,
-    },
-  }
-  const mv = new Swiper('[data-js-buildroom-mv]', mv_args)
-}
+//   const mv_args = {
+//     pagination: {
+//       el: ".swiper-pagination",
+//       type: "fraction",
+//     },
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+//     thumbs: {
+//       swiper: mv_thumbs,
+//     },
+//   }
+//   const mv = new Swiper('[data-js-buildroom-mv]', mv_args)
+// }
 
-const rf_buildroom_related_slide = () => {
-}
+// const rf_buildroom_related_slide = () => {
+// }
 
-export { RFBuildroomSlide, rf_buildroom_main_slide, rf_buildroom_related_slide }
+export { RFBuildroomSlide, rf_buildroom_related_slide }
