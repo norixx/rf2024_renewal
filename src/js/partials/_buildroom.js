@@ -1030,6 +1030,7 @@ class RFBuildroomSlide {
     buildData.forEach((elm) => {
       switch(elm.part) {
         // 建物、外観、共用部、周辺
+        case '000': // fake number
         case '001': //建物メイン写真(部屋ページの場合はJSONから取得)
         case '002':
         case '003':
@@ -1067,6 +1068,7 @@ class RFBuildroomSlide {
         case '003':
         case '004':
         case '005':
+          console.log('002-005突っ込もうとしている外観', elm.filename);
           this.#photos.build.push(elm.filename);
           break;
         // 周辺
@@ -1079,6 +1081,7 @@ class RFBuildroomSlide {
         case '037':
         case '038':
         case '039':
+          console.log('031-039突っ込もうとしている外観', elm.filename);
           this.#photos.exterior.push(elm.filename);
           break;
         // 間取り
@@ -1100,7 +1103,6 @@ class RFBuildroomSlide {
         case '133': 
         case '135': 
         case '136': 
-        // this.#photos.room.push(elm.filename); //間取りに統合
         this.#photos.floorplan.push(elm.filename);
           break;
       }
@@ -1108,7 +1110,7 @@ class RFBuildroomSlide {
 
     // 部屋ページの間取り写真だけは特別で、写真が無くてもタブ表示し、nophoto画像を挿入する
     // TODO: 削除予定
-    console.log('間取り写真枚数', this.#photos.floorplan.length)
+    // console.log('間取り写真枚数', this.#photos.floorplan.length)
     console.log('ソート後の写真データ(this.#photos)', this.#photos)
   }
 
@@ -1188,13 +1190,13 @@ class RFBuildroomSlide {
     
     // 3. その他の画像データを取得
     try {
-      // データ: RF_gallery_url
+      // データ: RF_gallery_url ===
       const fetchedData = await fetch(RF_gallery_url)
       const data = await fetchedData.json();
 
       console.log('取得した'+ RF_page_key +'データ(JSON): ', data)
 
-      // 部屋ページの場合 - 外観写真データも取得する
+      // 部屋ページの場合 - 外観写真データも取得する ===
       let dataBuild = []
       if(RF_page_key === 'room') {
         console.log('部屋ページなので、外観写真も取得')
@@ -1203,7 +1205,7 @@ class RFBuildroomSlide {
         console.log('【部屋】取得したデータ(外観)(JSON): ', dataBuild)
       }
 
-      // 写真データがまったくない場合は処理をエラー処理へ飛ばす
+      // 写真データがまったくない場合は処理をエラー処理へ飛ばす ===
       // 建物
       if(
         RF_page_key === 'build' && 
