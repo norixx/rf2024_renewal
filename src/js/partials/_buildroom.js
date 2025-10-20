@@ -679,7 +679,7 @@ class RFBuildroomSlide {
         // ロード開始をフラグで管理
         is_loading = true
 
-        console.log('タブイベント',  key, this.#isFloorData)
+        console.log('タブイベント', key, this.#isFloorData)
 
         // 同じボタンをクリックした場合は処理しない
         if (this.#getCurrentSlide() === key) {

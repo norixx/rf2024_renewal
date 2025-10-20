@@ -3133,7 +3133,7 @@
         "flagValue" : -1
       },
       "drop_console" : {
-        "active" : 0,
+        "active" : 1,
         "flagValue" : -1
       },
       "drop_debugger" : {
