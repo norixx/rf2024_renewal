@@ -18,4 +18,4 @@ const rf_get_globals = key => {
   return RF_GLOBALS['RF_CONFIG'][key]
 }
 
-export { rf_set_globals, rf_get_globals, init_rf_globals }
+export { rf_set_globals, rf_get_globals }

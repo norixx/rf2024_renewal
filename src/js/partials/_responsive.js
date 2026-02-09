@@ -1,4 +1,4 @@
-import { rf_get_globals, rf_set_globals, init_rf_globals } from './_global-setting'
+import { rf_get_globals, rf_set_globals } from './_global-setting'
 
 const rf_responsive_check = () => {
   window.addEventListener('resize', () => {
