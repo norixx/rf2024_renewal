@@ -23,6 +23,7 @@
         aspect-ratio: 16 / 10;
       }
     }
+
     .swiper-slide {
       display: flex;
       justify-content: center;
@@ -70,6 +71,7 @@
         mask-image: var(--icon-arrow-l);
       }
     }
+
     &.--next {
       &::after {
         mask-image: var(--icon-arrow-r);
@@ -121,6 +123,11 @@
       display: none;
     }
 
+    // パノラマ用(強制的に非表示)
+    &.--panorama {
+      display: none !important;
+    }
+
     &::after {
       content: '';
       background: var(--bg-white);
@@ -137,6 +144,37 @@
       &:hover {
         opacity: .8;
       }
+    }
+  }
+
+  // ポップアップ再生ボタン
+  &__btn-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: var(--z-index-lv2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 60px;
+    background: var(--bg-black-70);
+    border-radius: var(--bdr-radius-md);
+    cursor: pointer;
+    transition: var(--animation-normal);
+
+    &:hover {
+      background: var(--bg-black-90);
+      scale: 1.05;
+    }
+
+    &::after {
+      content: '';
+      background: var(--bg-white);
+      width: var(--space-20);
+      height: var(--space-20);
+      @include mask-icon(--icon-play);
     }
   }
 
@@ -207,6 +245,11 @@
         opacity: 0.6;
       }
     }
+
+    // パノラマのポップアップボタンを非表示(メインスライダーとスライドパネルのHTMLが共通のためここでは非表示する必要がある)
+    .c-buildroom-slide__btn-popup {
+      display: none;
+    }
   }
 
   //ローダー
@@ -231,6 +274,7 @@
       aspect-ratio: 16/9;
     }
   }
+
   &__img {
     width: 100%;
     height: 100%;
@@ -270,6 +314,7 @@
         mask-image: var(--icon-arrow-l);
       }
     }
+
     &.--next {
       &::after {
         mask-image: var(--icon-arrow-r);
@@ -278,9 +323,7 @@
   }
 
   // ページネーション（フラクション型）
-  &__pagination {
-    
-  }
+  &__pagination {}
 }
 
 .c-buildroom-mv-thumbs {
@@ -304,6 +347,7 @@
       }
     }
   }
+
   &__img {
     width: 100%;
     height: 100%;

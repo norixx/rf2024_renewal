@@ -16,7 +16,7 @@ import rf_top_banners from "./partials/_top-banners";
 import rf_todays_count from "./partials/_top-today";
 import rf_prop_slider from "./partials/_prop-slider";
 import { rf_room_list_link, rf_room_list_toggle } from "./partials/_room-list";
-import { RFBuildroomSlide, rf_buildroom_main_slide, rf_buildroom_related_slide } from "./partials/_buildroom";
+import { RFBuildroomSlide } from "./partials/_buildroom";
 import rf_cta_navi_tel from "./partials/_cta-navi";
 import rf_select_link from "./partials/_select-link";
 import rf_related_prop_slider from "./partials/_related-prop-slider";
@@ -68,7 +68,7 @@ const rf_init = () => {
   }
 
   // Pagetop
-  if(document.querySelector('[data-js-pagetop]')) {
+  if (document.querySelector('[data-js-pagetop]')) {
     pagetop()
   }
 
@@ -107,13 +107,6 @@ const rf_init = () => {
     console.dir(RFtemp)
   }
 
-  // 👇️ OLD
-  // if (document.querySelector('[data-js-buildroom-mv]')) {
-  //   rf_buildroom_main_slide()
-  // }
-  // if (document.querySelector('[data-js-buildroom-mv-thumbs]')) {
-  //   rf_buildroom_related_slide()
-  // }
   //=====
 
   // モーダル
@@ -161,13 +154,13 @@ const rf_init = () => {
   }
 
   // TODO: テスト(本番化のときに削除)
-  if(document.querySelector('#ajax-modal-test')) {
+  if (document.querySelector('#ajax-modal-test')) {
     rf_test()
   }
 
   // 間取りモーダル
-  if(
-    document.querySelector('[data-js-madori-modal]') 
+  if (
+    document.querySelector('[data-js-madori-modal]')
   ) {
     rf_modal_madori()
   }
