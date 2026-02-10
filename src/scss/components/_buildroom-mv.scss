@@ -171,10 +171,11 @@
 
     &::after {
       content: '';
+      --size: 32px;
       background: var(--bg-white);
-      width: var(--space-20);
-      height: var(--space-20);
-      @include mask-icon(--icon-play);
+      width: var(--size);
+      height: var(--size);
+      @include mask-icon(--icon-popup-panorama);
     }
   }
 
