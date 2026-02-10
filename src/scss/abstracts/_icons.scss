@@ -31,7 +31,8 @@
   --icon-arrow-r: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 16.6609L10.0707 17.7315L15.9365 11.8658L10.0707 6L9.00067 7.07002L13.7958 11.8651L9 16.6609Z' fill='black'/%3E%3C/svg%3E%0A");
 
   // アロー(上)
-  --icon-arrow-up: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9999 10.8284L7.0502 15.7782L5.63599 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z'%3E%3C/path%3E%3C/svg%3E");;
+  --icon-arrow-up: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9999 10.8284L7.0502 15.7782L5.63599 14.364L11.9999 8L18.3639 14.364L16.9497 15.7782L11.9999 10.8284Z'%3E%3C/path%3E%3C/svg%3E");
+  ;
   // アロー(下)
   --icon-arrow-down: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.33914 9L6.26845 10.0707L12.1342 15.9365L18 10.0707L16.93 9.00067L12.1349 13.7958L7.33914 9Z' fill='black'/%3E%3C/svg%3E%0A");
 
@@ -111,5 +112,8 @@
 
   // キーワード検索
   --icon-keyword-search: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 7H19.09V7.64H21.09V5H1V14.36H10.28V12.36H3V7Z' fill='black'/%3E%3Cpath d='M23.37 18.2901L21.34 16.2601C21.88 15.4501 22.2 14.4801 22.2 13.4401C22.2 10.6301 19.91 8.3501 17.11 8.3501C14.31 8.3501 12.02 10.6401 12.02 13.4401C12.02 16.2401 14.31 18.5301 17.11 18.5301C18.15 18.5301 19.12 18.2101 19.93 17.6701L21.96 19.7001L23.37 18.2901ZM17.1 16.5301C15.39 16.5301 14.01 15.1401 14.01 13.4401C14.01 11.7401 15.4 10.3501 17.1 10.3501C18.8 10.3501 20.19 11.7401 20.19 13.4401C20.19 15.1401 18.8 16.5301 17.1 16.5301Z' fill='black'/%3E%3C/svg%3E%0A");
+
+  // ポップアップ - パノラマ
+  --icon-popup-panorama: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.3 21.18H1V7H3V19.18H18.3V21.18ZM23.3 2H5V17.18H23.3V2ZM7 4H21.3V15.18H7V4ZM16.73 9.59L11.5 6.57V12.61L16.73 9.59Z' fill='black'/%3E%3C/svg%3E%0A");
 
 }
